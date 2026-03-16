@@ -5,6 +5,7 @@ import {
   CONF,
   importantDates,
 } from "../data/conferenceData";
+import { TopImage } from "../components/TopImage";
 
 export default function CallForPapers() {
   const topics = conferenceTopics;
@@ -12,40 +13,7 @@ export default function CallForPapers() {
   return (
     <div className="pt-16">
       {/* Mini Hero */}
-      <section className="relative h-[400px] overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1677092590812-78e7db4900d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcnlwdG9ncmFwaHklMjBjaXJjdWl0JTIwYm9hcmQlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc3Mjc2NjQwMnww&ixlib=rb-4.1.0&q=80&w=1080"
-            alt="Cryptography"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-deep/90" />
-        </div>
-
-        <div className="relative max-w-[1200px] mx-auto px-6 h-full flex flex-col items-center justify-center text-center">
-          <h1
-            className="text-[56px] font-bold italic text-white mb-4"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Call for Papers
-          </h1>
-          <div className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
-            <span
-              className="text-[15px] font-semibold text-cipher"
-              style={{ fontFamily: "var(--font-mono)" }}
-            >
-              July 25, 2025
-            </span>
-            <span
-              className="text-[15px] text-white/80"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              Submission Deadline (Extended)
-            </span>
-          </div>
-        </div>
-      </section>
-
+      <TopImage title="Call for Papers" />
       {/* Scope Section */}
       <section className="bg-white py-24">
         <div className="max-w-[1200px] mx-auto px-6">

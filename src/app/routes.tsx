@@ -8,6 +8,7 @@ import Program from "./pages/Program";
 import Venue from "./pages/Venue";
 import Committees from "./pages/Committees";
 import PreviousConferences from "./pages/PreviousConferences";
+import { vcrisRoutes } from "./utils/routes";
 
 export const router = createBrowserRouter([
   {
@@ -15,13 +16,14 @@ export const router = createBrowserRouter([
     Component: Root,
     children: [
       { index: true, Component: Home },
-      { path: "call-for-papers", Component: CallForPapers },
-      { path: "speakers", Component: KeynoteSpeakers },
-      { path: "registration", Component: Registration },
-      { path: "program", Component: Program },
-      { path: "venue", Component: Venue },
-      { path: "committees", Component: Committees },
-      { path: "previous-conferences", Component: PreviousConferences },
+      { path: vcrisRoutes.callForPapers, Component: CallForPapers },
+      { path: vcrisRoutes.keynoteSpeakers, Component: KeynoteSpeakers },
+      { path: vcrisRoutes.registration, Component: Registration },
+      { path: vcrisRoutes.program, Component: Program },
+      { path: vcrisRoutes.venue, Component: Venue },
+      { path: vcrisRoutes.organizingCommittees, Component: Committees },
+      { path: vcrisRoutes.programCommittees, Component: Committees },
+      { path: vcrisRoutes.previousConferences, Component: PreviousConferences },
     ],
   },
 ]);
