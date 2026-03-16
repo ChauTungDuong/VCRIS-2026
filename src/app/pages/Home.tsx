@@ -1,0 +1,589 @@
+import { Link } from "react-router";
+import { Calendar, MapPin, ChevronDown, ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import CountdownTimer from "../components/CountdownTimer";
+import SpeakerCard from "../components/SpeakerCard";
+import {
+  CONF,
+  importantDates,
+  heroStats,
+  keynoteSpeakers,
+} from "../data/conferenceData";
+
+export default function Home() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  return (
+    <div className="pt-16">
+      {/* Hero Section */}
+      <section className="relative h-screen overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1656520727264-67d0a9af5e85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxIb2FuJTIwS2llbSUyMExha2UlMjBIYW5vaSUyMHR3aWxpZ2h0JTIwZ29sZGVuJTIwaG91cnxlbnwxfHx8fDE3NzI3NjY0MDF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+            alt="Hanoi at twilight"
+            className="w-full h-full object-cover"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(120deg, rgba(7,21,37,0.92) 0%, rgba(7,21,37,0.55) 55%, rgba(7,21,37,0.15) 100%)",
+            }}
+          />
+          {/* Grain texture */}
+          <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNhKSIvPjwvc3ZnPg==')]" />
+        </div>
+
+        {/* Content */}
+        <div className="relative max-w-[1200px] mx-auto px-6 h-full flex items-center">
+          <div className="max-w-[580px]" style={{ marginTop: "-10%" }}>
+            {/* Eyebrow */}
+            <div
+              className={`flex items-center gap-3 mb-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+            >
+              <div className="w-8 h-1 bg-cipher" />
+              <span
+                className="text-[11px] font-semibold text-white tracking-[4px] uppercase"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                {CONF.name}
+              </span>
+            </div>
+
+            {/* Cipher Key Line */}
+            <div className="relative pl-6">
+              <div className="absolute left-0 top-0 w-[1px] h-[72px] bg-cipher" />
+
+              {/* Title */}
+              <div
+                className={`transition-all duration-700 delay-150 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+              >
+                <h1
+                  className="text-white leading-[1.1] mb-2"
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: "64px",
+                    fontStyle: "italic",
+                    fontWeight: 700,
+                  }}
+                >
+                  The 2nd International Conference on
+                </h1>
+                <h1
+                  className="leading-[1.1]"
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: "72px",
+                    fontStyle: "italic",
+                    fontWeight: 700,
+                  }}
+                >
+                  <span className="text-white">Cryptography </span>
+                  <span className="text-cipher">&</span>
+                  <span className="text-white"> Information Security</span>
+                </h1>
+              </div>
+            </div>
+
+            {/* Meta Chips */}
+            <div
+              className={`flex gap-3 mt-8 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+            >
+              <div className="flex items-center gap-2 px-4 py-2.5 rounded-[20px] bg-white/10 border border-white/20 backdrop-blur-sm">
+                <Calendar size={16} className="text-cipher" />
+                <span
+                  className="text-[14px] font-medium text-white"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
+                  {CONF.dates}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2.5 rounded-[20px] bg-white/10 border border-white/20 backdrop-blur-sm">
+                <MapPin size={16} className="text-cipher" />
+                <span
+                  className="text-[14px] font-medium text-white"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
+                  Hanoi, Vietnam
+                </span>
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div
+              className={`flex gap-4 mt-10 transition-all duration-700 delay-[450ms] ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+            >
+              <Link
+                to="/call-for-papers"
+                className="px-6 h-12 rounded-[20px] bg-cipher text-white text-[15px] font-semibold flex items-center justify-center gap-2 transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-cipher/40"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                Submit Your Paper <ArrowRight size={18} />
+              </Link>
+              <Link
+                to="/program"
+                className="px-6 h-12 rounded-[20px] border border-white text-white text-[15px] font-semibold flex items-center justify-center transition-all duration-200 hover:bg-white/10"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                View Program
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Info */}
+        <div className="absolute bottom-10 left-0 right-0">
+          <div className="max-w-[1200px] mx-auto px-6 flex justify-between items-center">
+            <p
+              className="text-[12px] text-white/50"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              Organized by · {CONF.location}
+            </p>
+            <ChevronDown size={24} className="text-cipher/70 animate-bounce" />
+          </div>
+        </div>
+
+        {/* Diagonal Cut */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-20 bg-cipher"
+          style={{ clipPath: "polygon(0 100%, 100% 100%, 100% 50%, 0 100%)" }}
+        />
+      </section>
+
+      {/* Stats Ribbon */}
+      <section className="bg-cipher py-6">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="grid grid-cols-4 gap-8">
+            {heroStats.map((stat, idx) => (
+              <div key={idx} className="text-center">
+                <div
+                  className="text-[28px] font-bold text-white mb-1"
+                  style={{ fontFamily: "var(--font-mono)" }}
+                >
+                  {stat.number}
+                </div>
+                <div
+                  className="text-[13px] text-white/75"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="bg-white py-24">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="grid grid-cols-12 gap-12">
+            {/* Left Column */}
+            <div className="col-span-7">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-2 h-2 rounded-full bg-cipher" />
+                <span
+                  className="text-[11px] font-semibold text-cipher uppercase tracking-[3px]"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
+                  ABOUT THE CONFERENCE
+                </span>
+              </div>
+
+              <h2
+                className="text-[44px] font-bold italic text-ink leading-[1.15] mb-6"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Building the Future of Cryptographic Science
+              </h2>
+
+              <div
+                className="space-y-4 text-[16px] text-slate mb-8"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                <p>
+                  The International Conference on Cryptography and Information
+                  Security (VCRIS 2025) is the 2nd edition of the annual
+                  conference organized by the Academy of Cryptography Techniques
+                  (ACT), Vietnam. The conference aims to foster academic
+                  exchange and advance both fundamental and applied research in
+                  Cryptography and Information Security within Vietnam and
+                  across the globe.
+                </p>
+                <p>
+                  Following the success of VCRIS 2024, the main theme of VCRIS
+                  2025 is the application of cryptography and information
+                  security, with a new track on quantum science and technology.
+                  Accepted papers will be published in IEEE-indexed proceedings.
+                </p>
+              </div>
+
+              {/* Topic Tags */}
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Post-Quantum Cryptography",
+                  "Blockchain & DLT",
+                  "AI Security",
+                  "Zero-Knowledge Proofs",
+                  "Digital Forensics",
+                  "Network Security",
+                  "Data Privacy",
+                ].map((topic) => (
+                  <span
+                    key={topic}
+                    className="px-3 py-1.5 rounded-full bg-cipher-dim text-cipher text-[12px] font-medium"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    {topic}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column */}
+            <div className="col-span-5 relative">
+              {/* Decorative Circle */}
+              <div
+                className="absolute top-0 right-0 w-[280px] h-[280px] rounded-full border border-rule opacity-30"
+                style={{ transform: "translate(20%, -10%)" }}
+              />
+
+              <div className="relative space-y-4">
+                {[
+                  { number: "2nd", label: "Edition" },
+                  { number: "2023", label: "Since" },
+                  { number: "IEEE", label: "Indexed" },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="bg-white border border-rule rounded-2xl p-6"
+                  >
+                    <div
+                      className="text-[36px] font-bold text-cipher mb-1"
+                      style={{ fontFamily: "var(--font-mono)" }}
+                    >
+                      {item.number}
+                    </div>
+                    <div
+                      className="text-[14px] text-ink"
+                      style={{ fontFamily: "var(--font-body)" }}
+                    >
+                      {item.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Important Dates */}
+      <section className="bg-warm py-24">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="grid grid-cols-2 gap-16">
+            {/* Countdown */}
+            <div>
+              <p
+                className="text-[11px] font-semibold text-slate uppercase tracking-[2px] mb-6"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                Conference Opens In
+              </p>
+              <CountdownTimer targetDate={CONF.dateStart} />
+              <p
+                className="text-[13px] text-slate italic mt-4"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                {CONF.dates} · Hanoi, Vietnam
+              </p>
+            </div>
+
+            {/* Timeline */}
+            <div>
+              <h3
+                className="text-[32px] font-bold italic text-ink mb-8"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Key Deadlines
+              </h3>
+
+              <div className="space-y-6 relative pl-6">
+                <div className="absolute left-0 top-2 bottom-2 w-[1px] border-l border-dashed border-rule" />
+
+                {importantDates.map((item, idx) => (
+                  <div key={idx} className="relative flex gap-4 items-start">
+                    <div
+                      className={`absolute -left-[25px] w-2.5 h-2.5 rounded-full ${item.highlight ? "bg-cipher ring-4 ring-cipher/20" : item.passed ? "bg-rule" : "bg-cipher"}`}
+                    />
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span
+                          className={`text-[15px] font-semibold ${item.passed ? "text-slate line-through" : "text-cipher"}`}
+                          style={{ fontFamily: "var(--font-mono)" }}
+                        >
+                          {item.date}
+                        </span>
+                        {item.extended && (
+                          <span
+                            className="px-2 py-0.5 rounded bg-amber/10 text-amber text-[11px] font-semibold"
+                            style={{ fontFamily: "var(--font-body)" }}
+                          >
+                            Extended
+                          </span>
+                        )}
+                      </div>
+                      <p
+                        className="text-[15px] font-medium text-ink"
+                        style={{ fontFamily: "var(--font-body)" }}
+                      >
+                        {item.label}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Keynote Speakers Preview */}
+      <section className="bg-deep py-24">
+        <div className="max-w-[1200px] mx-auto px-6">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <div className="w-2 h-2 rounded-full bg-cipher" />
+              <span
+                className="text-[11px] font-semibold text-cipher uppercase tracking-[3px]"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                KEYNOTE SPEAKERS
+              </span>
+            </div>
+            <h2
+              className="text-[48px] font-bold italic text-white"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Voices Shaping Cryptography
+            </h2>
+          </div>
+
+          {/* Speaker Cards */}
+          <div className="grid grid-cols-3 gap-6 mb-8">
+            {keynoteSpeakers.map((speaker) => (
+              <SpeakerCard
+                key={speaker.name}
+                name={speaker.name}
+                role={speaker.role}
+                institution={speaker.institution}
+                talk={speaker.talk}
+                image={speaker.image}
+              />
+            ))}
+          </div>
+
+          {/* View All Button */}
+          <div className="text-center">
+            <Link
+              to="/speakers"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white text-white text-[13px] font-medium hover:bg-white/10 transition-colors"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              View All Speakers <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Call for Papers CTA */}
+      <section className="bg-cipher py-16 relative overflow-hidden">
+        {/* Dotted Grid Pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.08]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, white 1px, transparent 1px)",
+            backgroundSize: "20px 20px",
+          }}
+        />
+
+        <div className="max-w-[1200px] mx-auto px-6 text-center relative z-10">
+          <h2
+            className="text-[48px] font-bold italic text-white mb-3"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            Your Research Belongs Here
+          </h2>
+          <p
+            className="text-[16px] text-white/80 mb-8"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            IEEE-indexed proceedings · Double-blind peer review · International
+            audience
+          </p>
+          <Link
+            to={CONF.easyChairUrl}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-[20px] bg-white text-cipher text-[15px] font-semibold hover:shadow-lg transition-all"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            Submit Paper via EasyChair <ArrowRight size={18} />
+          </Link>
+        </div>
+      </section>
+
+      {/* Program Preview */}
+      <section className="bg-white py-24">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="flex justify-between items-center mb-12">
+            <h2
+              className="text-[44px] font-bold italic text-ink"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Conference Program
+            </h2>
+            <div className="flex gap-2">
+              <button
+                className="px-4 py-2 rounded-full bg-ink text-white text-[13px] font-medium"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                Day 1 — Oct 30
+              </button>
+              <button
+                className="px-4 py-2 rounded-full border border-slate text-slate text-[13px] font-medium"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                Day 2 — Oct 31
+              </button>
+            </div>
+          </div>
+
+          {/* Schedule Rows */}
+          <div className="space-y-0 border border-rule rounded-2xl overflow-hidden">
+            {[
+              {
+                time: "09:00",
+                title: "Opening Ceremony",
+                subtitle: "Welcome Address by Conference Chair",
+                type: "keynote",
+              },
+              {
+                time: "09:30",
+                title: "Keynote: Post-Quantum Lattice Cryptography",
+                subtitle: "Dr. Sarah Chen, MIT",
+                type: "keynote",
+              },
+              {
+                time: "10:45",
+                title: "Coffee Break",
+                subtitle: "",
+                type: "break",
+              },
+              {
+                time: "11:15",
+                title: "Session A1: Blockchain Security",
+                subtitle: "Track A · Room 201",
+                type: "session",
+              },
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className={`flex items-start gap-6 p-6 transition-colors hover:bg-cipher-dim ${
+                  idx % 2 === 0 ? "bg-white" : "bg-paper"
+                } ${item.type === "keynote" ? "border-l-4 border-cipher bg-cipher-dim" : ""}`}
+              >
+                <div className="w-20 flex-shrink-0">
+                  <span
+                    className="text-[13px] font-medium text-cipher"
+                    style={{ fontFamily: "var(--font-mono)" }}
+                  >
+                    {item.time}
+                  </span>
+                </div>
+                <div className="flex-1">
+                  <h3
+                    className="text-[16px] font-semibold text-ink mb-1"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    {item.title}
+                  </h3>
+                  {item.subtitle && (
+                    <p
+                      className="text-[14px] text-slate"
+                      style={{ fontFamily: "var(--font-body)" }}
+                    >
+                      {item.subtitle}
+                    </p>
+                  )}
+                </div>
+                {item.type === "session" && (
+                  <span
+                    className="px-3 py-1 rounded-full bg-cipher/10 text-cipher text-[12px] font-medium"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    Track A
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <Link
+              to="/program"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-ink text-ink text-[13px] font-medium hover:bg-ink hover:text-white transition-all"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              View Full Program <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Sponsors */}
+      <section className="bg-paper py-16">
+        <div className="max-w-[1200px] mx-auto px-6 text-center">
+          <p
+            className="text-[12px] font-medium text-slate uppercase tracking-[3px] mb-8"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            Supported by
+          </p>
+          <div className="flex items-center justify-center gap-12 opacity-60 hover:opacity-100 transition-opacity">
+            <div
+              className="text-[24px] font-bold text-slate"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              IEEE
+            </div>
+            <div
+              className="text-[24px] font-bold text-slate"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              DBLP
+            </div>
+            <div
+              className="text-[24px] font-bold text-slate"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              ACM
+            </div>
+            <div
+              className="text-[24px] font-bold text-slate"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              IACR
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

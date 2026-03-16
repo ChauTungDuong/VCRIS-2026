@@ -1,0 +1,50 @@
+# ============================================================
+# VCRIS.org — Hybrid Routing Configuration
+# React SPA handles public routes; WordPress handles admin,
+# content, and previous conference archives.
+# ============================================================
+
+Options -MultiViews
+RewriteEngine On
+
+# ── 1. Serve static assets directly (no rewriting) ──────────
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# ── 2. WordPress pass-through paths ─────────────────────────
+# Admin and login
+RewriteRule ^wp-admin(/.*)?$ wp-admin/$1 [L]
+RewriteRule ^wp-login\.php$ wp-login.php [L]
+RewriteRule ^wp-signup\.php$ wp-signup.php [L]
+RewriteRule ^wp-cron\.php$ wp-cron.php [L]
+RewriteRule ^xmlrpc\.php$ xmlrpc.php [L]
+
+# WordPress core files
+RewriteRule ^wp-includes/(.*)$ wp-includes/$1 [L]
+RewriteRule ^wp-content/(.*)$ wp-content/$1 [L]
+
+# WordPress REST API
+RewriteRule ^wp-json/(.*)$ index.php [QSA,L]
+
+# WooCommerce / registration shop
+RewriteRule ^shop(/.*)?$ index.php [QSA,L]
+RewriteRule ^cart(/.*)?$ index.php [QSA,L]
+RewriteRule ^checkout(/.*)?$ index.php [QSA,L]
+RewriteRule ^my-account(/.*)?$ index.php [QSA,L]
+
+# Previous conference archives (served by WordPress)
+RewriteRule ^previous-conferences/vcris[0-9]{4}(/.*)?$ index.php [QSA,L]
+
+# Feed, sitemap, robots
+RewriteRule ^feed(/.*)?$ index.php [QSA,L]
+RewriteRule ^sitemap.*\.xml$ index.php [QSA,L]
+RewriteRule ^robots\.txt$ robots.txt [L]
+
+# ── 3. React SPA public routes → serve React index.html ─────
+# These routes are handled entirely by the React frontend.
+RewriteRule ^$ /react/index.html [L]
+RewriteRule ^(call-for-papers|speakers|program|registration|venue|committees|previous-conferences)(/.*)?$ /react/index.html [L]
+
+# ── 4. Fallback: everything else goes to WordPress ───────────
+RewriteRule ^(.*)$ index.php [QSA,L]
