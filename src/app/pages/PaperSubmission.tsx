@@ -61,12 +61,15 @@ export default function PaperSubmission() {
             <div className="space-y-4">
               {/* Paper Submission */}
               <div className="bg-white rounded-2xl p-8 border border-rule">
-                <h2
-                  className="text-[28px] font-bold italic text-ink mb-6"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  Paper Submission
-                </h2>
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-2 h-2 rounded-full bg-cipher" />
+                  <h2
+                    className="text-[28px] font-bold italic text-ink"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    Paper Submission
+                  </h2>
+                </div>
 
                 <div className="space-y-4">
                   <div>
@@ -126,12 +129,15 @@ export default function PaperSubmission() {
 
               {/* Paper Submission Requirements */}
               <div className="bg-white rounded-2xl p-8 border border-rule">
-                <h2
-                  className="text-[28px] font-bold italic text-ink mb-6"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  Paper Submission Requirements
-                </h2>
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-2 h-2 rounded-full bg-cipher" />
+                  <h2
+                    className="text-[28px] font-bold italic text-ink"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    Paper Submission Requirements
+                  </h2>
+                </div>
 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
@@ -169,12 +175,15 @@ export default function PaperSubmission() {
 
               {/* Presentation and Publication */}
               <div className="bg-white rounded-2xl p-8 border border-rule">
-                <h2
-                  className="text-[28px] font-bold italic text-ink mb-6"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  Presentation and Publication
-                </h2>
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-2 h-2 rounded-full bg-cipher" />
+                  <h2
+                    className="text-[28px] font-bold italic text-ink"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    Presentation and Publication
+                  </h2>
+                </div>
 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
@@ -211,12 +220,15 @@ export default function PaperSubmission() {
 
               {/* Contact Information */}
               <div className="bg-white rounded-2xl p-8 border border-rule">
-                <h2
-                  className="text-[28px] font-bold italic text-ink mb-6"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  Contact Information
-                </h2>
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-2 h-2 rounded-full bg-cipher" />
+                  <h2
+                    className="text-[28px] font-bold italic text-ink"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    Contact Information
+                  </h2>
+                </div>
 
                 <p
                   className="text-[15px] text-slate mb-4"
@@ -240,12 +252,15 @@ export default function PaperSubmission() {
             {/* Cột phải - Important Dates */}
             <div className="md:sticky md:top-24">
               <div className="bg-white rounded-2xl p-8 border border-rule">
-                <h2
-                  className="text-[28px] font-bold italic text-ink mb-6"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  Important Dates
-                </h2>
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-2 h-2 rounded-full bg-cipher" />
+                  <h2
+                    className="text-[28px] font-bold italic text-ink"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    Important Dates
+                  </h2>
+                </div>
 
                 <div className="space-y-4">
                   {importantDates.map((item, index) => (
