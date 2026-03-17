@@ -2,20 +2,20 @@ import { keynoteSpeakers } from "../data/conferenceData";
 
 const tbaSlots = [
   {
-    name: "Speaker TBA",
-    role: "To Be Announced",
-    institution: "International Expert",
-    talk: "TBA",
+    name: "DR. WOUTER CASTRYCK",
+    role: "Research Expert",
+    institution: "COSIC, KU Leuven",
+    talk: "Isogeny-based cryptography: an overview of the current landscape",
     image: "",
-    bio: "More keynote speakers will be announced soon.",
+    bio: "Dr. Wouter Castryck is a renowned researcher at KU Leuven specializing in the computational aspects of algebraic geometry and number theory. A recipient of best paper awards at Eurocrypt 2023 and Crypto 2020, his work focuses on post-quantum cryptographic applications, including isogeny-based, multivariate, and lattice-based cryptography."
   },
   {
-    name: "Speaker TBA",
-    role: "To Be Announced",
-    institution: "International Expert",
-    talk: "TBA",
+    name: "DR. FLORIAN CAULLERY",
+    role: "Director SoC Security | Cryptographer",
+    institution: "Technology Innovation Institute (TII)",
+    talk: "One Chip, Many Engines: Accelerating and Securing cryptographic algorithms on modern SoCs",
     image: "",
-    bio: "More keynote speakers will be announced soon.",
+    bio: "Dr. Florian Caullery is a cryptographer at the Secure Systems Research Center in Abu Dhabi with over a decade of experience spanning theoretical and applied cybersecurity. Having worked with industry leaders like Qualcomm and ST-Microelectronics, his expertise focuses on post-quantum cryptography, side-channel resistance, and the integration of secure cryptographic workloads within heterogeneous System-on-Chip (SoC) architectures."
   },
 ];
 

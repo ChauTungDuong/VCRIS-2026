@@ -58,14 +58,22 @@ export const topics = [
 
 export const keynoteSpeakers = [
   {
-    name: "Professor Tanaka Kiyofumi",
-    role: "Professor",
-    institution:
-      "Japan Advanced Institute of Science and Technology (JAIST), Japan",
+    name: "PROF. TANAKA KIYOFUMI",
+    role: "Dean of Information Science | Director of Next-Generation Digital Infrastructure",
+    institution: "Japan Advanced Institute of Science and Technology (JAIST)",
+    talk: "Challenges in High-Performance Cryptographic Hardware Design",
     image: "https://vcris.org/wp-content/uploads/2025/04/keynote.png",
-    talk: "Keynote Talk – VCRIS 2025",
-    bio: "Professor Tanaka Kiyofumi is affiliated with the Japan Advanced Institute of Science and Technology (JAIST). He is a leading expert in cryptography and information security with extensive research contributions recognized internationally.",
+    bio: "Dr. Kiyofumi Tanaka is a Professor and Dean at JAIST, where he leads research into computer architecture and accelerator hardware. With over 200 publications, his work focuses on the intersection of high-performance computing and security, specifically developing reconfigurable FPGA-based architectures for Elliptic Curve Cryptography and addressing the emerging hardware challenges of post-quantum cryptographic standards."
   },
+  // {
+  //   name: "PROF. TANAKA KIYOFUMI",
+  //   role: "Professor",
+  //   institution:
+  //     "Japan Advanced Institute of Science and Technology (JAIST), Japan",
+  //   image: "https://vcris.org/wp-content/uploads/2025/04/keynote.png",
+  //   talk: "Keynote Talk – VCRIS 2025",
+  //   bio: "Professor Tanaka Kiyofumi is affiliated with the Japan Advanced Institute of Science and Technology (JAIST). He is a leading expert in cryptography and information security with extensive research contributions recognized internationally.",
+  // },
 ];
 
 // VCRIS 2024 keynote speakers (for previous conference archive)
