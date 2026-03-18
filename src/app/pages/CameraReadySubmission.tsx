@@ -57,20 +57,20 @@ export default function CameraReadySubmission() {
               className="text-[16px] text-slate leading-relaxed"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Please make sure to{" "}
               <span className="font-semibold text-ink">
-                strictly follow the below steps
+                Camera-ready submission information will be updated later.
               </span>
             </p>
           </div>
         </div>
       </section>
 
-      {/* Steps */}
+      {/*
+      {/* Steps 
       <section className="bg-warm py-12 pb-24">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="space-y-6">
-            {/* Step 1: Copyright Consent Form */}
+            {/* Step 1: Copyright Consent Form
             <div className="bg-white rounded-2xl p-8 border border-rule">
               <div className="flex items-start gap-6">
                 <div className="flex-shrink-0">
@@ -153,7 +153,7 @@ export default function CameraReadySubmission() {
               </div>
             </div>
 
-            {/* Step 2: Prepare Final Manuscript */}
+            {/* Step 2: Prepare Final Manuscript
             <div className="bg-white rounded-2xl p-8 border border-rule">
               <div className="flex items-start gap-6">
                 <div className="flex-shrink-0">
@@ -298,7 +298,7 @@ export default function CameraReadySubmission() {
               </div>
             </div>
 
-            {/* Step 3: IEEE PDF eXpress */}
+            {/* Step 3: IEEE PDF eXpress
             <div className="bg-white rounded-2xl p-8 border border-rule">
               <div className="flex items-start gap-6">
                 <div className="flex-shrink-0">
@@ -334,7 +334,7 @@ export default function CameraReadySubmission() {
                   </p>
 
                   <div className="space-y-4">
-                    {/* Step I */}
+                    {/* Step I
                     <div className="bg-cipher/5 rounded-xl p-4">
                       <h3
                         className="text-[16px] font-semibold text-ink mb-3"
@@ -375,7 +375,7 @@ export default function CameraReadySubmission() {
                       </ul>
                     </div>
 
-                    {/* Step II */}
+                    {/* Step II
                     <div className="bg-cipher/5 rounded-xl p-4">
                       <h3
                         className="text-[16px] font-semibold text-ink mb-2"
@@ -386,7 +386,7 @@ export default function CameraReadySubmission() {
                       </h3>
                     </div>
 
-                    {/* Step III */}
+                    {/* Step III
                     <div className="bg-cipher/5 rounded-xl p-4">
                       <h3
                         className="text-[16px] font-semibold text-ink mb-2"
@@ -396,7 +396,7 @@ export default function CameraReadySubmission() {
                       </h3>
                     </div>
 
-                    {/* Step IV */}
+                    {/* Step IV
                     <div className="bg-cipher/5 rounded-xl p-4">
                       <h3
                         className="text-[16px] font-semibold text-ink mb-2"
@@ -406,8 +406,7 @@ export default function CameraReadySubmission() {
                         Source Files for Conversion"
                       </h3>
                     </div>
-
-                    {/* Step V */}
+                    {/* Step V
                     <div className="bg-cipher/5 rounded-xl p-4">
                       <h3
                         className="text-[16px] font-semibold text-ink mb-2"
@@ -426,7 +425,7 @@ export default function CameraReadySubmission() {
                       </p>
                     </div>
 
-                    {/* Step VI */}
+                    {/* Step VI
                     <div className="bg-cipher/5 rounded-xl p-4">
                       <h3
                         className="text-[16px] font-semibold text-ink mb-2"
@@ -463,7 +462,7 @@ export default function CameraReadySubmission() {
               </div>
             </div>
 
-            {/* Step 4: Upload to EasyChair */}
+            {/* Step 4: Upload to EasyChair
             <div className="bg-white rounded-2xl p-8 border border-rule">
               <div className="flex items-start gap-6">
                 <div className="flex-shrink-0">
@@ -476,7 +475,7 @@ export default function CameraReadySubmission() {
                     </span>
                   </div>
                 </div>
-
+                
                 <div className="flex-1">
                   <h2
                     className="text-[28px] font-bold italic text-ink mb-4"
@@ -613,6 +612,7 @@ export default function CameraReadySubmission() {
           </div>
         </div>
       </section>
+       */}
     </div>
   );
 }
