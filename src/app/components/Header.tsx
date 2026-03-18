@@ -20,7 +20,7 @@ export default function Navigation() {
       className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-200 ${isScrolled ? "bg-white/90 backdrop-blur-xl border-rule" : "bg-white border-rule"
         }`}
     >
-      <div className="max-w-[1400px] mx-auto px-4 lg:px-6 h-[60px] flex items-center justify-between gap-4">
+      <div className="max-w-[1400px] mx-auto px-4 lg:px-6 h-[60px] flex items-center justify-between sm:gap-2 md:gap-3">
         {/* Logo */}
         <Link to="/" className="flex flex-col shrink-0">
           <div className="flex items-baseline gap-2">

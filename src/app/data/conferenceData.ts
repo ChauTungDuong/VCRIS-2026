@@ -9,7 +9,7 @@ export const CONF = {
   dates: "October 30–31, 2025",
   dateStart: "2025-10-30T08:00:00",
   location: "Academy of Cryptography Techniques, Hanoi, Vietnam",
-  address: "141 Chien Thang Road, Tan Trieu, Thanh Tri, Hanoi, Vietnam",
+  address: "141 Chien Thang Road, Thanh Liet, Ha Noi, Viet Nam",
   easyChairUrl: "https://easychair.org/conferences/?conf=vcris2025",
   contactEmail: "vcris@actvn.edu.vn",
   website: "https://vcris.org",
@@ -213,28 +213,119 @@ export const organizers = {
 };
 
 export const callForPapersText = {
-  intro: `Authors are invited to submit full papers presenting new research results related to cryptography, information security and their applications for either crypto track or security track. All submissions must describe original research that is not published or currently under review by another conference or journal.`,
-  scope: `The VCRIS conference aims to foster an academic exchange environment and advance both fundamental and applied scientific research endeavors in Cryptography and Information Security, both within Vietnam and across the globe. Following the success of VCRIS 2024, the main theme of VCRIS 2025 is the application of cryptography and information security, with a new track of quantum science and technology.`,
-  submissionGuidelines: [
-    "Papers must be submitted via EasyChair on or before the specified due dates.",
-    "All submitted papers must be original and not previously published or under review elsewhere.",
-    "Submissions must be in PDF format using the IEEE conference templates.",
-    "Papers are limited to 6–8 pages in IEEE double-column format.",
-    "All submitted papers must be written in English.",
-    "All fonts must be embedded; no password protection on PDF.",
-    "Double-blind peer review — author identities must be anonymized.",
+  about: [
+    `The 3rd International Conference on Cryptography and Information Security (VCRIS 2026) will be held at the Academy of Cryptography Techniques, 141 Chien Thang Road, Thanh Liet, Hanoi, Vietnam.`,
+    `VCRIS 2026 is organized by the Academy of Cryptography Techniques in collaboration with co-organizing institutions including the Vietnam Institute for Advanced Study in Mathematics (VISAM), the Vietnam Association of Faculties- Institutes-Schools-Universities of ICT (FISU VN), the Information Security Journal (ISJ), with the endorsement of the University of Lorraine – France and the Japan Advanced Institute of Science and Technology – Japan, and the Computer Security and Industrial Cryptography group of KU Leuven – Belgium.`,
+    `VCRIS 2026 aims to bring together researchers, practitioners, and industry experts to present and discuss the latest advances in cryptography, post-quantum security, systems security, and AI-driven cybersecurity.`,
+    `The conference provides a high-quality international forum for theoretical foundations, practical implementations, and emerging interdisciplinary security technologies. VCRIS 2026 welcomes original research contributions, case studies, system implementations, and visionary papers.`
   ],
+  tracks: [
+    {
+      title: `Track 1: Theoretical and Post-Quantum Cryptography`,
+      topics: [
+        `Symmetric and asymmetric cryptography`,
+        `Cryptographic hash functions and digital signatures`,
+        `Cryptographic protocols and formal security proofs`,
+        `Provable security and complexity assumptions`,
+        `Random number generation and entropy sources`,
+        `Post-Quantum Cryptography (PQC)`,
+        `Lattice-based, code-based, multivariate cryptography`,
+        `Quantum-resistant primitives and migration strategies`
+      ]
+    },
+    {
+      title: `Track 2: Applied Cryptography and Privacy`,
+      topics: [
+        `Cryptographic engineering and implementation security`,
+        `Side-channel attacks and countermeasures`,
+        `Secure hardware and trusted execution environments`,
+        `Zero-knowledge proofs and secure multiparty computation`,
+        `Blockchain and distributed ledger cryptography`,
+        `Privacy-enhancing technologies`,
+        `Information hiding and watermarking`
+      ]
+    },
+    {
+      title: `Track 3: Systems and Network Security`,
+      topics: [
+        `Network and wireless security`,
+        `IoT and edge security`,
+        `Cloud and distributed systems security`,
+        `Operating systems and virtualization security`,
+        `Database and storage security`,
+        `Web and mobile security`,
+        `5G/6G and next-generation network security`
+      ]
+    },
+    {
+      title: `Track 4: AI-driven Security and Threat Intelligence`,
+      topics: [
+        `AI and machine learning for cybersecurity`,
+        `Malware analysis and detection`,
+        `Intrusion detection and prevention systems`,
+        `Deepfake detection and media forensics`,
+        `Adversarial machine learning`,
+        `LLM applications in cybersecurity`,
+        `Automated vulnerability detection`
+      ]
+    },
+    {
+      title: `Track 5: Emerging Security Technologies`,
+      topics: [
+        `Quantum communication security`,
+        `Cyber-physical systems security`,
+        `Smart city and critical infrastructure protection`,
+        `Digital forensics and incident response`,
+        `Human-centric security and usable security`,
+        `Security economics and governance`,
+        `Privacy and data protection frameworks`
+      ]
+    }
+  ],
+  submissions: [
+    `Authors are invited to submit original, unpublished research papers that are not currently under review elsewhere.`,
+    `All submissions must follow the IEEE conference format at IEEE’s website, be written in English, and should not exceed 6 pages.`,
+    `Papers will be peer-reviewed using a double-blind review process by at least three members of the technical Program Committee.`
+  ],
+  publication: [
+    `Accepted papers that are presented at the conference will be submitted for inclusion into IEEE Xplore subject to meeting IEEE Xplore’s scope and quality requirements.`
+  ],
+  postConferencePublication: [
+    `Several journal special issues related to VCRIS 2026 will be announced in due course.`
+  ]
+};
+
+export const callForWorkshopsText = {
+  intro: `The VCRIS conference will feature a workshop session for businesses. This will be a platform for businesses to introduce themselves and promote their products in the field of quantum science and technology, cryptography, and information security to the participating agencies, organizations, and scientists attending the conference.`,
+  details: `The detailed workshop for VCRIS 2026 will be updated later.`,
+  contact: [
+    {
+      name: `Dr. Vu Thi Dao`,
+      descriptions: [
+        `Institute of Research and Development Cooperation, Academy of Cryptography Techniques`,
+        `141 Chien Thang road, Thanh Liet, Hanoi, Vietnam`,
+        `Cell Phone: +84.982.151.982`
+      ]
+    },
+    {
+      name: `Ms Vuong Thi Hai Ha`,
+      descriptions: [
+        `Secretary of VCRIS 2026`,
+        `Cell Phone: +84.984.346.162`
+      ]
+    }
+  ]
 };
 
 // Venue data
 export const venue = {
   mainVenue: {
     name: "Academy of Cryptography Techniques",
-    address: "141 Chien Thang Road, Tan Trieu, Thanh Tri, Hanoi, Vietnam",
+    address: "141 Chien Thang Road, Thanh Liet, Ha Noi, Viet Nam",
     mapUrl:
       "https://maps.google.com/?q=Academy+of+Cryptography+Techniques+Hanoi+Vietnam",
     mapEmbed:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.6765!2d105.8342!3d20.9654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2zMjDCsDU3JzU1LjQiTiAxMDXCsDUwJzAzLjEiRQ!5e0!3m2!1sen!2s!4v1234567890",
+      "https://maps.google.com/maps?q=141%20Chi%E1%BA%BFn%20Th%E1%BA%AFng,%20T%C3%A2n%20Tri%E1%BB%81u,%20Thanh%20Tr%C3%AC,%20H%C3%A0%20N%E1%BB%99i,%20Vi%E1%BB%87t%20Nam&t=m&z=15&output=embed&iwloc=near",
   },
   conferenceHotel: {
     name: "Grand Plaza Hanoi Hotel",
