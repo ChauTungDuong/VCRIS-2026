@@ -1,49 +1,4 @@
-import { Check, Mail } from "lucide-react";
-
 export default function Registration() {
-  const registrationTypes = [
-    {
-      type: "Student",
-      price: "$250",
-      popular: false,
-      features: [
-        "Conference Proceedings (IEEE)",
-        "Access to All Sessions",
-        "Coffee Breaks & Lunches",
-        "Conference Kit & Materials",
-        "Certificate of Attendance"
-      ]
-    },
-    {
-      type: "Academic / Researcher",
-      price: "$450",
-      popular: true,
-      features: [
-        "Conference Proceedings (IEEE)",
-        "Access to All Sessions",
-        "Coffee Breaks & Lunches",
-        "Conference Kit & Materials",
-        "Certificate of Attendance",
-        "Networking Reception Access"
-      ]
-    },
-    {
-      type: "Industry Professional",
-      price: "$650",
-      popular: false,
-      features: [
-        "Conference Proceedings (IEEE)",
-        "Access to All Sessions",
-        "Coffee Breaks & Lunches",
-        "Conference Kit & Materials",
-        "Certificate of Attendance",
-        "Networking Reception Access",
-        "Gala Dinner Invitation",
-        "Premium Networking Opportunities"
-      ]
-    }
-  ];
-
   return (
     <div className="pt-16">
       {/* Hero */}
@@ -55,69 +10,309 @@ export default function Registration() {
         </div>
       </section>
 
-      {/* Pricing Cards */}
+      {/* Pricing Table */}
       <section className="bg-warm py-24">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-[40px] font-bold italic text-ink mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-              Choose Your Registration Type
+              Registration Fees
             </h2>
             <p className="text-[16px] text-slate" style={{ fontFamily: 'var(--font-body)' }}>
-              Early bird rates available until September 15, 2025
+              Early bird rates available until September 30, 2025
             </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-8">
-            {registrationTypes.map((reg) => (
-              <div
-                key={reg.type}
-                className={`relative rounded-[20px] p-10 transition-all duration-200 ${
-                  reg.popular
-                    ? 'bg-ink text-white scale-105 shadow-xl'
-                    : 'bg-white border border-rule hover:border-cipher hover:shadow-lg'
-                }`}
-              >
-                {reg.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-cipher text-white text-[12px] font-semibold" style={{ fontFamily: 'var(--font-body)' }}>
-                    Most Popular
-                  </div>
-                )}
-
-                <div className="text-center mb-8">
-                  <h3 className={`text-[13px] font-semibold uppercase tracking-[2px] mb-4 ${reg.popular ? 'text-white/70' : 'text-slate'}`} style={{ fontFamily: 'var(--font-body)' }}>
-                    {reg.type}
-                  </h3>
-                  <div className={`text-[40px] font-bold mb-2 ${reg.popular ? 'text-white' : 'text-cipher'}`} style={{ fontFamily: 'var(--font-mono)' }}>
-                    {reg.price}
-                  </div>
-                  <p className={`text-[13px] ${reg.popular ? 'text-white/60' : 'text-slate'}`} style={{ fontFamily: 'var(--font-body)' }}>
-                    per person
-                  </p>
-                </div>
-
-                <div className="space-y-4 mb-8">
-                  {reg.features.map((feature) => (
-                    <div key={feature} className="flex items-start gap-3">
-                      <Check size={18} className={`flex-shrink-0 mt-0.5 ${reg.popular ? 'text-cipher' : 'text-cipher'}`} />
-                      <span className={`text-[14px] ${reg.popular ? 'text-white' : 'text-ink'}`} style={{ fontFamily: 'var(--font-body)' }}>
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                <button
-                  className={`w-full h-11 rounded-xl text-[14px] font-semibold transition-all ${
-                    reg.popular
-                      ? 'bg-white text-cipher hover:shadow-lg'
-                      : 'bg-cipher text-white hover:shadow-lg hover:shadow-cipher/40'
-                  }`}
-                  style={{ fontFamily: 'var(--font-body)' }}
-                >
-                  Register Now
-                </button>
+          {/* Registration Notice Section */}
+          <div className="mb-12 bg-blue-50 border border-blue-200 rounded-lg p-6">
+            <div className="space-y-4" style={{ fontFamily: 'var(--font-body)' }}>
+              <div className="text-[15px]">
+                <span className="font-bold text-ink">Registration is handled at: </span>
+                <a href="https://vcris2025.websitehoinghi.com/" target="_blank" rel="noopener noreferrer" className="text-cipher font-semibold hover:underline">
+                  https://vcris2025.websitehoinghi.com/
+                </a>
               </div>
-            ))}
+              <div className="text-[15px]">
+                <span className="font-bold text-ink">After the registration and successful payment, please send proof to: </span>
+                <a href="mailto:vcris.act@gmail.com" className="text-cipher font-semibold hover:underline">
+                  vcris.act@gmail.com
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Responsive table wrapper */}
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse bg-white text-[14px]" style={{ fontFamily: 'var(--font-body)' }}>
+              <thead>
+                <tr className="bg-gray-200">
+                  <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-ink">Registration Type</th>
+                  <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-ink">Membership</th>
+                  <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-ink">Date</th>
+                  <th className="border border-gray-300 px-4 py-3 text-center font-semibold text-ink">Code</th>
+                  <th className="border border-gray-300 px-4 py-3 text-center font-semibold text-ink">Registration Fee</th>
+                  <th className="border border-gray-300 px-4 py-3 text-center font-semibold text-ink">Number of Accepted Papers</th>
+                </tr>
+              </thead>
+              <tbody>
+                {/* REGULAR REGISTRATION - ROW 1 */}
+                <tr>
+                  <td rowSpan={12} className="border border-gray-300 px-4 py-3 text-center font-bold text-ink bg-white" style={{ verticalAlign: 'middle', fontSize: '18px' }}>Regular Registration</td>
+                  <td rowSpan={6} className="border border-gray-300 px-4 py-3 text-center font-bold text-ink bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '16px' }}>IEEE Member</td>
+                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>Before Sep 30, 2025</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">RM:B1</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">250 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">01</td>
+                </tr>
+                {/* REGULAR REGISTRATION - ROW 2 */}
+                <tr>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">RM:B2</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">400 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">02</td>
+                </tr>
+                {/* REGULAR REGISTRATION - ROW 3 */}
+                <tr>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">RM:B3</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">500 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">03</td>
+                </tr>
+                {/* REGULAR REGISTRATION - ROW 4 */}
+                <tr>
+                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>After Sep 30, 2025</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">RM:A1</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">300 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">01</td>
+                </tr>
+                {/* REGULAR REGISTRATION - ROW 5 */}
+                <tr>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">RM:A2</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">450 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">02</td>
+                </tr>
+                {/* REGULAR REGISTRATION - ROW 6 */}
+                <tr>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">RM:A3</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">550 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">03</td>
+                </tr>
+                {/* REGULAR REGISTRATION - ROW 7 */}
+                <tr>
+                  <td rowSpan={6} className="border border-gray-300 px-4 py-3 text-center font-bold text-ink bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '16px' }}>Non-IEEE Member</td>
+                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>Before Sep 30, 2025</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">RN:B1</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">300 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">01</td>
+                </tr>
+                {/* REGULAR REGISTRATION - ROW 8 */}
+                <tr>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">RN:B2</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">500 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">02</td>
+                </tr>
+                {/* REGULAR REGISTRATION - ROW 9 */}
+                <tr>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">RN:B3</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">600 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">03</td>
+                </tr>
+                {/* REGULAR REGISTRATION - ROW 10 */}
+                <tr>
+                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>After Sep 30, 2025</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">RN:A1</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">350 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">01</td>
+                </tr>
+                {/* REGULAR REGISTRATION - ROW 11 */}
+                <tr>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">RN:A2</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">550 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">02</td>
+                </tr>
+                {/* REGULAR REGISTRATION - ROW 12 */}
+                <tr>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">RN:A3</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">650 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">03</td>
+                </tr>
+
+                {/* STUDENT CONFERENCE REGISTRATION - ROW 13 */}
+                <tr>
+                  <td rowSpan={12} className="border border-gray-300 px-4 py-3 text-center font-bold text-ink bg-white" style={{ verticalAlign: 'middle', fontSize: '18px' }}>Student Conference Registration</td>
+                  <td rowSpan={6} className="border border-gray-300 px-4 py-3 text-center font-bold text-ink bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '16px' }}>IEEE Member</td>
+                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>Before Sep 30, 2025</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">SM:B1</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">150 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">01</td>
+                </tr>
+                {/* STUDENT CONFERENCE REGISTRATION - ROW 14 */}
+                <tr>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">SM:B2</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">250 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">02</td>
+                </tr>
+                {/* STUDENT CONFERENCE REGISTRATION - ROW 15 */}
+                <tr>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">SM:B3</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">350 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">03</td>
+                </tr>
+                {/* STUDENT CONFERENCE REGISTRATION - ROW 16 */}
+                <tr>
+                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>After Sep 30, 2025</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">SM:A1</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">200 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">01</td>
+                </tr>
+                {/* STUDENT CONFERENCE REGISTRATION - ROW 17 */}
+                <tr>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">SM:A2</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">300 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">02</td>
+                </tr>
+                {/* STUDENT CONFERENCE REGISTRATION - ROW 18 */}
+                <tr>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">SM:A3</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">400 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">03</td>
+                </tr>
+                {/* STUDENT CONFERENCE REGISTRATION - ROW 19 */}
+                <tr>
+                  <td rowSpan={6} className="border border-gray-300 px-4 py-3 text-center font-bold text-ink bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '16px' }}>Non-IEEE Member</td>
+                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>Before Sep 30, 2025</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">SN:B1</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">180 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">01</td>
+                </tr>
+                {/* STUDENT CONFERENCE REGISTRATION - ROW 20 */}
+                <tr>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">SN:B2</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">300 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">02</td>
+                </tr>
+                {/* STUDENT CONFERENCE REGISTRATION - ROW 21 */}
+                <tr>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">SN:B3</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">400 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">03</td>
+                </tr>
+                {/* STUDENT CONFERENCE REGISTRATION - ROW 22 */}
+                <tr>
+                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>After Sep 30, 2025</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">SN:A1</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">230 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">01</td>
+                </tr>
+                {/* STUDENT CONFERENCE REGISTRATION - ROW 23 */}
+                <tr>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">SN:A2</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">350 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">02</td>
+                </tr>
+                {/* STUDENT CONFERENCE REGISTRATION - ROW 24 */}
+                <tr>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">SN:A3</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">450 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">03</td>
+                </tr>
+
+                {/* EXTRA FEES - ROW 1 */}
+                <tr>
+                  <td className="border border-gray-300 px-4 py-3 text-left text-ink font-semibold">Non-authors / Co-authors</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink"></td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink"></td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">NA/CA</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">150 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink"></td>
+                </tr>
+
+                {/* EXTRA FEES - ROW 2 */}
+                <tr>
+                  <td className="border border-gray-300 px-4 py-3 text-left text-ink font-semibold">Extra page Proceeding</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink"></td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink"></td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">EP</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">40 USD/page</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink"></td>
+                </tr>
+
+                {/* EXTRA FEES - ROW 3 */}
+                <tr>
+                  <td className="border border-gray-300 px-4 py-3 text-left text-ink font-semibold">Extra fee (Sightseeing tour fee)</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink"></td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink"></td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">EF</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink">30 USD</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-ink"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          {/* Payment Information Section */}
+          <div className="mt-16 bg-white rounded-lg p-8">
+            {/* Payment Detail */}
+            <div className="mb-12">
+              <h3 className="text-[24px] font-bold text-ink mb-6" style={{ fontFamily: 'var(--font-display)' }}>
+                Payment Detail
+              </h3>
+              <ul className="space-y-4 text-[15px] text-slate leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
+                <li className="flex gap-3">
+                  <span className="text-cipher font-bold flex-shrink-0">•</span>
+                  <span>The registration fee includes an IEEE publication (for the first author or the corresponding author), coffee breaks, lunch breaks, and other conference materials for two days of the conference.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-cipher font-bold flex-shrink-0">•</span>
+                  <span>The registration also covers an entrant to the Gala Dinner at a restaurant in Hanoi.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-cipher font-bold flex-shrink-0">•</span>
+                  <span>If the registrant has multiple papers in different special sessions including the regular session, the registrant must register for each paper.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-cipher font-bold flex-shrink-0">•</span>
+                  <span>Non-refundable registration fees must be paid prior to uploading the final IEEE formatted, publication-ready version of the paper.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-cipher font-bold flex-shrink-0">•</span>
+                  <span>The Extra fee includes coffee breaks, lunch breaks, tickets, and entertainment for visiting Vietnam's scenic.</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Further Inquiry */}
+            <div>
+              <h3 className="text-[24px] font-bold text-ink mb-6" style={{ fontFamily: 'var(--font-display)' }}>
+                Further Inquiry
+              </h3>
+              <p className="text-[15px] text-slate mb-6 leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
+                For any other related information or inquiry regarding the payment, the transaction methods, or difficulties in the registration process, the authors should send an email as soon as possible to:
+              </p>
+              <div className="mb-6 text-[15px]" style={{ fontFamily: 'var(--font-body)' }}>
+                <a href="mailto:VCRIS.ACT@gmail.com" className="font-bold text-cipher hover:underline text-[16px]">
+                  VCRIS.ACT@gmail.com
+                </a>
+              </div>
+              <p className="text-[14px] text-slate font-semibold mb-3" style={{ fontFamily: 'var(--font-body)' }}>
+                Please include:
+              </p>
+              <ul className="space-y-3 text-[15px] text-slate leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
+                <li className="flex gap-3">
+                  <span className="text-cipher font-bold flex-shrink-0">•</span>
+                  <span>PaperID</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-cipher font-bold flex-shrink-0">•</span>
+                  <span>Paper Title</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-cipher font-bold flex-shrink-0">•</span>
+                  <span>Author(s)</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-cipher font-bold flex-shrink-0">•</span>
+                  <span>Affiliation</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <p className="text-[13px] text-slate italic text-center mt-8" style={{ fontFamily: 'var(--font-body)' }}>
@@ -126,111 +321,6 @@ export default function Registration() {
               Contact us →
             </a>
           </p>
-        </div>
-      </section>
-
-      {/* What's Included */}
-      <section className="bg-white py-24">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <h2 className="text-[44px] font-bold italic text-ink text-center mb-16" style={{ fontFamily: 'var(--font-display)' }}>
-            What's Included
-          </h2>
-
-          <div className="grid grid-cols-3 gap-12">
-            {[
-              {
-                title: "IEEE Proceedings",
-                description: "Your work published in IEEE Xplore digital library with full indexing in DBLP and major academic databases."
-              },
-              {
-                title: "Networking Opportunities",
-                description: "Connect with 200+ researchers and practitioners from 40+ countries during sessions, breaks, and social events."
-              },
-              {
-                title: "Hybrid Access",
-                description: "Attend in-person in Hanoi or join virtually. All sessions recorded and available for 90 days post-conference."
-              },
-              {
-                title: "Conference Materials",
-                description: "Comprehensive conference kit including program booklet, USB drive with proceedings, and VCRIS 2025 credentials."
-              },
-              {
-                title: "Catering & Refreshments",
-                description: "Daily lunches, morning and afternoon coffee breaks featuring local Vietnamese cuisine and international options."
-              },
-              {
-                title: "Certificate",
-                description: "Official certificate of attendance suitable for academic records, professional development, and funding reports."
-              }
-            ].map((item) => (
-              <div key={item.title}>
-                <div className="w-12 h-12 rounded-full bg-cipher/10 flex items-center justify-center mb-4">
-                  <Check size={24} className="text-cipher" />
-                </div>
-                <h3 className="text-[18px] font-semibold text-ink mb-3" style={{ fontFamily: 'var(--font-body)' }}>
-                  {item.title}
-                </h3>
-                <p className="text-[15px] text-slate leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Registration Process */}
-      <section className="bg-warm py-24">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <h2 className="text-[44px] font-bold italic text-ink text-center mb-16" style={{ fontFamily: 'var(--font-display)' }}>
-            How to Register
-          </h2>
-
-          <div className="grid grid-cols-4 gap-8">
-            {[
-              { step: "01", title: "Select Type", description: "Choose your registration category" },
-              { step: "02", title: "Fill Form", description: "Complete the registration form" },
-              { step: "03", title: "Payment", description: "Secure online payment" },
-              { step: "04", title: "Confirmation", description: "Receive confirmation email" }
-            ].map((item, idx) => (
-              <div key={item.step} className="relative">
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-cipher text-white flex items-center justify-center mx-auto mb-4 text-[20px] font-bold" style={{ fontFamily: 'var(--font-mono)' }}>
-                    {item.step}
-                  </div>
-                  <h3 className="text-[16px] font-semibold text-ink mb-2" style={{ fontFamily: 'var(--font-body)' }}>
-                    {item.title}
-                  </h3>
-                  <p className="text-[14px] text-slate" style={{ fontFamily: 'var(--font-body)' }}>
-                    {item.description}
-                  </p>
-                </div>
-                {idx < 3 && (
-                  <div className="absolute top-8 left-[calc(50%+32px)] w-[calc(100%-64px)] h-[2px] bg-cipher/30 hidden lg:block" />
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section className="bg-deep py-16">
-        <div className="max-w-[1200px] mx-auto px-6 text-center">
-          <Mail size={40} className="text-cipher mx-auto mb-4" />
-          <h3 className="text-[32px] font-bold italic text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-            Questions About Registration?
-          </h3>
-          <p className="text-[16px] text-white/70 mb-8" style={{ fontFamily: 'var(--font-body)' }}>
-            Our registration team is here to help
-          </p>
-          <a
-            href="mailto:registration@vcris2025.org"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-cipher text-white text-[15px] font-semibold hover:shadow-lg hover:shadow-cipher/40 transition-all"
-            style={{ fontFamily: 'var(--font-body)' }}
-          >
-            Contact Registration Team
-          </a>
         </div>
       </section>
     </div>
