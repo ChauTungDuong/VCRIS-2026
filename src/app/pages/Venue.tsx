@@ -2,13 +2,13 @@ import { MapPin, Plane, Train, Car, ExternalLink } from "lucide-react";
 import { venue, CONF } from "../data/conferenceData";
 
 export default function Venue() {
-  const hotels = [
-    {
-      name: venue.conferenceHotel.name,
-      distance: "~10 min",
-      stars: 4,
-      note: "Conference hotel — special rates available",
-    },
+  const venueImages = [
+    "https://vcris.org/wp-content/uploads/2024/03/2022-11-08-1024x672.jpg",
+    "https://vcris.org/wp-content/uploads/2024/03/z5027586123041_31223954bd029175686cbedd54c930df-1024x768.jpg",
+    "https://vcris.org/wp-content/uploads/2024/01/Toa-nha-Ban-co-yeu-chinh-phu-4.jpg",
+    "https://vcris.org/wp-content/uploads/2024/03/z5027586097524_65d422081545cf19ec03fccfe8cde563-1024x768.jpg",
+    "https://vcris.org/wp-content/uploads/elementor/thumbs/khu-nha-o-can-bo-nhan-vien-ban-co-yeu-chinh-phu-le-van-luong1589905471-r2p4pj7zyykiqzh6et3cm7zzba6zyl03ry1vhe2qkw.jpg",
+    "https://vcris.org/wp-content/uploads/2024/03/z5027586073243_788c6f558db94688caaa268000a081d6-1024x768.jpg"
   ];
 
   return (
@@ -163,174 +163,69 @@ export default function Venue() {
         </div>
       </section>
 
-      {/* Accommodation */}
-      <section className="bg-warm py-24">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <h2
-            className="text-[44px] font-bold italic text-ink text-center mb-4"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Recommended Hotels
-          </h2>
-          <p
-            className="text-[16px] text-slate text-center mb-12"
-            style={{ fontFamily: "var(--font-body)" }}
-          >
-            Special conference rates available at selected partner hotels
-          </p>
-
-          <div className="grid grid-cols-2 gap-6">
-            {hotels.map((hotel) => (
-              <div
-                key={hotel.name}
-                className="bg-white border border-rule rounded-2xl p-6 hover:border-cipher hover:shadow-lg transition-all"
-              >
-                <div className="flex justify-between items-start mb-3">
-                  <h3
-                    className="text-[18px] font-semibold text-ink"
-                    style={{ fontFamily: "var(--font-body)" }}
-                  >
-                    {hotel.name}
-                  </h3>
-                  <div className="flex gap-0.5">
-                    {[...Array(hotel.stars)].map((_, i) => (
-                      <span key={i} className="text-cipher">
-                        ★
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 mb-2">
-                  <MapPin size={14} className="text-slate" />
-                  <span
-                    className="text-[13px] text-slate"
-                    style={{ fontFamily: "var(--font-body)" }}
-                  >
-                    {hotel.distance} from venue &mdash;{" "}
-                    {venue.conferenceHotel.address}
-                  </span>
-                </div>
-                {hotel.note && (
-                  <p
-                    className="text-[12px] font-medium text-cipher mb-3"
-                    style={{ fontFamily: "var(--font-body)" }}
-                  >
-                    {hotel.note}
-                  </p>
-                )}
-                <a
-                  href={`mailto:${CONF.contactEmail}?subject=Conference Hotel Rate Inquiry`}
-                  className="text-[13px] font-medium text-cipher hover:underline"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  Request Conference Rate →
-                </a>
-              </div>
-            ))}
-          </div>
-
-          <p
-            className="text-[13px] text-slate italic text-center mt-8"
-            style={{ fontFamily: "var(--font-body)" }}
-          >
-            For hotel inquiries, contact{" "}
-            <a
-              href={`mailto:${CONF.contactEmail}`}
-              className="text-cipher hover:underline"
-            >
-              {CONF.contactEmail}
-            </a>
-          </p>
-        </div>
-      </section>
-
       {/* Venue Photos */}
-      <section className="bg-white py-24">
+      <section className="bg-warm py-24">
         <div className="max-w-[1200px] mx-auto px-6">
           <h2
             className="text-[44px] font-bold italic text-ink text-center mb-12"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Conference Facilities
+            Photos of the Academy
           </h2>
 
-          <div className="grid grid-cols-3 gap-4">
-            <div className="h-64 rounded-2xl overflow-hidden group">
-              <img
-                src="https://images.unsplash.com/photo-1771911646904-61f0fc9033e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb25mZXJlbmNlJTIwaGFsbCUyMGludGVyaW9yfGVufDF8fHx8MTc3MjY5NDU4MHww&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Main Conference Hall"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-              />
-            </div>
-            <div className="h-64 rounded-2xl overflow-hidden group">
-              <img
-                src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=500"
-                alt="Breakout Rooms"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-              />
-            </div>
-            <div className="h-64 rounded-2xl overflow-hidden group">
-              <img
-                src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=500"
-                alt="Networking Area"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-              />
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {venueImages.map((src, idx) => (
+              <div 
+                key={idx} 
+                className="h-48 md:h-64 rounded-2xl overflow-hidden group shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+              >
+                <img
+                  src={src}
+                  alt={`Venue photo ${idx + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* About Hanoi */}
+      {/* About The Academy */}
       <section className="bg-deep py-24">
-        <div className="max-w-[1200px] mx-auto px-6">
+        <div className="max-w-[1200px] mx-auto px-6 text-center text-white">
           <h2
-            className="text-[44px] font-bold italic text-white text-center mb-6"
+            className="text-[44px] font-bold italic mb-6"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Discover Hanoi
+            Academy of Cryptography Techniques
           </h2>
-          <p
-            className="text-[16px] text-white/70 text-center max-w-[700px] mx-auto mb-12"
-            style={{ fontFamily: "var(--font-body)" }}
-          >
-            Vietnam's capital blends ancient Asian culture with French colonial
-            influence. Experience over 1,000 years of history while enjoying
-            world-class cuisine and vibrant street life.
-          </p>
-
-          <div className="grid grid-cols-3 gap-8">
-            {[
-              {
-                title: "Old Quarter",
-                description:
-                  "Explore the historic heart of Hanoi with its narrow streets, traditional shops, and street food culture",
-              },
-              {
-                title: "Hoan Kiem Lake",
-                description:
-                  "Visit the iconic Turtle Tower and Ngoc Son Temple in the city's spiritual center",
-              },
-              {
-                title: "Vietnamese Cuisine",
-                description:
-                  "Savor authentic pho, bun cha, and ca phe sua da in their birthplace",
-              },
-            ].map((attraction) => (
-              <div key={attraction.title} className="text-center">
-                <h3
-                  className="text-[20px] font-semibold text-white mb-3"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  {attraction.title}
-                </h3>
-                <p
-                  className="text-[14px] text-white/60 leading-relaxed"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  {attraction.description}
-                </p>
-              </div>
-            ))}
+          <div className="max-w-[900px] mx-auto text-left space-y-4">
+            <p
+              className="text-[16px] text-white/80 leading-relaxed italic"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              The Academy of Cryptography Techniques is the sole institution in Vietnam dedicated to both undergraduate and postgraduate education, as well as research in cryptographic science and technology for the Vietnam Government Information Security Commission (VGISC). Presently, the Academy offers three major programs: Information Security, Information Technology, and Telecommunication-Electronic Engineering.
+            </p>
+            <p
+              className="text-[16px] text-white/80 leading-relaxed italic"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              Its strategic vision is to evolve into a premier center for cryptographic techniques and information security training, catering to the human resource needs of VGISC and various sectors in the socio-economic landscape. Staffed with expert scientists and lecturers specializing in cryptographic techniques and information security, the Academy’s curriculum aligns with the advancements in science and technology, addressing practical demands. Additionally, it holds the distinction of being one of the eight principal institutions for information security training, as decreed by the Vietnamese Prime Minister.
+            </p>
+            <p
+              className="text-[16px] text-white/80 font-medium mt-6 text-center"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              For more information about the Academy of Cryptography Techniques, please visit:{" "}
+              <a
+                href="https://actvn.edu.vn/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cipher hover:underline"
+              >
+                https://actvn.edu.vn/
+              </a>
+            </p>
           </div>
         </div>
       </section>
