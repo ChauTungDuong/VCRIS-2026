@@ -9,6 +9,9 @@ import Program from "./pages/Program";
 import Venue from "./pages/Venue";
 import Committees from "./pages/Committees";
 import PreviousConferences from "./pages/PreviousConferences";
+import PaperSubmission from "./pages/PaperSubmission";
+import CameraReadySubmission from "./pages/CameraReadySubmission";
+import InstructionsForAuthors from "./pages/InstructionsForAuthors";
 import Accommodation from "./pages/Accommodation";
 import { vcrisRoutes } from "./utils/routes";
 
@@ -28,6 +31,15 @@ export const router = createBrowserRouter([
       { path: vcrisRoutes.organizingCommittees, Component: Committees },
       { path: vcrisRoutes.programCommittees, Component: Committees },
       { path: vcrisRoutes.previousConferences, Component: PreviousConferences },
+      { path: vcrisRoutes.paperSubmission, Component: PaperSubmission },
+      {
+        path: vcrisRoutes.cameraReadySubmission,
+        Component: CameraReadySubmission,
+      },
+      {
+        path: vcrisRoutes.instructionsForAuthors,
+        Component: InstructionsForAuthors,
+      },
     ],
   },
 ]);
