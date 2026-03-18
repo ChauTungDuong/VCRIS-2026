@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import CountdownTimer from "../components/CountdownTimer";
 import SpeakerCard from "../components/SpeakerCard";
 import {
-  CONF,
   importantDates,
   heroStats,
   keynoteSpeakers,
+  home,
+  CONF,
 } from "../data/conferenceData";
 
 export default function Home() {
@@ -51,7 +52,7 @@ export default function Home() {
                 className="text-[11px] font-semibold text-white tracking-[4px] uppercase"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                {CONF.name}
+                {home.name}
               </span>
             </div>
 
@@ -63,30 +64,7 @@ export default function Home() {
               <div
                 className={`transition-all duration-700 delay-150 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
               >
-                <h1
-                  className="text-white leading-[1.1] mb-2"
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: "64px",
-                    fontStyle: "italic",
-                    fontWeight: 700,
-                  }}
-                >
-                  The 2nd International Conference on
-                </h1>
-                <h1
-                  className="leading-[1.1]"
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: "72px",
-                    fontStyle: "italic",
-                    fontWeight: 700,
-                  }}
-                >
-                  <span className="text-white">Cryptography </span>
-                  <span className="text-cipher">&</span>
-                  <span className="text-white"> Information Security</span>
-                </h1>
+                <h1 className="text-white" dangerouslySetInnerHTML={{ __html: home.title }} />
               </div>
             </div>
 
@@ -94,22 +72,22 @@ export default function Home() {
             <div
               className={`flex gap-3 mt-8 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
             >
-              <div className="flex items-center gap-2 px-4 py-2.5 rounded-[20px] bg-white/10 border border-white/20 backdrop-blur-sm">
+              <div className="flex items-center gap-2 px-4 py-4 rounded-[20px] bg-white/10 border border-white/20 backdrop-blur-sm whitespace-nowrap">
                 <Calendar size={16} className="text-cipher" />
                 <span
                   className="text-[14px] font-medium text-white"
                   style={{ fontFamily: "var(--font-body)" }}
                 >
-                  {CONF.dates}
+                  {home.time}
                 </span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2.5 rounded-[20px] bg-white/10 border border-white/20 backdrop-blur-sm">
+              <div className="flex items-center gap-2 px-4 py-4 rounded-[20px] bg-white/10 border border-white/20 backdrop-blur-sm whitespace-nowrap">
                 <MapPin size={16} className="text-cipher" />
                 <span
                   className="text-[14px] font-medium text-white"
                   style={{ fontFamily: "var(--font-body)" }}
                 >
-                  Hanoi, Vietnam
+                  {home.venue}
                 </span>
               </div>
             </div>
@@ -143,39 +121,9 @@ export default function Home() {
               className="text-[12px] text-white/50"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Organized by · {CONF.location}
+              Organized by · {home.venue}
             </p>
             <ChevronDown size={24} className="text-cipher/70 animate-bounce" />
-          </div>
-        </div>
-
-        {/* Diagonal Cut */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-20 bg-cipher"
-          style={{ clipPath: "polygon(0 100%, 100% 100%, 100% 50%, 0 100%)" }}
-        />
-      </section>
-
-      {/* Stats Ribbon */}
-      <section className="bg-cipher py-6">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="grid grid-cols-4 gap-8">
-            {heroStats.map((stat, idx) => (
-              <div key={idx} className="text-center">
-                <div
-                  className="text-[28px] font-bold text-white mb-1"
-                  style={{ fontFamily: "var(--font-mono)" }}
-                >
-                  {stat.number}
-                </div>
-                <div
-                  className="text-[13px] text-white/75"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  {stat.label}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -296,12 +244,12 @@ export default function Home() {
               >
                 Conference Opens In
               </p>
-              <CountdownTimer targetDate={CONF.dateStart} />
+              <CountdownTimer targetDate={home.time} />
               <p
                 className="text-[13px] text-slate italic mt-4"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                {CONF.dates} · Hanoi, Vietnam
+                {home.time} · Hanoi, Vietnam
               </p>
             </div>
 
@@ -495,9 +443,8 @@ export default function Home() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className={`flex items-start gap-6 p-6 transition-colors hover:bg-cipher-dim ${
-                  idx % 2 === 0 ? "bg-white" : "bg-paper"
-                } ${item.type === "keynote" ? "border-l-4 border-cipher bg-cipher-dim" : ""}`}
+                className={`flex items-start gap-6 p-6 transition-colors hover:bg-cipher-dim ${idx % 2 === 0 ? "bg-white" : "bg-paper"
+                  } ${item.type === "keynote" ? "border-l-4 border-cipher bg-cipher-dim" : ""}`}
               >
                 <div className="w-20 flex-shrink-0">
                   <span

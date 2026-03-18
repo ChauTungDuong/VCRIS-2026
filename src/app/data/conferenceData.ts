@@ -1,7 +1,6 @@
 // ============================================================
-// VCRIS 2025 — Real conference data extracted from vcris.org DB
+// VCRIS 2026 — Real conference data extracted from vcris.org DB
 // ============================================================
-
 export const CONF = {
   name: "VCRIS 2025",
   fullName:
@@ -14,6 +13,121 @@ export const CONF = {
   easyChairUrl: "https://easychair.org/conferences/?conf=vcris2025",
   contactEmail: "vcris@actvn.edu.vn",
   website: "https://vcris.org",
+};
+
+export const conferenceTracks = {
+  track1: {
+    title: "The conference provides a high-quality international forum for theoretical foundations, practical implementations, and emerging interdisciplinary security technologies. VCRIS 2026 welcomes original research contributions, case studies, system implementations, and visionary papers.",
+    label: "track 1",
+    topic: [
+      "Symmetric and asymmetric cryptography",
+      "Cryptographic hash functions and digital signatures",
+      "Cryptographic protocols and formal security proofs",
+      "Provable security and complexity assumptions",
+      "Random number generation and entropy sources",
+      "Post-Quantum Cryptography (PQC)",
+      "Lattice-based, code-based, multivariate cryptography",
+      "Quantum-resistant primitives and migration strategies",
+    ]
+  },
+  track2: {
+    title: "The conference provides a high-quality international forum for theoretical foundations, practical implementations, and emerging interdisciplinary security technologies. VCRIS 2026 welcomes original research contributions, case studies, system implementations, and visionary papers.",
+    label: "track 2",
+    topic: [
+      "Cryptographic engineering and implementation security",
+      "Side-channel attacks and countermeasures",
+      "Secure hardware and trusted execution environments",
+      "Zero-knowledge proofs and secure multiparty computation",
+      "Blockchain and distributed ledger cryptography",
+      "Privacy-enhancing technologies",
+      "Information hiding and watermarking",
+    ]
+  },
+  track3: {
+    title: "The conference provides a high-quality international forum for theoretical foundations, practical implementations, and emerging interdisciplinary security technologies. VCRIS 2026 welcomes original research contributions, case studies, system implementations, and visionary papers.",
+    label: "track 3",
+    topic: [
+      "Network and wireless security",
+      "IoT and edge security",
+      "Cloud and distributed systems security",
+      "Operating systems and virtualization security",
+      "Database and storage security",
+      "Web and mobile security",
+      "5G/6G and next-generation network security",
+    ]
+  },
+  track4: {
+    title: "The conference provides a high-quality international forum for theoretical foundations, practical implementations, and emerging interdisciplinary security technologies. VCRIS 2026 welcomes original research contributions, case studies, system implementations, and visionary papers.",
+    label: "track 4",
+    topic: [
+      "AI and machine learning for cybersecurity",
+      "Malware analysis and detection",
+      "Intrusion detection and prevention systems",
+      "Deepfake detection and media forensics",
+      "Adversarial machine learning",
+      "LLM applications in cybersecurity",
+      "Automated vulnerability detection",
+    ]
+  },
+  track5: {
+    title: "The conference provides a high-quality international forum for theoretical foundations, practical implementations, and emerging interdisciplinary security technologies. VCRIS 2026 welcomes original research contributions, case studies, system implementations, and visionary papers.",
+    label: "track 5",
+    topic: [
+      "Quantum communication security",
+      "Cyber-physical systems security",
+      "Smart city and critical infrastructure protection",
+      "Digital forensics and incident response",
+      "Human-centric security and usable security",
+      "Security economics and governance",
+      "Privacy and data protection frameworks",
+    ]
+  }
+}
+
+export const home = {
+  name: "VCRIS 2026",
+  title: `<div class="transition-all duration-700 delay-150 opacity-100 translate-y-0">
+    <h1 class="text-white leading-[1.1] mb-2" style="font-family: var(--font-display); font-size: 64px; font-style: italic; font-weight: 700;">
+      The 3<sup>rd</sup> International Conference on
+    </h1>
+    <h1 class="leading-[1.1]" style="font-family: var(--font-display); font-size: 72px; font-style: italic; font-weight: 700;">
+      <span class="text-white">Cryptography </span>
+      <span class="text-cipher">&amp;</span>
+      <span class="text-white"> Information Security</span>
+    </h1>
+  </div>`,
+  time: "October 29 - 30, 2026",
+  venue: "Academy of Cryptography Techniques, Hanoi, Vietnam",
+  importantDates: {
+    paperSubmissionDeadline: "June 30, 2026",
+    notificationOfAcceptance: "June 31, 2026",
+    cameraReadySubmission: "Septemper 25, 2026",
+    conferenceDates: "October 29 - 30, 2026",
+  },
+  aboutTheConference: [
+    "VCRIS 2026 is organized by the Academy of Cryptography Techniques in collaboration with co-organizing institutions including the Vietnam Institute for Advanced Study in Mathematics (VISAM), the Vietnam Association of Faculties- Institutes-Schools-Universities of ICT (FISU VN), the Information Security Journal (ISJ), with the endorsement of the University of Lorraine – France and the Japan Advanced Institute of Science and Technology – Japan, and the Computer Security and Industrial Cryptography group of KU Leuven – Belgium.",
+    "VCRIS 2026 aims to bring together researchers, practitioners, and industry experts to present and discuss the latest advances in cryptography, post-quantum security, systems security, and AI-driven cybersecurity.",
+    "The conference provides a high-quality international forum for theoretical foundations, practical implementations, and emerging interdisciplinary security technologies. VCRIS 2026 welcomes original research contributions, case studies, system implementations, and visionary papers.",
+  ],
+  conferenceTracks,
+  paperSubmission: [
+    "Authors are invited to submit original, unpublished research papers that are not currently under review elsewhere.",
+    "All submissions must follow the <a href='https://www.ieee.org/conferences/publishing/templates.html'>IEEE website</a>, be written in English, and should not exceed 6 pages.",
+    "Papers will be peer-reviewed using a double-blind review process by at least three members of the technical Program Committee.",
+  ],
+  publication: [
+    "Accepted papers that are presented at the conference will be submitted for inclusion into IEEE Xplore subject to meeting IEEE Xplore’s scope and quality requirements"
+  ],
+  whySubmitToVCRIS2026: [
+    "International Technical Program Committee",
+    "IEEE Xplore proceedings",
+    "Strong focus on Post-Quantum Cryptography and AI Security",
+    "Balanced coverage of theory and applied cybersecurity",
+    "Networking opportunities with academia and industry",
+  ],
+  bottomOfHomepage: [
+    `© Copyright 2026 The 3<sup>rd</sup> International Conference on Cryptography and Information Security (VCRIS 2026)`
+  ]
 };
 
 export const importantDates = [
