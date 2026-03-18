@@ -1,182 +1,189 @@
-import { Check, Download, ArrowRight } from "lucide-react";
-import { Link } from "react-router";
+import { Check, Download, ArrowRight, FileText, BookOpen, AlertCircle, ChevronDown } from "lucide-react";
+
+import { useState } from "react";
 import {
-  topics as conferenceTopics,
+  callForPapersText,
   CONF,
-  importantDates,
 } from "../data/conferenceData";
 import { TopImage } from "../components/TopImage";
 
 export default function CallForPapers() {
-  const topics = conferenceTopics;
+  const [openTrackIndex, setOpenTrackIndex] = useState<number | null>(0);
+
+  const toggleTrack = (index: number) => {
+    setOpenTrackIndex(openTrackIndex === index ? null : index);
+  };
 
   return (
     <div className="pt-16">
-      {/* Mini Hero */}
       <TopImage title="Call for Papers" />
       {/* Scope Section */}
       <section className="bg-white py-24">
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="grid grid-cols-2 gap-16">
-            {/* Left: Topics */}
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-2 h-2 rounded-full bg-cipher" />
-                <span
-                  className="text-[11px] font-semibold text-cipher uppercase tracking-[3px]"
-                  style={{ fontFamily: "var(--font-body)" }}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            {/* Left Col: 8/12 - About & Tracks */}
+            <div className="col-span-1 lg:col-span-8">
+              <div className="mb-16">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-2 h-2 rounded-full bg-cipher" />
+                  <span
+                    className="text-[11px] font-semibold text-cipher uppercase tracking-[3px]"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    CONFERENCE SCOPE
+                  </span>
+                </div>
+
+                <h2
+                  className="text-[40px] font-bold italic text-ink leading-[1.15] mb-6"
+                  style={{ fontFamily: "var(--font-display)" }}
                 >
-                  CONFERENCE SCOPE
-                </span>
-              </div>
+                  About the Conference
+                </h2>
 
-              <h2
-                className="text-[40px] font-bold italic text-ink leading-[1.15] mb-6"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                Research Topics
-              </h2>
-
-              <p
-                className="text-[16px] text-slate mb-8"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                We welcome original research contributions addressing, but not
-                limited to, the following areas:
-              </p>
-
-              {/* Topics Grid */}
-              <div className="grid grid-cols-2 gap-x-6 gap-y-4">
-                {topics.map((topic) => (
-                  <div key={topic} className="flex items-start gap-2">
-                    <Check
-                      size={16}
-                      className="text-cipher flex-shrink-0 mt-1"
-                    />
-                    <span
-                      className="text-[15px] text-ink"
+                <div className="space-y-4">
+                  {callForPapersText.about.map((paragraph, i) => (
+                    <p
+                      key={i}
+                      className="text-[16px] text-slate leading-[1.7]"
                       style={{ fontFamily: "var(--font-body)" }}
                     >
-                      {topic}
-                    </span>
-                  </div>
-                ))}
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h2
+                  className="text-[32px] font-bold italic text-ink leading-[1.15] mb-8"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  Conference Tracks
+                </h2>
+
+                <div className="space-y-4">
+                  {callForPapersText.tracks.map((track, i) => {
+                    const isOpen = openTrackIndex === i;
+                    
+                    return (
+                      <div key={i} className="bg-rule/30 rounded-2xl overflow-hidden border border-transparent hover:border-cipher/20 transition-colors">
+                        <button
+                          onClick={() => toggleTrack(i)}
+                          className="w-full flex items-center justify-between p-5 lg:p-6 text-left"
+                        >
+                          <h3
+                            className={`text-[18px] lg:text-[20px] font-bold pr-4 transition-colors ${isOpen ? "text-cipher" : "text-ink"}`}
+                            style={{ fontFamily: "var(--font-display)" }}
+                          >
+                            {track.title}
+                          </h3>
+                          <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${isOpen ? "bg-cipher/10" : "bg-transparent"}`}>
+                            <ChevronDown
+                              size={20}
+                              className={`transition-transform duration-300 ${
+                                isOpen ? "rotate-180 text-cipher" : "text-slate"
+                              }`}
+                            />
+                          </div>
+                        </button>
+                        
+                        <div
+                          className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out ${
+                            isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                          }`}
+                        >
+                          <div className="overflow-hidden">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 px-5 lg:px-6 pb-6 pt-2">
+                              {track.topics.map((topic, j) => (
+                                <div key={j} className="flex items-start gap-2">
+                                  <Check
+                                    size={16}
+                                    strokeWidth={3}
+                                    className="text-cipher flex-shrink-0 mt-[3px]"
+                                  />
+                                  <span
+                                    className="text-[15px] text-ink leading-tight"
+                                    style={{ fontFamily: "var(--font-body)" }}
+                                  >
+                                    {topic}
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
 
-            {/* Right: Submission Card */}
-            <div>
-              <div className="bg-white border border-rule rounded-[20px] p-8 sticky top-24">
+            {/* Right Col: 4/12 - Submission & Publication */}
+            <div className="col-span-1 lg:col-span-4 space-y-8">
+              {/* Submission Card */}
+              <div className="bg-white border border-rule rounded-[20px] p-8 lg:sticky lg:top-24">
                 <h3
                   className="text-[24px] font-bold italic text-ink mb-6"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  Submission Guidelines
+                  Paper Submission
                 </h3>
 
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-cipher/10 flex items-center justify-center flex-shrink-0">
-                      <span
-                        className="text-[13px] font-bold text-cipher"
-                        style={{ fontFamily: "var(--font-mono)" }}
-                      >
-                        01
-                      </span>
-                    </div>
-                    <div>
-                      <h4
-                        className="text-[15px] font-semibold text-ink mb-1"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
-                        Format
-                      </h4>
-                      <p
-                        className="text-[14px] text-slate"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
-                        IEEE A4 format, 6–8 pages including references
-                      </p>
-                    </div>
-                  </div>
+                <div className="space-y-6 mb-8">
+                  {callForPapersText.submissions.map((item, idx) => (
+                     <div key={idx} className="flex items-start gap-3">
+                     <div className="w-8 h-8 rounded-full bg-cipher/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                       <FileText size={14} className="text-cipher" />
+                     </div>
+                     <p
+                       className="text-[14px] text-slate leading-[1.6]"
+                       style={{ fontFamily: "var(--font-body)" }}
+                     >
+                       {item}
+                     </p>
+                   </div>
+                  ))}
+                </div>
+                
+                <h3
+                  className="text-[22px] font-bold italic text-ink mb-6"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  Publication
+                </h3>
 
+                <div className="space-y-6 mb-8">
+                  {callForPapersText.publication.map((item, idx) => (
+                     <div key={idx} className="flex items-start gap-3">
+                     <div className="w-8 h-8 rounded-full bg-cipher/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                       <BookOpen size={14} className="text-cipher" />
+                     </div>
+                     <p
+                       className="text-[14px] text-slate leading-[1.6]"
+                       style={{ fontFamily: "var(--font-body)" }}
+                     >
+                       {item}
+                     </p>
+                   </div>
+                  ))}
+                </div>
+                
+                <div className="p-4 bg-amber/10 rounded-xl mb-8">
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-cipher/10 flex items-center justify-center flex-shrink-0">
-                      <span
-                        className="text-[13px] font-bold text-cipher"
-                        style={{ fontFamily: "var(--font-mono)" }}
-                      >
-                        02
-                      </span>
-                    </div>
-                    <div>
-                      <h4
-                        className="text-[15px] font-semibold text-ink mb-1"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
-                        Submission Platform
-                      </h4>
-                      <p
-                        className="text-[14px] text-slate"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
-                        All papers must be submitted via EasyChair
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-cipher/10 flex items-center justify-center flex-shrink-0">
-                      <span
-                        className="text-[13px] font-bold text-cipher"
-                        style={{ fontFamily: "var(--font-mono)" }}
-                      >
-                        03
-                      </span>
-                    </div>
-                    <div>
-                      <h4
-                        className="text-[15px] font-semibold text-ink mb-1"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
-                        Review Process
-                      </h4>
-                      <p
-                        className="text-[14px] text-slate"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
-                        Double-blind peer review by international experts
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-cipher/10 flex items-center justify-center flex-shrink-0">
-                      <span
-                        className="text-[13px] font-bold text-cipher"
-                        style={{ fontFamily: "var(--font-mono)" }}
-                      >
-                        04
-                      </span>
-                    </div>
-                    <div>
-                      <h4
-                        className="text-[15px] font-semibold text-ink mb-1"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
-                        Publication
-                      </h4>
-                      <p
-                        className="text-[14px] text-slate"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
-                        Accepted papers will be published in IEEE proceedings
-                      </p>
-                    </div>
+                     <AlertCircle size={20} className="text-amber flex-shrink-0 mt-0.5" />
+                     <p
+                       className="text-[13px] text-amber-900 font-medium leading-[1.6]"
+                       style={{ fontFamily: "var(--font-body)" }}
+                     >
+                       <strong className="block mb-1">Post-conference Publication</strong>
+                       {callForPapersText.postConferencePublication.join(" ")}
+                     </p>
                   </div>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-3 pt-6 border-t border-rule" style={{borderTopStyle: "dashed"}}>
                   <button
                     className="w-full h-11 rounded-xl border border-ink text-ink text-[14px] font-semibold flex items-center justify-center gap-2 hover:bg-ink hover:text-white transition-all"
                     style={{ fontFamily: "var(--font-body)" }}
@@ -201,113 +208,6 @@ export default function CallForPapers() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Review Process */}
-      <section className="bg-warm py-24">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2
-              className="text-[44px] font-bold italic text-ink"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Review Process
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-3 gap-12">
-            {[
-              {
-                number: "01",
-                title: "Submit Paper",
-                description:
-                  "Upload your manuscript via EasyChair. Ensure compliance with formatting guidelines and anonymization requirements for double-blind review.",
-              },
-              {
-                number: "02",
-                title: "Double-Blind Review",
-                description:
-                  "Papers are reviewed by at least three independent experts from our international program committee based on originality, quality, and relevance.",
-              },
-              {
-                number: "03",
-                title: "Notification & Camera-Ready",
-                description:
-                  "Authors receive acceptance decisions by September 1. Accepted papers must be revised per reviewer comments and submitted camera-ready by September 20, 2025.",
-              },
-            ].map((step) => (
-              <div key={step.number} className="relative">
-                <div
-                  className="absolute top-0 left-0 text-[64px] font-bold opacity-5"
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    color: "var(--cipher)",
-                  }}
-                >
-                  {step.number}
-                </div>
-                <div className="relative pt-12">
-                  <h3
-                    className="text-[18px] font-semibold text-ink mb-3"
-                    style={{ fontFamily: "var(--font-body)" }}
-                  >
-                    {step.title}
-                  </h3>
-                  <p
-                    className="text-[15px] text-slate leading-relaxed"
-                    style={{ fontFamily: "var(--font-body)" }}
-                  >
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Connecting Line */}
-          <div className="relative h-0 -mt-48">
-            <div className="absolute top-0 left-[16.66%] right-[16.66%] h-[1px] border-t border-dashed border-rule" />
-          </div>
-        </div>
-      </section>
-
-      {/* Important Dates */}
-      <section className="bg-white py-24">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <h2
-            className="text-[44px] font-bold italic text-ink text-center mb-12"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Important Dates
-          </h2>
-
-          <div className="grid grid-cols-2 gap-8 max-w-[800px] mx-auto">
-            {importantDates.map((item) => (
-              <div
-                key={item.label}
-                className={`p-6 rounded-2xl border ${item.highlight ? "border-cipher bg-cipher/5" : "border-rule bg-white"}`}
-              >
-                <div
-                  className={`text-[24px] font-bold mb-2 ${item.highlight ? "text-cipher" : item.passed ? "text-slate line-through" : "text-ink"}`}
-                  style={{ fontFamily: "var(--font-mono)" }}
-                >
-                  {item.date}
-                  {item.extended && (
-                    <span className="ml-2 px-2 py-0.5 rounded bg-amber/10 text-amber text-[13px] font-semibold align-middle">
-                      Extended
-                    </span>
-                  )}
-                </div>
-                <div
-                  className="text-[15px] text-ink"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  {item.label}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
