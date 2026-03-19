@@ -10,6 +10,7 @@ import {
   home,
   CONF,
 } from "../data/conferenceData";
+import TopImage from "../components/TopImage";
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,98 +22,73 @@ export default function Home() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1656520727264-67d0a9af5e85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxIb2FuJTIwS2llbSUyMExha2UlMjBIYW5vaSUyMHR3aWxpZ2h0JTIwZ29sZGVuJTIwaG91cnxlbnwxfHx8fDE3NzI3NjY0MDF8MA&ixlib=rb-4.1.0&q=80&w=1080"
-            alt="Hanoi at twilight"
-            className="w-full h-full object-cover"
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(120deg, rgba(7,21,37,0.92) 0%, rgba(7,21,37,0.55) 55%, rgba(7,21,37,0.15) 100%)",
-            }}
-          />
-          {/* Grain texture */}
-          <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNhKSIvPjwvc3ZnPg==')]" />
-        </div>
-
-        {/* Content */}
-        <div className="relative max-w-[1200px] mx-auto px-6 h-full flex items-center">
-          <div className="max-w-[580px]" style={{ marginTop: "-10%" }}>
-            {/* Eyebrow */}
-            <div
-              className={`flex items-center gap-3 mb-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-            >
-              <div className="w-8 h-1 bg-cipher" />
-              <span
-                className="text-[11px] font-semibold text-white tracking-[4px] uppercase"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                {home.name}
-              </span>
-            </div>
-
-            {/* Cipher Key Line */}
-            <div className="relative pl-6">
-              <div className="absolute left-0 top-0 w-[1px] h-[72px] bg-cipher" />
-
-              {/* Title */}
+      <section className="relative h-[400px] overflow-hidden">
+        <TopImage
+          title={<div className="relative max-w-[1200px] mx-auto px-6 h-full flex items-center">
+            <header className="max-w-[640px]" style={{ marginTop: "-10%" }}>
+              {/* Eyebrow */}
               <div
-                className={`transition-all duration-700 delay-150 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                className={`flex items-center gap-3 mb-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
               >
-                <h1 className="text-white" dangerouslySetInnerHTML={{ __html: home.title }} />
-              </div>
-            </div>
-
-            {/* Meta Chips */}
-            <div
-              className={`flex gap-3 mt-8 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-            >
-              <div className="flex items-center gap-2 px-4 py-4 rounded-[20px] bg-white/10 border border-white/20 backdrop-blur-sm whitespace-nowrap">
-                <Calendar size={16} className="text-cipher" />
+                <div className="w-8 h-1 bg-cipher" />
                 <span
-                  className="text-[14px] font-medium text-white"
+                  className="text-[11px] font-semibold text-white tracking-[4px] uppercase"
                   style={{ fontFamily: "var(--font-body)" }}
                 >
-                  {home.time}
+                  {home.name}
                 </span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-4 rounded-[20px] bg-white/10 border border-white/20 backdrop-blur-sm whitespace-nowrap">
-                <MapPin size={16} className="text-cipher" />
-                <span
-                  className="text-[14px] font-medium text-white"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  {home.venue}
-                </span>
-              </div>
-            </div>
 
-            {/* CTA Buttons */}
-            <div
-              className={`flex gap-4 mt-10 transition-all duration-700 delay-[450ms] ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-            >
-              <Link
-                to="/call-for-papers"
-                className="px-6 h-12 rounded-[20px] bg-cipher text-white text-[15px] font-semibold flex items-center justify-center gap-2 transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-cipher/40"
-                style={{ fontFamily: "var(--font-body)" }}
+              {/* Cipher Key Line */}
+              <div className="relative pl-6">
+                <div className="absolute left-0 top-0 w-[1px] h-[72px] bg-cipher" />
+
+                {/* Title */}
+                <div
+                  className={`transition-all duration-700 delay-150 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                >
+                  <h1
+                    className="text-white leading-[1.12]"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    <span className="block text-[38px] md:text-[48px] italic font-bold">
+                      The 3<sup>rd</sup> International Conference on
+                    </span>
+                    <span className="block text-[44px] md:text-[62px] italic font-bold mt-1">
+                      Cryptography <span className="text-cipher">&amp;</span>{" "}
+                      Information Security
+                    </span>
+                  </h1>
+                </div>
+              </div>
+
+              {/* Meta Chips */}
+              <div
+                className={`flex gap-3 mt-8 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
               >
-                Submit Your Paper <ArrowRight size={18} />
-              </Link>
-              <Link
-                to="/program"
-                className="px-6 h-12 rounded-[20px] border border-white text-white text-[15px] font-semibold flex items-center justify-center transition-all duration-200 hover:bg-white/10"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                View Program
-              </Link>
-            </div>
-          </div>
-        </div>
+                <div className="flex items-center gap-2 px-4 py-4 rounded-[20px] bg-white/10 border border-white/20 backdrop-blur-sm whitespace-nowrap">
+                  <Calendar size={16} className="text-cipher" />
+                  <span
+                    className="text-[14px] font-medium text-white"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    {home.time}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-4 rounded-[20px] bg-white/10 border border-white/20 backdrop-blur-sm whitespace-nowrap">
+                  <MapPin size={16} className="text-cipher" />
+                  <span
+                    className="text-[14px] font-medium text-white"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    {home.venue}
+                  </span>
+                </div>
+              </div>
+            </header>
+          </div>}
+        />
+
 
         {/* Bottom Info */}
         <div className="absolute bottom-10 left-0 right-0">

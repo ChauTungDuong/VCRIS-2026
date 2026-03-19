@@ -36,9 +36,9 @@ export default function CallForWorkshops() {
               >
                 {callForWorkshopsText.intro}
               </p>
-              
+
               <div className="p-6 rounded-2xl border border-cipher bg-cipher/5">
-                <p 
+                <p
                   className="text-[16px] font-semibold text-cipher"
                   style={{ fontFamily: "var(--font-body)" }}
                 >
@@ -106,7 +106,7 @@ export default function CallForWorkshops() {
                       </div>
                     </div>
                   ))}
-                  
+
                 </div>
 
                 <div className="space-y-3">

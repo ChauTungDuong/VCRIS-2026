@@ -1,11 +1,11 @@
 import { Outlet } from "react-router";
-import Navigation from "./components/Header";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 export default function Root() {
   return (
     <div className="min-h-screen">
-      <Navigation />
+      <Header />
       <main>
         <Outlet />
       </main>
