@@ -16,7 +16,13 @@ body {
 }
 
 /* Remove default margins on common elements */
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
 }
 
@@ -36,4 +42,33 @@ h1, h2, h3, h4, h5, h6, p {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--cipher);
+}
+
+@keyframes sponsors-marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.sponsors-marquee {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.sponsors-marquee__track {
+  display: flex;
+  width: max-content;
+  gap: 12px;
+  animation: sponsors-marquee 38s linear infinite;
+  will-change: transform;
+}
+
+.sponsors-marquee:hover .sponsors-marquee__track {
+  animation-play-state: paused;
 }
