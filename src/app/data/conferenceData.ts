@@ -212,13 +212,86 @@ export const organizers = {
   ],
   endorsers: [
     "Japan Advanced Institute of Science and Technology (JAIST), Japan",
-    "International Association for Cryptologic Research (IACR)",
-    "COSIC Research Group, KU Leuven, Belgium",
-    "Ho Chi Minh City University of Technology (HCMUT), Vietnam",
-    "Le Quy Don Technical University, Vietnam",
-    "Vietnam National University, Hanoi (VNU-HN)",
+    "University of Lorraine (UL), France",
+    "Computer Security and Industrial Cryptography group (COSIC), KU Leuven, Belgium",
   ],
 };
+
+export type CommitteePerson = {
+  name: string;
+  affiliation: string;
+  isChair?: boolean;
+};
+
+export type CommitteeGroup = {
+  role: string;
+  members: CommitteePerson[];
+};
+
+export const organizingCommitteeGroups: CommitteeGroup[] = [
+  {
+    role: "Honorary Chairs",
+    members: [
+      { name: "Nguyen Huu Hung", affiliation: "VGISC, Vietnam" },
+      { name: "Yukari Nagai", affiliation: "JAIST, Japan" },
+      { name: "Hoang Van Thuc", affiliation: "ACT, Vietnam" },
+    ],
+  },
+  {
+    role: "General Chairs",
+    members: [
+      { name: "Nguyen Hieu Minh", affiliation: "ACT, Vietnam" },
+      { name: "Nguyen Thanh Thuy", affiliation: "FISU, Vietnam" },
+      { name: "Le Minh Ha", affiliation: "VIASM, Vietnam" },
+      { name: "Vincent Rijmen", affiliation: "KU Leuven, ESAT/COSIC, Belgium" },
+      { name: "Jean-Yves Marion", affiliation: "LORIA, University of Lorraine, France" },
+    ],
+  },
+  {
+    role: "Advisory Committee",
+    members: [
+      { name: "Phan Duong Hieu", affiliation: "Telecom Paris, Institut Polytechnique de Paris, France" },
+      { name: "Nguyen Le Minh", affiliation: "JAIST, Japan" },
+      { name: "Serge Vaudenay", affiliation: "EPFL IC IINFCOM LASEC, Switzerland" },
+      { name: "Frederik Vercauteren", affiliation: "COSIC, KU Leuven, Belgium" },
+      { name: "Kazuhiro Ogata", affiliation: "JAIST, Japan" },
+      { name: "Edgar Weippl", affiliation: "University of Vienna, Austria" },
+    ],
+  },
+  {
+    role: "Program Chairs",
+    members: [
+      { name: "Lam Thu Bui", affiliation: "ACT, Vietnam", isChair: true },
+      { name: "Eiichiro Fujisaki", affiliation: "JAIST, Japan" },
+      { name: "Stjepan Picek", affiliation: "DiS Radboud University, The Netherlands" },
+      { name: "Junbeom Hur", affiliation: "Korea University, Korea" },
+      { name: "Mizuhito Ogawa", affiliation: "Old Teachers Network, Japan" },
+      { name: "Nhien-An Le-Khac", affiliation: "University College Dublin, Ireland" },
+    ],
+  },
+  {
+    role: "Publication Chairs",
+    members: [
+      { name: "Nguyen Nhu Tuan", affiliation: "ISJ, Vietnam" },
+      { name: "Pham Duy Trung", affiliation: "ACT, Vietnam" },
+    ],
+  },
+  {
+    role: "Publicity Chairs",
+    members: [
+      { name: "Nguyen The Hao", affiliation: "ISJ, Vietnam" },
+      { name: "Le Duc Thuan", affiliation: "ACT, Vietnam" },
+    ],
+  },
+  {
+    role: "Local Organization Committee",
+    members: [
+      { name: "Vu Thi Dao", affiliation: "ACT, Vietnam", isChair: true },
+      { name: "Tran Thi Luong", affiliation: "ACT, Vietnam" },
+      { name: "Dao Ba Anh", affiliation: "ACT, Vietnam" },
+    ],
+  },
+];
 
 export const callForPapersText = {
   about: [
@@ -372,4 +445,86 @@ export const heroStats = [
   { number: "20+", label: "Countries" },
   { number: "60+", label: "Submitted Papers" },
   { number: "IEEE", label: "Indexed Proceedings" },
+];
+
+export const programCommittee = [
+  { firstName: "Anh", lastName: "Phan", affiliation: "Le Quy Don Technical University, Vietnam" },
+  { firstName: "Anh-Tien", lastName: "Le", affiliation: "Academy of Cryptography Techniques, Vietnam" },
+  { firstName: "Atah Nuh", lastName: "Mih", affiliation: "University of New Brunswick, Canada" },
+  { firstName: "Ba Anh", lastName: "Dao", affiliation: "Academy of Cryptography Techniques, Vietnam" },
+  { firstName: "Bagus", lastName: "Santoso", affiliation: "The University of Electro-Communications, Japan" },
+  { firstName: "Bui Cuong", lastName: "Nguyen", affiliation: "Vietnam Government Information Security Commission, Vietnam" },
+  { firstName: "Chung Tien", lastName: "Nguyen", affiliation: "Academy of Cryptography Techniques, Vietnam" },
+  { firstName: "Cong", lastName: "Nguyen-Duc", affiliation: "Academy of Cryptography Techniques, Vietnam" },
+  { firstName: "Cong-Kha", lastName: "Pham", affiliation: "The University of Electro-Communications, Japan" },
+  { firstName: "Cuong", lastName: "Nguyen", affiliation: "Le Quy Don Technical University, Vietnam" },
+  { firstName: "Dai Tho", lastName: "Nguyen", affiliation: "Vietnam National University, Hanoi, Vietnam" },
+  { firstName: "Dat", lastName: "Tran", affiliation: "University of Canberra, Australia" },
+  { firstName: "Dat-Thinh", lastName: "Nguyen", affiliation: "University College Dublin, Ireland" },
+  { firstName: "Dung Hoang", lastName: "Duong", affiliation: "University of Wollongong, Australia" },
+  { firstName: "Eiichiro", lastName: "Fujisaki", affiliation: "Japan Advanced Institute of Science and Technology, Japan" },
+  { firstName: "Frederik", lastName: "Vercauteren", affiliation: "COSIC, KU Leuven, Belgium" },
+  { firstName: "Hieu-Minh", lastName: "Nguyen", affiliation: "Academy of Cryptography Techniques, Vietnam" },
+  { firstName: "Hoa", lastName: "Nguyen Ngoc", affiliation: "VNU University of Engineering and Technology, Vietnam" },
+  { firstName: "Hoai An", lastName: "Le Thi", affiliation: "LITA EA 3097 UFR MIM Université de Lorraine, France" },
+  { firstName: "Hung", lastName: "Nguyen-Viet", affiliation: "Le Quy Don Technical University, Vietnam" },
+  { firstName: "Hung", lastName: "Cao", affiliation: "University of New Brunswick, Canada" },
+  { firstName: "Hung", lastName: "Nguyen", affiliation: "Key Lab in Information Security, Vietnam" },
+  { firstName: "Huy Quoc", lastName: "Le", affiliation: "Tan Tao University, Vietnam" },
+  { firstName: "Ik Rae", lastName: "Jeong", affiliation: "Korea University, South Korea" },
+  { firstName: "Jean-Yves", lastName: "Marion", affiliation: "Université de Lorraine, LORIA, France" },
+  { firstName: "Joan", lastName: "Daemen", affiliation: "DiS, Radboud University, The Netherlands" },
+  { firstName: "Junbeom", lastName: "Hur", affiliation: "Korea University, South Korea" },
+  { firstName: "Khai Hanh", lastName: "Tang", affiliation: "Nanyang Technological University, Singapore" },
+  { firstName: "Khanh", lastName: "Nguyen", affiliation: "University of Wollongong, Australia" },
+  { firstName: "Khoa", lastName: "Nguyen", affiliation: "University of Wollongong, Australia" },
+  { firstName: "Kwangjo", lastName: "Kim", affiliation: "Korea Advanced Institute of Science and Technology, South Korea" },
+  { firstName: "Lam Thu", lastName: "Bui", affiliation: "Academy of Cryptography Techniques, Vietnam" },
+  { firstName: "Lejla", lastName: "Batina", affiliation: "DiS, Radboud University, The Netherlands" },
+  { firstName: "Le-Minh", lastName: "Nguyen", affiliation: "Japan Advanced Institute of Science and Technology, Japan" },
+  { firstName: "Luc", lastName: "Quynh", affiliation: "Academy of Cryptography Techniques, Vietnam" },
+  { firstName: "Luong", lastName: "Tran", affiliation: "Academy of Cryptography Techniques, Vietnam" },
+  { firstName: "Minh Tuan", lastName: "Dang", affiliation: "Posts and Telecommunications Institute of Technology, Vietnam" },
+  { firstName: "Mizuhito", lastName: "Ogawa", affiliation: "Old Teachers Network, Japan" },
+  { firstName: "Ngo", lastName: "Tran", affiliation: "Florida Atlantic University, USA" },
+  { firstName: "Ngoc Khanh", lastName: "Nguyen", affiliation: "King's College London, England" },
+  { firstName: "Ngoc-Quy", lastName: "Tran", affiliation: "Academy of Cryptography Techniques, Vietnam" },
+  { firstName: "Nhien-An", lastName: "Le-Khac", affiliation: "University College Dublin, Ireland" },
+  { firstName: "Ni", lastName: "Trieu", affiliation: "Arizona State University, USA" },
+  { firstName: "Nikolay", lastName: "Moldovyan", affiliation: "St. Petersburg Institute for Informatics and Automation of the Russian Academy of Sciences, Russia" },
+  { firstName: "Pablo", lastName: "Freyre-Arrozarena", affiliation: "Institute of Cryptography, University of Havana, Cuba" },
+  { firstName: "Pham Van", lastName: "Huong", affiliation: "Academy of Cryptography Techniques, Vietnam" },
+  { firstName: "Phuong Hoa", lastName: "Nguyen", affiliation: "Rennes University, France" },
+  { firstName: "Quang Duc", lastName: "Tran", affiliation: "Hanoi University of Science and Technology, Vietnam" },
+  { firstName: "Quang Uy", lastName: "Nguyen", affiliation: "Le Quy Don Technical University, Vietnam" },
+  { firstName: "Quang-Kien", lastName: "Trinh", affiliation: "Le Quy Don Technical University, Vietnam" },
+  { firstName: "Quoc Hung", lastName: "Nguyen", affiliation: "VNU University of Science, Vietnam" },
+  { firstName: "Quoc-Huy", lastName: "Vu", affiliation: "Pôle Universitaire Léonard de Vinci, France" },
+  { firstName: "Rene", lastName: "Richard", affiliation: "National Research Council, Canada" },
+  { firstName: "Rossy Nhung", lastName: "Nguyen", affiliation: "Quanova, Vietnam" },
+  { firstName: "Serge", lastName: "Vaudenay", affiliation: "Ecole Polytechnique Fédérale de Lausanne, Switzerland" },
+  { firstName: "Seyed Alireza Rahimi", lastName: "Azghadi", affiliation: "University of New Brunswick, Canada" },
+  { firstName: "Sihem", lastName: "Mesnager", affiliation: "The University of Paris VIII, France" },
+  { firstName: "Stjepan", lastName: "Picek", affiliation: "DiS, Radboud University, The Netherlands" },
+  { firstName: "Sylvain", lastName: "Guilley", affiliation: "GET/ENST, CNRS/LTCI, France" },
+  { firstName: "Thang", lastName: "Hoang", affiliation: "Virginia Tech, USA" },
+  { firstName: "Thang", lastName: "Nguyen", affiliation: "Academy of Cryptography Techniques, Vietnam" },
+  { firstName: "Thanh Binh", lastName: "Huynh Thi", affiliation: "Hanoi University of Science and Technology, Vietnam" },
+  { firstName: "Thi Dao", lastName: "Vu", affiliation: "Academy of Cryptography Techniques, Vietnam" },
+  { firstName: "Tho", lastName: "Mai", affiliation: "Academy of Cryptography Techniques, Vietnam" },
+  { firstName: "Tho", lastName: "Hoang-Duc", affiliation: "Academy of Cryptography Techniques, Vietnam" },
+  { firstName: "Tien", lastName: "Dinh", affiliation: "Vietnam Government Information Security Commission, Vietnam" },
+  { firstName: "Tim", lastName: "Beyne", affiliation: "COSIC, KU Leuven, Belgium" },
+  { firstName: "Trong-Thuc", lastName: "Hoang", affiliation: "The University of Electro-Communications, Japan" },
+  { firstName: "Trung", lastName: "Pham", affiliation: "Academy of Cryptography Techniques, Vietnam" },
+  { firstName: "Trung", lastName: "Do Quang", affiliation: "Academy of Cryptography Techniques, Vietnam" },
+  { firstName: "Truong", lastName: "Nguyen-Dao", affiliation: "Academy of Cryptography Techniques, Vietnam" },
+  { firstName: "Truong Thanh Hung", lastName: "Nguyen", affiliation: "University of New Brunswick, Canada" },
+  { firstName: "Viet Cuong", lastName: "Trinh", affiliation: "Hong Duc University, Vietnam" },
+  { firstName: "Viet Xuan Phuong", lastName: "Tran", affiliation: "University of Arkansas at Little Rock, USA" },
+  { firstName: "Vincent", lastName: "Rijmen", affiliation: "KU Leuven, ESAT/COSIC, Belgium" },
+  { firstName: "Xuan-Thanh", lastName: "Do", affiliation: "University of Limoges, France" },
+  { firstName: "Xuan-Tu", lastName: "Tran", affiliation: "The Information Technology Institute – Vietnam National University, Vietnam" },
+  { firstName: "Yan", lastName: "Ren", affiliation: "Nanyang Technological University, Singapore" },
+  { firstName: "Yingfei", lastName: "Yan", affiliation: "Nanyang Technological University, Singapore" },
 ];

@@ -7,7 +7,8 @@ import KeynoteSpeakers from "./pages/KeynoteSpeakers";
 import Registration from "./pages/Registration";
 import Program from "./pages/Program";
 import Venue from "./pages/Venue";
-import Committees from "./pages/Committees";
+import OrganizingCommittees from "./pages/OrganizingCommittees";
+import ProgramCommittees from "./pages/ProgramCommittees";
 import PreviousConferences from "./pages/PreviousConferences";
 import PaperSubmission from "./pages/PaperSubmission";
 import CameraReadySubmission from "./pages/CameraReadySubmission";
@@ -28,8 +29,8 @@ export const router = createBrowserRouter([
       { path: vcrisRoutes.program, Component: Program },
       { path: vcrisRoutes.venue, Component: Venue },
       { path: vcrisRoutes.accommodation, Component: Accommodation },
-      { path: vcrisRoutes.organizingCommittees, Component: Committees },
-      { path: vcrisRoutes.programCommittees, Component: Committees },
+      { path: vcrisRoutes.organizingCommittees, Component: OrganizingCommittees },
+      { path: vcrisRoutes.programCommittees, Component: ProgramCommittees },
       { path: vcrisRoutes.previousConferences, Component: PreviousConferences },
       { path: vcrisRoutes.paperSubmission, Component: PaperSubmission },
       {
