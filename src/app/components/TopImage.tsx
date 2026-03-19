@@ -7,7 +7,7 @@ export const TopImage = ({ title }: TopImageProps) => {
     const isSimpleTitle = typeof title === "string" || typeof title === "number";
 
     return (
-        <div className="relative h-[500px] overflow-hidden">
+        <div className="relative h-[560px] md:h-[640px] overflow-hidden">
             <div className="absolute inset-0">
                 <img
                     src="src/assets/background.jpg"

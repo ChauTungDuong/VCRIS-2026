@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative h-[400px] overflow-hidden">
+      <section className="relative h-[500px] overflow-hidden">
         <TopImage
           title={<div className="relative max-w-[1200px] mx-auto px-6 h-full flex items-center">
             <header className="max-w-[640px]" style={{ marginTop: "-10%" }}>
@@ -88,20 +88,6 @@ export default function Home() {
             </header>
           </div>}
         />
-
-
-        {/* Bottom Info */}
-        <div className="absolute bottom-10 left-0 right-0">
-          <div className="max-w-[1200px] mx-auto px-6 flex justify-between items-center">
-            <p
-              className="text-[12px] text-white/50"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              Organized by · {home.venue}
-            </p>
-            <ChevronDown size={24} className="text-cipher/70 animate-bounce" />
-          </div>
-        </div>
       </section>
 
       {/* About Section */}
