@@ -1,44 +1,10 @@
-import { programCommittee, CONF } from "../data/conferenceData";
+import { programCommittee } from "../data/conferenceData";
+import { TopImage } from "../components/TopImage";
 
 export default function ProgramCommittees() {
   return (
     <div className="pt-16">
-      {/* Hero */}
-      <section className="relative h-[320px] overflow-hidden bg-deep">
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage:
-                "linear-gradient(45deg, transparent 45%, var(--cipher) 45%, var(--cipher) 55%, transparent 55%)",
-              backgroundSize: "20px 20px",
-            }}
-          />
-        </div>
-        <div className="relative max-w-[1200px] mx-auto px-6 h-full flex flex-col items-center justify-center text-center">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-2 h-2 rounded-full bg-cipher" />
-            <span
-              className="text-[11px] font-semibold text-cipher uppercase tracking-[3px]"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              {CONF.name}
-            </span>
-          </div>
-          <h1
-            className="text-[56px] font-bold italic text-white mb-4"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Program Committees
-          </h1>
-          <p
-            className="text-[18px] text-white/70 max-w-[600px]"
-            style={{ fontFamily: "var(--font-body)" }}
-          >
-            The technical program committee members
-          </p>
-        </div>
-      </section>
+      <TopImage title="Program Committees" />
 
       {/* Table Section */}
       <section className="bg-warm py-20">
