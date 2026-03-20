@@ -2,15 +2,15 @@
 // VCRIS 2026 — Real conference data extracted from vcris.org DB
 // ============================================================
 export const CONF = {
-  name: "VCRIS 2025",
+  name: "VCRIS 2026",
   fullName:
-    "The 2nd International Conference on Cryptography and Information Security",
-  edition: "2nd",
-  dates: "October 30–31, 2025",
-  dateStart: "2025-10-30T08:00:00",
+    "The 3rd International Conference on Cryptography and Information Security",
+  edition: "3rd",
+  dates: "October 29–30, 2026",
+  dateStart: "2026-10-29T08:00:00",
   location: "Academy of Cryptography Techniques, Hanoi, Vietnam",
   address: "141 Chien Thang Road, Thanh Liet, Ha Noi, Viet Nam",
-  easyChairUrl: "https://easychair.org/conferences/?conf=vcris2025",
+  easyChairUrl: "https://easychair.org/conferences/?conf=vcris2026",
   contactEmail: "vcris@actvn.edu.vn",
   website: "https://vcris.org",
 };
@@ -423,12 +423,20 @@ export const venue = {
 // Previous conferences
 export const previousConferences = [
   {
+    year: "2025",
+    name: "VCRIS 2025",
+    edition: "2nd",
+    dates: "October 30–31, 2025",
+    location: "Academy of Cryptography Techniques, Hanoi, Vietnam",
+    wpUrl: "https://vcris.org/previous-conferences/vcris2025/homepage/",
+  },
+  {
     year: "2024",
     name: "VCRIS 2024",
     edition: "1st",
     dates: "December 3–4, 2024",
     location: "Academy of Cryptography Techniques, Hanoi, Vietnam",
-    wpUrl: "https://vcris.org/previous-conferences/vcris2024/",
+    wpUrl: "https://vcris.org/previous-conferences/vcris2024/homepage/",
   },
 ];
 

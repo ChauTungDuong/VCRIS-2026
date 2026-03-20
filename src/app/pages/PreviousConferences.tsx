@@ -2,6 +2,7 @@ import { ExternalLink, Calendar, MapPin } from "lucide-react";
 import {
   previousConferences,
   keynoteSpeakers2024,
+  keynoteSpeakers as keynoteSpeakers2025,
   CONF,
 } from "../data/conferenceData";
 
@@ -89,8 +90,8 @@ export default function PreviousConferences() {
                     </div>
                   </div>
 
-                  {/* VCRIS 2024 keynote preview */}
-                  {conf.year === "2024" && (
+                  {/* Keynote preview */}
+                  {(conf.year === "2024" || conf.year === "2025") && (
                     <div>
                       <p
                         className="text-[12px] font-semibold text-slate uppercase tracking-[2px] mb-3"
@@ -99,7 +100,7 @@ export default function PreviousConferences() {
                         Keynote Speaker
                       </p>
                       <div className="flex items-center gap-4">
-                        {keynoteSpeakers2024.map((speaker) => (
+                        {(conf.year === "2024" ? keynoteSpeakers2024 : keynoteSpeakers2025).map((speaker) => (
                           <div
                             key={speaker.name}
                             className="flex items-center gap-3"
