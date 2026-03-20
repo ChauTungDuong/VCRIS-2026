@@ -67,5 +67,9 @@ export const headerNavLinks = [
     {
         path: vcrisRoutes.previousConferences,
         label: "Previous Conferences",
+        children: [
+            { path: "https://vcris.org/previous-conferences/vcris2025/homepage/", label: "VCRIS 2025" },
+            { path: "https://vcris.org/previous-conferences/vcris2024/homepage/", label: "VCRIS 2024" }
+        ],
     }
 ]

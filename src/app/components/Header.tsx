@@ -87,20 +87,37 @@ export default function Navigation() {
                     <div className="absolute left-1/2 top-full z-50 mt-2 min-w-[200px] -translate-x-1/2 rounded-xl border border-rule bg-white py-1.5 shadow-xl shadow-black/10">
                       {/* small bridge so moving mouse to dropdown doesn't close it */}
                       <div className="absolute -top-2 left-0 right-0 h-2" />
-                      {link.children.map((child) => (
-                        <Link
-                          key={child.path}
-                          to={child.path}
-                          className={`flex items-center px-4 py-2 text-[12px] whitespace-nowrap transition-colors duration-150 ${location.pathname === child.path
+                      {link.children.map((child) => {
+                        const isExternal = child.path.startsWith("http");
+                        const linkClasses = `flex items-center px-4 py-2 text-[12px] whitespace-nowrap transition-colors duration-150 ${location.pathname === child.path
                             ? "text-cipher bg-cipher/8 font-medium"
                             : "text-ink hover:text-cipher hover:bg-cipher/5"
-                            }`}
-                          style={{ fontFamily: "var(--font-body)" }}
-                          onClick={() => setActiveDropdown(null)}
-                        >
-                          {child.label.toUpperCase()}
-                        </Link>
-                      ))}
+                            }`;
+
+                        return isExternal ? (
+                          <a
+                            key={child.path}
+                            href={child.path}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={linkClasses}
+                            style={{ fontFamily: "var(--font-body)" }}
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            {child.label.toUpperCase()}
+                          </a>
+                        ) : (
+                          <Link
+                            key={child.path}
+                            to={child.path}
+                            className={linkClasses}
+                            style={{ fontFamily: "var(--font-body)" }}
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            {child.label.toUpperCase()}
+                          </Link>
+                        );
+                      })}
                     </div>
                   )}
                 </div>
