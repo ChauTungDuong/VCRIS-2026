@@ -133,26 +133,24 @@ export const home = {
 export const importantDates = [
   {
     label: "Paper Submission Deadline",
-    date: "July 25, 2025",
-    passed: true,
-    extended: true,
+    date: "June 30, 2026",
+    passed: false,
   },
   {
     label: "Notification of Acceptance",
-    date: "September 01, 2025",
-    passed: true,
+    date: "July 31, 2026",
+    passed: false,
   },
   {
     label: "Camera-Ready Submission",
-    date: "September 20, 2025",
-    passed: true,
+    date: "September 25, 2026",
+    passed: false,
   },
   {
-    label: "Author Registration Deadline",
-    date: "September 20, 2025",
-    passed: true,
+    label: "Conference Dates",
+    date: "October 29 – 30, 2026",
+    passed: false,
   },
-  { label: "Conference", date: "October 30–31, 2025", passed: false },
 ];
 
 export const topics = [

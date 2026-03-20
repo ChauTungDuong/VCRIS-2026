@@ -157,7 +157,7 @@ export default function Home() {
                         >
                           {item.date}
                         </span>
-                        {item.extended && (
+                        {Boolean((item as any).extended) && (
                           <span
                             className="px-2 py-0.5 rounded bg-amber/10 text-amber text-[11px] font-semibold"
                             style={{ fontFamily: "var(--font-body)" }}
@@ -209,19 +209,21 @@ export default function Home() {
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 <p>
-                  The International Conference on Cryptography and Information
-                  Security (VCRIS 2025) is the 2nd edition of the annual
-                  conference organized by the Academy of Cryptography Techniques
-                  (ACT), Vietnam. The conference aims to foster academic
-                  exchange and advance both fundamental and applied research in
-                  Cryptography and Information Security within Vietnam and
-                  across the globe.
+                  Following the success of VCRIS 2025, this event will continue
+                  to be held in Hanoi, the thousand-year-old capital of Vietnam,
+                  renowned for its rich history, cultural heritage, and vibrant
+                  historical landmarks.
                 </p>
                 <p>
-                  Following the success of VCRIS 2024, the main theme of VCRIS
-                  2025 is the application of cryptography and information
-                  security, with a new track on quantum science and technology.
-                  Accepted papers will be published in IEEE-indexed proceedings.
+                  The Academy of Cryptography Techniques, selected by the
+                  Vietnamese Government as a pivotal institution for nurturing
+                  information security expertise, will serve as the venue for
+                  the VCRIS 2026. The Academy of Cryptography Techniques stands
+                  as Vietnam’s exclusive hub for cultivating professionals with
+                  both undergraduate and postgraduate qualifications and
+                  spearheading research in cryptographic science and technology
+                  under the purview of the Vietnam Government Information
+                  Security Commission (VGISC).
                 </p>
               </div>
 
@@ -257,8 +259,8 @@ export default function Home() {
 
               <div className="relative space-y-4">
                 {[
-                  { number: "2nd", label: "Edition" },
-                  { number: "2023", label: "Since" },
+                  { number: "3rd", label: "Edition" },
+                  { number: "2024", label: "Since" },
                   { number: "IEEE", label: "Indexed" },
                 ].map((item) => (
                   <div
