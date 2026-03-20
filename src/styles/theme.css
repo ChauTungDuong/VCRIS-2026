@@ -1,49 +1,49 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* VCRIS 2025 Color System - "Cipher Light" */
-  --ink: #0D1B2A;
-  --paper: #F7F8FA;
+  /* VCRIS 2026 Color System - "Academic/SOICT Style" */
+  --ink: #212529;
+  --paper: #F8F9FA;
   --white: #FFFFFF;
-  --cipher: #0EA5A0;
-  --cipher-dim: #CBF0EE;
-  --slate: #64748B;
-  --rule: #E4E8EE;
-  --deep: #071525;
-  --warm: #F0EDE8;
-  --amber: #D97706;
+  --cipher: #1B4F91; /* Primary Blue */
+  --cipher-dim: #E8F0FE;
+  --slate: #4A4A4A;
+  --rule: #DEE2E6;
+  --deep: #1B4F91; /* Navy Blue for Deep Sections */
+  --warm: #FFFFFF;
+  --amber: #C12026; /* Primary Red (Accent) */
   
   /* Typography */
-  --font-display: 'Cormorant Garamond', serif;
-  --font-body: 'Syne', sans-serif;
+  --font-display: 'Montserrat', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   
   /* Legacy compatibility */
   --font-size: 16px;
-  --background: #F7F8FA;
-  --foreground: #0D1B2A;
+  --background: #F8F9FA;
+  --foreground: #212529;
   --card: #FFFFFF;
-  --card-foreground: #0D1B2A;
+  --card-foreground: #212529;
   --popover: #FFFFFF;
-  --popover-foreground: #0D1B2A;
-  --primary: #0EA5A0;
+  --popover-foreground: #212529;
+  --primary: #1B4F91;
   --primary-foreground: #FFFFFF;
-  --secondary: #64748B;
+  --secondary: #4A4A4A;
   --secondary-foreground: #FFFFFF;
-  --muted: #F0EDE8;
-  --muted-foreground: #64748B;
-  --accent: #0EA5A0;
+  --muted: #F8F9FA;
+  --muted-foreground: #4A4A4A;
+  --accent: #C12026;
   --accent-foreground: #FFFFFF;
-  --destructive: #d4183d;
+  --destructive: #C12026;
   --destructive-foreground: #ffffff;
-  --border: #E4E8EE;
+  --border: #DEE2E6;
   --input: transparent;
   --input-background: #f3f3f5;
   --switch-background: #cbced4;
-  --font-weight-medium: 500;
+  --font-weight-medium: 600;
   --font-weight-normal: 400;
-  --ring: #0EA5A0;
-  --radius: 0.625rem;
+  --ring: #1B4F91;
+  --radius: 0.25rem; /* More boxy for academic look */
 }
 
 @theme inline {

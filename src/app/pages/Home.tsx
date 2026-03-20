@@ -48,14 +48,14 @@ export default function Home() {
                   className={`transition-all duration-700 delay-150 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                 >
                   <h1
-                    className="text-white leading-[1.12]"
+                    className="text-white leading-[1.12] uppercase"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
-                    <span className="block text-[38px] md:text-[48px] italic font-bold">
+                    <span className="block text-[32px] md:text-[40px] font-bold">
                       The 3<sup>rd</sup> International Conference on
                     </span>
-                    <span className="block text-[44px] md:text-[62px] italic font-bold mt-1">
-                      Cryptography <span className="text-cipher">&amp;</span>{" "}
+                    <span className="block text-[40px] md:text-[52px] font-bold mt-2">
+                      Cryptography <span className="text-amber">&amp;</span>{" "}
                       Information Security
                     </span>
                   </h1>
@@ -135,11 +135,12 @@ export default function Home() {
             {/* Timeline */}
             <div>
               <h3
-                className="text-[28px] md:text-[32px] font-bold italic text-ink mb-8"
+                className="text-[28px] md:text-[32px] font-bold text-ink uppercase"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Important Dates
               </h3>
+              <div className="w-16 h-1 bg-amber mt-2 mb-8" />
 
               <div className="space-y-6 relative pl-5 md:pl-6">
                 <div className="absolute left-0 top-2 bottom-2 w-[1px] border-l border-dashed border-rule" />
@@ -187,22 +188,20 @@ export default function Home() {
           <div className="grid grid-cols-12 gap-12">
             {/* Left Column */}
             <div className="col-span-7">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-2 h-2 rounded-full bg-cipher" />
-                <span
-                  className="text-[11px] font-semibold text-cipher uppercase tracking-[3px]"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  ABOUT THE CONFERENCE
-                </span>
-              </div>
-
               <h2
-                className="text-[44px] font-bold italic text-ink leading-[1.15] mb-6"
+                className="text-[36px] font-bold text-ink leading-[1.15] uppercase"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Building the Future of Cryptographic Science
+                Welcome to VCRIS 2026
               </h2>
+              <div className="w-16 h-1 bg-amber mt-4 mb-6" />
+
+              <p
+                className="text-[24px] text-amber italic mb-6"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Advancing Cryptography and Information Security
+              </p>
 
               <div
                 className="space-y-4 text-[16px] text-slate mb-8"
@@ -289,22 +288,14 @@ export default function Home() {
       <section className="bg-deep py-24">
         <div className="max-w-[1200px] mx-auto px-6">
           {/* Header */}
-          <div className="text-center mb-12">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="w-2 h-2 rounded-full bg-cipher" />
-              <span
-                className="text-[11px] font-semibold text-cipher uppercase tracking-[3px]"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                KEYNOTE SPEAKERS
-              </span>
-            </div>
+          <div className="text-center mb-12 flex flex-col items-center">
             <h2
-              className="text-[48px] font-bold italic text-white"
+              className="text-[40px] font-bold text-white uppercase"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Voices Shaping Cryptography
+              Keynote Speakers
             </h2>
+            <div className="w-16 h-1 bg-amber mt-4" />
           </div>
 
           {/* Speaker Cards */}
@@ -373,28 +364,29 @@ export default function Home() {
       {/* Program Preview */}
       <section className="bg-white py-24">
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="flex justify-between items-center mb-12">
+          <div className="flex justify-between items-center mb-4">
             <h2
-              className="text-[44px] font-bold italic text-ink"
+              className="text-[40px] font-bold text-ink uppercase"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Conference Program
             </h2>
             <div className="flex gap-2">
               <button
-                className="px-4 py-2 rounded-full bg-ink text-white text-[13px] font-medium"
+                className="px-4 py-2 rounded-full bg-deep text-white text-[13px] font-medium"
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 Day 1 — Oct 30
               </button>
               <button
-                className="px-4 py-2 rounded-full border border-slate text-slate text-[13px] font-medium"
+                className="px-4 py-2 rounded-full border border-rule text-slate text-[13px] font-medium"
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 Day 2 — Oct 31
               </button>
             </div>
           </div>
+          <div className="w-16 h-1 bg-amber mb-8" />
 
           {/* Schedule Rows */}
           <div className="space-y-0 border border-rule rounded-2xl overflow-hidden">
