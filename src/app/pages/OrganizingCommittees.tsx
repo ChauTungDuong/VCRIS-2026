@@ -5,6 +5,7 @@ import {
   type CommitteeGroup,
 } from "../data/conferenceData";
 import { TopImage } from "../components/TopImage";
+import PageRenderer from "../components/PageRenderer";
 
 function PersonCard({ person }: { person: CommitteePerson }) {
   return (
@@ -76,8 +77,11 @@ export default function OrganizingCommittees() {
   );
 
   return (
-    <div className="pt-16">
-      <TopImage title="Organizing Committees" />
+    <PageRenderer
+      slug="organizing-committees"
+      fallback={
+        <div className="pt-16">
+          <TopImage title="Organizing Committees" />
 
       {/* Organizing Bodies */}
       <section className="bg-warm pt-16 pb-10">
@@ -180,5 +184,6 @@ export default function OrganizingCommittees() {
         </div>
       </section>
     </div>
+  } />
   );
 }

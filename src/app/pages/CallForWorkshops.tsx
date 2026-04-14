@@ -1,11 +1,15 @@
 import { ArrowRight, Mail } from "lucide-react";
 import { TopImage } from "../components/TopImage";
 import { callForWorkshopsText, CONF } from "../data/conferenceData";
+import PageRenderer from "../components/PageRenderer";
 
 export default function CallForWorkshops() {
   return (
-    <div className="pt-16">
-      <TopImage title="Call for Workshops" />
+    <PageRenderer
+      slug="call-for-workshops"
+      fallback={
+        <div className="pt-16">
+          <TopImage title="Call for Workshops" />
 
       {/* Scope Section */}
       <section className="bg-white py-24">
@@ -123,7 +127,8 @@ export default function CallForWorkshops() {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+          </section>
+        </div>
+      } />
   );
 }

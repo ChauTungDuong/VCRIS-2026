@@ -1,5 +1,6 @@
 import { MapPin, Plane, Train, Car, ExternalLink } from "lucide-react";
 import { venue, CONF } from "../data/conferenceData";
+import PageRenderer from "../components/PageRenderer";
 
 export default function Venue() {
   const venueImages = [
@@ -12,8 +13,11 @@ export default function Venue() {
   ];
 
   return (
-    <div className="pt-16">
-      {/* Hero with Venue Photo */}
+    <PageRenderer
+      slug="venue"
+      fallback={
+        <div className="pt-16">
+          {/* Hero with Venue Photo */}
       <section className="relative h-[500px] overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1758413149178-95efe71954fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhY2FkZW1pYyUyMGJ1aWxkaW5nJTIwYXJjaGl0ZWN0dXJlJTIwSGFub2l8ZW58MXx8fHwxNzcyNzY2NDAyfDA&ixlib=rb-4.1.0&q=80&w=1080"
@@ -228,7 +232,8 @@ export default function Venue() {
             </p>
           </div>
         </div>
-      </section>
-    </div>
+          </section>
+        </div>
+      } />
   );
 }

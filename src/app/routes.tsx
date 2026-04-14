@@ -16,7 +16,18 @@ import InstructionsForAuthors from "./pages/InstructionsForAuthors";
 import Accommodation from "./pages/Accommodation";
 import { vcrisRoutes } from "./utils/routes";
 
+// Admin imports
+import AdminLayout from "./admin/AdminLayout";
+import LoginPage from "./admin/LoginPage";
+import DashboardPage from "./admin/DashboardPage";
+import PagesListPage from "./admin/PagesListPage";
+import PageEditorPage from "./admin/PageEditorPage";
+import SiteConfigPage from "./admin/SiteConfigPage";
+import MediaLibraryPage from "./admin/MediaLibraryPage";
+import DynamicPage from "./pages/DynamicPage";
+
 export const router = createBrowserRouter([
+  // Public routes
   {
     path: "/",
     Component: Root,
@@ -41,6 +52,24 @@ export const router = createBrowserRouter([
         path: vcrisRoutes.instructionsForAuthors,
         Component: InstructionsForAuthors,
       },
+      // Dynamic page for admin-created pages
+      { path: ":slug", Component: DynamicPage },
+    ],
+  },
+  // Admin routes
+  {
+    path: "/admin/login",
+    Component: LoginPage,
+  },
+  {
+    path: "/admin",
+    Component: AdminLayout,
+    children: [
+      { index: true, Component: DashboardPage },
+      { path: "pages", Component: PagesListPage },
+      { path: "editor/:slug", Component: PageEditorPage },
+      { path: "config", Component: SiteConfigPage },
+      { path: "media", Component: MediaLibraryPage },
     ],
   },
 ]);

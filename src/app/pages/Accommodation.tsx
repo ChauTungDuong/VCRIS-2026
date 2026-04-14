@@ -1,5 +1,6 @@
 import { MapPin, Bus, Car, Footprints, ExternalLink } from "lucide-react";
 import { CONF } from "../data/conferenceData";
+import PageRenderer from "../components/PageRenderer";
 
 export default function Accommodation() {
   const accommodations = [
@@ -28,8 +29,11 @@ export default function Accommodation() {
   ];
 
   return (
-    <div className="pt-16">
-      {/* Hero */}
+    <PageRenderer
+      slug="accommodation"
+      fallback={
+        <div className="pt-16">
+          {/* Hero */}
       <section className="relative h-[400px] overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1571896349842-332ce143f2c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw3fHxob3RlbHxlbnwwfHx8fDE3NzI3NjY0MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
@@ -160,7 +164,8 @@ export default function Accommodation() {
             ))}
           </div>
         </div>
-      </section>
-    </div>
+          </section>
+        </div>
+      } />
   );
 }

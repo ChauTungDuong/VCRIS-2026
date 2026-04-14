@@ -1,7 +1,8 @@
 import { TopImage } from "../components/TopImage";
+import PageRenderer from "../components/PageRenderer";
 
 export default function Program() {
-  return (
+  const fallbackContent = (
     <div className="pt-16">
       <TopImage title="Conference Program" />
 
@@ -23,4 +24,6 @@ export default function Program() {
       */}
     </div>
   );
+
+  return <PageRenderer slug="program" fallback={fallbackContent} />;
 }

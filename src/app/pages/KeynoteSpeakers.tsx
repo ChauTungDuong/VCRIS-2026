@@ -1,4 +1,5 @@
 import { keynoteSpeakers } from "../data/conferenceData";
+import PageRenderer from "../components/PageRenderer";
 
 const tbaSlots = [
   {
@@ -23,8 +24,11 @@ export default function KeynoteSpeakers() {
   const speakers = [...keynoteSpeakers, ...tbaSlots];
 
   return (
-    <div className="pt-16">
-      {/* Hero */}
+    <PageRenderer
+      slug="keynote-speakers"
+      fallback={
+        <div className="pt-16">
+          {/* Hero */}
       <section className="relative h-[400px] overflow-hidden bg-deep">
         <div className="absolute inset-0 opacity-10">
           <div
@@ -164,5 +168,6 @@ export default function KeynoteSpeakers() {
         </div>
       </section>
     </div>
+  } />
   );
 }

@@ -1,9 +1,13 @@
 import { FileText, CheckCircle2, BookOpen } from "lucide-react";
+import PageRenderer from "../components/PageRenderer";
 
 export default function InstructionForAuthors() {
   return (
-    <div className="pt-16">
-      {/* Hero Section */}
+    <PageRenderer
+      slug="instructions-for-authors"
+      fallback={
+        <div className="pt-16">
+          {/* Hero Section */}
       <section className="relative h-[400px] overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -245,7 +249,8 @@ export default function InstructionForAuthors() {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+          </section>
+        </div>
+      } />
   );
 }

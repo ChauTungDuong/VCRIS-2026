@@ -1,10 +1,14 @@
 import { programCommittee } from "../data/conferenceData";
 import { TopImage } from "../components/TopImage";
+import PageRenderer from "../components/PageRenderer";
 
 export default function ProgramCommittees() {
   return (
-    <div className="pt-16">
-      <TopImage title="Program Committees" />
+    <PageRenderer
+      slug="program-committees"
+      fallback={
+        <div className="pt-16">
+          <TopImage title="Program Committees" />
 
       {/* Table Section */}
       <section className="bg-warm py-20">
@@ -99,5 +103,6 @@ export default function ProgramCommittees() {
         </div>
       </section>
     </div>
+  } />
   );
 }

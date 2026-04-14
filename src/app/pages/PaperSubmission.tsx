@@ -6,6 +6,7 @@ import {
   Users,
   Book,
 } from "lucide-react";
+import PageRenderer from "../components/PageRenderer";
 
 export default function PaperSubmission() {
   const importantDates = [
@@ -16,8 +17,11 @@ export default function PaperSubmission() {
   ];
 
   return (
-    <div className="pt-16">
-      {/* Hero Section */}
+    <PageRenderer
+      slug="paper-submission"
+      fallback={
+        <div className="pt-16">
+          {/* Hero Section */}
       <section className="relative h-[400px] overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -307,7 +311,8 @@ export default function PaperSubmission() {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+          </section>
+        </div>
+      } />
   );
 }

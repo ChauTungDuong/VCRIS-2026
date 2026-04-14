@@ -11,6 +11,7 @@ import {
   CONF,
 } from "../data/conferenceData";
 import TopImage from "../components/TopImage";
+import PageRenderer from "../components/PageRenderer";
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -20,8 +21,11 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="pt-16">
-      {/* Hero Section */}
+    <PageRenderer
+      slug="home"
+      fallback={
+        <div className="pt-16">
+          {/* Hero Section */}
       <section className="relative h-[500px] overflow-hidden">
         <TopImage
           title={<div className="relative max-w-[1200px] mx-auto px-6 h-full flex items-center">
@@ -517,5 +521,6 @@ export default function Home() {
         </div>
       </section>
     </div>
+  } />
   );
 }

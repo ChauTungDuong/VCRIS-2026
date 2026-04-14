@@ -26,7 +26,7 @@ p {
   margin: 0;
 }
 
-/* Custom scrollbar (optional, for browsers that support it) */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -44,11 +44,11 @@ p {
   background: var(--cipher);
 }
 
+/* Sponsors marquee */
 @keyframes sponsors-marquee {
   0% {
     transform: translateX(0);
   }
-
   100% {
     transform: translateX(-50%);
   }
@@ -71,4 +71,21 @@ p {
 
 .sponsors-marquee:hover .sponsors-marquee__track {
   animation-play-state: paused;
+}
+
+/* Utility: accent underline */
+.accent-underline {
+  display: inline-block;
+  border-bottom: 3px solid var(--amber);
+  padding-bottom: 2px;
+}
+
+/* Animated fade-in utility */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease both;
 }

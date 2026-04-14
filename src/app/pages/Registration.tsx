@@ -1,7 +1,12 @@
+import PageRenderer from "../components/PageRenderer";
+
 export default function Registration() {
   return (
-    <div className="pt-16">
-      {/* Hero */}
+    <PageRenderer
+      slug="registration"
+      fallback={
+        <div className="pt-16">
+          {/* Hero */}
       <section className="relative h-[300px] bg-deep">
         <div className="max-w-[1200px] mx-auto px-6 h-full flex flex-col items-center justify-center text-center">
           <h1 className="text-[56px] font-bold italic text-white" style={{ fontFamily: 'var(--font-display)' }}>
@@ -322,7 +327,8 @@ export default function Registration() {
             </a>
           </p>
         </div>
-      </section>
-    </div>
+          </section>
+        </div>
+      } />
   );
 }

@@ -6,6 +6,7 @@ import {
   CONF,
 } from "../data/conferenceData";
 import { TopImage } from "../components/TopImage";
+import PageRenderer from "../components/PageRenderer";
 
 export default function CallForPapers() {
   const [openTrackIndex, setOpenTrackIndex] = useState<number | null>(0);
@@ -14,7 +15,7 @@ export default function CallForPapers() {
     setOpenTrackIndex(openTrackIndex === index ? null : index);
   };
 
-  return (
+  const fallbackContent = (
     <div className="pt-16">
       <TopImage title="Call for Papers" />
       {/* Scope Section */}
@@ -239,4 +240,6 @@ export default function CallForPapers() {
       </section>
     </div>
   );
+
+  return <PageRenderer slug="call-for-papers" fallback={fallbackContent} />;
 }
