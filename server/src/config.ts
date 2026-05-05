@@ -1,13 +1,21 @@
 import dotenv from "dotenv";
 dotenv.config();
 
+const requireEnv = (key: string) => {
+  const value = process.env[key];
+  if (!value) {
+    throw new Error(`Missing required env var: ${key}`);
+  }
+  return value;
+};
+
 export const config = {
   port: parseInt(process.env.PORT || "4000"),
-  databaseUrl: process.env.DATABASE_URL || "",
-  jwtSecret: process.env.JWT_SECRET || "vcris-2026-secret-key",
+  databaseUrl: requireEnv("DATABASE_URL"),
+  jwtSecret: requireEnv("JWT_SECRET"),
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || "7d",
-  adminEmail: process.env.ADMIN_EMAIL || "admin@vcris.org",
-  adminPassword: process.env.ADMIN_PASSWORD || "vcris2026admin",
+  adminEmail: requireEnv("ADMIN_EMAIL"),
+  adminPassword: requireEnv("ADMIN_PASSWORD"),
   uploadDir: process.env.UPLOAD_DIR || "uploads",
   corsOrigin: process.env.CORS_ORIGIN || "http://localhost:5173",
   defaultLocale: "en",

@@ -8,6 +8,14 @@ import {
 
 const prisma = new PrismaClient();
 
+const requireEnv = (key: string) => {
+  const value = process.env[key];
+  if (!value) {
+    throw new Error(`Missing required env var: ${key}`);
+  }
+  return value;
+};
+
 function textBlock(
   content: string,
   opts: {
@@ -125,16 +133,15 @@ async function main() {
   console.log("🌱 Seeding database...");
 
   // 1. Create admin user
-  const hashedPassword = await bcrypt.hash(
-    process.env.ADMIN_PASSWORD || "vcris2026admin",
-    12,
-  );
+  const adminEmail = requireEnv("ADMIN_EMAIL");
+  const adminPassword = requireEnv("ADMIN_PASSWORD");
+  const hashedPassword = await bcrypt.hash(adminPassword, 12);
 
   await prisma.user.upsert({
-    where: { email: process.env.ADMIN_EMAIL || "admin@vcris.org" },
+    where: { email: adminEmail },
     update: {},
     create: {
-      email: process.env.ADMIN_EMAIL || "admin@vcris.org",
+      email: adminEmail,
       password: hashedPassword,
       name: "VCRIS Admin",
       role: "SUPER_ADMIN",

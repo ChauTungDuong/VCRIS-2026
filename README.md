@@ -1,9 +1,11 @@
 ## VCRIS 2026 Content Management System
+
 This repository has been upgraded to a full-stack CMS architecture. It supports dynamic pages, visual drag-and-drop editing (via Puck), database-driven site configurations, and multi-language support.
 
 ### 📋 Architecture
 
 **Frontend:**
+
 - React (Vite)
 - Tailwind CSS
 - Protected Admin routes (`/admin`)
@@ -11,12 +13,14 @@ This repository has been upgraded to a full-stack CMS architecture. It supports 
 - Axios for API communication
 
 **Backend:**
+
 - Node.js & Express
 - Prisma ORM
 - MySQL 8 Database
 - JWT Authentication
 
 **Deployment:**
+
 - Docker & Docker Compose
 - Multi-stage builds
 - Nginx for serving SPA and proxying API
@@ -26,6 +30,7 @@ This repository has been upgraded to a full-stack CMS architecture. It supports 
 ### 🚀 Quick Start (Local Development)
 
 1. **Install dependencies:**
+
    ```bash
    npm install      # Install frontend dependencies
    cd server
@@ -37,6 +42,7 @@ This repository has been upgraded to a full-stack CMS architecture. It supports 
    - Set `DATABASE_URL` (requires a running MySQL instance)
 
 3. **Database Setup:**
+
    ```bash
    cd server
    npx prisma db push --accept-data-loss
@@ -44,6 +50,7 @@ This repository has been upgraded to a full-stack CMS architecture. It supports 
    ```
 
 4. **Start Dev Servers:**
+
    ```bash
    # Terminal 1: Backend
    cd server
@@ -64,21 +71,23 @@ The project includes a ready-to-use Docker Compose configuration.
 
 2. **Configure Environment**
    Create a `.env` file in the root directory and update passwords:
+
    ```env
    DB_ROOT_PASSWORD=your_secure_root_password
    DB_USER=vcris_user
    DB_PASSWORD=your_secure_db_password
    DB_NAME=vcris_db
 
-   JWT_SECRET=super_secret_jwt_key_123!
+   JWT_SECRET=change_me_jwt_secret
    JWT_EXPIRES_IN=7d
-   ADMIN_EMAIL=admin@vcris.org
-   ADMIN_PASSWORD=secret_admin_password
+   ADMIN_EMAIL=admin@example.com
+   ADMIN_PASSWORD=change_me_admin_password
 
    VITE_API_URL=/api/v1
    ```
 
 3. **Deploy using Docker Compose**
+
    ```bash
    # Build and start all services in detached mode
    docker-compose up -d --build
