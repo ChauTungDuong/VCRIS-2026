@@ -19,4 +19,20 @@ export default defineConfig({
 
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
+
+  server: {
+    proxy: {
+      // Forward API calls to Express backend
+      '/api': {
+        target: 'http://localhost:4000',
+        changeOrigin: true,
+      },
+      // Forward uploaded file requests to Express static server
+      // This is the key fix: /uploads/* must go to port 4000, not 5173
+      '/uploads': {
+        target: 'http://localhost:4000',
+        changeOrigin: true,
+      },
+    },
+  },
 })

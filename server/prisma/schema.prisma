@@ -1,0 +1,91 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String   @default("Admin")
+  role      Role     @default(ADMIN)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("users")
+}
+
+enum Role {
+  ADMIN
+  SUPER_ADMIN
+}
+
+model Page {
+  id          Int       @id @default(autoincrement())
+  slug        String    @unique
+  isPublished Boolean   @default(true) @map("is_published")
+  sortOrder   Int       @default(0) @map("sort_order")
+  isSystem    Boolean   @default(false) @map("is_system")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+  publishedAt DateTime? @map("published_at")
+
+  translations PageTranslation[]
+  versions     PageVersion[]
+
+  @@map("pages")
+}
+
+model PageTranslation {
+  id       Int    @id @default(autoincrement())
+  pageId   Int    @map("page_id")
+  locale   String @default("en") @db.VarChar(10)
+  title    String
+  content  Json   @db.Json
+
+  page Page @relation(fields: [pageId], references: [id], onDelete: Cascade)
+
+  @@unique([pageId, locale])
+  @@map("page_translations")
+}
+
+model PageVersion {
+  id        Int      @id @default(autoincrement())
+  pageId    Int      @map("page_id")
+  locale    String   @default("en") @db.VarChar(10)
+  title     String
+  content   Json     @db.Json
+  version   Int
+  createdAt DateTime @default(now()) @map("created_at")
+  createdBy String?  @map("created_by")
+
+  page Page @relation(fields: [pageId], references: [id], onDelete: Cascade)
+
+  @@unique([pageId, locale, version])
+  @@index([pageId, locale])
+  @@map("page_versions")
+}
+
+model SiteConfig {
+  id    Int    @id @default(autoincrement())
+  key   String @unique @db.VarChar(100)
+  value Json   @db.Json
+
+  @@map("site_configs")
+}
+
+model MediaFile {
+  id        Int      @id @default(autoincrement())
+  filename  String
+  path      String
+  url       String
+  mimeType  String   @map("mime_type")
+  size      Int
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("media_files")
+}

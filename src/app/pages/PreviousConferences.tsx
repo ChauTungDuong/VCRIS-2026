@@ -5,11 +5,15 @@ import {
   keynoteSpeakers as keynoteSpeakers2025,
   CONF,
 } from "../data/conferenceData";
+import PageRenderer from "../components/PageRenderer";
 
 export default function PreviousConferences() {
   return (
-    <div className="pt-16">
-      {/* Hero */}
+    <PageRenderer
+      slug="previous-conferences"
+      fallback={
+        <div className="pt-16">
+          {/* Hero */}
       <section className="relative h-[320px] overflow-hidden bg-deep">
         <div className="absolute inset-0 opacity-10">
           <div
@@ -177,7 +181,8 @@ export default function PreviousConferences() {
             </p>
           </div>
         </div>
-      </section>
-    </div>
+          </section>
+        </div>
+      } />
   );
 }

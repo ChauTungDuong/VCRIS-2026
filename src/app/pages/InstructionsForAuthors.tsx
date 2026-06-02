@@ -1,35 +1,14 @@
 import { FileText, CheckCircle2, BookOpen } from "lucide-react";
+import PageRenderer from "../components/PageRenderer";
+import PageTitle from "../components/PageTitle";
 
 export default function InstructionForAuthors() {
   return (
-    <div className="pt-16">
-      {/* Hero Section */}
-      <section className="relative h-[400px] overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1455390582262-044cdead277a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3cml0aW5nJTIwcmVzZWFyY2glMjBwYXBlcnxlbnwxfHx8fDE3NDI0MjgwMDB8MA&ixlib=rb-4.1.0&q=80&w=1080"
-            alt="Instruction for Authors"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-deep/90" />
-        </div>
-
-        <div className="relative max-w-[1200px] mx-auto px-6 h-full flex flex-col items-center justify-center text-center">
-          <h1
-            className="text-[56px] font-bold italic text-white mb-4"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Instruction for Authors
-          </h1>
-          <p
-            className="text-[18px] text-white/90 max-w-[800px]"
-            style={{ fontFamily: "var(--font-body)" }}
-          >
-            Guidelines and requirements for manuscript preparation and
-            submission
-          </p>
-        </div>
-      </section>
+    <PageRenderer
+      slug="instructions-for-authors"
+      fallback={
+        <div>
+          <PageTitle title="Instruction for Authors" />
 
       {/* Main Content */}
       <section className="bg-warm py-24">
@@ -245,7 +224,8 @@ export default function InstructionForAuthors() {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+          </section>
+        </div>
+      } />
   );
 }

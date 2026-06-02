@@ -1,11 +1,13 @@
 import { Link, useLocation } from "react-router";
 import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 import { headerNavLinks } from "../utils/routes";
 
 export default function Navigation() {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +16,11 @@ export default function Navigation() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Close mobile menu on route change
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
 
   return (
     <nav
@@ -45,9 +52,9 @@ export default function Navigation() {
           </span>
         </Link>
 
-        {/* Nav Links */}
-        <div className="min-w-0 flex-1">
-          <div className="flex items-center justify-start lg:justify-center gap-1.5 lg:gap-2">
+        {/* Desktop Nav Links */}
+        <div className="hidden xl:flex min-w-0 flex-1">
+          <div className="flex items-center justify-start xl:justify-center gap-1.5 xl:gap-2">
             {headerNavLinks.map((link) => {
               const isActive =
                 location.pathname === link.path ||
@@ -63,7 +70,7 @@ export default function Navigation() {
                 >
                   <Link
                     to={link.path}
-                    className={`px-2.5 lg:px-3 h-9 rounded-full text-[11px] lg:text-[12px] font-medium tracking-[0.2px] whitespace-nowrap flex items-center gap-1 transition-colors duration-200 ${isActive
+                    className={`px-2.5 xl:px-3 h-9 rounded-full text-[11px] xl:text-[12px] font-medium tracking-[0.2px] whitespace-nowrap flex items-center gap-1 transition-colors duration-200 ${isActive
                       ? "text-cipher bg-cipher/10"
                       : "text-ink hover:text-cipher hover:bg-cipher/5"
                       }`}
@@ -125,6 +132,107 @@ export default function Navigation() {
             })}
           </div>
         </div>
+
+        {/* Mobile Menu Toggle */}
+        <button
+          className="xl:hidden p-2 text-ink hover:bg-cipher/5 rounded-lg transition-colors"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
+        {/* Mobile Menu Overlay */}
+        {isMobileMenuOpen && (
+          <div className="absolute top-[60px] left-0 w-full h-[calc(100vh-60px)] z-40 bg-white border-t border-rule xl:hidden overflow-y-auto shadow-xl">
+            <div className="flex flex-col p-4 gap-2">
+              {headerNavLinks.map((link) => {
+                const isActive =
+                  location.pathname === link.path ||
+                  Boolean(link.children?.some((c) => location.pathname === c.path));
+                const isExpanded = activeDropdown === link.path;
+
+                return (
+                  <div key={link.path} className="flex flex-col">
+                    <div className="flex items-center">
+                      <Link
+                        to={link.path}
+                        className={`flex-1 px-4 py-3 rounded-xl text-[14px] font-medium tracking-[0.2px] transition-colors duration-200 ${isActive
+                            ? "text-cipher bg-cipher/10"
+                            : "text-ink hover:bg-cipher/5"
+                          }`}
+                        style={{ fontFamily: "var(--font-body)" }}
+                        onClick={() => {
+                          if (!link.children) {
+                            setIsMobileMenuOpen(false);
+                          }
+                        }}
+                      >
+                        {link.label.toUpperCase()}
+                      </Link>
+                      {link.children && (
+                        <button
+                          onClick={() => setActiveDropdown(isExpanded ? null : link.path)}
+                          className="p-3 ml-2 text-ink hover:bg-cipher/5 rounded-xl transition-colors"
+                        >
+                          <svg
+                            className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? "rotate-180" : ""}`}
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth={2}
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                      )}
+                    </div>
+                    
+                    {link.children && (
+                      <div className={`overflow-hidden transition-[max-height,opacity] duration-300 ease-in-out ${isExpanded ? "max-h-[500px] opacity-100 mt-1" : "max-h-0 opacity-0"}`}>
+                        <div className="flex flex-col pl-6 gap-1 border-l-2 border-rule ml-6 pb-2">
+                          {link.children.map((child) => {
+                            const isExternal = child.path.startsWith("http");
+                            const childIsActive = location.pathname === child.path;
+                            const linkClasses = `px-4 py-2 text-[13px] rounded-lg transition-colors duration-150 ${childIsActive
+                                ? "text-cipher bg-cipher/5 font-medium"
+                                : "text-slate hover:text-ink hover:bg-cipher/5"
+                              }`;
+
+                            return isExternal ? (
+                              <a
+                                key={child.path}
+                                href={child.path}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={linkClasses}
+                                style={{ fontFamily: "var(--font-body)" }}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                              >
+                                {child.label}
+                              </a>
+                            ) : (
+                              <Link
+                                key={child.path}
+                                to={child.path}
+                                className={linkClasses}
+                                style={{ fontFamily: "var(--font-body)" }}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                              >
+                                {child.label}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
 
         {/* CTA Buttons
         <div className="hidden xl:flex items-center gap-2.5 shrink-0">

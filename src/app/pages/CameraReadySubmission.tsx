@@ -5,45 +5,16 @@ import {
   CheckCircle2,
   AlertCircle,
 } from "lucide-react";
+import PageRenderer from "../components/PageRenderer";
+import PageTitle from "../components/PageTitle";
 
 export default function CameraReadySubmission() {
   return (
-    <div className="pt-16">
-      {/* Hero Section */}
-      <section className="relative h-[400px] overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkb2N1bWVudCUyMHN1Ym1pc3Npb24lMjBmaW5hbHxlbnwxfHx8fDE3NDI0MjgwMDB8MA&ixlib=rb-4.1.0&q=80&w=1080"
-            alt="Camera Ready Submission"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-deep/90" />
-        </div>
-
-        <div className="relative max-w-[1200px] mx-auto px-6 h-full flex flex-col items-center justify-center text-center">
-          <h1
-            className="text-[56px] font-bold italic text-white mb-4"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Camera Ready Submission
-          </h1>
-          <div className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
-            <Calendar size={18} className="text-cipher" />
-            <span
-              className="text-[15px] font-semibold text-cipher"
-              style={{ fontFamily: "var(--font-mono)" }}
-            >
-              September 25, 2026
-            </span>
-            <span
-              className="text-[15px] text-white/80"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              Submission Deadline
-            </span>
-          </div>
-        </div>
-      </section>
+    <PageRenderer
+      slug="camera-ready-submission"
+      fallback={
+        <div>
+          <PageTitle title="Camera Ready Submission" />
 
       {/* Introduction */}
       <section className="bg-warm py-12">
@@ -97,7 +68,7 @@ export default function CameraReadySubmission() {
                       className="text-[15px] text-slate leading-relaxed"
                       style={{ fontFamily: "var(--font-body)" }}
                     >
-                      For every manuscript in the VCRIS 2025 Proceedings,
+                      For every manuscript in the VCRIS 2026 Proceedings,
                       copyright consent must be given by the authors. The signed
                       copyright consent form of each accepted paper{" "}
                       <span className="font-semibold text-ink">
@@ -182,7 +153,7 @@ export default function CameraReadySubmission() {
                     Please review the requirements list and the detailed
                     instructions that follow.{" "}
                     <span className="font-semibold text-ink">
-                      IEEE & VCRIS 2025 Submission Requirements
+                      IEEE & VCRIS 2026 Submission Requirements
                     </span>{" "}
                     - All Camera-ready Submissions must:
                   </p>
@@ -247,7 +218,7 @@ export default function CameraReadySubmission() {
                         style={{ fontFamily: "var(--font-body)" }}
                       >
                         Adhere to the author's instructions for submission on
-                        the VCRIS 2025 website
+                        the VCRIS 2026 website
                       </p>
                     </div>
 
@@ -290,8 +261,8 @@ export default function CameraReadySubmission() {
                       publication chairs to plagiarism detection software to
                       identify papers with potentially plagiarized material
                       before they are posted. Any paper that does not adhere to
-                      IEEE and the VCRIS 2025 requirements will be refused for
-                      publication in the VCRIS 2025 proceedings.
+                      IEEE and the VCRIS 2026 requirements will be refused for
+                      publication in the VCRIS 2026 proceedings.
                     </p>
                   </div>
                 </div>
@@ -613,6 +584,8 @@ export default function CameraReadySubmission() {
         </div>
       </section>
        */}
-    </div>
+          {/* Hero Section */}
+        </div>
+      } />
   );
 }

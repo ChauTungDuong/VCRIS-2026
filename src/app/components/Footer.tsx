@@ -41,49 +41,9 @@ const resolveSponsorLogo = (logoFileName: string) => {
   return "";
 };
 
-const sponsorsList: SponsorItem[] = Object.values(sponsorsData).flat();
-const marqueeSponsors = [...sponsorsList, ...sponsorsList];
-
 export default function Footer() {
   return (
     <div>
-      {/* Sponsors Marquee */}
-      <div className="mb-10">
-        <div className="sponsors-marquee">
-          <div className="sponsors-marquee__track" aria-label="Sponsors and partners">
-            {marqueeSponsors.map((sponsor, idx) => {
-              const logoUrl = resolveSponsorLogo(sponsor.logo);
-
-              return (
-                <a
-                  key={`${sponsor.title}-${idx}`}
-                  href={sponsor.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="h-[64px] min-w-[220px] rounded-xl border border-white/10 bg-white/[0.03] px-4 flex items-center justify-center hover:border-cipher/50 transition-colors duration-200"
-                  title={sponsor.title}
-                >
-                  {logoUrl ? (
-                    <img
-                      src={logoUrl}
-                      alt={sponsor.title}
-                      className="max-h-10 w-auto object-contain"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <span
-                      className="text-[12px] text-white/70 text-center"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
-                      {sponsor.title}
-                    </span>
-                  )}
-                </a>
-              );
-            })}
-          </div>
-        </div>
-      </div>
       <footer className="bg-[#060E1A] text-white">
         <div className="max-w-[1200px] mx-auto px-6 pt-18 pb-8">
           {/* Top Section */}
@@ -262,7 +222,7 @@ export default function Footer() {
               className="text-[12px] text-white/30"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              © 2025 VCRIS · Academy of Cryptography Techniques, Vietnam
+              © 2026 VCRIS · Academy of Cryptography Techniques, Vietnam
             </p>
             <p
               className="text-[12px] text-white/30"
