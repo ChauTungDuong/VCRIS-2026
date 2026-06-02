@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -45,7 +45,7 @@ model PageTranslation {
   pageId   Int    @map("page_id")
   locale   String @default("en") @db.VarChar(10)
   title    String
-  content  Json   @db.Json
+  content  Json
 
   page Page @relation(fields: [pageId], references: [id], onDelete: Cascade)
 
@@ -58,7 +58,7 @@ model PageVersion {
   pageId    Int      @map("page_id")
   locale    String   @default("en") @db.VarChar(10)
   title     String
-  content   Json     @db.Json
+  content   Json
   version   Int
   createdAt DateTime @default(now()) @map("created_at")
   createdBy String?  @map("created_by")
@@ -73,7 +73,7 @@ model PageVersion {
 model SiteConfig {
   id    Int    @id @default(autoincrement())
   key   String @unique @db.VarChar(100)
-  value Json   @db.Json
+  value Json
 
   @@map("site_configs")
 }
