@@ -1,29 +1,42 @@
-FROM node:20-alpine
+FROM node:20-alpine AS deps
 
 WORKDIR /app
 
-# Copy package files
 COPY package*.json ./
-
-# Install dependencies
 RUN npm ci
 
-# Copy prisma schema
+FROM node:20-alpine AS build
+
+WORKDIR /app
+
+COPY package*.json ./
+COPY --from=deps /app/node_modules ./node_modules
 COPY prisma ./prisma
+COPY tsconfig.json ./
+COPY src ./src
 
-# Generate Prisma client
 RUN npx prisma generate
-
-# Copy source code
-COPY . .
-
-# Build TypeScript
 RUN npm run build
 
-# Create uploads directory
-RUN mkdir -p uploads
+FROM node:20-alpine AS production
+
+WORKDIR /app
+
+ENV NODE_ENV=production
+
+RUN addgroup -S nodejs && adduser -S nodejs -G nodejs
+
+COPY package*.json ./
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/prisma ./prisma
+COPY --from=build /app/src ./src
+COPY --from=build /app/tsconfig.json ./tsconfig.json
+
+RUN mkdir -p /app/uploads && chown -R nodejs:nodejs /app
+
+USER nodejs
 
 EXPOSE 4000
 
-# Run migrations, seed, then start server
-CMD ["sh", "-c", "npx prisma db push --accept-data-loss && npx prisma db seed && node dist/index.js"]
+CMD ["sh", "-c", "npx prisma db push && npx prisma db seed && node dist/index.js"]
