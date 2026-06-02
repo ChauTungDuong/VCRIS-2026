@@ -1,6 +1,7 @@
 import { MapPin, Plane, Train, Car, ExternalLink } from "lucide-react";
 import { venue, CONF } from "../data/conferenceData";
 import PageRenderer from "../components/PageRenderer";
+import PageTitle from "../components/PageTitle";
 
 export default function Venue() {
   const venueImages = [
@@ -16,33 +17,8 @@ export default function Venue() {
     <PageRenderer
       slug="venue"
       fallback={
-        <div className="pt-16">
-          {/* Hero with Venue Photo */}
-      <section className="relative h-[500px] overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1758413149178-95efe71954fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhY2FkZW1pYyUyMGJ1aWxkaW5nJTIwYXJjaGl0ZWN0dXJlJTIwSGFub2l8ZW58MXx8fHwxNzcyNzY2NDAyfDA&ixlib=rb-4.1.0&q=80&w=1080"
-          alt="Academy of Cryptography Techniques"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-deep/90 via-deep/40 to-transparent" />
-
-        <div className="absolute bottom-12 left-0 right-0">
-          <div className="max-w-[1200px] mx-auto px-6">
-            <h1
-              className="text-[56px] font-bold italic text-white mb-2"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Venue & Travel
-            </h1>
-            <p
-              className="text-[18px] text-white/80"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              Academy of Cryptography Techniques · {CONF.location}
-            </p>
-          </div>
-        </div>
-      </section>
+        <div>
+          <PageTitle title="Venue & Travel" />
 
       {/* Venue Details */}
       <section className="bg-white py-24">

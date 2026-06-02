@@ -1,10 +1,10 @@
-import { TopImage } from "../components/TopImage";
+import PageTitle from "../components/PageTitle";
 import PageRenderer from "../components/PageRenderer";
 
 export default function Program() {
   const fallbackContent = (
-    <div className="pt-16">
-      <TopImage title="Conference Program" />
+    <div>
+      <PageTitle title="Conference Program" />
 
       <section className="bg-white py-24">
         <div className="max-w-[1200px] mx-auto px-6 text-center">

@@ -1,19 +1,13 @@
 import PageRenderer from "../components/PageRenderer";
+import PageTitle from "../components/PageTitle";
 
 export default function Registration() {
   return (
     <PageRenderer
       slug="registration"
       fallback={
-        <div className="pt-16">
-          {/* Hero */}
-      <section className="relative h-[300px] bg-deep">
-        <div className="max-w-[1200px] mx-auto px-6 h-full flex flex-col items-center justify-center text-center">
-          <h1 className="text-[56px] font-bold italic text-white" style={{ fontFamily: 'var(--font-display)' }}>
-            Registration
-          </h1>
-        </div>
-      </section>
+        <div>
+          <PageTitle title="Registration" />
 
       {/* Pricing Table */}
       <section className="bg-warm py-24">
@@ -23,7 +17,7 @@ export default function Registration() {
               Registration Fees
             </h2>
             <p className="text-[16px] text-slate" style={{ fontFamily: 'var(--font-body)' }}>
-              Early bird rates available until September 30, 2025
+              Early bird rates available until September 30, 2026
             </p>
           </div>
 
@@ -32,8 +26,8 @@ export default function Registration() {
             <div className="space-y-4" style={{ fontFamily: 'var(--font-body)' }}>
               <div className="text-[15px]">
                 <span className="font-bold text-ink">Registration is handled at: </span>
-                <a href="https://vcris2025.websitehoinghi.com/" target="_blank" rel="noopener noreferrer" className="text-cipher font-semibold hover:underline">
-                  https://vcris2025.websitehoinghi.com/
+                <a href="https://vcris2026.websitehoinghi.com/" target="_blank" rel="noopener noreferrer" className="text-cipher font-semibold hover:underline">
+                  https://vcris2026.websitehoinghi.com/
                 </a>
               </div>
               <div className="text-[15px]">
@@ -63,7 +57,7 @@ export default function Registration() {
                 <tr>
                   <td rowSpan={12} className="border border-gray-300 px-4 py-3 text-center font-bold text-ink bg-white" style={{ verticalAlign: 'middle', fontSize: '18px' }}>Regular Registration</td>
                   <td rowSpan={6} className="border border-gray-300 px-4 py-3 text-center font-bold text-ink bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '16px' }}>IEEE Member</td>
-                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>Before Sep 30, 2025</td>
+                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>Before Sep 30, 2026</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">RM:B1</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">250 USD</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">01</td>
@@ -82,7 +76,7 @@ export default function Registration() {
                 </tr>
                 {/* REGULAR REGISTRATION - ROW 4 */}
                 <tr>
-                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>After Sep 30, 2025</td>
+                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>After Sep 30, 2026</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">RM:A1</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">300 USD</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">01</td>
@@ -102,7 +96,7 @@ export default function Registration() {
                 {/* REGULAR REGISTRATION - ROW 7 */}
                 <tr>
                   <td rowSpan={6} className="border border-gray-300 px-4 py-3 text-center font-bold text-ink bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '16px' }}>Non-IEEE Member</td>
-                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>Before Sep 30, 2025</td>
+                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>Before Sep 30, 2026</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">RN:B1</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">300 USD</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">01</td>
@@ -121,7 +115,7 @@ export default function Registration() {
                 </tr>
                 {/* REGULAR REGISTRATION - ROW 10 */}
                 <tr>
-                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>After Sep 30, 2025</td>
+                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>After Sep 30, 2026</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">RN:A1</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">350 USD</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">01</td>
@@ -143,7 +137,7 @@ export default function Registration() {
                 <tr>
                   <td rowSpan={12} className="border border-gray-300 px-4 py-3 text-center font-bold text-ink bg-white" style={{ verticalAlign: 'middle', fontSize: '18px' }}>Student Conference Registration</td>
                   <td rowSpan={6} className="border border-gray-300 px-4 py-3 text-center font-bold text-ink bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '16px' }}>IEEE Member</td>
-                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>Before Sep 30, 2025</td>
+                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>Before Sep 30, 2026</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">SM:B1</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">150 USD</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">01</td>
@@ -162,7 +156,7 @@ export default function Registration() {
                 </tr>
                 {/* STUDENT CONFERENCE REGISTRATION - ROW 16 */}
                 <tr>
-                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>After Sep 30, 2025</td>
+                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>After Sep 30, 2026</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">SM:A1</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">200 USD</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">01</td>
@@ -182,7 +176,7 @@ export default function Registration() {
                 {/* STUDENT CONFERENCE REGISTRATION - ROW 19 */}
                 <tr>
                   <td rowSpan={6} className="border border-gray-300 px-4 py-3 text-center font-bold text-ink bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '16px' }}>Non-IEEE Member</td>
-                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>Before Sep 30, 2025</td>
+                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>Before Sep 30, 2026</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">SN:B1</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">180 USD</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">01</td>
@@ -201,7 +195,7 @@ export default function Registration() {
                 </tr>
                 {/* STUDENT CONFERENCE REGISTRATION - ROW 22 */}
                 <tr>
-                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>After Sep 30, 2025</td>
+                  <td rowSpan={3} className="border border-gray-300 px-4 py-3 text-center text-slate bg-gray-50" style={{ verticalAlign: 'middle', fontSize: '15px' }}>After Sep 30, 2026</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">SN:A1</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">230 USD</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-ink">01</td>
@@ -322,7 +316,7 @@ export default function Registration() {
 
           <p className="text-[13px] text-slate italic text-center mt-8" style={{ fontFamily: 'var(--font-body)' }}>
             Need an invitation letter for visa purposes?{' '}
-            <a href="mailto:registration@vcris2025.org" className="text-cipher hover:underline">
+            <a href="mailto:registration@vcris2026.org" className="text-cipher hover:underline">
               Contact us →
             </a>
           </p>

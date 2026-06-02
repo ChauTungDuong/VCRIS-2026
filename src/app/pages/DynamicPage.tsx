@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Render } from "@measured/puck";
 import { puckConfig } from "../admin/components/PuckComponents";
-import TopImage from "../components/TopImage";
+import PageTitle from "../components/PageTitle";
 
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:4000/api/v1";
 
@@ -47,24 +47,8 @@ export default function DynamicPage() {
 
   if (error || !pageData) {
     return (
-      <div className="pt-16">
-        <TopImage
-          title={
-            <div className="relative max-w-[1200px] mx-auto px-6 h-full flex items-center justify-center">
-              <h1
-                className="text-white text-center"
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: 48,
-                  fontWeight: 700,
-                  fontStyle: "italic",
-                }}
-              >
-                Page Not Found
-              </h1>
-            </div>
-          }
-        />
+      <div>
+        <PageTitle title="Page Not Found" />
         <div style={{
           maxWidth: 600, margin: "60px auto", textAlign: "center",
           fontFamily: "var(--font-body)", padding: "0 24px",

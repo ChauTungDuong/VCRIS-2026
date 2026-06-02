@@ -4,8 +4,8 @@ import {
   type CommitteePerson,
   type CommitteeGroup,
 } from "../data/conferenceData";
-import { TopImage } from "../components/TopImage";
 import PageRenderer from "../components/PageRenderer";
+import PageTitle from "../components/PageTitle";
 
 function PersonCard({ person }: { person: CommitteePerson }) {
   return (
@@ -80,21 +80,12 @@ export default function OrganizingCommittees() {
     <PageRenderer
       slug="organizing-committees"
       fallback={
-        <div className="pt-16">
-          <TopImage title="Organizing Committees" />
+        <div>
+          <PageTitle title="Organizing Committees" />
 
       {/* Organizing Bodies */}
       <section className="bg-warm pt-16 pb-10">
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="text-center mb-10">
-            <h2
-              className="text-[40px] font-bold italic text-ink mb-4"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Organizing Bodies
-            </h2>
-          </div>
-
           <div className="grid grid-cols-3 gap-6">
             {/* Organizer */}
             <div className="bg-white border border-rule rounded-2xl p-7">

@@ -1,173 +1,154 @@
-import { keynoteSpeakers } from "../data/conferenceData";
 import PageRenderer from "../components/PageRenderer";
+import PageTitle from "../components/PageTitle";
 
-const tbaSlots = [
+const keynoteSpeakersData = [
   {
-    name: "DR. WOUTER CASTRYCK",
-    role: "Research Expert",
-    institution: "COSIC, KU Leuven",
-    talk: "Isogeny-based cryptography: an overview of the current landscape",
-    image: "",
-    bio: "Dr. Wouter Castryck is a renowned researcher at KU Leuven specializing in the computational aspects of algebraic geometry and number theory. A recipient of best paper awards at Eurocrypt 2023 and Crypto 2020, his work focuses on post-quantum cryptographic applications, including isogeny-based, multivariate, and lattice-based cryptography."
-  },
-  {
-    name: "DR. FLORIAN CAULLERY",
-    role: "Director SoC Security | Cryptographer",
-    institution: "Technology Innovation Institute (TII)",
-    talk: "One Chip, Many Engines: Accelerating and Securing cryptographic algorithms on modern SoCs",
-    image: "",
-    bio: "Dr. Florian Caullery is a cryptographer at the Secure Systems Research Center in Abu Dhabi with over a decade of experience spanning theoretical and applied cybersecurity. Having worked with industry leaders like Qualcomm and ST-Microelectronics, his expertise focuses on post-quantum cryptography, side-channel resistance, and the integration of secure cryptographic workloads within heterogeneous System-on-Chip (SoC) architectures."
-  },
+    name: "Anupam Chattopadhyay",
+    role: "Associate Professor",
+    institution: "College of Computing and Data Science, Nanyang Technological University, Singapore",
+    research: "Computing Architecture, Electronic Design Automation, AI Security, Quantum Safe Systems, Emerging Technologies",
+    talk: "The Brave New (Quantum) World",
+    image: "/images/anh.png", // Assuming this is available
+    abstract: "Major advances across all the design stack of Quantum computing – algorithm, software, and hardware – has brought us to a realm where, it is impossible to ignore the effect of Quantum computing in the world around us. We will discuss two aspects of Quantum computing in this talk. First, efficient circuit design and automation challenges – and how we can borrow some knowledge from classical computing for that. We will conclude this part with case studies on experimental Quantum computers. Second, the most important practical threat from a large-scale Quantum computer is on public-key cryptography. This is countered by developing and standardizing Post-Quantum Cryptography (PQC) primitives. We will talk about various PQC candidates and the perils of migration to a Quantum-safe environment.",
+    bio: [
+      "Anupam Chattopadhyay received his B.E. degree from Jadavpur University, India, MSc. from ALaRI, Switzerland and PhD from RWTH Aachen in 2000, 2002 and 2008 respectively. From 2008 to 2009, he worked as a Member of Consulting Staff in CoWare R&D, Noida, India. From 2010 to 2014, he led the MPSoC Architectures Research Group in RWTH Aachen, Germany as a Junior Professor. Since September 2014, Anupam was appointed as an Assistant Professor in College of Computing & Data Science, NTU, where he got promoted to Associate Professor with Tenure from August, 2019. In the past, he held visiting positions at Politecnico di Torino, Italy; EPFL, Switzerland; Technion, Israel; Kyoto University, Japan and Indian Statistical Institute, Kolkata.",
+      "Anupam currently heads a team of 20+ researchers, overseeing projects in computer architectures, security, design automation and emerging technologies. His research advances have been reported in more than 300 conference/journal papers (ACM/IEEE/Springer), multiple research monographs and edited books (CRC, Springer) and open-access forums.",
+      "Anupam regularly serves in the TPCs of top conferences (DAC, DATE, ICCAD, ASP-DAC, CHES), reviews journal/ conference articles and presented multiple invited seminars/tutorials in prestigious venues. He is an Associate Editor of IEEE TCAD, IACR CHES, ACM TECS, served as the Associate Editor of IEEE ESL, lead editor of Springer Handbook of Computer Architectures, and editor of Springer book series on Computer Architecture and Design Methodologies. He is fellow of JSPS, fellow of Intercontinental Academia, senior member of ACM and senior member of IEEE."
+    ],
+    awards: [
+      "Nanyang Award for Innovation and Entrepreneurship, 2025.",
+      "Best Poster Award in AsiaCCS, 2025.",
+      "Best Paper Award in Cryptographic Hardware and Embedded Systems (CHES), 2025.",
+      "Best Paper Award in VLSI-SoC Conference, 2024.",
+      "ACM TODAES Distinguished Reviewer, 2022.",
+      "IEEE CEDA Distinguished Lecturer, 2022-2023.",
+      "Best Paper Award in International Conference on Security, Privacy and Applied Cryptographic Engineering (SPACE), 2020.",
+      "Nripendra Nath Biswas Special Mention Recognition in ACM/IEEE VLSI Design Conference, 2020.",
+      "Nominated for Best Paper Award in ACM/IEEE VLSI Design Conference, 2018.",
+      "Nominated for Best Interactive Presentation (IP) Award in ACM/IEEE DATE, 2016.",
+      "Recipient of Borchers’ plaque for outstanding PhD dissertation from RWTH Aachen, 2008."
+    ]
+  }
 ];
 
 export default function KeynoteSpeakers() {
-  const speakers = [...keynoteSpeakers, ...tbaSlots];
-
   return (
     <PageRenderer
       slug="keynote-speakers"
       fallback={
-        <div className="pt-16">
-          {/* Hero */}
-      <section className="relative h-[400px] overflow-hidden bg-deep">
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage:
-                "linear-gradient(45deg, transparent 45%, var(--cipher) 45%, var(--cipher) 55%, transparent 55%)",
-              backgroundSize: "20px 20px",
-            }}
-          />
-        </div>
+        <div>
+          <PageTitle title="Keynote Speakers" />
 
-        <div className="relative max-w-[1200px] mx-auto px-6 h-full flex flex-col items-center justify-center text-center">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-2 h-2 rounded-full bg-cipher" />
-            <span
-              className="text-[11px] font-semibold text-cipher uppercase tracking-[3px]"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              VCRIS 2025
-            </span>
-          </div>
-          <h1
-            className="text-[56px] font-bold italic text-white mb-4"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Keynote Speakers
-          </h1>
-          <p
-            className="text-[18px] text-white/70 max-w-[600px]"
-            style={{ fontFamily: "var(--font-body)" }}
-          >
-            World-renowned experts sharing cutting-edge research and insights in
-            cryptography and information security
-          </p>
-        </div>
-      </section>
-
-      {/* Speakers Grid */}
-      <section className="bg-white py-24">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="grid grid-cols-3 gap-8">
-            {speakers.map((speaker, idx) => (
-              <div key={idx} className="group">
-                <div
-                  className={`bg-white border rounded-2xl p-8 transition-all duration-200 hover:border-cipher hover:shadow-lg hover:-translate-y-1 ${speaker.name === "Speaker TBA" ? "border-dashed border-rule opacity-60" : "border-rule"}`}
-                >
-                  <div className="flex flex-col items-center">
-                    <div className="w-[88px] h-[88px] rounded-full overflow-hidden ring-2 ring-cipher ring-offset-4 mb-4 bg-cipher/10 flex items-center justify-center">
-                      {speaker.image ? (
-                        <img
-                          src={speaker.image}
-                          alt={speaker.name}
-                          className="w-full h-full object-cover"
-                        />
-                      ) : (
-                        <span className="text-[32px] text-cipher/30">?</span>
-                      )}
+          {/* Speakers */}
+          <section className="bg-white py-12">
+            <div className="max-w-[1200px] mx-auto px-6 space-y-24">
+              {keynoteSpeakersData.map((speaker, idx) => (
+                <div key={idx} className="flex flex-col gap-10">
+                  {/* Top: Image and Info */}
+                  <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+                    {/* Image */}
+                    <div className="w-full md:w-[280px] lg:w-[320px] flex-shrink-0">
+                      <div className="overflow-hidden">
+                        {speaker.image ? (
+                          <img
+                            src={speaker.image}
+                            alt={speaker.name}
+                            className="w-full h-auto object-cover rounded-md shadow-md"
+                          />
+                        ) : (
+                          <div className="w-full aspect-[4/5] bg-cipher/10 rounded-md flex items-center justify-center">
+                            <span className="text-cipher/30 text-[48px]">?</span>
+                          </div>
+                        )}
+                      </div>
                     </div>
 
-                    <h3
-                      className="text-[18px] font-semibold text-ink text-center mb-1"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
-                      {speaker.name}
-                    </h3>
-
-                    <p
-                      className="text-[13px] text-slate text-center mb-1"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
-                      {speaker.role}
-                    </p>
-
-                    <p
-                      className="text-[13px] font-medium text-cipher text-center mb-4"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
-                      {speaker.institution}
-                    </p>
-
-                    <div className="px-3 py-1.5 rounded-full bg-cipher/10 border border-cipher/30 mb-4 w-full">
+                    {/* Info */}
+                    <div className="flex-1 flex flex-col justify-center text-center md:pt-4">
+                      <h3
+                        className="text-[22px] md:text-[26px] font-bold text-blue-700 mb-2"
+                        style={{ fontFamily: "var(--font-display)" }}
+                      >
+                        {speaker.role}
+                      </h3>
+                      <h2
+                        className="text-[28px] md:text-[34px] font-bold text-blue-800 mb-4"
+                        style={{ fontFamily: "var(--font-display)" }}
+                      >
+                        {speaker.name}
+                      </h2>
                       <p
-                        className="text-[12px] font-medium text-cipher text-center"
+                        className="text-[16px] md:text-[18px] text-blue-700 font-medium mb-8 max-w-2xl mx-auto"
                         style={{ fontFamily: "var(--font-body)" }}
                       >
-                        {speaker.talk}
+                        {speaker.institution}
+                      </p>
+                      <p
+                        className="text-[15px] text-slate-700 max-w-3xl mx-auto"
+                        style={{ fontFamily: "var(--font-body)" }}
+                      >
+                        <span className="font-bold text-slate-800">Research areas:</span> {speaker.research}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Bottom: Title, Abstract, Bio */}
+                  <div className="space-y-6">
+                    <h3 className="text-[18px] md:text-[20px] font-bold text-ink" style={{ fontFamily: "var(--font-display)" }}>
+                      Title: {speaker.talk}
+                    </h3>
+                    
+                    <div>
+                      <h4 className="text-[18px] font-bold text-ink mb-3" style={{ fontFamily: "var(--font-body)" }}>
+                        Abstract
+                      </h4>
+                      <p className="text-[15px] text-slate-800 leading-relaxed text-justify indent-8" style={{ fontFamily: "var(--font-body)" }}>
+                        {speaker.abstract}
                       </p>
                     </div>
 
-                    <p
-                      className="text-[14px] text-slate text-center leading-relaxed"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
-                      {speaker.bio}
-                    </p>
+                    <div>
+                      <h4 className="text-[18px] font-bold text-ink mb-3" style={{ fontFamily: "var(--font-body)" }}>
+                        Bio
+                      </h4>
+                      <div className="space-y-3">
+                        {speaker.bio.map((paragraph, pIdx) => (
+                          <p key={pIdx} className="text-[15px] text-slate-800 leading-relaxed text-justify indent-8" style={{ fontFamily: "var(--font-body)" }}>
+                            {paragraph}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="text-[18px] font-bold text-ink mb-3" style={{ fontFamily: "var(--font-body)" }}>
+                        Awards
+                      </h4>
+                      <div className="space-y-3">
+                        {speaker.awards.map((award, aIdx) => (
+                          <p key={aIdx} className="text-[15px] text-slate-800 leading-relaxed text-justify indent-8" style={{ fontFamily: "var(--font-body)" }}>
+                            {award}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+              ))}
+            </div>
+          </section>
 
-      {/* CTA Section */}
-      <section className="bg-warm py-16">
-        <div className="max-w-[1200px] mx-auto px-6 text-center">
-          <h3
-            className="text-[36px] font-bold italic text-ink mb-4"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Join Us in Hanoi
-          </h3>
-          <p
-            className="text-[16px] text-slate mb-8"
-            style={{ fontFamily: "var(--font-body)" }}
-          >
-            Don't miss the opportunity to learn from these distinguished
-            speakers
-          </p>
-          <div className="flex gap-4 justify-center">
-            <a
-              href="/registration"
-              className="px-8 py-4 rounded-full bg-cipher text-white text-[15px] font-semibold hover:shadow-lg hover:shadow-cipher/40 transition-all"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              Register Now
-            </a>
-            <a
-              href="/program"
-              className="px-8 py-4 rounded-full border border-ink text-ink text-[15px] font-semibold hover:bg-ink hover:text-white transition-all"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              View Full Program
-            </a>
-          </div>
+          {/* Special Announcement */}
+          <section className="bg-cipher py-16 border-t border-cipher text-white">
+             <div className="max-w-[1200px] mx-auto px-6 text-center">
+                <h3 className="text-[24px] font-bold mb-4" style={{ fontFamily: "var(--font-display)" }}>Announcement</h3>
+                <p className="text-[16px]" style={{ fontFamily: "var(--font-body)" }}>
+                  Several journal special issues related to VCRIS 2026 will be announced in due course.
+                </p>
+             </div>
+          </section>
         </div>
-      </section>
-    </div>
-  } />
+      }
+    />
   );
 }

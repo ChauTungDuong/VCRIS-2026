@@ -1,6 +1,7 @@
 import { MapPin, Bus, Car, Footprints, ExternalLink } from "lucide-react";
 import { CONF } from "../data/conferenceData";
 import PageRenderer from "../components/PageRenderer";
+import PageTitle from "../components/PageTitle";
 
 export default function Accommodation() {
   const accommodations = [
@@ -32,32 +33,8 @@ export default function Accommodation() {
     <PageRenderer
       slug="accommodation"
       fallback={
-        <div className="pt-16">
-          {/* Hero */}
-      <section className="relative h-[400px] overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1571896349842-332ce143f2c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw3fHxob3RlbHxlbnwwfHx8fDE3NzI3NjY0MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-          alt="Accommodation"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-deep/90 via-deep/40 to-transparent" />
-        <div className="absolute bottom-12 left-0 right-0">
-          <div className="max-w-[1200px] mx-auto px-6">
-            <h1
-              className="text-[56px] font-bold italic text-white mb-2"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Accommodation
-            </h1>
-            <p
-              className="text-[18px] text-white/80"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              Recommended Hotels for {CONF.name} Attendees
-            </p>
-          </div>
-        </div>
-      </section>
+        <div>
+          <PageTitle title="Accommodation" />
 
       {/* Accommodation List */}
       <section className="bg-white py-24">
