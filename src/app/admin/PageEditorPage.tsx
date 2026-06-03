@@ -414,8 +414,9 @@ export default function PageEditorPage() {
               <div
                 className="elementor-left-panel"
                 style={{
-                  width: 290, flexShrink: 0,
-                  display: "flex", flexDirection: "column",
+                  width: 320, minWidth: 260, maxWidth: 600, flexShrink: 0,
+                  resize: "horizontal",
+                  display: "block",
                   height: "100%", overflow: "hidden",
                   borderRight: "1px solid rgba(255,255,255,0.07)",
                   background: "#132336",

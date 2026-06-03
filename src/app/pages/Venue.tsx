@@ -1,215 +1,72 @@
-import { MapPin, Plane, Train, Car, ExternalLink } from "lucide-react";
-import { venue, CONF } from "../data/conferenceData";
-import PageRenderer from "../components/PageRenderer";
-import PageTitle from "../components/PageTitle";
+import React from 'react';
+import { venue } from "../data/conferenceData";
+import { MapPin, Building, Info } from "lucide-react";
 
 export default function Venue() {
-  const venueImages = [
-    "https://vcris.org/wp-content/uploads/2024/03/2022-11-08-1024x672.jpg",
-    "https://vcris.org/wp-content/uploads/2024/03/z5027586123041_31223954bd029175686cbedd54c930df-1024x768.jpg",
-    "https://vcris.org/wp-content/uploads/2024/01/Toa-nha-Ban-co-yeu-chinh-phu-4.jpg",
-    "https://vcris.org/wp-content/uploads/2024/03/z5027586097524_65d422081545cf19ec03fccfe8cde563-1024x768.jpg",
-    "https://vcris.org/wp-content/uploads/elementor/thumbs/khu-nha-o-can-bo-nhan-vien-ban-co-yeu-chinh-phu-le-van-luong1589905471-r2p4pj7zyykiqzh6et3cm7zzba6zyl03ry1vhe2qkw.jpg",
-    "https://vcris.org/wp-content/uploads/2024/03/z5027586073243_788c6f558db94688caaa268000a081d6-1024x768.jpg"
-  ];
-
   return (
-    <PageRenderer
-      slug="venue"
-      fallback={
-        <div>
-          <PageTitle title="Venue & Travel" />
+    <div className="w-full">
+        <h1
+              className="text-[44px] font-bold italic text-ink leading-[1.15] mb-12 text-center"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Địa điểm
+            </h1>
 
-      {/* Venue Details */}
-      <section className="bg-white py-24">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="grid grid-cols-2 gap-16">
-            {/* Map */}
-            <div className="rounded-2xl overflow-hidden border border-rule h-[500px]">
-              <iframe
-                src={venue.mainVenue.mapEmbed}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-
-            {/* Info */}
-            <div>
-              <h2
-                className="text-[36px] font-bold italic text-ink mb-6"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                Academy of Cryptography Techniques
-              </h2>
-
-              <div className="space-y-6 mb-8">
-                <div className="flex items-start gap-3">
-                  <MapPin
-                    size={20}
-                    className="text-cipher flex-shrink-0 mt-1"
-                  />
-                  <div>
-                    <p
-                      className="text-[15px] text-ink font-medium mb-1"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
-                      Address
-                    </p>
-                    <p
-                      className="text-[15px] text-slate"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
-                      {venue.mainVenue.address}
-                    </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <div className="space-y-8" style={{ fontFamily: "var(--font-body)" }}>
+                <section className="bg-paper p-8 rounded-2xl border border-rule">
+                  <div className="flex items-center gap-3 mb-6">
+                    <MapPin className="text-cipher w-8 h-8" />
+                    <h2 className="text-[24px] font-bold text-ink">Địa điểm tổ chức</h2>
                   </div>
-                </div>
+                  <p className="text-[18px] font-semibold text-ink mb-2">{venue.mainVenue.name}</p>
+                  <p className="text-[18px] text-slate">{venue.mainVenue.address}</p>
+                </section>
 
-                <div>
-                  <p
-                    className="text-[15px] text-ink font-medium mb-3"
-                    style={{ fontFamily: "var(--font-body)" }}
-                  >
-                    Getting There
-                  </p>
-
-                  <div className="space-y-3">
-                    <div className="flex items-start gap-3">
-                      <Plane
-                        size={18}
-                        className="text-cipher flex-shrink-0 mt-0.5"
-                      />
-                      <p
-                        className="text-[14px] text-slate"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
-                        <span className="font-medium text-ink">
-                          From Airport:
-                        </span>{" "}
-                        30 minutes by taxi from Noi Bai International Airport
-                        (HAN)
-                      </p>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <Car
-                        size={18}
-                        className="text-cipher flex-shrink-0 mt-0.5"
-                      />
-                      <p
-                        className="text-[14px] text-slate"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
-                        <span className="font-medium text-ink">By Taxi:</span>{" "}
-                        Grab and traditional taxis readily available throughout
-                        Hanoi
-                      </p>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <Train
-                        size={18}
-                        className="text-cipher flex-shrink-0 mt-0.5"
-                      />
-                      <p
-                        className="text-[14px] text-slate"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
-                        <span className="font-medium text-ink">
-                          Public Transit:
-                        </span>{" "}
-                        Bus routes 18, 34, and 86 stop nearby
-                      </p>
-                    </div>
+                <section className="bg-paper p-8 rounded-2xl border border-rule">
+                  <div className="flex items-center gap-3 mb-6">
+                    <Building className="text-cipher w-8 h-8" />
+                    <h2 className="text-[24px] font-bold text-ink">Khu vực tổ chức</h2>
                   </div>
-                </div>
+                  <ul className="space-y-4">
+                    {venue.areas.map((area, idx) => (
+                      <li key={idx} className="flex flex-col gap-1">
+                        <span className="text-[18px] font-semibold text-ink">{area.name}</span>
+                        <span className="text-[17px] text-slate flex items-start gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-slate mt-2 shrink-0"></span>
+                          {area.location}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+
+                <section className="bg-[#e6f4f8] p-8 rounded-2xl border border-[#b0d9e6]">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Info className="text-cipher w-6 h-6" />
+                    <h2 className="text-[20px] font-bold text-[#0b2740]">Thông tin dành cho đại biểu</h2>
+                  </div>
+                  <ul className="list-disc pl-5 space-y-2 text-[17px] text-[#0b2740]">
+                    {venue.instructions.map((inst, idx) => (
+                      <li key={idx}>{inst}</li>
+                    ))}
+                  </ul>
+                </section>
               </div>
 
-              <a
-                href={venue.mainVenue.mapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-cipher text-white text-[14px] font-semibold hover:shadow-lg hover:shadow-cipher/40 transition-all"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                View on Google Maps
-                <ExternalLink size={16} />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Venue Photos */}
-      <section className="bg-warm py-24">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <h2
-            className="text-[44px] font-bold italic text-ink text-center mb-12"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Photos of the Academy
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {venueImages.map((src, idx) => (
-              <div 
-                key={idx} 
-                className="h-48 md:h-64 rounded-2xl overflow-hidden group shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
-              >
-                <img
-                  src={src}
-                  alt={`Venue photo ${idx + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+              <div className="h-full min-h-[400px] rounded-2xl overflow-hidden border border-rule shadow-sm">
+                <iframe
+                  src={venue.mainVenue.mapEmbed}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, minHeight: "400px" }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Map of Academy of Cryptography Techniques"
+                ></iframe>
               </div>
-            ))}
           </div>
         </div>
-      </section>
-
-      {/* About The Academy */}
-      <section className="bg-deep py-24">
-        <div className="max-w-[1200px] mx-auto px-6 text-center text-white">
-          <h2
-            className="text-[44px] font-bold italic mb-6"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Academy of Cryptography Techniques
-          </h2>
-          <div className="max-w-[900px] mx-auto text-left space-y-4">
-            <p
-              className="text-[16px] text-white/80 leading-relaxed italic"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              The Academy of Cryptography Techniques is the sole institution in Vietnam dedicated to both undergraduate and postgraduate education, as well as research in cryptographic science and technology for the Vietnam Government Information Security Commission (VGISC). Presently, the Academy offers three major programs: Information Security, Information Technology, and Telecommunication-Electronic Engineering.
-            </p>
-            <p
-              className="text-[16px] text-white/80 leading-relaxed italic"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              Its strategic vision is to evolve into a premier center for cryptographic techniques and information security training, catering to the human resource needs of VGISC and various sectors in the socio-economic landscape. Staffed with expert scientists and lecturers specializing in cryptographic techniques and information security, the Academy’s curriculum aligns with the advancements in science and technology, addressing practical demands. Additionally, it holds the distinction of being one of the eight principal institutions for information security training, as decreed by the Vietnamese Prime Minister.
-            </p>
-            <p
-              className="text-[16px] text-white/80 font-medium mt-6 text-center"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              For more information about the Academy of Cryptography Techniques, please visit:{" "}
-              <a
-                href="https://actvn.edu.vn/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cipher hover:underline"
-              >
-                https://actvn.edu.vn/
-              </a>
-            </p>
-          </div>
-        </div>
-          </section>
-        </div>
-      } />
   );
 }

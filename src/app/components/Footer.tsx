@@ -45,190 +45,127 @@ export default function Footer() {
   return (
     <div>
       <footer className="bg-[#060E1A] text-white">
-        <div className="max-w-[1200px] mx-auto px-6 pt-18 pb-8">
+        <div className="max-w-[1800px] mx-auto px-8 lg:px-12 xl:px-16 pt-16 pb-8">
           {/* Top Section */}
           <div className="flex justify-between items-start mb-10">
             <div>
               <div className="flex items-baseline gap-2 mb-2">
                 <span
-                  className="text-[28px] font-bold"
+                  className="text-[36px] font-bold"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  VCRIS
+                  AI4CRIS
                 </span>
                 <span
-                  className="text-[13px] font-medium text-cipher"
+                  className="text-[18px] font-medium text-cipher"
                   style={{ fontFamily: "var(--font-body)" }}
                 >
                   2026
                 </span>
               </div>
               <p
-                className="text-[13px] text-white/45"
+                className="text-[17px] text-white/60 leading-relaxed"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                International Conference on
-                <br />
-                Cryptography & Information Security
+                Hội thảo khoa học Quốc gia <br />
+                Trí tuệ nhân tạo cho Mật mã và An toàn thông tin
               </p>
             </div>
 
             <div className="flex items-center gap-4">
               <a
                 href={`mailto:${CONF.contactEmail}`}
-                className="text-white/35 hover:text-cipher transition-colors duration-200"
+                className="text-white/60 hover:text-cipher transition-colors duration-200"
               >
-                <Mail size={20} />
+                <Mail size={24} />
               </a>
             </div>
           </div>
 
           {/* Divider */}
-          <div className="h-px bg-white/8 mb-10" />
+          <div className="h-px bg-white/10 mb-10" />
 
           {/* Links Grid */}
-          <div className="grid grid-cols-4 gap-12 mb-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-12">
             <div>
               <h3
-                className="text-[11px] font-semibold text-cipher uppercase tracking-[2px] mb-4"
+                className="text-[13px] font-bold text-cipher uppercase tracking-[2px] mb-4"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                Conference
+                Hội thảo
               </h3>
               <div className="flex flex-col gap-3">
-                <Link
-                  to="/"
-                  className="text-[14px] text-white/45 hover:text-white/85 transition-colors"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  Home
+                <Link to="/" className="text-[15px] text-white/60 hover:text-white transition-colors">
+                  Trang chủ
                 </Link>
-                <Link
-                  to="/call-for-papers"
-                  className="text-[14px] text-white/45 hover:text-white/85 transition-colors"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  Call for Papers
+                <Link to="/members" className="text-[17px] text-white/60 hover:text-white transition-colors">
+                  Thành viên
                 </Link>
-                <Link
-                  to="/speakers"
-                  className="text-[14px] text-white/45 hover:text-white/85 transition-colors"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  Keynote Speakers
+                <Link to="/speakers" className="text-[17px] text-white/60 hover:text-white transition-colors">
+                  Diễn giả
                 </Link>
               </div>
             </div>
 
             <div>
               <h3
-                className="text-[11px] font-semibold text-cipher uppercase tracking-[2px] mb-4"
+                className="text-[16px] font-bold text-cipher uppercase tracking-[2px] mb-4"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                Authors
+                Tác giả
               </h3>
               <div className="flex flex-col gap-3">
-                <Link
-                  to="/call-for-papers"
-                  className="text-[14px] text-white/45 hover:text-white/85 transition-colors"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  Submission Guidelines
+                <Link to="/submission" className="text-[17px] text-white/60 hover:text-white transition-colors">
+                  Gửi bài tham dự
                 </Link>
-                <a
-                  href={CONF.easyChairUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[14px] text-white/45 hover:text-white/85 transition-colors"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  Submit via EasyChair
-                </a>
-                <a
-                  href="https://www.ieee.org/conferences/publishing/templates.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[14px] text-white/45 hover:text-white/85 transition-colors"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  IEEE Templates
+                <a href={CONF.easyChairUrl} target="_blank" rel="noopener noreferrer" className="text-[17px] text-white/60 hover:text-white transition-colors">
+                  Nộp bài qua EasyChair
                 </a>
               </div>
             </div>
 
             <div>
               <h3
-                className="text-[11px] font-semibold text-cipher uppercase tracking-[2px] mb-4"
+                className="text-[16px] font-bold text-cipher uppercase tracking-[2px] mb-4"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                Attend
+                Tham dự
               </h3>
               <div className="flex flex-col gap-3">
-                <Link
-                  to="/registration"
-                  className="text-[14px] text-white/45 hover:text-white/85 transition-colors"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  Registration
+                <Link to="/registration" className="text-[17px] text-white/60 hover:text-white transition-colors">
+                  Đăng ký tham dự
                 </Link>
-                <Link
-                  to="/venue"
-                  className="text-[14px] text-white/45 hover:text-white/85 transition-colors"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  Venue & Travel
+                <Link to="/program" className="text-[17px] text-white/60 hover:text-white transition-colors">
+                  Chương trình
                 </Link>
-                <a
-                  href={`https://vcris.org/previous-conferences/`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[14px] text-white/45 hover:text-white/85 transition-colors"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  Previous Conferences
-                </a>
+                <Link to="/venue" className="text-[17px] text-white/60 hover:text-white transition-colors">
+                  Địa điểm
+                </Link>
               </div>
             </div>
 
             <div>
               <h3
-                className="text-[11px] font-semibold text-cipher uppercase tracking-[2px] mb-4"
+                className="text-[13px] font-bold text-cipher uppercase tracking-[2px] mb-4"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                Organization
+                Liên hệ
               </h3>
               <div className="flex flex-col gap-3">
-                <Link
-                  to="/committees"
-                  className="text-[14px] text-white/45 hover:text-white/85 transition-colors"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  Committees
-                </Link>
-                <a
-                  href={`mailto:${CONF.contactEmail}`}
-                  className="text-[14px] text-white/45 hover:text-white/85 transition-colors"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  Contact
+                <a href={`mailto:${CONF.contactEmail}`} className="text-[15px] text-white/60 hover:text-white transition-colors">
+                  {CONF.contactEmail}
                 </a>
               </div>
             </div>
           </div>
 
           {/* Bottom Bar */}
-          <div className="flex justify-between items-center pt-8 border-t border-white/8">
+          <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 gap-4">
             <p
-              className="text-[12px] text-white/30"
+              className="text-[14px] text-white/40"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              © 2026 VCRIS · Academy of Cryptography Techniques, Vietnam
-            </p>
-            <p
-              className="text-[12px] text-white/30"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              IEEE Proceedings · DBLP Indexed
+              © 2026 AI4CRIS · Học viện Kỹ thuật mật mã
             </p>
           </div>
         </div>

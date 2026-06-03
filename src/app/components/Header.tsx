@@ -27,7 +27,7 @@ export default function Navigation() {
       className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-200 ${isScrolled ? "bg-white/90 backdrop-blur-xl border-rule" : "bg-white border-rule"
         }`}
     >
-      <div className="max-w-[1400px] mx-auto px-4 lg:px-6 h-[60px] flex items-center justify-between sm:gap-2 md:gap-3">
+      <div className="max-w-[1800px] mx-auto px-8 lg:px-12 xl:px-16 h-[72px] flex items-center justify-between sm:gap-2 md:gap-3">
         {/* Logo */}
         <Link to="/" className="flex flex-col shrink-0">
           <div className="flex items-baseline gap-2">
@@ -35,7 +35,7 @@ export default function Navigation() {
               className="text-[28px] font-bold text-ink"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              VCRIS
+              AI4CRIS
             </span>
             <span
               className="text-[13px] font-medium text-cipher"
@@ -48,7 +48,7 @@ export default function Navigation() {
             className="hidden xl:block text-[10px] text-slate whitespace-nowrap"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Cryptography & Information Security
+            AI for Cryptography & Information Security
           </span>
         </Link>
 
@@ -157,7 +157,7 @@ export default function Navigation() {
                     <div className="flex items-center">
                       <Link
                         to={link.path}
-                        className={`flex-1 px-4 py-3 rounded-xl text-[14px] font-medium tracking-[0.2px] transition-colors duration-200 ${isActive
+                        className={`flex-1 px-4 py-3 rounded-xl text-[15px] font-semibold tracking-[0.2px] transition-colors duration-200 ${isActive
                             ? "text-cipher bg-cipher/10"
                             : "text-ink hover:bg-cipher/5"
                           }`}

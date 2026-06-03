@@ -1,223 +1,134 @@
 // ============================================================
-// VCRIS 2026 — Real conference data extracted from vcris.org DB
+// AI4CRIS 2026
 // ============================================================
 export const CONF = {
-  name: "VCRIS 2026",
-  fullName:
-    "The 3rd International Conference on Cryptography and Information Security",
-  edition: "3rd",
-  dates: "October 29–30, 2026",
-  dateStart: "2026-10-29T08:00:00",
-  location: "Academy of Cryptography Techniques, Hanoi, Vietnam",
-  address: "141 Chien Thang Road, Thanh Liet, Ha Noi, Viet Nam",
-  easyChairUrl: "https://easychair.org/conferences/?conf=vcris2026",
-  contactEmail: "vcris@actvn.edu.vn",
-  website: "https://vcris.org",
+  name: "AI4CRIS 2026",
+  fullName: "Hội thảo khoa học Quốc gia Trí tuệ nhân tạo cho mật mã và an toàn thông tin 2026 (Artificial Intelligence for Cryptography and Information Security- AI4CRIS)",
+  dates: "14/08/2026",
+  dateStart: "2026-08-14T08:00:00",
+  location: "Học viện Kỹ thuật mật mã, Hà Nội, Việt Nam",
+  address: "141 Chiến Thắng, Thanh Liệt, Hà Nội",
+  easyChairUrl: "https://easychair.org/conferences/?conf=ai4cris2026",
+  contactEmail: "AI4Security@actvn.edu.vn",
+  website: "https://ai4cris.org",
 };
 
 export const conferenceTracks = {
   track1: {
-    title: "The conference provides a high-quality international forum for theoretical foundations, practical implementations, and emerging interdisciplinary security technologies. VCRIS 2026 welcomes original research contributions, case studies, system implementations, and visionary papers.",
+    title: "Phiên 1: AI trong phát hiện mối đe dọa và ứng phó sự cố an ninh mạng",
     label: "track 1",
     topic: [
-      "Symmetric and asymmetric cryptography",
-      "Cryptographic hash functions and digital signatures",
-      "Cryptographic protocols and formal security proofs",
-      "Provable security and complexity assumptions",
-      "Random number generation and entropy sources",
-      "Post-Quantum Cryptography (PQC)",
-      "Lattice-based, code-based, multivariate cryptography",
-      "Quantum-resistant primitives and migration strategies",
+      "AI trong phát hiện tấn công mạng & malware",
+      "Phát hiện bất thường bằng ML/DL",
+      "Tự động hóa phản ứng sự cố"
     ]
   },
   track2: {
-    title: "The conference provides a high-quality international forum for theoretical foundations, practical implementations, and emerging interdisciplinary security technologies. VCRIS 2026 welcomes original research contributions, case studies, system implementations, and visionary papers.",
+    title: "Phiên 2: AI cho bảo mật dữ liệu và an ninh hệ thống mạng",
     label: "track 2",
     topic: [
-      "Cryptographic engineering and implementation security",
-      "Side-channel attacks and countermeasures",
-      "Secure hardware and trusted execution environments",
-      "Zero-knowledge proofs and secure multiparty computation",
-      "Blockchain and distributed ledger cryptography",
-      "Privacy-enhancing technologies",
-      "Information hiding and watermarking",
+      "AI trong giám sát mạng, IDS/IPS",
+      "AI phát hiện lừa đảo, gian lận tài chính",
+      "AI bảo vệ dữ liệu lớn, Cloud, IoT"
     ]
   },
   track3: {
-    title: "The conference provides a high-quality international forum for theoretical foundations, practical implementations, and emerging interdisciplinary security technologies. VCRIS 2026 welcomes original research contributions, case studies, system implementations, and visionary papers.",
+    title: "Phiên 3: AI trong mật mã và bảo mật hậu lượng tử",
     label: "track 3",
     topic: [
-      "Network and wireless security",
-      "IoT and edge security",
-      "Cloud and distributed systems security",
-      "Operating systems and virtualization security",
-      "Database and storage security",
-      "Web and mobile security",
-      "5G/6G and next-generation network security",
+      "Xu hướng PQC toàn cầu (NIST, ETSI)",
+      "Thách thức triển khai PQC tại Việt Nam",
+      "AI trong phân tích, kiểm thử mật mã"
     ]
   },
   track4: {
-    title: "The conference provides a high-quality international forum for theoretical foundations, practical implementations, and emerging interdisciplinary security technologies. VCRIS 2026 welcomes original research contributions, case studies, system implementations, and visionary papers.",
+    title: "Phiên 4: AI trong phòng chống thông tin sai lệch và các thách thức an ninh trong tương lai",
     label: "track 4",
     topic: [
-      "AI and machine learning for cybersecurity",
-      "Malware analysis and detection",
-      "Intrusion detection and prevention systems",
-      "Deepfake detection and media forensics",
-      "Adversarial machine learning",
-      "LLM applications in cybersecurity",
-      "Automated vulnerability detection",
-    ]
-  },
-  track5: {
-    title: "The conference provides a high-quality international forum for theoretical foundations, practical implementations, and emerging interdisciplinary security technologies. VCRIS 2026 welcomes original research contributions, case studies, system implementations, and visionary papers.",
-    label: "track 5",
-    topic: [
-      "Quantum communication security",
-      "Cyber-physical systems security",
-      "Smart city and critical infrastructure protection",
-      "Digital forensics and incident response",
-      "Human-centric security and usable security",
-      "Security economics and governance",
-      "Privacy and data protection frameworks",
+      "AI & bảo vệ dữ liệu cá nhân",
+      "AI giải thích được (Explainable AI) trong An toàn thông tin",
+      "Rủi ro từ AI tạo sinh (Generative AI) (deepfake, lừa đảo, fakenews)"
     ]
   }
 }
 
 export const home = {
-  name: "VCRIS 2026",
+  name: "AI4CRIS 2026",
   title: `<div class="transition-all duration-700 delay-150 opacity-100 translate-y-0">
-    <h1 class="text-white leading-[1.1] mb-2" style="font-family: var(--font-display); font-size: 64px; font-style: italic; font-weight: 700;">
-      The 3<sup>rd</sup> International Conference on
+    <h1 class="text-white leading-[1.1] mb-2 uppercase" style="font-family: var(--font-display); font-size: 32px; font-style: italic; font-weight: 700;">
+      HỘI THẢO KHOA HỌC QUỐC GIA TRÍ TUỆ NHÂN TẠO CHO MẬT MÃ VÀ AN TOÀN THÔNG TIN
     </h1>
     <h1 class="leading-[1.1]" style="font-family: var(--font-display); font-size: 72px; font-style: italic; font-weight: 700;">
-      <span class="text-white">Cryptography </span>
-      <span class="text-cipher">&amp;</span>
-      <span class="text-white"> Information Security</span>
+      <span class="text-cipher">AI4CRIS </span>
+      <span class="text-white"> 2026</span>
     </h1>
   </div>`,
-  time: "October 29 - 30, 2026",
-  venue: "Academy of Cryptography Techniques, Hanoi, Vietnam",
+  time: "HÀ NỘI NGÀY 14/8/2026",
+  venue: "Học viện Kỹ thuật mật mã, 141 Chiến Thắng, Thanh Liệt, Hà Nội",
   importantDates: {
-    paperSubmissionDeadline: "June 30, 2026",
-    notificationOfAcceptance: "June 31, 2026",
-    cameraReadySubmission: "Septemper 25, 2026",
-    conferenceDates: "October 29 - 30, 2026",
+    paperSubmissionDeadline: "20/7/2026",
+    registrationDeadline: "07/8/2026",
+    conferenceDates: "14/8/2026",
   },
   aboutTheConference: [
-    "VCRIS 2026 is organized by the Academy of Cryptography Techniques in collaboration with co-organizing institutions including the Vietnam Institute for Advanced Study in Mathematics (VISAM), the Vietnam Association of Faculties- Institutes-Schools-Universities of ICT (FISU VN), the Information Security Journal (ISJ), with the endorsement of the University of Lorraine – France and the Japan Advanced Institute of Science and Technology – Japan, and the Computer Security and Industrial Cryptography group of KU Leuven – Belgium.",
-    "VCRIS 2026 aims to bring together researchers, practitioners, and industry experts to present and discuss the latest advances in cryptography, post-quantum security, systems security, and AI-driven cybersecurity.",
-    "The conference provides a high-quality international forum for theoretical foundations, practical implementations, and emerging interdisciplinary security technologies. VCRIS 2026 welcomes original research contributions, case studies, system implementations, and visionary papers.",
+    "Hội thảo AI4CRIS được tổ chức bởi Học viện Kỹ thuật mật mã phối hợp với Câu lạc bộ Khoa-Trường-Viện Công nghệ Thông tin - Truyền thông Việt Nam; Học viện Báo chí và Tuyên truyền, Tạp chí An toàn thông tin cùng với sự bảo trợ của các đơn vị Ban Cơ yếu Chính phủ, Bộ Khoa học và Công nghệ, Hiệp hội tin học Việt Nam, Hiệp hội An ninh mạng Quốc Gia, Trung tâm Dữ liệu Quốc Gia.",
+    "Hội thảo nhằm tăng cường nhận thức và chia sẻ về vai trò, ý nghĩa và tác động của trí tuệ nhân tạo trong lĩnh vực an toàn, bảo mật thông tin; làm rõ cơ hội, thách thức và yêu cầu đặt ra đối với việc ứng dụng AI trong bảo vệ không gian số hiện nay; cập nhật xu hướng toàn cầu, chính sách quốc gia và thực tiễn triển khai, đồng thời phân tích các mô hình, giải pháp ứng dụng trí tuệ nhân tạo trong bảo mật hệ thống thông tin, góp phần nâng cao năng lực phòng ngừa, phát hiện và ứng phó với các nguy cơ, mối đe dọa an ninh mạng đồng thời tạo diễn đàn trao đổi, kết nối đa chiều giữa cơ quan quản lý, nhà khoa học, doanh nghiệp và các cơ sở đào tạo và thúc đẩy chia sẻ kinh nghiệm, kết quả nghiên cứu và nhu cầu thực tiễn, qua đó tăng cường gắn kết giữa nghiên cứu - đào tạo - ứng dụng."
   ],
   conferenceTracks,
-  paperSubmission: [
-    "Authors are invited to submit original, unpublished research papers that are not currently under review elsewhere.",
-    "All submissions must follow the <a href='https://www.ieee.org/conferences/publishing/templates.html'>IEEE website</a>, be written in English, and should not exceed 6 pages.",
-    "Papers will be peer-reviewed using a double-blind review process by at least three members of the technical Program Committee.",
-  ],
-  publication: [
-    "Accepted papers that are presented at the conference will be submitted for inclusion into IEEE Xplore subject to meeting IEEE Xplore’s scope and quality requirements"
-  ],
-  whySubmitToVCRIS2026: [
-    "International Technical Program Committee",
-    "IEEE Xplore proceedings",
-    "Strong focus on Post-Quantum Cryptography and AI Security",
-    "Balanced coverage of theory and applied cybersecurity",
-    "Networking opportunities with academia and industry",
-  ],
   bottomOfHomepage: [
-    `© Copyright 2026 The 3<sup>rd</sup> International Conference on Cryptography and Information Security (VCRIS 2026)`
+    `© Copyright 2026 Hội thảo khoa học Quốc gia Trí tuệ nhân tạo cho mật mã và an toàn thông tin (AI4CRIS)`
   ]
 };
 
+export const logos = [
+  { name: "Học viện Kỹ thuật mật mã", src: "/images/kma.png", role: "Đơn vị chủ trì tổ chức" },
+  { name: "FISU Việt Nam", src: "/images/fisu.png", role: "Đơn vị đồng tổ chức" },
+  { name: "Học viện Báo chí và Tuyên truyền", src: "/images/ajc.jpg", role: "Đơn vị đồng tổ chức" },
+  { name: "Tạp chí An toàn thông tin", src: "/images/attt.png", role: "Đơn vị đồng tổ chức" },
+  { name: "Ban Cơ yếu Chính phủ", src: "/images/bcy.png", role: "Đơn vị bảo trợ" },
+  { name: "Bộ Khoa học và Công nghệ", src: "/images/bkhcn.png", role: "Đơn vị bảo trợ" },
+  { name: "Hiệp hội tin học Việt Nam", src: "/images/vaip.jpg", role: "Đơn vị bảo trợ" },
+  { name: "Hiệp hội An ninh mạng Quốc Gia", src: "/images/nca.png", role: "Đơn vị bảo trợ" },
+  { name: "Trung tâm Dữ liệu Quốc Gia", src: "/images/ttdlqg.jpg", role: "Đơn vị bảo trợ" }
+];
+
 export const importantDates = [
   {
-    label: "Paper Submission Deadline",
-    date: "June 30, 2026",
+    label: "Thời hạn nộp báo cáo và tham luận",
+    date: "20/7/2026",
     passed: false,
   },
   {
-    label: "Notification of Acceptance",
-    date: "July 31, 2026",
+    label: "Thời gian đăng ký tham dự Hội thảo",
+    date: "07/8/2026",
     passed: false,
   },
   {
-    label: "Registration Deadline",
-    date: "September 25, 2026",
+    label: "Thời gian tổ chức Hội thảo",
+    date: "14/8/2026",
     passed: false,
-  },
-  {
-    label: "Conference Dates",
-    date: "October 29 – 30, 2026",
-    passed: false,
-  },
-];
-
-export const topics = [
-  "Post-Quantum Cryptography",
-  "Blockchain & Distributed Ledger Technology",
-  "AI/ML Security & Privacy",
-  "Zero-Knowledge Proofs",
-  "Homomorphic Encryption",
-  "Quantum Science & Technology",
-  "Cryptographic Protocols",
-  "Network & Cloud Security",
-  "Privacy-Preserving Technologies",
-  "IoT & Embedded Security",
-  "Digital Forensics & Cybercrime",
-  "Hardware Security",
-];
-
-export const keynoteSpeakers = [
-  {
-    name: "PROF. TANAKA KIYOFUMI",
-    role: "Dean of Information Science | Director of Next-Generation Digital Infrastructure",
-    institution: "Japan Advanced Institute of Science and Technology (JAIST)",
-    talk: "Challenges in High-Performance Cryptographic Hardware Design",
-    image: "https://vcris.org/wp-content/uploads/2025/04/keynote.png",
-    bio: "Dr. Kiyofumi Tanaka is a Professor and Dean at JAIST, where he leads research into computer architecture and accelerator hardware. With over 200 publications, his work focuses on the intersection of high-performance computing and security, specifically developing reconfigurable FPGA-based architectures for Elliptic Curve Cryptography and addressing the emerging hardware challenges of post-quantum cryptographic standards."
-  },
-  // {
-  //   name: "PROF. TANAKA KIYOFUMI",
-  //   role: "Professor",
-  //   institution:
-  //     "Japan Advanced Institute of Science and Technology (JAIST), Japan",
-  //   image: "https://vcris.org/wp-content/uploads/2025/04/keynote.png",
-  //   talk: "Keynote Talk – VCRIS 2025",
-  //   bio: "Professor Tanaka Kiyofumi is affiliated with the Japan Advanced Institute of Science and Technology (JAIST). He is a leading expert in cryptography and information security with extensive research contributions recognized internationally.",
-  // },
-];
-
-// VCRIS 2024 keynote speakers (for previous conference archive)
-export const keynoteSpeakers2024 = [
-  {
-    name: "Prof. Edgar Weippl",
-    role: "Professor of Security and Privacy",
-    institution: "University of Vienna, Austria",
-    image:
-      "https://vcris.org/wp-content/uploads/2024/05/Edgar-Weippl-1-300x300-1.jpg",
-    talk: "Security & Privacy Research",
-    bio: "Prof. Edgar Weippl is a professor at the University of Vienna and a renowned researcher in cybersecurity. He has published extensively and leads major European security research projects.",
   },
 ];
 
 export const organizers = {
-  organizer: ["Academy of Cryptography Techniques (ACT)"],
+  host: ["Học viện Kỹ thuật mật mã"],
   coOrganizers: [
-    "Vietnam Institute for Advanced Study in Mathematics (VIASM)",
-    "Vietnam Association of Faculties-Institutes-Schools-Universities of ICT (FISU)",
-    "Journal of Information Security (ISJ)",
+    "Câu lạc bộ các Khoa - Trường - Viện Công nghệ thông tin - Truyền thông Việt Nam (FISU VN)",
+    "Học viện Báo chí và Tuyên truyền",
+    "Tạp chí An toàn thông tin"
   ],
-  endorsers: [
-    "Japan Advanced Institute of Science and Technology (JAIST), Japan",
-    "University of Lorraine (UL), France",
-    "Computer Security and Industrial Cryptography group (COSIC), KU Leuven, Belgium",
+  sponsors: [
+    "Ban Cơ yếu Chính phủ",
+    "Bộ Khoa học và Công nghệ",
+    "Hiệp hội tin học Việt Nam",
+    "Hiệp hội An ninh mạng Quốc Gia",
+    "Trung tâm Dữ liệu Quốc Gia"
   ],
 };
 
 export type CommitteePerson = {
   name: string;
-  affiliation: string;
+  affiliation?: string;
   isChair?: boolean;
 };
 
@@ -228,300 +139,110 @@ export type CommitteeGroup = {
 
 export const organizingCommitteeGroups: CommitteeGroup[] = [
   {
-    role: "Honorary Chairs",
+    role: "Thành viên Ban chương trình",
     members: [
-      { name: "Nguyen Huu Hung", affiliation: "VGISC, Vietnam" },
-      { name: "Yukari Nagai", affiliation: "JAIST, Japan" },
-      { name: "Hoang Van Thuc", affiliation: "ACT, Vietnam" },
+      { name: "GS. TS. Nguyễn Thanh Thủy - Chủ tịch FISU VN", isChair: true },
+      { name: "GS.TS. Nguyễn Hiếu Minh - Phó Giám đốc Học viện Kỹ thuật mật mã", isChair: true },
+      { name: "PGS. TS. Bùi Thu Lâm - Phó Chủ tịch, Tổng thư ký FISU VN", isChair: true },
+      { name: "PGS. TS. Nguyễn Thị Trường Giang - Phó Giám đốc Học viện Báo chí và Tuyên truyền", isChair: true },
+      { name: "PGS. TS. Nguyễn Việt Hùng - Phó Chủ tịch FISU VN" },
+      { name: "PGS. TS. Nguyễn Long Giang - Phó Chủ tịch FISU VN" },
+      { name: "TS. Phạm Văn Hưởng - Chủ nhiệm Khoa CNTT, Học viện Kỹ thuật mật mã" },
+      { name: "PGS.TS. Trần Thị Lượng - Phó Chủ nhiệm Khoa ATTT, Học viện Kỹ thuật mật mã" },
+      { name: "TS. Phạm Duy Trung - Phó Chủ nhiệm Khoa ATTT, Học viện Kỹ thuật mật mã" },
+      { name: "TS. Nguyễn Văn Long - Phó Chủ nhiệm Khoa Mật mã, Học viện Kỹ thuật mật mã" },
+      { name: "TS. Lê Đức Thuận - Học viện Kỹ thuật mật mã" },
+      { name: "TS. Mai Đức Thọ - Học viện Kỹ thuật mật mã" },
+      { name: "Viện Khoa học - Công nghệ mật mã" }
     ],
-  },
-  {
-    role: "General Chairs",
-    members: [
-      { name: "Nguyen Hieu Minh", affiliation: "ACT, Vietnam" },
-      { name: "Nguyen Thanh Thuy", affiliation: "FISU, Vietnam" },
-      { name: "Le Minh Ha", affiliation: "VIASM, Vietnam" },
-      { name: "Vincent Rijmen", affiliation: "KU Leuven, ESAT/COSIC, Belgium" },
-      { name: "Jean-Yves Marion", affiliation: "LORIA, University of Lorraine, France" },
-    ],
-  },
-  {
-    role: "Advisory Committee",
-    members: [
-      { name: "Phan Duong Hieu", affiliation: "Telecom Paris, Institut Polytechnique de Paris, France" },
-      { name: "Nguyen Le Minh", affiliation: "JAIST, Japan" },
-      { name: "Serge Vaudenay", affiliation: "EPFL IC IINFCOM LASEC, Swiss" },
-      { name: "Frederik Vercauteren", affiliation: "COSIC, KU Leuven, Belgium" },
-      { name: "Kazuhiro Ogata", affiliation: "JAIST, Japan" },
-      { name: "Edgar Weippl", affiliation: "University of Vienna, Austria" },
-    ],
-  },
-  {
-    role: "Program Chairs",
-    members: [
-      { name: "Lam Thu Bui", affiliation: "ACT, Vietnam", isChair: true },
-      { name: "Khoa Nguyen", affiliation: "Wollogong University, Australia" },
-      { name: "Stjepan Picek", affiliation: "DiS Radboud University, The Netherlands" },
-      { name: "Junbeom Hur", affiliation: "Korea University, Korea" },
-      { name: "Mizuhito Ogawa", affiliation: "Old Teachers Network, Japan" },
-    ],
-  },
-  {
-    role: "Publication Chairs",
-    members: [
-      { name: "Nguyen Nhu Tuan", affiliation: "ISJ, Vietnam" },
-      { name: "Pham Duy Trung", affiliation: "ACT, Vietnam" },
-    ],
-  },
-  {
-    role: "Publicity Chairs",
-    members: [
-      { name: "Nguyen The Hao", affiliation: "ISJ, Vietnam" },
-      { name: "Le Duc Thuan", affiliation: "ACT, Vietnam" },
-    ],
-  },
-  {
-    role: "Local Organization Committee",
-    members: [
-      { name: "Vu Thi Dao", affiliation: "ACT, Vietnam", isChair: true },
-      { name: "Tran Thi Luong", affiliation: "ACT, Vietnam" },
-      { name: "Dao Ba Anh", affiliation: "ACT, Vietnam" },
-    ],
-  },
+  }
 ];
 
-export const callForPapersText = {
+export const submissionText = {
   about: [
-    `The 3rd International Conference on Cryptography and Information Security (VCRIS 2026) will be held at the Academy of Cryptography Techniques, 141 Chien Thang Road, Thanh Liet, Hanoi, Vietnam.`,
-    `VCRIS 2026 is organized by the Academy of Cryptography Techniques in collaboration with co-organizing institutions including the Vietnam Institute for Advanced Study in Mathematics (VISAM), the Vietnam Association of Faculties- Institutes-Schools-Universities of ICT (FISU VN), the Information Security Journal (ISJ), with the endorsement of the University of Lorraine – France and the Japan Advanced Institute of Science and Technology – Japan, and the Computer Security and Industrial Cryptography group of KU Leuven – Belgium.`,
-    `VCRIS 2026 aims to bring together researchers, practitioners, and industry experts to present and discuss the latest advances in cryptography, post-quantum security, systems security, and AI-driven cybersecurity.`,
-    `The conference provides a high-quality international forum for theoretical foundations, practical implementations, and emerging interdisciplinary security technologies. VCRIS 2026 welcomes original research contributions, case studies, system implementations, and visionary papers.`
+    `Hội thảo AI4CRIS do Học viện Kỹ thuật mật mã chủ trì phối hợp với FISU Việt Nam, Học viện Báo chí và Tuyên truyền và Tạp chí An toàn thông tin tổ chức, dưới sự bảo trợ của Ban Cơ yếu Chính phủ, Bộ Khoa học và Công nghệ cùng các tổ chức, hiệp hội chuyên ngành. Hội thảo là diễn đàn trao đổi học thuật và thực tiễn về ứng dụng trí tuệ nhân tạo trong an toàn thông tin, an ninh mạng và bảo vệ dữ liệu. Sự kiện nhằm cập nhật xu hướng công nghệ, chính sách và các giải pháp trí tuệ nhân tạo tiên tiến, đồng thời kết nối cơ quan quản lý, nhà khoa học, doanh nghiệp và cơ sở đào tạo để thúc đẩy nghiên cứu, hợp tác và chuyển giao công nghệ phục vụ bảo vệ không gian số quốc gia.`,
+    `Ban Tổ chức trân trọng kính mời các nhà nghiên cứu, giảng viên, chuyên gia, cán bộ quản lý, nghiên cứu sinh, học viên và doanh nghiệp gửi bài báo cáo khoa học tham gia các phiên chuyên đề của Hội thảo.`
   ],
   tracks: [
     {
-      title: `Track 1: Theoretical and Post-Quantum Cryptography`,
+      title: `Phiên 1: AI trong phát hiện mối đe dọa và ứng phó sự cố an ninh mạng`,
       topics: [
-        `Symmetric and asymmetric cryptography`,
-        `Cryptographic hash functions and digital signatures`,
-        `Cryptographic protocols and formal security proofs`,
-        `Provable security and complexity assumptions`,
-        `Random number generation and entropy sources`,
-        `Post-Quantum Cryptography (PQC)`,
-        `Lattice-based, code-based, multivariate cryptography`,
-        `Quantum-resistant primitives and migration strategies`
-      ]
+        `AI trong phát hiện tấn công mạng & malware;`,
+        `Phát hiện bất thường bằng ML/DL;`,
+        `Tự động hóa phản ứng sự cố.`
+      ],
+      audience: "Trường đại học, viện nghiên cứu, doanh nghiệp an ninh mạng."
     },
     {
-      title: `Track 2: Applied Cryptography and Privacy`,
+      title: `Phiên 2: AI cho bảo mật dữ liệu và an ninh hệ thống mạng`,
       topics: [
-        `Cryptographic engineering and implementation security`,
-        `Side-channel attacks and countermeasures`,
-        `Secure hardware and trusted execution environments`,
-        `Zero-knowledge proofs and secure multiparty computation`,
-        `Blockchain and distributed ledger cryptography`,
-        `Privacy-enhancing technologies`,
-        `Information hiding and watermarking`
-      ]
+        `AI trong giám sát mạng, IDS/IPS;`,
+        `AI phát hiện lừa đảo, gian lận tài chính;`,
+        `AI bảo vệ dữ liệu lớn, Cloud, IoT.`
+      ],
+      audience: "Trường đại học, doanh nghiệp FinTech, ngân hàng, tổ chức tài chính, doanh nghiệp Cloud và doanh nghiệp công nghệ số."
     },
     {
-      title: `Track 3: Systems and Network Security`,
+      title: `Phiên 3: AI trong mật mã và bảo mật hậu lượng tử`,
       topics: [
-        `Network and wireless security`,
-        `IoT and edge security`,
-        `Cloud and distributed systems security`,
-        `Operating systems and virtualization security`,
-        `Database and storage security`,
-        `Web and mobile security`,
-        `5G/6G and next-generation network security`
-      ]
+        `Xu hướng PQC toàn cầu (NIST, ETSI);`,
+        `Thách thức triển khai PQC tại Việt Nam;`,
+        `AI trong phân tích, kiểm thử mật mã.`
+      ],
+      audience: "Các viện nghiên cứu mật mã, trường đại học, doanh nghiệp an ninh mạng, chuyên gia bảo mật."
     },
     {
-      title: `Track 4: AI-driven Security and Threat Intelligence`,
+      title: `Phiên 4: AI trong phòng chống thông tin sai lệch và các thách thức an ninh trong tương lai`,
       topics: [
-        `AI and machine learning for cybersecurity`,
-        `Malware analysis and detection`,
-        `Intrusion detection and prevention systems`,
-        `Deepfake detection and media forensics`,
-        `Adversarial machine learning`,
-        `LLM applications in cybersecurity`,
-        `Automated vulnerability detection`
-      ]
-    },
-    {
-      title: `Track 5: Emerging Security Technologies`,
-      topics: [
-        `Quantum communication security`,
-        `Cyber-physical systems security`,
-        `Smart city and critical infrastructure protection`,
-        `Digital forensics and incident response`,
-        `Human-centric security and usable security`,
-        `Security economics and governance`,
-        `Privacy and data protection frameworks`
-      ]
+        `AI & bảo vệ dữ liệu cá nhân;`,
+        `AI giải thích được (Explainable AI) trong An toàn thông tin;`,
+        `Rủi ro từ AI tạo sinh (Generative AI) (deepfake, lừa đảo, fakenews).`
+      ],
+      audience: "Nhà khoa học, luật sư, cơ quan quản lý, doanh nghiệp AI"
     }
   ],
-  submissions: [
-    `Authors are invited to submit original, unpublished research papers that are not currently under review elsewhere.`,
-    `All submissions must follow the IEEE conference format at IEEE’s website, be written in English, and should not exceed 6 pages.`,
-    `Papers will be peer-reviewed using a double-blind review process by at least three members of the technical Program Committee.`
+  requirements: [
+    `Bài viết là công trình nghiên cứu, ứng dụng hoặc tổng quan khoa học chưa công bố ở các hội thảo hoặc tạp chí khác.`,
+    `Nội dung đảm bảo tính khoa học, tính thực tiễn và phù hợp với chủ đề hội thảo.`,
+    `Khuyến khích các bài báo có kết quả thực nghiệm, mô hình triển khai hoặc nghiên cứu điển hình (case study).`,
+    `Ngôn ngữ: Tiếng Việt.`
   ],
-  publication: [
-    `Accepted papers that are presented at the conference will be submitted for inclusion into IEEE Xplore subject to meeting IEEE Xplore’s scope and quality requirements.`
-  ],
-  postConferencePublication: [
-    `Several journal special issues related to VCRIS 2026 will be announced in due course.`
-  ]
-};
-
-export const callForWorkshopsText = {
-  intro: `The VCRIS conference will feature a workshop session for businesses. This will be a platform for businesses to introduce themselves and promote their products in the field of quantum science and technology, cryptography, and information security to the participating agencies, organizations, and scientists attending the conference.`,
-  details: `The detailed workshop for VCRIS 2026 will be updated later.`,
-  contact: [
-    {
-      name: `Dr. Vu Thi Dao`,
-      descriptions: [
-        `Institute of Research and Development Cooperation, Academy of Cryptography Techniques`,
-        `141 Chien Thang road, Thanh Liet, Hanoi, Vietnam`,
-        `Cell Phone: +84.982.151.982`
-      ]
-    },
-    {
-      name: `Ms Vuong Thi Hai Ha`,
-      descriptions: [
-        `Secretary of VCRIS 2026`,
-        `Cell Phone: +84.984.346.162`
-      ]
-    }
+  structure: `Bài viết cần bao gồm các nội dung chính: Tiêu đề bài báo, Thông tin tác giả, Tóm tắt (Abstract), Từ khóa, Đặt vấn đề, Phương pháp nghiên cứu, Kết quả và thảo luận, Kết luận, Tài liệu tham khảo.`,
+  reviewProcess: [
+    `Ban Chương trình tiếp nhận bài báo qua email AI4Security@actvn.edu.vn`,
+    `Bài báo được phản biện bởi các chuyên gia trong lĩnh vực tương ứng.`,
+    `Các bài đạt yêu cầu sẽ được lựa chọn trình bày tại hội thảo.`,
+    `Các bài báo được lựa chọn sẽ được đề xuất đăng trong kỷ yếu hội thảo và Tạp chí An toàn thông tin - Ban Cơ yếu Chính phủ.`
   ]
 };
 
 // Venue data
 export const venue = {
   mainVenue: {
-    name: "Academy of Cryptography Techniques",
-    address: "141 Chien Thang Road, Thanh Liet, Ha Noi, Viet Nam",
+    name: "Học viện Kỹ thuật mật mã",
+    address: "141 Chiến Thắng, Thanh Liệt, Hà Nội",
     mapUrl:
       "https://maps.google.com/?q=Academy+of+Cryptography+Techniques+Hanoi+Vietnam",
     mapEmbed:
       "https://maps.google.com/maps?q=141%20Chi%E1%BA%BFn%20Th%E1%BA%AFng,%20T%C3%A2n%20Tri%E1%BB%81u,%20Thanh%20Tr%C3%AC,%20H%C3%A0%20N%E1%BB%99i,%20Vi%E1%BB%87t%20Nam&t=m&z=15&output=embed&iwloc=near",
   },
-  conferenceHotel: {
-    name: "Grand Plaza Hanoi Hotel",
-    address: "117 Tran Duy Hung Street, Hanoi 100000, Vietnam",
-    note: "Estimated time from conference venue: By Bus: 10 min | By Car: 10 min | Walking: 25 min",
-  },
-  transport: {
-    fromAirport: "~30 min taxi/Grab from Noi Bai International Airport (HAN)",
-    byTaxi: "Grab app available — recommended",
-    byBus: "Bus routes 18, 34, 86",
-  },
+  areas: [
+    {
+      name: "Phiên toàn thể và phiên bàn tròn",
+      location: "Hội trường lớn Học viện Kỹ thuật mật mã."
+    },
+    {
+      name: "Phiên chuyên đề A",
+      location: "Hội trường Học viện Kỹ thuật mật mã."
+    },
+    {
+      name: "Phiên chuyên đề B",
+      location: "Phòng đọc tầng 2, tòa nhà TB2."
+    }
+  ],
+  instructions: [
+    "Đại biểu vui lòng có mặt trước giờ khai mạc ít nhất 15 phút để hoàn tất thủ tục đăng ký.",
+    "Khu vực đón tiếp và cấp phát tài liệu được bố trí tại sảnh Hội trường.",
+    "Ban Tổ chức sẽ có nhân viên hỗ trợ hướng dẫn trong suốt thời gian diễn ra hội thảo."
+  ]
 };
-
-// Previous conferences
-export const previousConferences = [
-  {
-    year: "2025",
-    name: "VCRIS 2025",
-    edition: "2nd",
-    dates: "October 30–31, 2025",
-    location: "Academy of Cryptography Techniques, Hanoi, Vietnam",
-    wpUrl: "https://vcris.org/previous-conferences/vcris2025/homepage/",
-  },
-  {
-    year: "2024",
-    name: "VCRIS 2024",
-    edition: "1st",
-    dates: "December 3–4, 2024",
-    location: "Academy of Cryptography Techniques, Hanoi, Vietnam",
-    wpUrl: "https://vcris.org/previous-conferences/vcris2024/homepage/",
-  },
-];
-
-// Stats (real-world references from site)
-export const stats = [
-  { number: "2nd", label: "Edition" },
-  { number: "IEEE", label: "Indexed Proceedings" },
-  { number: "2023", label: "Established" },
-  { number: "Hybrid", label: "Format" },
-];
-
-export const heroStats = [
-  { number: "200+", label: "Attendees" },
-  { number: "20+", label: "Countries" },
-  { number: "60+", label: "Submitted Papers" },
-  { number: "IEEE", label: "Indexed Proceedings" },
-];
-
-export const programCommittee = [
-  { firstName: "Anh", lastName: "Phan", affiliation: "Le Quy Don Technical University, Vietnam" },
-  { firstName: "Anh Tuan", lastName: "Tong", affiliation: "Academy of Security Technology and Industry, Vietnam" },
-  { firstName: "Anh-Tien", lastName: "Le", affiliation: "Academy of Cryptography Techniques, Vietnam" },
-  { firstName: "Ba Anh", lastName: "Dao", affiliation: "Academy of Cryptography Techniques, Vietnam" },
-  { firstName: "Bagus", lastName: "Santoso", affiliation: "The University of Electro-Communications, Japan" },
-  { firstName: "Binh Minh", lastName: "Nguyen", affiliation: "Hanoi University of Science and Technology, Vietnam" },
-  { firstName: "Cang", lastName: "Phan Anh", affiliation: "VinhLong University of Technology and Education, Vietnam" },
-  { firstName: "Cho", lastName: "Do", affiliation: "Posts and Telecommunications Institute of Technology, Vietnam" },
-  { firstName: "Chung Tien", lastName: "Nguyen", affiliation: "Viet Nam Government Information Security Commission, Vietnam" },
-  { firstName: "Cong", lastName: "Nguyen-Duc", affiliation: "Academy of Cryptography Techniques, Vietnam" },
-  { firstName: "Cong-Kha", lastName: "Pham", affiliation: "The University of Elector-Communications, Japan" },
-  { firstName: "Cuong", lastName: "Nguyen", affiliation: "Le Quy Don Technical University, Vietnam" },
-  { firstName: "Dai Tho", lastName: "Nguyen", affiliation: "Vietnam National University, Vietnam" },
-  { firstName: "Duc-Tho", lastName: "Hoang", affiliation: "Academy of Cryptographic Technique, Vietnam" },
-  { firstName: "Duc-Thuan", lastName: "Le", affiliation: "Academy of Cryptography Techniques, Vietnam" },
-  { firstName: "Hai", lastName: "Nguyen Nhat", affiliation: "Hanoi University of Science and Technology, Vietnam" },
-  { firstName: "Hau", lastName: "Pham", affiliation: "VNUHCM University of Information Technology, Vietnam" },
-  { firstName: "Hieu", lastName: "Duong-Van", affiliation: "Tien Giang University, Vietnam" },
-  { firstName: "Hieu Minh", lastName: "Nguyen", affiliation: "Academy of Crytography Techniques, Vietnam" },
-  { firstName: "Hoa", lastName: "Nguyen Ngoc", affiliation: "VNU University of Engineering and Technology, Vietnam" },
-  { firstName: "Hung", lastName: "Nguyen", affiliation: "Command 86, Vietnam" },
-  { firstName: "Hung", lastName: "Cao", affiliation: "University of New Brunswick, Canada" },
-  { firstName: "Huong", lastName: "Pham Van", affiliation: "Academy of Cryptography Techniques, Vietnam" },
-  { firstName: "Huy", lastName: "Tran Duc", affiliation: "FPT Information Security, Vietnam" },
-  { firstName: "Huy Quoc", lastName: "Le", affiliation: "Tan Tao University, Vietnam" },
-  { firstName: "Jean-Yves", lastName: "Marion", affiliation: "Université de Lorraine, LORIA, France" },
-  { firstName: "Junbeom", lastName: "Hur", affiliation: "Korea University, South Korea" },
-  { firstName: "Khai Hanh", lastName: "Tang", affiliation: "Nanyang Technological University, Singapore" },
-  { firstName: "Khanh", lastName: "Nguyen", affiliation: "SCIT" },
-  { firstName: "Khoa", lastName: "Nguyen", affiliation: "University of Wollongong, Australia" },
-  { firstName: "Kwangjo", lastName: "Kim", affiliation: "Korea Advanced Institute of Science and Technology, South Korea" },
-  { firstName: "Lam", lastName: "Bui Thu", affiliation: "Academy of Crytography Techniques, Vietnam" },
-  { firstName: "Long", lastName: "Nguyen-Van", affiliation: "Academy of Cryptography Techniques, Vietnam" },
-  { firstName: "Luc", lastName: "Quynh", affiliation: "Academy of Cryptography Techniques, Vietnam" },
-  { firstName: "Luong", lastName: "Tran", affiliation: "Academy of Cryptography Techniques, Vietnam" },
-  { firstName: "Minh-Tuan", lastName: "Thai", affiliation: "Can Tho University, Vietnam" },
-  { firstName: "Mizuhito", lastName: "Ogawa", affiliation: "Japan Advanced Institute of Science and Technology, Japan" },
-  { firstName: "Ngo", lastName: "Tran", affiliation: "Florida Atlantic University, USA" },
-  { firstName: "Nhien-An", lastName: "Le-Khac", affiliation: "University College Dublin, Ireland" },
-  { firstName: "Nikolay", lastName: "Moldovyan", affiliation: "St. Petersburg Institute for Informatics and Automation of the Russian Academy of Sciences, Russia" },
-  { firstName: "Pablo", lastName: "Freyre-Arrozarena", affiliation: "University of Havana, Cuba" },
-  { firstName: "Phuong-Hoa", lastName: "Nguyen", affiliation: "Telecom Paris, Institut Polytechnique de Paris, France" },
-  { firstName: "Quang Anh", lastName: "Tran", affiliation: "Posts and Telecommunications Institute of Technology, Vietnam" },
-  { firstName: "Quang Duc", lastName: "Tran", affiliation: "Hanoi University of Science and Technology, Vietnam" },
-  { firstName: "Quang-Kien", lastName: "Trinh", affiliation: "Le Quy Don Technical University, Vietnam" },
-  { firstName: "Quy", lastName: "Tran Ngoc", affiliation: "Academy of Cryptography Techniques, Vietnam" },
-  { firstName: "Rene", lastName: "Richard", affiliation: "National Research Council, Canada" },
-  { firstName: "Steven", lastName: "Duong", affiliation: "University of Wollongong, Autralia" },
-  { firstName: "Sylvain", lastName: "Guilley", affiliation: "GET/ENST, CNRS/LTCI, France" },
-  { firstName: "Ta Minh", lastName: "Thanh", affiliation: "Le Quy Don Technical University, Vietnam" },
-  { firstName: "Tai", lastName: "Pho", affiliation: "Vietnam National University, Vietnam" },
-  { firstName: "Thang", lastName: "Hoang", affiliation: "Virginia Tech, USA" },
-  { firstName: "Thang", lastName: "Nguyen", affiliation: "Academy of Cryptography Techniques, Vietnam" },
-  { firstName: "The Son", lastName: "Tran", affiliation: "VietHan Collegue, Vietnam" },
-  { firstName: "Thi Dao", lastName: "Vu", affiliation: "Academy of Cryptography Techniques, Vietnam" },
-  { firstName: "Tho", lastName: "Mai", affiliation: "Academy of Cryptography Techniques, Vietnam" },
-  { firstName: "Tien", lastName: "Dinh", affiliation: "Vietnam Government Information Security Commission, Vietnam" },
-  { firstName: "Trong-Thuc", lastName: "Hoang", affiliation: "The University of Electro-Communications, Japan" },
-  { firstName: "Trung", lastName: "Pham", affiliation: "Academy of Cryptography Techniques, Vietnam" },
-  { firstName: "Trung", lastName: "Do Quang", affiliation: "Academy of Cryptography Techniques, Vietnam" },
-  { firstName: "Truong", lastName: "Nguyen-Dao", affiliation: "Academy of Cryptography Techniques, Vietnam" },
-  { firstName: "Truong Thanh Hung", lastName: "Nguyen", affiliation: "University of New Brunswick, Canada" },
-  { firstName: "Tuan", lastName: "Dang", affiliation: "CMC University, Vietnam" },
-  { firstName: "Tuan", lastName: "Lai Minh", affiliation: "Academy of Cryptography Techniques, Vietnam" },
-  { firstName: "Van Loi", lastName: "Cao", affiliation: "Le Quy Don Technical University, Vietnam" },
-  { firstName: "Van-Phuc", lastName: "Hoang", affiliation: "Le Quy Don Technical University, Vietnam" },
-  { firstName: "Viet Hung", lastName: "Nguyen", affiliation: "Le Quy Don Technical University, Vietnam" },
-  { firstName: "Viet Long", lastName: "Hoang", affiliation: "Academy of Security Technology and Industry, Vietnam" },
-  { firstName: "Viet Xuan Phuong", lastName: "Tran", affiliation: "University of Arkansas at Little Rock, USA" },
-  { firstName: "Vincent", lastName: "Rijmen", affiliation: "KU Leuven, ESAT/COSIC, Belgium" },
-  { firstName: "Xuan Dau", lastName: "Hoang", affiliation: "Posts and Telecommunications Institute of Technology, Vietnam" },
-];

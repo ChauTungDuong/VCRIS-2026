@@ -8,7 +8,9 @@ import {
   IconTextRow, TwoColText, NumberedList,
   HeroBanner, FeatureCard, ScheduleTable, InfoBox, GradientSection, DownloadButton,
 } from "./ElementorComponents";
+import { RichTextField } from "./RichTextField";
 import { makeMediaField } from "./MediaPickerField";
+import { VenuePageTitle, VenueDetails, VenuePhotoGrid, VenuePhotoItem, VenueAboutContainer, VenueText, VenueLink } from "./VenueComponents";
 
 // ==========================
 // Shared Field Configs
@@ -62,6 +64,8 @@ export const puckConfig: Config = {
     hero: { title: "🚀 Hero Sections", components: ["HeroBanner"] },
     home: { title: "🏠 Home Layouts", components: ["HomeHero", "HomeImportantDates", "HomeAbout", "HomeCfa"] },
     general: { title: "🌐 Page Layouts", components: ["TopImageHeader"] },
+    macro: { title: "🧩 Macro Blocks", components: ["TopImageHeader", "HomeHero", "HomeImportantDates", "HomeAbout", "HomeCfa"] },
+    venue: { title: "🏢 Venue", components: ["VenuePageTitle", "VenueDetails", "VenuePhotoGrid", "VenuePhotoItem", "VenueAboutContainer", "VenueText", "VenueLink"] },
   },
   root: {
     render: ({ children }: { children: React.ReactNode }) => (
@@ -104,6 +108,9 @@ export const puckConfig: Config = {
     InfoBox,
     GradientSection,
     DownloadButton,
+
+    // ===== VENUE COMPONENTS =====
+    VenuePageTitle, VenueDetails, VenuePhotoGrid, VenuePhotoItem, VenueAboutContainer, VenueText, VenueLink,
 
     // ====== SECTION ======
     Section: {

@@ -48,12 +48,11 @@ export default function GlobalHero() {
                 className="text-white leading-[1.12]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                <span className="block text-[38px] md:text-[48px] italic font-bold">
-                  The 3<sup>rd</sup> International Conference on
+                <span className="block text-[24px] md:text-[34px] italic font-bold">
+                  HỘI THẢO KHOA HỌC QUỐC GIA TRÍ TUỆ NHÂN TẠO CHO MẬT MÃ VÀ AN TOÀN THÔNG TIN
                 </span>
-                <span className="block text-[44px] md:text-[62px] italic font-bold mt-1">
-                  Cryptography <span className="text-cipher">&amp;</span>{" "}
-                  Information Security
+                <span className="block text-[44px] md:text-[62px] italic font-bold mt-2">
+                  <span className="text-cipher">AI4CRIS</span> 2026
                 </span>
               </h1>
             </div>

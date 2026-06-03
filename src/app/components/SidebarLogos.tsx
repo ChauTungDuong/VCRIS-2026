@@ -1,90 +1,50 @@
-import { Building2, Handshake, Users, Award } from "lucide-react";
-import { sponsorsData } from "../data/sponsorsData";
-
-const sponsorLogoModules = import.meta.glob("../../assets/*.{png,jpg,jpeg,webp,svg}", {
-  eager: true,
-  import: "default",
-}) as Record<string, string>;
-
-const sponsorLogoByName = Object.entries(sponsorLogoModules).reduce<Record<string, string>>(
-  (acc, [path, logoUrl]) => {
-    const fileName = path.split("/").pop();
-    if (fileName) {
-      acc[fileName] = logoUrl;
-    }
-    return acc;
-  },
-  {}
-);
-
-const resolveSponsorLogo = (logoFileName: string) => {
-  const candidates = [
-    logoFileName,
-    logoFileName.replace("co-organizer-", "co-organizers-"),
-    logoFileName.replace("endorser-", "endorsers-"),
-  ];
-
-  for (const candidate of candidates) {
-    if (sponsorLogoByName[candidate]) {
-      return sponsorLogoByName[candidate];
-    }
-  }
-
-  return "";
-};
+import { Building2, Shield, Users } from "lucide-react";
+import { logos } from "../data/conferenceData";
 
 const SponsorCategory = ({ title, icon: Icon, sponsors }: { title: string, icon: any, sponsors: any[] }) => {
   if (!sponsors || sponsors.length === 0) return null;
   
   return (
-    <div className="mb-10 last:mb-0">
-      <div className="flex items-center gap-2 mb-3">
-        <Icon size={20} className="text-ink" />
-        <h3 className="text-[14px] font-bold text-ink uppercase tracking-wider" style={{ fontFamily: "var(--font-display)" }}>
+    <div className="mb-10 last:mb-0 w-full flex flex-col items-center">
+      <div className="flex items-center gap-2 mb-3 w-full border-b border-rule pb-2">
+        <Icon size={20} className="text-cipher" />
+        <h3 className="text-[14px] font-bold text-ink uppercase tracking-wider w-full" style={{ fontFamily: "var(--font-display)" }}>
           {title}
         </h3>
       </div>
-      <div className="h-px w-full bg-rule mb-6 border-t border-dashed border-rule" />
       
-      <div className="flex flex-col gap-8">
-        {sponsors.map((sponsor, idx) => {
-          const logoUrl = resolveSponsorLogo(sponsor.logo);
-          return (
-            <a
-              key={idx}
-              href={sponsor.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center text-center group"
-            >
-              {logoUrl && (
-                <div className="w-full flex justify-center mb-3">
-                  <img
-                    src={logoUrl}
-                    alt={sponsor.title}
-                    className="max-w-[140px] max-h-[100px] object-contain transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
-              )}
-              <span className="text-[13px] text-ink font-medium leading-snug group-hover:text-cipher transition-colors" style={{ fontFamily: "var(--font-body)" }}>
-                {sponsor.title}
-              </span>
-            </a>
-          );
-        })}
+      <div className="flex flex-col gap-8 w-full items-center mt-2">
+        {sponsors.map((sponsor, idx) => (
+          <div key={idx} className="flex flex-col items-center text-center group w-[120px] lg:w-[160px]">
+            <div className="w-full flex justify-center mb-3 h-[100px] p-2 transition-transform duration-300 group-hover:scale-105">
+              <img
+                src={sponsor.src}
+                alt={sponsor.name}
+                className="max-h-full max-w-full object-contain"
+                loading="lazy"
+                title={sponsor.name}
+              />
+            </div>
+            <span className="text-[13px] text-slate font-medium leading-snug transition-colors" style={{ fontFamily: "var(--font-body)" }}>
+              {sponsor.name}
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
 export default function SidebarLogos() {
+  const chuTri = logos.filter(l => l.role === "Đơn vị chủ trì tổ chức");
+  const dongToChuc = logos.filter(l => l.role === "Đơn vị đồng tổ chức");
+  const baoTro = logos.filter(l => l.role === "Đơn vị bảo trợ");
+
   return (
-    <div className="w-full h-full bg-white p-6 md:p-8">
-      <SponsorCategory title="Sponsor" icon={Building2} sponsors={sponsorsData.organizer} />
-      <SponsorCategory title="Technical Sponsor" icon={Handshake} sponsors={sponsorsData.technicalSponsor} />
-      <SponsorCategory title="Co-Organizers" icon={Users} sponsors={sponsorsData.co_organizers} />
-      <SponsorCategory title="Endorsers" icon={Award} sponsors={sponsorsData.endorsers} />
+    <div className="w-full h-full bg-white p-6 md:p-8 flex flex-col items-center">
+      <SponsorCategory title="Đơn vị chủ trì tổ chức" icon={Building2} sponsors={chuTri} />
+      <SponsorCategory title="Đơn vị đồng tổ chức" icon={Users} sponsors={dongToChuc} />
+      <SponsorCategory title="Đơn vị bảo trợ" icon={Shield} sponsors={baoTro} />
     </div>
   );
 }
