@@ -27,7 +27,7 @@ export default function Navigation() {
       className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-200 ${isScrolled ? "bg-white/90 backdrop-blur-xl border-rule" : "bg-white border-rule"
         }`}
     >
-      <div className="max-w-[1800px] mx-auto px-4 lg:px-6 xl:px-8 h-[72px] flex items-center justify-between sm:gap-2 md:gap-3">
+      <div className="max-w-[1800px] mx-auto px-2 lg:px-4 2xl:px-8 h-[72px] flex items-center justify-between sm:gap-2 md:gap-3">
         {/* Logo */}
         <Link to="/" className="flex flex-col shrink-0 justify-center">
           <div className="flex items-baseline gap-2 mb-1">
@@ -53,8 +53,8 @@ export default function Navigation() {
         </Link>
 
         {/* Desktop Nav Links */}
-        <div className="hidden xl:flex min-w-0 flex-1">
-          <div className="flex items-center justify-start xl:justify-center gap-1.5 xl:gap-2">
+        <div className="hidden 2xl:flex min-w-0 flex-1 ml-12 2xl:ml-16 mr-12 2xl:mr-24">
+          <div className="flex w-full items-center justify-between">
             {headerNavLinks.map((link) => {
               const isActive =
                 location.pathname === link.path ||
@@ -70,7 +70,7 @@ export default function Navigation() {
                 >
                   <Link
                     to={link.path}
-                    className={`px-2.5 xl:px-3 h-9 rounded-full text-[11px] xl:text-[12px] font-medium tracking-[0.2px] whitespace-nowrap flex items-center gap-1 transition-colors duration-200 ${isActive
+                    className={`px-3 2xl:px-5 h-10 rounded-full text-[12px] 2xl:text-[13px] font-bold tracking-[0.5px] whitespace-nowrap flex items-center gap-1 transition-colors duration-200 ${isActive
                       ? "text-cipher bg-cipher/10"
                       : "text-ink hover:text-cipher hover:bg-cipher/5"
                       }`}
@@ -135,7 +135,7 @@ export default function Navigation() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="xl:hidden p-2 text-ink hover:bg-cipher/5 rounded-lg transition-colors"
+          className="2xl:hidden p-2 text-ink hover:bg-cipher/5 rounded-lg transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle mobile menu"
         >
@@ -144,7 +144,7 @@ export default function Navigation() {
 
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
-          <div className="absolute top-[60px] left-0 w-full h-[calc(100vh-60px)] z-40 bg-white border-t border-rule xl:hidden overflow-y-auto shadow-xl">
+          <div className="absolute top-[60px] left-0 w-full h-[calc(100vh-60px)] z-40 bg-white border-t border-rule 2xl:hidden overflow-y-auto shadow-xl">
             <div className="flex flex-col p-4 gap-2">
               {headerNavLinks.map((link) => {
                 const isActive =
@@ -234,32 +234,6 @@ export default function Navigation() {
         )}
 
 
-        {/* CTA Buttons
-        <div className="hidden xl:flex items-center gap-2.5 shrink-0">
-          <a
-            href="https://vcris.org/previous-conferences/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[12px] font-medium tracking-[0.2px] whitespace-nowrap text-ink hover:text-cipher transition-colors duration-200"
-            style={{ fontFamily: "var(--font-body)" }}
-          >
-            ARCHIVE
-          </a>
-          <Link
-            to={vcrisRoutes.callForPapers.path}
-            className="px-3.5 h-9 rounded-2xl bg-cipher text-white text-[12px] font-semibold whitespace-nowrap flex items-center justify-center transition-all duration-200 hover:shadow-lg hover:shadow-cipher/40"
-            style={{ fontFamily: "var(--font-body)" }}
-          >
-            Submit Paper
-          </Link>
-          <Link
-            to={vcrisRoutes.registration.path}
-            className="px-3.5 h-9 rounded-2xl border border-cipher text-cipher bg-white text-[12px] font-semibold whitespace-nowrap flex items-center justify-center transition-all duration-200 hover:bg-cipher/5"
-            style={{ fontFamily: "var(--font-body)" }}
-          >
-            Register
-          </Link>
-        </div> */}
       </div>
     </nav>
   );

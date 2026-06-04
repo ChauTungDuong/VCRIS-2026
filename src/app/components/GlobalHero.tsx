@@ -10,17 +10,17 @@ export default function GlobalHero() {
   }, []);
 
   return (
-    <section className="relative h-[400px] md:h-[500px] overflow-hidden mt-[60px]">
+    <section className="relative min-h-[450px] md:min-h-[500px] overflow-hidden mt-[60px] flex items-center py-12 md:py-16">
       <div className="absolute inset-0">
         <img
-          src="/images/bia.jpg"
+          src="/images/bia-1920500.png"
           alt="Cryptography"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-white/10" />
       </div>
 
-      <div className="relative max-w-[1200px] mx-auto px-6 h-full flex items-center justify-center pt-8 text-center">
+      <div className="relative w-full max-w-[1200px] mx-auto px-4 md:px-6 flex items-center justify-center text-center">
         <header className="max-w-[800px] flex flex-col items-center">
           {/* Eyebrow */}
           <div

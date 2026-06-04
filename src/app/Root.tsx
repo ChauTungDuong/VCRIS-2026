@@ -9,8 +9,8 @@ export default function Root() {
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
       <GlobalHero />
-      <div className="flex-1 w-full max-w-[1800px] mx-auto px-4 lg:px-6 xl:px-8 flex flex-col lg:flex-row relative">
-        <main className="flex-1 min-w-0 w-full lg:pr-8 py-12">
+      <div className="flex-1 w-full max-w-[1800px] mx-auto pl-8 lg:pl-12 xl:pl-16 pr-0 flex flex-col lg:flex-row relative">
+        <main className="flex-1 min-w-0 w-full lg:pr-24 py-12">
           <Outlet />
         </main>
         <aside className="w-full lg:w-[300px] xl:w-[340px] flex-shrink-0 lg:border-l border-rule border-dashed bg-white">
