@@ -27,25 +27,25 @@ export default function Navigation() {
       className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-200 ${isScrolled ? "bg-white/90 backdrop-blur-xl border-rule" : "bg-white border-rule"
         }`}
     >
-      <div className="max-w-[1800px] mx-auto px-8 lg:px-12 xl:px-16 h-[72px] flex items-center justify-between sm:gap-2 md:gap-3">
+      <div className="max-w-[1800px] mx-auto px-4 lg:px-6 xl:px-8 h-[72px] flex items-center justify-between sm:gap-2 md:gap-3">
         {/* Logo */}
-        <Link to="/" className="flex flex-col shrink-0">
-          <div className="flex items-baseline gap-2">
+        <Link to="/" className="flex flex-col shrink-0 justify-center">
+          <div className="flex items-baseline gap-2 mb-1">
             <span
-              className="text-[28px] font-bold text-ink"
+              className="text-[28px] font-bold text-ink leading-none"
               style={{ fontFamily: "var(--font-display)" }}
             >
               AI4CRIS
             </span>
             <span
-              className="text-[13px] font-medium text-cipher"
+              className="text-[13px] font-medium text-cipher leading-none"
               style={{ fontFamily: "var(--font-body)" }}
             >
               2026
             </span>
           </div>
           <span
-            className="hidden xl:block text-[12px] font-bold text-ink whitespace-nowrap mt-1"
+            className="hidden xl:block text-[12px] font-bold text-ink whitespace-nowrap leading-none"
             style={{ fontFamily: "var(--font-body)" }}
           >
             AI for Cryptography & Information Security

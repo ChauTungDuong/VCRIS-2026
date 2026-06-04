@@ -15,7 +15,7 @@ const SponsorCategory = ({ title, icon: Icon, sponsors }: { title: string, icon:
       
       <div className="flex flex-col gap-8 w-full items-center mt-2">
         {sponsors.map((sponsor, idx) => (
-          <div key={idx} className="flex flex-col items-center text-center group w-[120px] lg:w-[160px]">
+          <div key={idx} className="flex flex-col items-center text-center group w-[160px] lg:w-[220px]">
             <div className="w-full flex justify-center mb-3 h-[100px] p-2 transition-transform duration-300 group-hover:scale-105">
               <img
                 src={sponsor.src}
@@ -25,7 +25,7 @@ const SponsorCategory = ({ title, icon: Icon, sponsors }: { title: string, icon:
                 title={sponsor.name}
               />
             </div>
-            <span className="text-[13px] text-slate font-medium leading-snug transition-colors" style={{ fontFamily: "var(--font-body)" }}>
+            <span className="text-[13px] text-ink font-bold leading-snug transition-colors" style={{ fontFamily: "var(--font-body)" }}>
               {sponsor.name}
             </span>
           </div>
@@ -41,7 +41,7 @@ export default function SidebarLogos() {
   const baoTro = logos.filter(l => l.role === "Đơn vị bảo trợ");
 
   return (
-    <div className="w-full h-full bg-white p-6 md:p-8 flex flex-col items-center">
+    <div className="w-full h-full bg-white py-6 md:py-8 px-2 lg:px-4 flex flex-col items-center">
       <SponsorCategory title="Đơn vị chủ trì tổ chức" icon={Building2} sponsors={chuTri} />
       <SponsorCategory title="Đơn vị đồng tổ chức" icon={Users} sponsors={dongToChuc} />
       <SponsorCategory title="Đơn vị bảo trợ" icon={Shield} sponsors={baoTro} />

@@ -63,7 +63,7 @@ export const home = {
       <span class="text-white"> 2026</span>
     </h1>
   </div>`,
-  time: "HÀ NỘI NGÀY 14/8/2026",
+  time: "Hà Nội, 14/8/2026",
   venue: "Học viện Kỹ thuật mật mã, 141 Chiến Thắng, Thanh Liệt, Hà Nội",
   importantDates: {
     paperSubmissionDeadline: "20/7/2026",
