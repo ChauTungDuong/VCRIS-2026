@@ -17,42 +17,43 @@ export default function GlobalHero() {
           alt="Cryptography"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-deep/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-deep/80 to-transparent" />
+        <div className="absolute inset-0 bg-white/10" />
       </div>
 
-      <div className="relative max-w-[1200px] mx-auto px-6 h-full flex items-center pt-8">
-        <header className="max-w-[640px]">
+      <div className="relative max-w-[1200px] mx-auto px-6 h-full flex items-center justify-center pt-8 text-center">
+        <header className="max-w-[800px] flex flex-col items-center">
           {/* Eyebrow */}
           <div
-            className={`flex items-center gap-3 mb-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+            className={`flex items-center justify-center gap-3 mb-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
           >
-            <div className="w-8 h-1 bg-cipher" />
+            <div className="w-8 h-1 bg-cipher hidden sm:block" />
             <span
-              className="text-[11px] font-semibold text-white tracking-[4px] uppercase"
+              className="text-[12px] font-bold text-[#1e40af] tracking-[4px] uppercase drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"
               style={{ fontFamily: "var(--font-body)" }}
             >
               {home.name}
             </span>
+            <div className="w-8 h-1 bg-cipher hidden sm:block" />
           </div>
 
-          {/* Cipher Key Line */}
-          <div className="relative pl-6">
-            <div className="absolute left-0 top-0 w-[1px] h-[72px] bg-cipher" />
+          {/* Title */}
+          <div className="relative">
 
             {/* Title */}
             <div
               className={`transition-all duration-700 delay-150 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
             >
               <h1
-                className="text-white leading-[1.12]"
+                className="text-cipher leading-[1.12]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                <span className="block text-[24px] md:text-[34px] italic font-bold">
-                  HỘI THẢO KHOA HỌC QUỐC GIA TRÍ TUỆ NHÂN TẠO CHO MẬT MÃ VÀ AN TOÀN THÔNG TIN
+                <span className="block text-[24px] md:text-[34px] italic font-extrabold drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">
+                  HỘI THẢO KHOA HỌC QUỐC GIA <br />
+                  TRÍ TUỆ NHÂN TẠO CHO MẬT MÃ <br />
+                  VÀ AN TOÀN THÔNG TIN
                 </span>
-                <span className="block text-[44px] md:text-[62px] italic font-extrabold mt-2 drop-shadow-md">
-                  <span className="text-white">AI4CRIS</span> 2026
+                <span className="block text-[44px] md:text-[62px] italic font-black mt-2 drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">
+                  <span className="text-[#0066CC]">AI4CRIS</span> 2026
                 </span>
               </h1>
             </div>
@@ -60,21 +61,21 @@ export default function GlobalHero() {
 
           {/* Meta Chips */}
           <div
-            className={`flex gap-3 mt-8 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+            className={`flex flex-wrap justify-center gap-3 mt-8 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
           >
-            <div className="flex items-center gap-2 px-4 py-4 rounded-[20px] bg-white/10 border border-white/20 backdrop-blur-sm whitespace-nowrap">
-              <Calendar size={16} className="text-cipher" />
+            <div className="flex items-center gap-2 px-4 py-4 rounded-[20px] bg-white/60 border border-[#0a2342]/10 backdrop-blur-md shadow-sm whitespace-nowrap">
+              <Calendar size={18} className="text-cipher" />
               <span
-                className="text-[14px] font-medium text-white"
+                className="text-[15px] font-bold text-[#0a2342]"
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 {home.time}
               </span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-4 rounded-[20px] bg-white/10 border border-white/20 backdrop-blur-sm whitespace-nowrap">
-              <MapPin size={16} className="text-cipher" />
+            <div className="flex items-center gap-2 px-4 py-4 rounded-[20px] bg-white/60 border border-[#0a2342]/10 backdrop-blur-md shadow-sm whitespace-nowrap">
+              <MapPin size={18} className="text-cipher" />
               <span
-                className="text-[14px] font-medium text-white"
+                className="text-[15px] font-bold text-[#0a2342]"
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 {home.venue}
