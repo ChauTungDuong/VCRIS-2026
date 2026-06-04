@@ -45,7 +45,7 @@ export default function Navigation() {
             </span>
           </div>
           <span
-            className="hidden xl:block text-[10px] text-slate whitespace-nowrap"
+            className="hidden xl:block text-[12px] font-bold text-ink whitespace-nowrap mt-1"
             style={{ fontFamily: "var(--font-body)" }}
           >
             AI for Cryptography & Information Security

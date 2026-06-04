@@ -91,6 +91,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* About the Conference */}
+      <section className="bg-white rounded-3xl p-8 lg:p-12 border border-rule shadow-sm">
+        <div className="flex items-center gap-2 mb-4">
+          <div className="w-2 h-2 rounded-full bg-cipher" />
+          <span
+            className="text-[11px] font-semibold text-cipher uppercase tracking-[3px]"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            GIỚI THIỆU
+          </span>
+        </div>
+        <h2
+          className="text-[36px] font-bold italic text-ink mb-6"
+          style={{ fontFamily: "var(--font-display)" }}
+        >
+          Về hội thảo {CONF.name}
+        </h2>
+        <div className="text-[16px] text-slate space-y-4 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
+          {home.aboutTheConference.map((p, idx) => (
+            <p key={idx} className="indent-8">{p}</p>
+          ))}
+        </div>
+      </section>
+
       {/* Important Dates & Info Section */}
       <section className="bg-[#f0f8fa] rounded-3xl p-8 lg:p-12 border border-[#b0d9e6] shadow-sm">
         <div className="flex items-center gap-2 mb-4">
@@ -115,30 +139,6 @@ export default function Home() {
           <p><span className="font-semibold">Địa điểm tổ chức Hội thảo:</span> Học viện Kỹ thuật mật mã, 141 Chiến Thắng, Thanh Liệt, Hà Nội</p>
           <p><span className="font-semibold">Hòm thư điện tử nhận bài tham luận và báo cáo:</span> <a href="mailto:AI4Security@actvn.edu.vn" className="text-cipher hover:underline">AI4Security@actvn.edu.vn</a></p>
           <p><span className="font-semibold">Mọi thông tin về hội thảo xin vui lòng liên hệ:</span> <a href="mailto:AI4Security@actvn.edu.vn" className="text-cipher hover:underline">AI4Security@actvn.edu.vn</a></p>
-        </div>
-      </section>
-
-      {/* About the Conference */}
-      <section className="bg-white rounded-3xl p-8 lg:p-12 border border-rule shadow-sm">
-        <div className="flex items-center gap-2 mb-4">
-          <div className="w-2 h-2 rounded-full bg-cipher" />
-          <span
-            className="text-[11px] font-semibold text-cipher uppercase tracking-[3px]"
-            style={{ fontFamily: "var(--font-body)" }}
-          >
-            GIỚI THIỆU
-          </span>
-        </div>
-        <h2
-          className="text-[36px] font-bold italic text-ink mb-6"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
-          Về hội thảo {CONF.name}
-        </h2>
-        <div className="text-[16px] text-slate space-y-4 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-          {home.aboutTheConference.map((p, idx) => (
-            <p key={idx} className="indent-8">{p}</p>
-          ))}
         </div>
       </section>
     </div>

@@ -13,7 +13,7 @@ export default function GlobalHero() {
     <section className="relative h-[400px] md:h-[500px] overflow-hidden mt-[60px]">
       <div className="absolute inset-0">
         <img
-          src="/images/hohoankiem.avif"
+          src="/images/bia.jpg"
           alt="Cryptography"
           className="w-full h-full object-cover"
         />
@@ -51,8 +51,8 @@ export default function GlobalHero() {
                 <span className="block text-[24px] md:text-[34px] italic font-bold">
                   HỘI THẢO KHOA HỌC QUỐC GIA TRÍ TUỆ NHÂN TẠO CHO MẬT MÃ VÀ AN TOÀN THÔNG TIN
                 </span>
-                <span className="block text-[44px] md:text-[62px] italic font-bold mt-2">
-                  <span className="text-cipher">AI4CRIS</span> 2026
+                <span className="block text-[44px] md:text-[62px] italic font-extrabold mt-2 drop-shadow-md">
+                  <span className="text-white">AI4CRIS</span> 2026
                 </span>
               </h1>
             </div>

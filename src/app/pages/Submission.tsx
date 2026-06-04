@@ -21,20 +21,38 @@ export default function Submission() {
           </h1>
         </div>
 
-        <section className="space-y-6">
-          <h2 className="text-[32px] font-bold text-ink mb-4 border-b border-rule pb-2" style={{ fontFamily: "var(--font-display)" }}>
-            1. Giới thiệu
+        <section className="bg-white rounded-3xl p-8 lg:p-12 border border-rule shadow-sm">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-2 h-2 rounded-full bg-cipher" />
+            <span
+              className="text-[11px] font-semibold text-cipher uppercase tracking-[3px]"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              GIỚI THIỆU
+            </span>
+          </div>
+          <h2 className="text-[36px] font-bold italic text-ink mb-6" style={{ fontFamily: "var(--font-display)" }}>
+            Về việc gửi bài tham dự
           </h2>
-          {submissionText.about.map((paragraph, idx) => (
-            <p key={idx} className="text-[18px] text-slate leading-relaxed indent-8" style={{ fontFamily: "var(--font-body)" }}>
-              {paragraph}
-            </p>
-          ))}
+          <div className="text-[16px] text-slate space-y-4 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
+            {submissionText.about.map((paragraph, idx) => (
+              <p key={idx} className="indent-8">{paragraph}</p>
+            ))}
+          </div>
         </section>
 
-        <section className="space-y-8">
-          <h2 className="text-[32px] font-bold text-ink mb-4 border-b border-rule pb-2" style={{ fontFamily: "var(--font-display)" }}>
-            2. Các chủ đề nhận bài
+        <section className="bg-[#f0f8fa] rounded-3xl p-8 lg:p-12 border border-[#b0d9e6] shadow-sm">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-2 h-2 rounded-full bg-cipher" />
+            <span
+              className="text-[13px] font-semibold text-cipher uppercase tracking-[3px]"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              CHỦ ĐỀ
+            </span>
+          </div>
+          <h2 className="text-[32px] font-bold italic text-ink mb-6" style={{ fontFamily: "var(--font-display)" }}>
+            Các chủ đề nhận bài
           </h2>
           <div className="space-y-4">
             {submissionText.tracks.map((track, idx) => {
@@ -73,57 +91,102 @@ export default function Submission() {
           </div>
         </section>
 
-        <section className="space-y-6">
-          <h2 className="text-[32px] font-bold text-ink mb-4 border-b border-rule pb-2" style={{ fontFamily: "var(--font-display)" }}>
-            3. Yêu cầu đối với bài báo cáo
+        <section className="bg-white rounded-3xl p-8 lg:p-12 border border-rule shadow-sm">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-2 h-2 rounded-full bg-cipher" />
+            <span
+              className="text-[11px] font-semibold text-cipher uppercase tracking-[3px]"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              YÊU CẦU
+            </span>
+          </div>
+          <h2 className="text-[32px] font-bold italic text-ink mb-6" style={{ fontFamily: "var(--font-display)" }}>
+            Yêu cầu đối với bài báo cáo
           </h2>
-          <ul className="list-disc pl-6 space-y-3 text-[18px] text-slate" style={{ fontFamily: "var(--font-body)" }}>
+          <ul className="list-disc pl-6 space-y-3 text-[16px] text-slate" style={{ fontFamily: "var(--font-body)" }}>
             {submissionText.requirements.map((req, idx) => (
               <li key={idx}>{req}</li>
             ))}
           </ul>
         </section>
 
-        <section className="space-y-6">
-          <h2 className="text-[32px] font-bold text-ink mb-4 border-b border-rule pb-2" style={{ fontFamily: "var(--font-display)" }}>
-            4. Cấu trúc bài viết
+        <section className="bg-[#f0f8fa] rounded-3xl p-8 lg:p-12 border border-[#b0d9e6] shadow-sm">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-2 h-2 rounded-full bg-cipher" />
+            <span
+              className="text-[13px] font-semibold text-cipher uppercase tracking-[3px]"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              CẤU TRÚC
+            </span>
+          </div>
+          <h2 className="text-[32px] font-bold italic text-ink mb-6" style={{ fontFamily: "var(--font-display)" }}>
+            Cấu trúc bài viết
           </h2>
-          <p className="text-[18px] text-slate leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
+          <p className="text-[16px] text-slate leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
             {submissionText.structure}
           </p>
         </section>
 
-        <section className="space-y-6">
-          <h2 className="text-[32px] font-bold text-ink mb-4 border-b border-rule pb-2" style={{ fontFamily: "var(--font-display)" }}>
-            5. Quy trình xét duyệt
+        <section className="bg-white rounded-3xl p-8 lg:p-12 border border-rule shadow-sm">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-2 h-2 rounded-full bg-cipher" />
+            <span
+              className="text-[11px] font-semibold text-cipher uppercase tracking-[3px]"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              QUY TRÌNH
+            </span>
+          </div>
+          <h2 className="text-[32px] font-bold italic text-ink mb-6" style={{ fontFamily: "var(--font-display)" }}>
+            Quy trình xét duyệt
           </h2>
-          <ul className="list-decimal pl-6 space-y-3 text-[18px] text-slate" style={{ fontFamily: "var(--font-body)" }}>
+          <ul className="list-decimal pl-6 space-y-3 text-[16px] text-slate" style={{ fontFamily: "var(--font-body)" }}>
             {submissionText.reviewProcess.map((step, idx) => (
               <li key={idx}>{step}</li>
             ))}
           </ul>
         </section>
 
-        <section className="space-y-6">
-          <h2 className="text-[32px] font-bold text-ink mb-4 border-b border-rule pb-2" style={{ fontFamily: "var(--font-display)" }}>
-            6. Mốc thời gian dự kiến
+        <section className="bg-[#f0f8fa] rounded-3xl p-8 lg:p-12 border border-[#b0d9e6] shadow-sm">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-2 h-2 rounded-full bg-cipher" />
+            <span
+              className="text-[13px] font-semibold text-cipher uppercase tracking-[3px]"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              MỐC THỜI GIAN
+            </span>
+          </div>
+          <h2 className="text-[32px] font-bold italic text-ink mb-6" style={{ fontFamily: "var(--font-display)" }}>
+            Mốc thời gian dự kiến
           </h2>
-          <ul className="space-y-3 text-[18px] text-slate" style={{ fontFamily: "var(--font-body)" }}>
-            <li><span className="font-semibold text-ink">Thời gian tổ chức Hội thảo:</span> 14/8/2026</li>
-            <li><span className="font-semibold text-ink">Thời hạn nộp báo cáo và tham luận:</span> 20/7/2026</li>
-            <li><span className="font-semibold text-ink">Thời gian đăng ký tham dự Hội thảo:</span> 07/8/2026</li>
-          </ul>
+          <div className="space-y-3 text-[16px] text-slate" style={{ fontFamily: "var(--font-body)" }}>
+            <p><span className="font-semibold text-ink">Thời gian tổ chức Hội thảo:</span> 14/8/2026</p>
+            <p><span className="font-semibold text-ink">Thời hạn nộp báo cáo và tham luận:</span> 20/7/2026</p>
+            <p><span className="font-semibold text-ink">Thời gian đăng ký tham dự Hội thảo:</span> 07/8/2026</p>
+          </div>
         </section>
 
-        <section className="space-y-6">
-          <h2 className="text-[32px] font-bold text-ink mb-4 border-b border-rule pb-2" style={{ fontFamily: "var(--font-display)" }}>
-            7. Thông tin liên hệ
+        <section className="bg-white rounded-3xl p-8 lg:p-12 border border-rule shadow-sm">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-2 h-2 rounded-full bg-cipher" />
+            <span
+              className="text-[11px] font-semibold text-cipher uppercase tracking-[3px]"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              LIÊN HỆ
+            </span>
+          </div>
+          <h2 className="text-[32px] font-bold italic text-ink mb-6" style={{ fontFamily: "var(--font-display)" }}>
+            Thông tin liên hệ
           </h2>
-          <ul className="space-y-3 text-[18px] text-slate" style={{ fontFamily: "var(--font-body)" }}>
-            <li><span className="font-semibold text-ink">Email:</span> <a href="mailto:AI4Security@actvn.edu.vn" className="text-cipher hover:underline">AI4Security@actvn.edu.vn</a></li>
-            <li><span className="font-semibold text-ink">Website:</span> <a href="https://ai4cris.org" target="_blank" rel="noopener noreferrer" className="text-cipher hover:underline">https://ai4cris.org</a></li>
-          </ul>
-          <p className="text-[18px] text-slate leading-relaxed mt-6">
+          <div className="space-y-3 text-[16px] text-slate" style={{ fontFamily: "var(--font-body)" }}>
+            <p><span className="font-semibold text-ink">Email:</span> <a href="mailto:AI4Security@actvn.edu.vn" className="text-cipher hover:underline">AI4Security@actvn.edu.vn</a></p>
+            <p><span className="font-semibold text-ink">Website:</span> <a href="https://ai4cris.org" target="_blank" rel="noopener noreferrer" className="text-cipher hover:underline">https://ai4cris.org</a></p>
+          </div>
+          <p className="text-[16px] text-slate leading-relaxed mt-6">
             Ban Tổ chức trân trọng kính mời các nhà khoa học, chuyên gia, doanh nghiệp và cơ quan quản lý tham gia gửi bài và đồng hành cùng Hội thảo AI4CRIS 2026.
           </p>
         </section>
