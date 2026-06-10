@@ -17,13 +17,25 @@ const SponsorCategory = ({ title, icon: Icon, sponsors }: { title: string, icon:
         {sponsors.map((sponsor, idx) => (
           <div key={idx} className="flex flex-col items-center text-center group w-full px-2">
             <div className="w-full flex justify-center mb-3 h-[100px] p-2 transition-transform duration-300 group-hover:scale-105">
-              <img
-                src={sponsor.src}
-                alt={sponsor.name}
-                className="max-h-full max-w-full object-contain"
-                loading="lazy"
-                title={sponsor.name}
-              />
+              {sponsor.link ? (
+                <a href={sponsor.link} target="_blank" rel="noopener noreferrer" className="h-full flex justify-center items-center">
+                  <img
+                    src={sponsor.src}
+                    alt={sponsor.name}
+                    className="max-h-full max-w-full object-contain"
+                    loading="lazy"
+                    title={sponsor.name}
+                  />
+                </a>
+              ) : (
+                <img
+                  src={sponsor.src}
+                  alt={sponsor.name}
+                  className="max-h-full max-w-full object-contain"
+                  loading="lazy"
+                  title={sponsor.name}
+                />
+              )}
             </div>
             <span className="text-[13px] text-ink font-bold leading-snug transition-colors" style={{ fontFamily: "var(--font-body)" }}>
               {sponsor.name}

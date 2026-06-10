@@ -93,21 +93,15 @@ export default function Home() {
 
       {/* About the Conference */}
       <section className="bg-white rounded-3xl p-8 lg:p-12 border border-rule shadow-sm">
-        <div className="flex items-center gap-2 mb-4">
-          <div className="w-2 h-2 rounded-full bg-cipher" />
-          <span
-            className="text-[11px] font-semibold text-cipher uppercase tracking-[3px]"
-            style={{ fontFamily: "var(--font-body)" }}
+        <div className="flex items-center gap-2 mb-4 md:mb-6">
+          <div className="w-3 h-3 rounded-full bg-cipher" />
+          <h2
+            className="text-[28px] md:text-[32px] font-bold text-cipher uppercase"
+            style={{ fontFamily: "var(--font-display)" }}
           >
             GIỚI THIỆU
-          </span>
+          </h2>
         </div>
-        <h2
-          className="text-[36px] font-bold italic text-ink mb-6"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
-          Về hội thảo {CONF.name}
-        </h2>
         <div className="text-[16px] text-slate space-y-4 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
           {home.aboutTheConference.map((p, idx) => (
             <p key={idx} className="indent-8">{p}</p>
@@ -117,27 +111,20 @@ export default function Home() {
 
       {/* Important Dates & Info Section */}
       <section className="bg-[#f0f8fa] rounded-3xl p-8 lg:p-12 border border-[#b0d9e6] shadow-sm">
-        <div className="flex items-center gap-2 mb-4">
-          <div className="w-2 h-2 rounded-full bg-cipher" />
-          <span
-            className="text-[13px] font-semibold text-cipher uppercase tracking-[3px]"
-            style={{ fontFamily: "var(--font-body)" }}
+        <div className="flex items-center gap-2 mb-4 md:mb-6">
+          <div className="w-3 h-3 rounded-full bg-cipher" />
+          <h2
+            className="text-[28px] md:text-[32px] font-bold text-cipher uppercase"
+            style={{ fontFamily: "var(--font-display)" }}
           >
             THÔNG TIN QUAN TRỌNG
-          </span>
+          </h2>
         </div>
-        <h2
-          className="text-[32px] font-bold italic text-ink mb-6"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
-          Một số mốc thời gian của Hội thảo
-        </h2>
         <div className="text-[18px] text-[#0b2740] space-y-3 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
           <p><span className="font-semibold">Thời gian tổ chức Hội thảo:</span> 14/8/2026</p>
           <p><span className="font-semibold">Thời hạn nộp báo cáo và tham luận:</span> 20/7/2026</p>
           <p><span className="font-semibold">Thời gian đăng ký tham dự Hội thảo:</span> 07/8/2026</p>
           <p><span className="font-semibold">Địa điểm tổ chức Hội thảo:</span> Học viện Kỹ thuật mật mã, 141 Chiến Thắng, Thanh Liệt, Hà Nội</p>
-          <p><span className="font-semibold">Hòm thư điện tử nhận bài tham luận và báo cáo:</span> <a href="mailto:AI4Security@actvn.edu.vn" className="text-cipher hover:underline">AI4Security@actvn.edu.vn</a></p>
           <p><span className="font-semibold">Mọi thông tin về hội thảo xin vui lòng liên hệ:</span> <a href="mailto:AI4Security@actvn.edu.vn" className="text-cipher hover:underline">AI4Security@actvn.edu.vn</a></p>
         </div>
       </section>
