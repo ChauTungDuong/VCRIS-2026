@@ -83,8 +83,8 @@ export const home = {
 export const logos = [
   { name: "Học viện Kỹ thuật mật mã", src: "/images/kma.png", role: "Đơn vị chủ trì tổ chức", link: "https://actvn.edu.vn/" },
   { name: "FISU Việt Nam", src: "/images/fisu.png", role: "Đơn vị đồng tổ chức", link: "https://www.fisu.edu.vn/" },
-  { name: "Học viện Báo chí và Tuyên truyền", src: "/images/ajc.jpg", role: "Đơn vị đồng tổ chức", link: "https://ajc.hcma.vn/" },
-  { name: "Tạp chí An toàn thông tin", src: "/images/attt.png", role: "Đơn vị đồng tổ chức", link: "https://antoanthongtin.vn/" },
+  { name: "Học viện Báo chí và Tuyên truyền", src: "/images/ajc.jpg", role: "Đơn vị phối hợp", link: "https://ajc.hcma.vn/" },
+  { name: "Tạp chí An toàn thông tin", src: "/images/attt.png", role: "Đơn vị phối hợp", link: "https://antoanthongtin.vn/" },
   { name: "Ban Cơ yếu Chính phủ", src: "/images/bcy.png", role: "Đơn vị bảo trợ", link: "https://bcy.gov.vn/" },
   { name: "Bộ Khoa học và Công nghệ", src: "/images/bkhcn.png", role: "Đơn vị bảo trợ", link: "https://mst.gov.vn/" },
   { name: "Hiệp hội tin học Việt Nam", src: "/images/vaip.jpg", role: "Đơn vị bảo trợ", link: "http://vaip.org.vn/" },
@@ -209,10 +209,10 @@ export const submissionText = {
   ],
   structure: `Bài viết cần bao gồm các nội dung chính: Tiêu đề bài báo, Thông tin tác giả, Tóm tắt (Abstract), Từ khóa, Đặt vấn đề, Phương pháp nghiên cứu, Kết quả và thảo luận, Kết luận, Tài liệu tham khảo.`,
   reviewProcess: [
-    `Ban chương trình tiếp nhận bài báo qua link`,
-    `Bài báo được phản biện bởi các chuyên gia trong lĩnh vực tương ứng.`,
-    `Các bài đạt yêu cầu sẽ được lựa chọn trình bày tại hội thảo.`,
-    `Các bài báo được lựa chọn sẽ được đề xuất đăng trong kỷ yếu hội thảo và Tạp chí An toàn thông tin - Ban Cơ yếu Chính phủ.`
+    `Ban Tổ chức tiếp nhận bài báo của tác giả thông qua hệ thống quản lý bài báo EasyChair hoặc đường dẫn nộp bài trực tuyến (Google Form) được công bố trên website của Hội thảo.`,
+    `Các bài báo hợp lệ sẽ được gửi tới các chuyên gia, nhà khoa học có chuyên môn phù hợp để thực hiện phản biện và đánh giá theo quy trình của Hội thảo.`,
+    `Căn cứ kết quả phản biện, Ban Chương trình sẽ xem xét và lựa chọn các bài báo đáp ứng yêu cầu về chất lượng khoa học, tính mới và tính ứng dụng để trình bày tại Hội thảo.`,
+    `Các bài báo được chấp nhận và trình bày tại Hội thảo sẽ được xem xét, đề xuất đăng trong \nKỷ yếu Hội thảo và Tạp chí An toàn thông tin - Ban Cơ yếu Chính phủ.`
   ]
 };
 

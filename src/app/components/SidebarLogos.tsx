@@ -50,12 +50,14 @@ const SponsorCategory = ({ title, icon: Icon, sponsors }: { title: string, icon:
 export default function SidebarLogos() {
   const chuTri = logos.filter(l => l.role === "Đơn vị chủ trì tổ chức");
   const dongToChuc = logos.filter(l => l.role === "Đơn vị đồng tổ chức");
+  const phoiHop = logos.filter(l => l.role === "Đơn vị phối hợp");
   const baoTro = logos.filter(l => l.role === "Đơn vị bảo trợ");
 
   return (
     <div className="w-full h-full bg-white py-6 pl-6 pr-2 md:py-8 md:pl-8 md:pr-4 flex flex-col items-center">
       <SponsorCategory title="Đơn vị chủ trì tổ chức" icon={Building2} sponsors={chuTri} />
       <SponsorCategory title="Đơn vị đồng tổ chức" icon={Users} sponsors={dongToChuc} />
+      <SponsorCategory title="Đơn vị phối hợp" icon={Users} sponsors={phoiHop} />
       <SponsorCategory title="Đơn vị bảo trợ" icon={Shield} sponsors={baoTro} />
     </div>
   );
