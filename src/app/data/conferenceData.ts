@@ -139,22 +139,46 @@ export type CommitteeGroup = {
 
 export const organizingCommitteeGroups: CommitteeGroup[] = [
   {
-    role: "Thành viên Ban chương trình",
+    role: "Ban Chỉ đạo",
     members: [
-      { name: "GS. TS. Nguyễn Thanh Thủy - Chủ tịch FISU VN", isChair: true },
-      { name: "GS.TS. Nguyễn Hiếu Minh - Phó Giám đốc Học viện Kỹ thuật mật mã", isChair: true },
-      { name: "PGS. TS. Bùi Thu Lâm - Phó Chủ tịch, Tổng thư ký FISU VN", isChair: true },
-      { name: "PGS. TS. Nguyễn Thị Trường Giang - Phó Giám đốc Học viện Báo chí và Tuyên truyền", isChair: true },
-      { name: "PGS. TS. Nguyễn Việt Hùng - Phó Chủ tịch FISU VN" },
-      { name: "PGS. TS. Nguyễn Long Giang - Phó Chủ tịch FISU VN" },
-      { name: "TS. Phạm Văn Hưởng - Chủ nhiệm Khoa CNTT, Học viện Kỹ thuật mật mã" },
-      { name: "PGS.TS. Trần Thị Lượng - Phó Chủ nhiệm Khoa ATTT, Học viện Kỹ thuật mật mã" },
-      { name: "TS. Phạm Duy Trung - Phó Chủ nhiệm Khoa ATTT, Học viện Kỹ thuật mật mã" },
+      { name: "TS. Nguyễn Hữu Hùng - Phó Trưởng ban Ban Cơ yếu Chính phủ - Trưởng ban", isChair: true },
+      { name: "GS. TS. Nguyễn Thanh Thủy - Chủ tịch FISU Việt Nam" },
+      { name: "TS. Hoàng Văn Thức - Giám đốc Học viện Kỹ thuật mật mã" },
+      { name: "PGS. TS. Lưu Văn Quảng - Phó Giám đốc Học viện Báo chí và Tuyên truyền" }
+    ]
+  },
+  {
+    role: "Ban Tổ chức",
+    members: [
+      { name: "GS.TS. Nguyễn Hiếu Minh - Phó Giám đốc Học viện Kỹ thuật mật mã - Trưởng ban", isChair: true },
+      { name: "PGS. TS. Nguyễn Thị Trường Giang - Phó Giám đốc Học viện Báo chí và Tuyên truyền" },
+      { name: "TS. Vũ Thị Đào - Viện trưởng Viện Nghiên cứu và Hợp tác phát triển, Học viện Kỹ thuật mật mã" },
+      { name: "TS. Nguyễn Như Tuấn - Tổng biên tập Tạp chí An toàn thông tin" }
+    ]
+  },
+  {
+    role: "Ban Chương trình",
+    members: [
+      { name: "PGS. TS. Bùi Thu Lâm - Phó Chủ tịch, Tổng thư ký FISU Việt Nam - Trưởng ban", isChair: true },
+      { name: "PGS. TS. Nguyễn Việt Hùng - Phó Chủ tịch FISU Việt Nam" },
+      { name: "PGS. TS. Nguyễn Long Giang - Phó Chủ tịch  FISU Việt Nam" },
+      { name: "TS. Nguyễn Bùi Cương - Phó Viện trưởng Viện Khoa học - Công nghệ mật mã" },
+      { name: "PGS. TS. Hoàng Việt Long - Chủ nhiệm khoa An toàn thông tin, Học viện Kỹ thuật và Công nghệ an ninh" },
+      { name: "TS. Nguyễn Đình Nghĩa - Chủ nhiệm khoa An toàn thông tin, Học viện An ninh nhân dân" },
+      { name: "TS. Nguyễn Thế Hùng - Trưởng phòng, Viện 486, Bộ Tư lệnh 86" },
+      { name: "PGS. TS. Trần Quang Đức - Giám đốc Trung tâm An ninh mạng, Đại học Bách khoa Hà Nội" },
+      { name: "PGS. TS. Trần Quanh Anh - Phó Giám đốc Học viện Công nghệ Bưu chính viễn thông" },
+      { name: "PGS. TS. Hoàng Xuân Dậu - Chủ nhiệm khoa An toàn thông tin, Học viện Công nghệ Bưu chính viễn thông" },
+      { name: "PGS. TS. Trần Minh Triết - Phó Hiệu trưởng Trường Đại học Khoa học tự nhiên, Đại học Quốc gia Thành phố Hồ Chí Minh" },
+      { name: "TS. Hoàng Đức Thọ - Chủ nhiệm Khoa An toàn thông tin, Học viện Kỹ thuật mật mã" },
+      { name: "TS. Bùi Đức Trình - Chủ nhiệm Khoa Điện tử - Vi mạch, Học viện Kỹ thuật mật mã" },
+      { name: "TS. Phạm Văn Hưởng - Chủ nhiệm Khoa Công nghệ thông tin, Học viện Kỹ thuật mật mã" },
       { name: "TS. Nguyễn Văn Long - Phó Chủ nhiệm Khoa Mật mã, Học viện Kỹ thuật mật mã" },
+      { name: "TS. Phạm Duy Trung - Phó Chủ nhiệm Khoa ATTT, Học viện Kỹ thuật mật mã (Biên tập kỷ yếu)" },
+      { name: "PGS. TS. Trần Thị Lượng - Phó Chủ nhiệm Khoa ATTT, Học viện Kỹ thuật mật mã" },
       { name: "TS. Lê Đức Thuận - Học viện Kỹ thuật mật mã" },
-      { name: "TS. Mai Đức Thọ - Học viện Kỹ thuật mật mã" },
-      { name: "Viện Khoa học - Công nghệ mật mã" }
-    ],
+      { name: "TS. Mai Đức Thọ - Học viện Kỹ thuật mật mã" }
+    ]
   }
 ];
 
