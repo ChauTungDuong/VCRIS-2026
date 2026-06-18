@@ -125,7 +125,7 @@ export default function Home() {
           <p><span className="font-semibold">Thời hạn nộp báo cáo và tham luận:</span> 20/7/2026</p>
           <p><span className="font-semibold">Thời gian đăng ký tham dự Hội thảo:</span> 07/8/2026</p>
           <p><span className="font-semibold">Địa điểm tổ chức Hội thảo:</span> Học viện Kỹ thuật mật mã, 141 Chiến Thắng, Thanh Liệt, Hà Nội</p>
-          <p><span className="font-semibold">Mọi thông tin về hội thảo xin vui lòng liên hệ:</span> <a href="mailto:AI4Security@actvn.edu.vn" className="text-cipher hover:underline">AI4Security@actvn.edu.vn</a></p>
+          <p><span className="font-semibold">Mọi thông tin về hội thảo xin vui lòng liên hệ:</span> <a href="mailto:AI4CRIS@actvn.edu.vn" className="text-cipher hover:underline">AI4CRIS@actvn.edu.vn</a></p>
         </div>
       </section>
     </div>

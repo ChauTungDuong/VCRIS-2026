@@ -153,7 +153,7 @@ export default function Submission() {
             </h2>
           </div>
           <div className="space-y-3 text-[16px] text-slate" style={{ fontFamily: "var(--font-body)" }}>
-            <p><span className="font-semibold text-ink">Email:</span> <a href="mailto:AI4Security@actvn.edu.vn" className="text-cipher hover:underline">AI4Security@actvn.edu.vn</a></p>
+            <p><span className="font-semibold text-ink">Email:</span> <a href="mailto:AI4CRIS@actvn.edu.vn" className="text-cipher hover:underline">AI4CRIS@actvn.edu.vn</a></p>
             <p><span className="font-semibold text-ink">Website:</span> <a href="https://ai4cris.actvn.edu.vn" target="_blank" rel="noopener noreferrer" className="text-cipher hover:underline">https://ai4cris.actvn.edu.vn</a></p>
           </div>
           <p className="text-[16px] text-slate leading-relaxed mt-6">

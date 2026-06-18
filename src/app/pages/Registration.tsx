@@ -48,7 +48,7 @@ export default function Registration() {
                 <div className="text-[15px] text-slate space-y-2">
                   <p><span className="font-semibold text-ink">Ms. Vương Thị Hải Hà</span></p>
                   <p>SĐT: 0984 346 162</p>
-                  <p>Email: <a href="mailto:AI4Security@actvn.edu.vn" className="text-cipher hover:underline">AI4Security@actvn.edu.vn</a></p>
+                  <p>Email: <a href="mailto:AI4CRIS@actvn.edu.vn" className="text-cipher hover:underline">AI4CRIS@actvn.edu.vn</a></p>
                 </div>
               </div>
 

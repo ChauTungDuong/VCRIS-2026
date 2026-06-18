@@ -9,7 +9,7 @@ export const CONF = {
   location: "Học viện Kỹ thuật mật mã, Hà Nội, Việt Nam",
   address: "141 Chiến Thắng, Thanh Liệt, Hà Nội",
   easyChairUrl: "https://easychair.org/conferences/?conf=ai4cris2026",
-  contactEmail: "AI4Security@actvn.edu.vn",
+  contactEmail: "AI4CRIS@actvn.edu.vn",
   website: "https://ai4cris.org",
 };
 
@@ -71,7 +71,7 @@ export const home = {
     conferenceDates: "14/8/2026",
   },
   aboutTheConference: [
-    "Hội thảo AI4CRIS được tổ chức bởi Học viện Kỹ thuật mật mã phối hợp với Câu lạc bộ Khoa-Trường-Viện Công nghệ Thông tin - Truyền thông Việt Nam; Học viện Báo chí và Tuyên truyền, Tạp chí An toàn thông tin cùng với sự bảo trợ của Ban Cơ yếu Chính phủ, Bộ Khoa học và Công nghệ, Hội tin học Việt Nam, Hiệp hội An ninh mạng Quốc Gia và Trung tâm Dữ liệu Quốc Gia.",
+    "Hội thảo AI4CRIS được tổ chức bởi Học viện Kỹ thuật mật mã phối hợp với Câu lạc bộ Khoa-Trường-Viện Công nghệ Thông tin - Truyền thông Việt Nam; Học viện Báo chí và Tuyên truyền, Tạp chí An toàn thông tin cùng với sự bảo trợ của Ban Cơ yếu Chính phủ, Bộ Khoa học và Công nghệ, Hội tin học Việt Nam và Trung tâm Dữ liệu Quốc Gia.",
     "Hội thảo nhằm tăng cường nhận thức và chia sẻ về vai trò, ý nghĩa và tác động của trí tuệ nhân tạo trong lĩnh vực an toàn, bảo mật thông tin; làm rõ cơ hội, thách thức và yêu cầu đặt ra đối với việc ứng dụng AI trong bảo vệ không gian số hiện nay; cập nhật xu hướng toàn cầu, chính sách quốc gia và thực tiễn triển khai, đồng thời phân tích các mô hình, giải pháp ứng dụng trí tuệ nhân tạo trong bảo mật hệ thống thông tin, góp phần nâng cao năng lực phòng ngừa, phát hiện và ứng phó với các nguy cơ, mối đe dọa an ninh mạng đồng thời tạo diễn đàn trao đổi, kết nối đa chiều giữa cơ quan quản lý, nhà khoa học, doanh nghiệp và các cơ sở đào tạo và thúc đẩy chia sẻ kinh nghiệm, kết quả nghiên cứu và nhu cầu thực tiễn, qua đó tăng cường gắn kết giữa nghiên cứu - đào tạo - ứng dụng."
   ],
   conferenceTracks,
@@ -88,7 +88,6 @@ export const logos = [
   { name: "Ban Cơ yếu Chính phủ", src: "/images/bcy.png", role: "Đơn vị bảo trợ", link: "https://bcy.gov.vn/" },
   { name: "Bộ Khoa học và Công nghệ", src: "/images/bkhcn.png", role: "Đơn vị bảo trợ", link: "https://mst.gov.vn/" },
   { name: "Hiệp hội tin học Việt Nam", src: "/images/vaip.jpg", role: "Đơn vị bảo trợ", link: "http://vaip.org.vn/" },
-  { name: "Hiệp hội An ninh mạng Quốc Gia", src: "/images/nca.png", role: "Đơn vị bảo trợ", link: "https://nca.org.vn/" },
   { name: "Trung tâm Dữ liệu Quốc Gia", src: "/images/ttdlqg.jpg", role: "Đơn vị bảo trợ", link: "https://www.facebook.com/ttdlqg/?locale=vi_VN" }
 ];
 
@@ -121,7 +120,6 @@ export const organizers = {
     "Ban Cơ yếu Chính phủ",
     "Bộ Khoa học và Công nghệ",
     "Hiệp hội tin học Việt Nam",
-    "Hiệp hội An ninh mạng Quốc Gia",
     "Trung tâm Dữ liệu Quốc Gia"
   ],
 };
@@ -184,7 +182,7 @@ export const organizingCommitteeGroups: CommitteeGroup[] = [
 
 export const submissionText = {
   about: [
-    `Hội thảo AI4CRIS do Học viện Kỹ thuật mật mã chủ trì phối hợp với FISU Việt Nam, Học viện Báo chí và Tuyên truyền và Tạp chí An toàn thông tin tổ chức cùng với sự bảo trợ của Ban Cơ yếu Chính phủ, Bộ Khoa học và Công nghệ, Hội tin học Việt Nam, Hiệp hội An ninh mạng Quốc Gia và Trung tâm Dữ liệu Quốc Gia. Hội thảo là diễn đàn trao đổi học thuật và thực tiễn về ứng dụng trí tuệ nhân tạo trong an toàn thông tin, an ninh mạng và bảo vệ dữ liệu. Sự kiện nhằm cập nhật xu hướng công nghệ, chính sách và các giải pháp trí tuệ nhân tạo tiên tiến, đồng thời kết nối cơ quan quản lý, nhà khoa học, doanh nghiệp và cơ sở đào tạo để thúc đẩy nghiên cứu, hợp tác và chuyển giao công nghệ phục vụ bảo vệ không gian số quốc gia.`,
+    `Hội thảo AI4CRIS do Học viện Kỹ thuật mật mã chủ trì phối hợp với FISU Việt Nam, Học viện Báo chí và Tuyên truyền và Tạp chí An toàn thông tin tổ chức cùng với sự bảo trợ của Ban Cơ yếu Chính phủ, Bộ Khoa học và Công nghệ, Hội tin học Việt Nam và Trung tâm Dữ liệu Quốc Gia. Hội thảo là diễn đàn trao đổi học thuật và thực tiễn về ứng dụng trí tuệ nhân tạo trong an toàn thông tin, an ninh mạng và bảo vệ dữ liệu. Sự kiện nhằm cập nhật xu hướng công nghệ, chính sách và các giải pháp trí tuệ nhân tạo tiên tiến, đồng thời kết nối cơ quan quản lý, nhà khoa học, doanh nghiệp và cơ sở đào tạo để thúc đẩy nghiên cứu, hợp tác và chuyển giao công nghệ phục vụ bảo vệ không gian số quốc gia.`,
     `Ban Tổ chức trân trọng kính mời các nhà nghiên cứu, giảng viên, chuyên gia, cán bộ quản lý, nghiên cứu sinh, học viên và doanh nghiệp gửi bài báo cáo khoa học tham gia các phiên chuyên đề của Hội thảo.`
   ],
   tracks: [
