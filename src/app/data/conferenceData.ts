@@ -8,7 +8,7 @@ export const CONF = {
   dateStart: "2026-08-14T08:00:00",
   location: "Học viện Kỹ thuật mật mã, Hà Nội, Việt Nam",
   address: "141 Chiến Thắng, Thanh Liệt, Hà Nội",
-  easyChairUrl: "https://easychair.org/conferences/?conf=ai4cris2026",
+  easyChairUrl: "https://easychair.org/conferences/?conf=ai4cris",
   contactEmail: "AI4CRIS@actvn.edu.vn",
   website: "https://ai4cris.org",
 };

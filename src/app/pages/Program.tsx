@@ -43,7 +43,7 @@ export default function Program() {
                       </tr>
                       <tr className="hover:bg-paper/50 transition-colors">
                         <td className="p-4 font-semibold text-ink">08:35 - 09:00</td>
-                        <td className="p-4">Báo cáo mời 2: Một số kết quả nghiên cứu nổi bật về AI trong ATTT của Học viện KTMM và định hướng hoặc AI trong bảo mật, mật mã quốc gia và định hướng phát triển</td>
+                        <td className="p-4">Báo cáo mời 2: Một số kết quả nghiên cứu nổi bật về AI trong ATTT của Học viện KTMM và định hướng AI trong bảo mật và mật mã quốc gia</td>
                         <td className="p-4">Học viện Kỹ thuật mật mã</td>
                       </tr>
                       <tr className="hover:bg-paper/50 transition-colors">
