@@ -16,9 +16,19 @@ const SponsorCategory = ({ title, icon: Icon, sponsors }: { title: string, icon:
       <div className="flex flex-col gap-8 w-full items-center mt-2">
         {sponsors.map((sponsor, idx) => (
           <div key={idx} className="flex flex-col items-center text-center group w-full px-2">
-            <div className="w-full flex justify-center mb-3 h-[100px] p-2 transition-transform duration-300 group-hover:scale-105">
-              {sponsor.link ? (
-                <a href={sponsor.link} target="_blank" rel="noopener noreferrer" className="h-full flex justify-center items-center">
+            {sponsor.src ? (
+              <div className="w-full flex justify-center mb-3 h-[100px] p-2 transition-transform duration-300 group-hover:scale-105">
+                {sponsor.link ? (
+                  <a href={sponsor.link} target="_blank" rel="noopener noreferrer" className="h-full flex justify-center items-center">
+                    <img
+                      src={sponsor.src}
+                      alt={sponsor.name}
+                      className="max-h-full max-w-full object-contain"
+                      loading="lazy"
+                      title={sponsor.name}
+                    />
+                  </a>
+                ) : (
                   <img
                     src={sponsor.src}
                     alt={sponsor.name}
@@ -26,17 +36,9 @@ const SponsorCategory = ({ title, icon: Icon, sponsors }: { title: string, icon:
                     loading="lazy"
                     title={sponsor.name}
                   />
-                </a>
-              ) : (
-                <img
-                  src={sponsor.src}
-                  alt={sponsor.name}
-                  className="max-h-full max-w-full object-contain"
-                  loading="lazy"
-                  title={sponsor.name}
-                />
-              )}
-            </div>
+                )}
+              </div>
+            ) : null}
             <span className="text-[13px] text-ink font-bold leading-snug transition-colors" style={{ fontFamily: "var(--font-body)" }}>
               {sponsor.name}
             </span>
