@@ -3,20 +3,28 @@ import { useParams } from "react-router";
 import { Render } from "@measured/puck";
 import { puckConfig } from "../admin/components/PuckComponents";
 import PageTitle from "../components/PageTitle";
+import { siteTheme, USE_STATIC_DATA } from "../utils/site";
 
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:4000/api/v1";
 
 export default function DynamicPage() {
-  const { slug } = useParams<{ slug: string }>();
+  const params = useParams<{ slug: string }>();
+  const slug = params.slug || "home";
   const [pageData, setPageData] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(!USE_STATIC_DATA);
+  const [error, setError] = useState(USE_STATIC_DATA ? "Static mode" : "");
 
-  // Get locale from localStorage or default to 'en'
-  const locale = localStorage.getItem("vcris_locale") || "en";
+  // Get locale from localStorage or default to siteTheme
+  const locale = localStorage.getItem("vcris_locale") || siteTheme.defaultLocale;
 
   useEffect(() => {
-    if (!slug) return;
+    // Static mode: no API call, immediately fail for dynamic pages since content isn't fetched
+    if (USE_STATIC_DATA) {
+      setLoading(false);
+      setError("Static mode");
+      return;
+    }
+
     setLoading(true);
     fetch(`${API_BASE}/pages/${slug}?locale=${locale}`)
       .then((res) => {

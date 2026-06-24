@@ -1,8 +1,11 @@
-import { programCommittee } from "../data/conferenceData";
+import { organizingCommitteeGroups } from "../data/conferenceData";
 import PageTitle from "../components/PageTitle";
 import PageRenderer from "../components/PageRenderer";
 
 export default function ProgramCommittees() {
+  const programCommitteeGroup = organizingCommitteeGroups.find(g => g.role === "Ban Chương trình");
+  const programCommittee = programCommitteeGroup ? programCommitteeGroup.members : [];
+
   return (
     <PageRenderer
       slug="program-committees"
@@ -28,13 +31,7 @@ export default function ProgramCommittees() {
                     className="px-6 py-4 text-[15px] font-bold text-ink uppercase tracking-[1px]"
                     style={{ fontFamily: "var(--font-body)" }}
                   >
-                    First Name
-                  </th>
-                  <th
-                    className="px-6 py-4 text-[15px] font-bold text-ink uppercase tracking-[1px]"
-                    style={{ fontFamily: "var(--font-body)" }}
-                  >
-                    Last Name
+                    Name
                   </th>
                   <th
                     className="px-6 py-4 text-[15px] font-bold text-ink uppercase tracking-[1px]"
@@ -47,7 +44,7 @@ export default function ProgramCommittees() {
               <tbody>
                 {programCommittee.map((member, idx) => (
                   <tr
-                    key={`${member.firstName}-${member.lastName}-${idx}`}
+                    key={`${member.name}-${idx}`}
                     className="border-t border-rule hover:bg-cipher/5 transition-colors"
                   >
                     <td
@@ -60,19 +57,13 @@ export default function ProgramCommittees() {
                       className="px-6 py-3.5 text-[14px] font-medium text-ink"
                       style={{ fontFamily: "var(--font-body)" }}
                     >
-                      {member.firstName}
-                    </td>
-                    <td
-                      className="px-6 py-3.5 text-[14px] font-medium text-ink"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
-                      {member.lastName}
+                      {member.name}
                     </td>
                     <td
                       className="px-6 py-3.5 text-[14px] text-slate"
                       style={{ fontFamily: "var(--font-body)" }}
                     >
-                      {member.affiliation}
+                      {member.affiliation || ""}
                     </td>
                   </tr>
                 ))}

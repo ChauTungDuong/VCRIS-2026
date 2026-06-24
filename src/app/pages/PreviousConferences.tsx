@@ -1,11 +1,25 @@
 import { ExternalLink, Calendar, MapPin } from "lucide-react";
-import {
-  previousConferences,
-  keynoteSpeakers2024,
-  keynoteSpeakers as keynoteSpeakers2025,
-  CONF,
-} from "../data/conferenceData";
+import { CONF } from "../data/conferenceData";
 import PageRenderer from "../components/PageRenderer";
+
+const previousConferences = [
+  {
+    year: "2025",
+    edition: "2nd",
+    name: "VCRIS 2025",
+    dates: "August 2025",
+    location: "Vietnam",
+    wpUrl: "https://vcris.org/previous-conferences/vcris2025/homepage/"
+  },
+  {
+    year: "2024",
+    edition: "1st",
+    name: "VCRIS 2024",
+    dates: "August 2024",
+    location: "Vietnam",
+    wpUrl: "https://vcris.org/previous-conferences/vcris2024/homepage/"
+  }
+];
 
 export default function PreviousConferences() {
   return (
@@ -94,47 +108,6 @@ export default function PreviousConferences() {
                     </div>
                   </div>
 
-                  {/* Keynote preview */}
-                  {(conf.year === "2024" || conf.year === "2025") && (
-                    <div>
-                      <p
-                        className="text-[12px] font-semibold text-slate uppercase tracking-[2px] mb-3"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
-                        Keynote Speaker
-                      </p>
-                      <div className="flex items-center gap-4">
-                        {(conf.year === "2024" ? keynoteSpeakers2024 : keynoteSpeakers2025).map((speaker) => (
-                          <div
-                            key={speaker.name}
-                            className="flex items-center gap-3"
-                          >
-                            <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-cipher/30">
-                              <img
-                                src={speaker.image}
-                                alt={speaker.name}
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                            <div>
-                              <p
-                                className="text-[14px] font-semibold text-ink"
-                                style={{ fontFamily: "var(--font-body)" }}
-                              >
-                                {speaker.name}
-                              </p>
-                              <p
-                                className="text-[13px] text-slate"
-                                style={{ fontFamily: "var(--font-body)" }}
-                              >
-                                {speaker.institution}
-                              </p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
                 </div>
 
                 <div className="flex flex-col items-end justify-between">

@@ -36,6 +36,7 @@ export function MediaPickerField({ value, onChange, label }: MediaPickerFieldPro
   const [files, setFiles] = useState<MediaFile[]>([]);
   const [loading, setLoading] = useState(false);
   const [uploading, setUploading] = useState(false);
+  const [dragging, setDragging] = useState(false);
   const [selected, setSelected] = useState<string>(value || "");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -53,10 +54,7 @@ export function MediaPickerField({ value, onChange, label }: MediaPickerFieldPro
     if (open) fetchFiles();
   }, [open, fetchFiles]);
 
-  /* ---------- upload ---------- */
-  const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+  const handleUploadFile = async (file: File) => {
     setUploading(true);
     try {
       await mediaApi.upload(file);
@@ -67,6 +65,31 @@ export function MediaPickerField({ value, onChange, label }: MediaPickerFieldPro
       setUploading(false);
       if (fileInputRef.current) fileInputRef.current.value = "";
     }
+  };
+
+  const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    await handleUploadFile(file);
+  };
+
+  /* ---------- drag & drop ---------- */
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    setDragging(true);
+  };
+
+  const handleDragLeave = (e: React.DragEvent) => {
+    e.preventDefault();
+    setDragging(false);
+  };
+
+  const handleDrop = async (e: React.DragEvent) => {
+    e.preventDefault();
+    setDragging(false);
+    const file = e.dataTransfer.files?.[0];
+    if (!file) return;
+    await handleUploadFile(file);
   };
 
   /* ---------- confirm selection ---------- */
@@ -226,7 +249,29 @@ export function MediaPickerField({ value, onChange, label }: MediaPickerFieldPro
             </div>
 
             {/* Body */}
-            <div style={{ flex: 1, overflowY: "auto", padding: 20 }}>
+            <div 
+              style={{ 
+                flex: 1, 
+                overflowY: "auto", 
+                padding: 20, 
+                position: "relative",
+                transition: "background-color 0.2s",
+                backgroundColor: dragging ? "#F0F4F8" : "transparent"
+              }}
+              onDragOver={handleDragOver}
+              onDragLeave={handleDragLeave}
+              onDrop={handleDrop}
+            >
+              {dragging && (
+                <div style={{
+                  position: "absolute", inset: 0, background: "rgba(27,79,145,0.05)",
+                  border: "2px dashed #1B4F91", borderRadius: 8, zIndex: 10,
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  pointerEvents: "none"
+                }}>
+                  <p style={{ fontSize: 20, fontWeight: 600, color: "#1B4F91" }}>Drop file here to upload</p>
+                </div>
+              )}
               {loading ? (
                 <div style={{ textAlign: "center", padding: 60, color: "#4A4A4A" }}>
                   Loading files…

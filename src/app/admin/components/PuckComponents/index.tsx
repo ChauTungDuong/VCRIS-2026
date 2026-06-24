@@ -9,8 +9,10 @@ import {
   HeroBanner, FeatureCard, ScheduleTable, InfoBox, GradientSection, DownloadButton,
 } from "./ElementorComponents";
 import { RichTextField } from "./RichTextField";
+import { makeTipTapField } from "./TipTapField";
 import { makeMediaField } from "./MediaPickerField";
 import { VenuePageTitle, VenueDetails, VenuePhotoGrid, VenuePhotoItem, VenueAboutContainer, VenueText, VenueLink } from "./VenueComponents";
+import { Ai4CrisCountdown, Ai4CrisTimeline, Ai4CrisSection } from "./Ai4CrisComponents";
 
 // ==========================
 // Shared Field Configs
@@ -65,6 +67,7 @@ export const puckConfig: Config = {
     home: { title: "🏠 Home Layouts", components: ["HomeHero", "HomeImportantDates", "HomeAbout", "HomeCfa"] },
     general: { title: "🌐 Page Layouts", components: ["TopImageHeader"] },
     macro: { title: "🧩 Macro Blocks", components: ["TopImageHeader", "HomeHero", "HomeImportantDates", "HomeAbout", "HomeCfa"] },
+    ai4cris: { title: "🤖 AI4CRIS Specific", components: ["Ai4CrisCountdown", "Ai4CrisTimeline", "Ai4CrisSection"] },
     venue: { title: "🏢 Venue", components: ["VenuePageTitle", "VenueDetails", "VenuePhotoGrid", "VenuePhotoItem", "VenueAboutContainer", "VenueText", "VenueLink"] },
   },
   root: {
@@ -111,6 +114,9 @@ export const puckConfig: Config = {
 
     // ===== VENUE COMPONENTS =====
     VenuePageTitle, VenueDetails, VenuePhotoGrid, VenuePhotoItem, VenueAboutContainer, VenueText, VenueLink,
+
+    // ===== AI4CRIS COMPONENTS =====
+    Ai4CrisCountdown, Ai4CrisTimeline, Ai4CrisSection,
 
     // ====== SECTION ======
     Section: {
@@ -256,7 +262,7 @@ export const puckConfig: Config = {
         padding: "0",
       },
       fields: {
-        content: { type: "textarea", label: "Content" },
+        content: makeTipTapField("Content"),
         fontSize: { type: "select", label: "Font Size", options: fontSizeOptions },
         fontFamily: { type: "select", label: "Font Family", options: fontFamilyOptions },
         fontWeight: { type: "select", label: "Font Weight", options: fontWeightOptions },
@@ -275,7 +281,7 @@ export const puckConfig: Config = {
         padding: { type: "text", label: "Padding" },
       },
       render: ({ content, fontSize, fontFamily, fontWeight, fontStyle, color, textAlign, lineHeight, margin, padding, puck }: any) => (
-        <p
+        <div
           ref={puck.dragRef}
           style={{ fontSize, fontFamily, fontWeight, fontStyle, color, textAlign, lineHeight, margin, padding }}
           dangerouslySetInnerHTML={{ __html: content }}
@@ -292,7 +298,7 @@ export const puckConfig: Config = {
         padding: "0",
       },
       fields: {
-        html: { type: "textarea", label: "HTML Content" },
+        html: makeTipTapField("HTML Content"),
         maxWidth: { type: "text", label: "Max Width" },
         padding: { type: "text", label: "Padding" },
       },
@@ -578,7 +584,7 @@ export const puckConfig: Config = {
       },
       fields: {
         title: { type: "text", label: "Title" },
-        content: { type: "textarea", label: "Content" },
+        content: makeTipTapField("Content"),
         isOpen: {
           type: "select",
           label: "Default State",

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { pagesApi } from "./hooks/useApi";
+import { siteTheme } from "../utils/site";
 
 interface PageItem {
   id: number;
@@ -38,7 +39,7 @@ export default function PagesListPage() {
   const [showCreate, setShowCreate] = useState(false);
   const [newSlug, setNewSlug] = useState("");
   const [newTitle, setNewTitle] = useState("");
-  const [locale, setLocale] = useState("en");
+  const [locale, setLocale] = useState(siteTheme.defaultLocale);
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
 

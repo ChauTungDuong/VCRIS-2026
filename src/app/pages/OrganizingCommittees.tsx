@@ -95,7 +95,7 @@ export default function OrganizingCommittees() {
               >
                 Organizer
               </h3>
-              {organizers.organizer.map((org) => (
+              {organizers.host.map((org) => (
                 <p
                   key={org}
                   className="text-[15px] font-semibold text-ink leading-snug"
@@ -128,16 +128,16 @@ export default function OrganizingCommittees() {
               </ul>
             </div>
 
-            {/* Endorsers */}
+            {/* Sponsors */}
             <div className="bg-white border border-rule rounded-2xl p-7">
               <h3
                 className="text-[11px] font-semibold text-cipher uppercase tracking-[3px] mb-5"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                Endorsers
+                Sponsors
               </h3>
               <ul className="space-y-2.5">
-                {organizers.endorsers.map((org) => (
+                {organizers.sponsors.map((org) => (
                   <li
                     key={org}
                     className="flex items-start gap-2 text-[14px] text-ink leading-snug"

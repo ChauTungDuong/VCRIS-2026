@@ -1,13 +1,21 @@
 import { Calendar, MapPin } from "lucide-react";
 import { useEffect, useState } from "react";
 import { home } from "../data/conferenceData";
+import { useSiteConfig } from "../hooks/useSiteConfig";
 
 export default function GlobalHero() {
   const [isVisible, setIsVisible] = useState(false);
+  const { config } = useSiteConfig();
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const heroName = config?.conference_name || home.name;
+  const heroTitle = config?.ai4cris_hero_title || "HỘI THẢO KHOA HỌC QUỐC GIA <br className=\"hidden sm:block\" />TRÍ TUỆ NHÂN TẠO CHO MẬT MÃ <br className=\"hidden sm:block\" />VÀ AN TOÀN THÔNG TIN";
+  const heroSubtitle = config?.ai4cris_hero_subtitle || "<span className=\"text-[#0066CC]\">AI4CRIS</span> 2026";
+  const heroDate = config?.ai4cris_hero_date || home.time;
+  const heroVenue = config?.ai4cris_hero_venue || home.venue;
 
   return (
     <section className="relative min-h-[450px] md:min-h-[500px] overflow-hidden mt-[60px] flex items-center py-12 md:py-16">
@@ -38,7 +46,7 @@ export default function GlobalHero() {
               className="text-[12px] font-bold text-[#1e40af] tracking-[4px] uppercase drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              {home.name}
+              {heroName}
             </span>
             <div className="w-8 h-1 bg-cipher hidden sm:block" />
           </div>
@@ -54,14 +62,14 @@ export default function GlobalHero() {
                 className="text-cipher leading-[1.12]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                <span className="block text-[18px] sm:text-[24px] md:text-[34px] italic font-extrabold drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">
-                  HỘI THẢO KHOA HỌC QUỐC GIA <br className="hidden sm:block" />
-                  TRÍ TUỆ NHÂN TẠO CHO MẬT MÃ <br className="hidden sm:block" />
-                  VÀ AN TOÀN THÔNG TIN
-                </span>
-                <span className="block text-[36px] sm:text-[44px] md:text-[62px] italic font-black mt-2 drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">
-                  <span className="text-[#0066CC]">AI4CRIS</span> 2026
-                </span>
+                <span 
+                  className="block text-[18px] sm:text-[24px] md:text-[34px] italic font-extrabold drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]"
+                  dangerouslySetInnerHTML={{ __html: heroTitle }}
+                />
+                <span 
+                  className="block text-[36px] sm:text-[44px] md:text-[62px] italic font-black mt-2 drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]"
+                  dangerouslySetInnerHTML={{ __html: heroSubtitle }}
+                />
               </h1>
             </div>
           </div>
@@ -76,7 +84,7 @@ export default function GlobalHero() {
                 className="text-[14px] sm:text-[15px] font-bold text-[#0a2342]"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                {home.time}
+                {heroDate}
               </span>
             </div>
             <div className="flex items-start sm:items-center gap-2 px-4 py-4 rounded-[20px] bg-white/60 border border-[#0a2342]/10 backdrop-blur-md shadow-sm sm:whitespace-nowrap text-left">
@@ -85,7 +93,7 @@ export default function GlobalHero() {
                 className="text-[14px] sm:text-[15px] font-bold text-[#0a2342]"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                {home.venue}
+                {heroVenue}
               </span>
             </div>
           </div>

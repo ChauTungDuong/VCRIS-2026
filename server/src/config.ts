@@ -17,7 +17,7 @@ export const config = {
   adminEmail: requireEnv("ADMIN_EMAIL"),
   adminPassword: requireEnv("ADMIN_PASSWORD"),
   uploadDir: process.env.UPLOAD_DIR || "uploads",
-  corsOrigin: process.env.CORS_ORIGIN || "http://localhost:5173",
+  corsOrigin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(",") : ["http://localhost:5173", "http://localhost:3000"],
   defaultLocale: "en",
   supportedLocales: ["en", "vi"],
 };

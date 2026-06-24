@@ -4,6 +4,7 @@ import { Puck, usePuck } from "@measured/puck";
 import "@measured/puck/puck.css";
 import { puckConfig } from "./components/PuckComponents";
 import { pagesApi } from "./hooks/useApi";
+import { siteTheme } from "../utils/site";
 
 /* ─────────────────────────────────────────────────────────────
    LEFT PANEL — inner component, must be inside <Puck> context
@@ -165,7 +166,7 @@ function EditorTopBar({
 export default function PageEditorPage() {
   const { slug } = useParams<{ slug: string }>();
   const [searchParams] = useSearchParams();
-  const locale = searchParams.get("locale") || "en";
+  const locale = searchParams.get("locale") || siteTheme.defaultLocale;
   const navigate = useNavigate();
 
   const [initialData, setInitialData] = useState<any>(null);

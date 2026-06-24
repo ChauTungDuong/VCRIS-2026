@@ -1,7 +1,13 @@
 import { ArrowRight, Mail } from "lucide-react";
 import PageTitle from "../components/PageTitle";
-import { callForWorkshopsText, CONF } from "../data/conferenceData";
+import { CONF } from "../data/conferenceData";
 import PageRenderer from "../components/PageRenderer";
+
+const callForWorkshopsText = {
+  intro: "Thông tin chi tiết về việc kêu gọi đề xuất các phiên thảo luận chuyên đề (Workshops) sẽ được Ban Tổ chức cập nhật trong thời gian sớm nhất.",
+  details: "Hiện tại hệ thống chưa mở nhận đề xuất workshop. Vui lòng theo dõi các thông báo tiếp theo từ Hội thảo.",
+  contact: [] as {name: string, descriptions: string[]}[]
+};
 
 export default function CallForWorkshops() {
   return (

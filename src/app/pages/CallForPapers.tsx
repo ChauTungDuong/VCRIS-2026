@@ -2,7 +2,7 @@ import { Check, Download, ArrowRight, FileText, BookOpen, AlertCircle, ChevronDo
 
 import { useState } from "react";
 import {
-  callForPapersText,
+  submissionText,
   CONF,
 } from "../data/conferenceData";
 import PageTitle from "../components/PageTitle";
@@ -40,7 +40,7 @@ export default function CallForPapers() {
             </h2>
 
             <div className="space-y-4">
-              {callForPapersText.about.map((paragraph, i) => (
+              {submissionText.about.map((paragraph, i) => (
                 <p
                   key={i}
                   className="text-[16px] text-slate leading-[1.7] indent-8"
@@ -61,7 +61,7 @@ export default function CallForPapers() {
             </h2>
 
             <div className="space-y-4">
-              {callForPapersText.tracks.map((track, i) => {
+              {submissionText.tracks.map((track, i) => {
                 const isOpen = openTrackIndex === i;
                 
                 return (
@@ -124,11 +124,11 @@ export default function CallForPapers() {
                 className="text-[28px] font-bold italic text-ink mb-6"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Paper Submission
+                Quy định nộp bài (Paper Submission)
               </h3>
 
               <div className="space-y-6 mb-8">
-                {callForPapersText.submissions.map((item, idx) => (
+                {submissionText.requirements.map((item, idx) => (
                   <div key={idx} className="flex items-start gap-3">
                     <div className="w-8 h-8 rounded-full bg-cipher/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <FileText size={14} className="text-cipher" />
@@ -141,6 +141,17 @@ export default function CallForPapers() {
                     </p>
                   </div>
                 ))}
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-full bg-cipher/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <FileText size={14} className="text-cipher" />
+                  </div>
+                  <p
+                    className="text-[15px] text-slate leading-[1.7]"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    {submissionText.structure}
+                  </p>
+                </div>
               </div>
               
               <div className="space-y-3 pt-6 border-t border-rule" style={{borderTopStyle: "dashed"}}>
@@ -176,37 +187,11 @@ export default function CallForPapers() {
                   className="text-[28px] font-bold italic text-ink mb-6"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  Publication
+                  Quy trình phản biện (Review Process)
                 </h3>
 
                 <div className="space-y-6">
-                  {callForPapersText.publication.map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-full bg-cipher/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <BookOpen size={14} className="text-cipher" />
-                      </div>
-                      <p
-                        className="text-[15px] text-slate leading-[1.7]"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
-                        {item}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Post-conference Publication */}
-              <div className="bg-white border border-rule rounded-[20px] p-8 lg:p-10 flex flex-col">
-                <h3
-                  className="text-[28px] font-bold italic text-ink mb-6"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  Post-conference Publication
-                </h3>
-
-                <div className="space-y-6">
-                  {callForPapersText.postConferencePublication.map((item, idx) => (
+                  {submissionText.reviewProcess.map((item, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <div className="w-8 h-8 rounded-full bg-cipher/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <BookOpen size={14} className="text-cipher" />
