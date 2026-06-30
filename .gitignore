@@ -4,6 +4,7 @@ server/node_modules/
 
 # Build artifacts & caches
 dist/
+dist/index.html
 server/dist/
 build/
 .vite/
