@@ -1,5 +1,146 @@
-import { ComponentConfig } from "@measured/puck";
+import React, { useState } from "react";
+import { ComponentConfig, DropZone } from "@measured/puck";
 import CountdownTimer from "../../../components/CountdownTimer";
+import { makeTipTapField } from "./TipTapField";
+
+
+// ==========================
+// AI4CRIS Heading
+// ==========================
+export type Ai4CrisHeadingProps = {
+  text: string;
+  level: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  align: "left" | "center" | "right";
+  color: "cipher" | "ink" | "slate" | "white" | "primary" | "warning";
+  italic: boolean;
+};
+
+export const Ai4CrisHeading: ComponentConfig<Ai4CrisHeadingProps> = {
+  label: "AI4CRIS Heading",
+  defaultProps: {
+    text: "Tiêu đề phụ",
+    level: "h3",
+    align: "left",
+    color: "cipher",
+    italic: false,
+  },
+  fields: {
+    text: { type: "text", label: "Nội dung" },
+    level: {
+      type: "select", label: "Cấp độ",
+      options: [
+        { label: "H1", value: "h1" }, { label: "H2", value: "h2" }, { label: "H3", value: "h3" },
+        { label: "H4", value: "h4" }, { label: "H5", value: "h5" }, { label: "H6", value: "h6" },
+      ]
+    },
+    align: {
+      type: "select", label: "Căn lề",
+      options: [
+        { label: "Trái", value: "left" }, { label: "Giữa", value: "center" }, { label: "Phải", value: "right" }
+      ]
+    },
+    color: {
+      type: "select", label: "Màu sắc",
+      options: [
+        { label: "Đỏ (Cipher)", value: "cipher" }, { label: "Xanh đậm (Ink)", value: "ink" },
+        { label: "Xám (Slate)", value: "slate" }, { label: "Trắng (White)", value: "white" },
+        { label: "Xanh nhạt (Primary)", value: "primary" }, { label: "Vàng (Warning)", value: "warning" },
+      ]
+    },
+    italic: {
+      type: "select", label: "In nghiêng",
+      options: [{ label: "Không", value: false }, { label: "Có", value: true }] as any
+    }
+  },
+  render: ({ text, level, align, color, italic, puck }) => {
+    const Tag = level;
+    let colorClass = "text-cipher";
+    if (color === "ink") colorClass = "text-ink";
+    if (color === "slate") colorClass = "text-slate";
+    if (color === "white") colorClass = "text-white";
+    if (color === "primary") colorClass = "text-[#0EA5A0]";
+    if (color === "warning") colorClass = "text-[#975a16]";
+
+    const sizeClass = level === "h1" ? "text-[36px] md:text-[44px]" :
+                      level === "h2" ? "text-[28px] md:text-[32px]" :
+                      level === "h3" ? "text-[22px] md:text-[24px]" :
+                      level === "h4" ? "text-[18px] md:text-[20px]" : "text-[16px]";
+
+    return (
+      <Tag ref={puck.dragRef} className={`${sizeClass} ${colorClass} font-bold ${italic ? 'italic' : ''} text-${align} mb-4`} style={{ fontFamily: "var(--font-display)" }}>
+        {text}
+      </Tag>
+    );
+  }
+};
+
+// ==========================
+// AI4CRIS Text
+// ==========================
+export type Ai4CrisTextProps = {
+  contentHtml: string;
+};
+
+export const Ai4CrisText: ComponentConfig<Ai4CrisTextProps> = {
+  label: "AI4CRIS Rich Text",
+  defaultProps: {
+    contentHtml: "<p>Nội dung văn bản...</p>",
+  },
+  fields: {
+    contentHtml: makeTipTapField("Nội dung (HTML)"),
+  },
+  render: ({ contentHtml, puck }) => (
+    <div ref={puck.dragRef} className="ai4cris-html-content space-y-4" style={{ fontFamily: "var(--font-body)" }} dangerouslySetInnerHTML={{ __html: contentHtml }} />
+  )
+};
+
+// ==========================
+// AI4CRIS Button
+// ==========================
+export type Ai4CrisButtonProps = {
+  label: string;
+  url: string;
+  variant: "primary" | "secondary" | "outline";
+};
+
+export const Ai4CrisButton: ComponentConfig<Ai4CrisButtonProps> = {
+  label: "AI4CRIS Button",
+  defaultProps: {
+    label: "Click here",
+    url: "#",
+    variant: "primary",
+  },
+  fields: {
+    label: { type: "text", label: "Nhãn nút" },
+    url: { type: "text", label: "Đường dẫn" },
+    variant: {
+      type: "select", label: "Kiểu",
+      options: [
+        { label: "Màu đỏ chính (Primary)", value: "primary" },
+        { label: "Màu xanh (Secondary)", value: "secondary" },
+        { label: "Viền (Outline)", value: "outline" }
+      ]
+    }
+  },
+  render: ({ label, url, variant, puck }) => {
+    let className = "inline-flex items-center justify-center px-6 py-3 rounded-full font-bold text-[14px] uppercase tracking-wider transition-all duration-300 ";
+    if (variant === "primary") {
+      className += "bg-cipher text-white hover:bg-ink hover:text-white";
+    } else if (variant === "secondary") {
+      className += "bg-ink text-white hover:bg-cipher hover:text-white";
+    } else {
+      className += "border-2 border-cipher text-cipher hover:bg-cipher hover:text-white";
+    }
+
+    return (
+      <div ref={puck.dragRef} className="my-4">
+        <a href={url} className={className} style={{ fontFamily: "var(--font-display)" }}>
+          {label}
+        </a>
+      </div>
+    );
+  }
+};
 
 // ==========================
 // AI4CRIS Countdown Block
@@ -149,52 +290,192 @@ export const Ai4CrisTimeline: ComponentConfig<Ai4CrisTimelineProps> = {
 // ==========================
 export type Ai4CrisSectionProps = {
   title: string;
-  contentHtml: string;
-  bgColor: string;
+  titleAlign: "left" | "center";
+  variant: "card-white" | "card-blue" | "plain" | "warning-yellow";
 };
 
 export const Ai4CrisSection: ComponentConfig<Ai4CrisSectionProps> = {
   label: "AI4CRIS Section Box",
   defaultProps: {
     title: "TIÊU ĐỀ SECTION",
-    contentHtml: "<p>Nội dung giới thiệu...</p>",
-    bgColor: "#ffffff",
+    titleAlign: "left",
+        variant: "card-white",
   },
   fields: {
-    title: { type: "text", label: "Tiêu đề (Chữ Hoa)" },
-    contentHtml: { type: "textarea", label: "Nội dung (HTML)" },
-    bgColor: {
+    title: { type: "text", label: "Tiêu đề" },
+    titleAlign: {
       type: "select",
-      label: "Màu nền",
+      label: "Căn lề tiêu đề",
       options: [
-        { label: "Trắng (#ffffff)", value: "#ffffff" },
-        { label: "Xanh nhạt (#f0f8fa)", value: "#f0f8fa" },
+        { label: "Trái", value: "left" },
+        { label: "Giữa", value: "center" },
+      ],
+    },
+    
+    variant: {
+      type: "select",
+      label: "Kiểu dáng khối",
+      options: [
+        { label: "Thẻ trắng (Card White)", value: "card-white" },
+        { label: "Thẻ xanh nhạt (Card Blue)", value: "card-blue" },
+        { label: "Không nền/Viền (Plain)", value: "plain" },
+        { label: "Lưu ý vàng (Warning Yellow)", value: "warning-yellow" },
       ],
     },
   },
-  render: ({ title, contentHtml, bgColor, puck }) => (
-    <section
-      ref={puck.dragRef}
-      className={`rounded-3xl p-8 lg:p-12 border shadow-sm ${
-        bgColor === "#f0f8fa" ? "bg-[#f0f8fa] border-[#b0d9e6]" : "bg-white border-rule"
-      }`}
-    >
-      <div className="flex items-center gap-2 mb-4 md:mb-6">
-        <div className="w-3 h-3 rounded-full bg-cipher" />
-        <h2
-          className="text-[28px] md:text-[32px] font-bold text-cipher uppercase"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
-          {title}
-        </h2>
+  render: ({ title, titleAlign, variant, puck }) => {
+    let containerClass = "ai4cris-html-content mb-8 md:mb-12 ";
+    let titleClass = "text-[28px] md:text-[32px] font-bold text-cipher uppercase";
+    
+    if (variant === "card-white") {
+      containerClass += "bg-white rounded-3xl p-8 lg:p-12 border border-rule shadow-sm";
+    } else if (variant === "card-blue") {
+      containerClass += "bg-[#f0f8fa] rounded-3xl p-8 lg:p-12 border border-[#b0d9e6] shadow-sm";
+    } else if (variant === "warning-yellow") {
+      containerClass += "bg-[#fff9e6] border border-[#fbd38d] rounded-2xl p-6 shadow-sm text-[#975a16]";
+      titleClass = "text-[18px] font-bold text-[#b7791f] mb-3";
+    } else if (variant === "plain") {
+      containerClass += "";
+      titleClass = "text-[44px] font-bold italic text-ink leading-[1.15] mb-6";
+    }
+
+    return (
+      <section ref={puck.dragRef} className={containerClass} style={{ fontFamily: "var(--font-body)" }}>
+        {title && (
+          <div className={`mb-4 md:mb-6 ${titleAlign === "center" ? "text-center" : "flex items-center gap-2"}`}>
+            {titleAlign === "left" && variant !== "warning-yellow" && variant !== "plain" && (
+              <div className="w-3 h-3 rounded-full bg-cipher flex-shrink-0" />
+            )}
+            <h2 className={titleClass} style={{ fontFamily: variant === "plain" ? "var(--font-display)" : "inherit" }}>
+              {title}
+            </h2>
+          </div>
+        )}
+        
+        <div className={`text-[16px] md:text-[18px] space-y-4 leading-relaxed ${
+            variant === "card-blue" ? "text-[#0b2740]" : variant === "warning-yellow" ? "text-[#975a16]" : "text-slate"
+          }`}>
+          <DropZone zone="content" />
+        </div>
+      </section>
+    );
+  },
+};
+
+// ==========================
+// AI4CRIS Member Tabs
+// ==========================
+export type Ai4CrisMemberTabsProps = {
+  tabs: { id: string; title: string; }[];
+};
+
+export const Ai4CrisMemberTabs: ComponentConfig<Ai4CrisMemberTabsProps> = {
+  label: "AI4CRIS Member Tabs",
+  defaultProps: {
+    tabs: [
+      { id: "ban-chi-dao", title: "Ban chỉ đạo" },
+      { id: "ban-to-chuc", title: "Ban tổ chức" },
+      { id: "ban-chuong-trinh", title: "Ban chương trình" },
+    ],
+  },
+  fields: {
+    tabs: {
+      type: "array",
+      label: "Tabs",
+      arrayFields: {
+        id: { type: "text", label: "Tab ID" },
+        title: { type: "text", label: "Tiêu đề Tab" },
+        
+      },
+      getItemSummary: (item: any) => item.title || "Tab",
+    } as any,
+  },
+  render: ({ tabs, puck }) => {
+    const [activeId, setActiveId] = useState(tabs?.[0]?.id);
+    return (
+      <div ref={puck.dragRef} className="ai4cris-member-tabs w-full">
+        <div className="grid w-full grid-cols-3 mb-8 bg-[#f1f5f9] p-1 rounded-lg items-center text-center">
+          {(tabs || []).map((t) => (
+            <button
+              key={t.id}
+              onClick={() => setActiveId(t.id)}
+              className={`py-2 px-4 rounded-md font-medium text-[16px] transition-all whitespace-nowrap ${
+                activeId === t.id ? "bg-white text-ink shadow-sm font-semibold" : "text-slate hover:bg-white/50"
+              }`}
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              {t.title}
+            </button>
+          ))}
+        </div>
+        <div className="tab-content" style={{ fontFamily: "var(--font-body)" }}>
+          {(tabs || []).map((t) => (
+            <div 
+              key={t.id} 
+              className={`bg-paper p-8 rounded-2xl border border-rule transition-all duration-500 ease-in-out ${activeId === t.id ? "block opacity-100" : "hidden opacity-0"}`}
+            >
+              <div className="ai4cris-html-content space-y-4"><DropZone zone={`tab-${t.id}`} /></div>
+            </div>
+          ))}
+        </div>
       </div>
-      <div
-        className={`text-[16px] md:text-[18px] space-y-4 leading-relaxed ${
-          bgColor === "#f0f8fa" ? "text-[#0b2740]" : "text-slate"
-        } ai4cris-html-content`}
-        style={{ fontFamily: "var(--font-body)" }}
-        dangerouslySetInnerHTML={{ __html: contentHtml }}
-      />
-    </section>
+    );
+  },
+};
+
+// ==========================
+// AI4CRIS Track Accordion
+// ==========================
+export type Ai4CrisTrackAccordionProps = {
+  tracks: { id: string; title: string; }[];
+};
+
+export const Ai4CrisTrackAccordion: ComponentConfig<Ai4CrisTrackAccordionProps> = {
+  label: "AI4CRIS Track Accordion",
+  defaultProps: {
+    tracks: [
+      { id: "track-1", title: "Track 1: Chủ đề 1" },
+    ],
+  },
+  fields: {
+    tracks: {
+      type: "array",
+      label: "Tracks",
+      arrayFields: {
+        id: { type: "text", label: "ID (không dấu, viết liền)" },
+        title: { type: "text", label: "Tiêu đề Track" },
+        contentHtml: makeTipTapField("Nội dung (HTML)"),
+      },
+      getItemSummary: (item: any) => item.title || "Track",
+    } as any,
+  },
+  render: ({ tracks, puck }) => (
+    <div ref={puck.dragRef} className="space-y-6">
+      {(tracks || []).map((track, i) => (
+        <details
+          key={i}
+          className="bg-paper rounded-2xl border border-rule overflow-hidden transition-all duration-300 group"
+        >
+          <summary
+            className="flex justify-between items-center cursor-pointer p-6 list-none hover:bg-[#f8fafc] transition-colors"
+          >
+            <h3 className="text-[20px] font-bold text-cipher" style={{ fontFamily: "var(--font-display)" }}>
+              {track.title}
+            </h3>
+            <span
+              className="text-cipher transform group-open:rotate-180 transition-transform duration-300 flex-shrink-0"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div
+            className="p-6 pt-0 border-t border-rule bg-white text-[17px] text-slate ai4cris-html-content"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+             <div className="mt-4"><DropZone zone={`track-${track.id}`} /></div>
+          </div>
+        </details>
+      ))}
+    </div>
   ),
 };

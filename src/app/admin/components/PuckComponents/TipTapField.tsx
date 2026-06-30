@@ -177,6 +177,7 @@ export const TipTapEditor: React.FC<TipTapEditorProps> = ({ value, onChange }) =
   React.useEffect(() => { injectStyles(); }, []);
 
   const [showColorPicker, setShowColorPicker] = React.useState(false);
+  const [viewMode, setViewMode] = React.useState<"visual" | "code">("visual");
 
   const editor = useEditor({
     extensions: [
@@ -215,8 +216,28 @@ export const TipTapEditor: React.FC<TipTapEditorProps> = ({ value, onChange }) =
 
   return (
     <div className="tiptap-field-wrap">
-      {/* ── Toolbar ── */}
-      <div className="tiptap-toolbar">
+      {/* ── Mode Switcher ── */}
+      <div style={{ display: 'flex', borderBottom: '1px solid #dee2e6', background: '#f8f9fa' }}>
+        <button 
+          type="button" 
+          onClick={() => setViewMode("visual")} 
+          style={{ padding: '8px 16px', border: 'none', background: viewMode === "visual" ? '#fff' : 'transparent', borderBottom: viewMode === "visual" ? '2px solid #1B4F91' : '2px solid transparent', fontWeight: 600, cursor: 'pointer', color: viewMode === "visual" ? '#1B4F91' : '#6c757d' }}
+        >
+          Visual
+        </button>
+        <button 
+          type="button" 
+          onClick={() => setViewMode("code")} 
+          style={{ padding: '8px 16px', border: 'none', background: viewMode === "code" ? '#fff' : 'transparent', borderBottom: viewMode === "code" ? '2px solid #1B4F91' : '2px solid transparent', fontWeight: 600, cursor: 'pointer', color: viewMode === "code" ? '#1B4F91' : '#6c757d' }}
+        >
+          Code
+        </button>
+      </div>
+
+      {viewMode === "visual" ? (
+        <>
+          {/* ── Toolbar ── */}
+          <div className="tiptap-toolbar">
         {/* Text formatting */}
         <TB onClick={() => editor.chain().focus().toggleBold().run()} isActive={editor.isActive("bold")} title="Bold (Ctrl+B)">
           <strong>B</strong>
@@ -337,6 +358,23 @@ export const TipTapEditor: React.FC<TipTapEditorProps> = ({ value, onChange }) =
       <div className="tiptap-editor-content">
         <EditorContent editor={editor} />
       </div>
+      </>
+      ) : (
+        <div style={{ padding: 12 }}>
+          <textarea 
+            value={value} 
+            onChange={(e) => {
+              onChange(e.target.value);
+              editor.commands.setContent(e.target.value);
+            }} 
+            style={{ 
+              width: '100%', minHeight: 200, fontFamily: 'monospace', 
+              fontSize: 13, padding: 8, border: '1px solid #ccc', 
+              borderRadius: 4, outline: 'none', resize: 'vertical'
+            }} 
+          />
+        </div>
+      )}
     </div>
   );
 };

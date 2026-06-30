@@ -7,9 +7,9 @@ import { siteTheme, USE_STATIC_DATA } from "../utils/site";
 
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:4000/api/v1";
 
-export default function DynamicPage() {
+export default function DynamicPage({ FallbackComponent, pageSlug }: { FallbackComponent?: React.ComponentType, pageSlug?: string }) {
   const params = useParams<{ slug: string }>();
-  const slug = params.slug || "home";
+  const slug = pageSlug || params.slug || "home";
   const [pageData, setPageData] = useState<any>(null);
   const [loading, setLoading] = useState(!USE_STATIC_DATA);
   const [error, setError] = useState(USE_STATIC_DATA ? "Static mode" : "");
@@ -54,6 +54,10 @@ export default function DynamicPage() {
   }
 
   if (error || !pageData) {
+    if (FallbackComponent) {
+      return <FallbackComponent />;
+    }
+
     return (
       <div>
         <PageTitle title="Page Not Found" />

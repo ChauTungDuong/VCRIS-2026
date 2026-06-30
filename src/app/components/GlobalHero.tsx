@@ -12,23 +12,24 @@ export default function GlobalHero() {
   }, []);
 
   const heroName = config?.conference_name || home.name;
-  const heroTitle = config?.ai4cris_hero_title || "HỘI THẢO KHOA HỌC QUỐC GIA <br className=\"hidden sm:block\" />TRÍ TUỆ NHÂN TẠO CHO MẬT MÃ <br className=\"hidden sm:block\" />VÀ AN TOÀN THÔNG TIN";
-  const heroSubtitle = config?.ai4cris_hero_subtitle || "<span className=\"text-[#0066CC]\">AI4CRIS</span> 2026";
-  const heroDate = config?.ai4cris_hero_date || home.time;
-  const heroVenue = config?.ai4cris_hero_venue || home.venue;
+  const heroTitle = config?.hero_title || config?.ai4cris_hero_title || "HỘI THẢO KHOA HỌC QUỐC GIA <br className=\"hidden sm:block\" />TRÍ TUỆ NHÂN TẠO CHO MẬT MÃ <br className=\"hidden sm:block\" />VÀ AN TOÀN THÔNG TIN";
+  const heroSubtitle = config?.hero_subtitle || config?.ai4cris_hero_subtitle || "<span className=\"text-[#0066CC]\">AI4CRIS</span> 2026";
+  const heroDate = config?.conference_dates || config?.ai4cris_hero_date || home.time;
+  const heroVenue = config?.conference_location || config?.ai4cris_hero_venue || home.venue;
+  const bgImage = config?.hero_bg_image || "/images/bia-1920500.png";
 
   return (
     <section className="relative min-h-[450px] md:min-h-[500px] overflow-hidden mt-[60px] flex items-center py-12 md:py-16">
       <div className="absolute inset-0 bg-[#0c407c]">
         {/* Left side (Building) */}
         <img
-          src="/images/bia-1920500.png"
+          src={bgImage}
           alt=""
           className="absolute inset-0 w-full h-full object-cover object-left"
         />
         {/* Right side (Globe) with smooth fade mask */}
         <img
-          src="/images/bia-1920500.png"
+          src={bgImage}
           alt=""
           className="hidden md:block absolute inset-0 w-full h-full object-cover object-right [mask-image:linear-gradient(to_right,transparent_30%,black_70%)] md:[mask-image:linear-gradient(to_right,transparent_40%,black_60%)]"
         />

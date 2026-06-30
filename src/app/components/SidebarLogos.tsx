@@ -1,5 +1,12 @@
 import { Building2, Shield, Users } from "lucide-react";
 import { logos } from "../data/conferenceData";
+import { useSiteConfig } from "../hooks/useSiteConfig";
+
+const iconMap: Record<string, any> = {
+  Building2,
+  Users,
+  Shield,
+};
 
 const SponsorCategory = ({ title, icon: Icon, sponsors }: { title: string, icon: any, sponsors: any[] }) => {
   if (!sponsors || sponsors.length === 0) return null;
@@ -50,17 +57,29 @@ const SponsorCategory = ({ title, icon: Icon, sponsors }: { title: string, icon:
 };
 
 export default function SidebarLogos() {
-  const chuTri = logos.filter(l => l.role === "Đơn vị chủ trì tổ chức");
-  const dongToChuc = logos.filter(l => l.role === "Đơn vị đồng tổ chức");
-  const phoiHop = logos.filter(l => l.role === "Đơn vị phối hợp");
-  const baoTro = logos.filter(l => l.role === "Đơn vị bảo trợ");
+  const { config } = useSiteConfig();
+  const sponsors = config?.sidebar_sponsors?.length ? config.sidebar_sponsors : logos;
+  const categories = config?.sidebar_categories?.length ? config.sidebar_categories : [
+    { title: "Đơn vị chủ trì tổ chức", icon: "Building2" },
+    { title: "Đơn vị đồng tổ chức", icon: "Users" },
+    { title: "Đơn vị phối hợp", icon: "Users" },
+    { title: "Đơn vị bảo trợ", icon: "Shield" },
+  ];
 
   return (
     <div className="w-full h-full bg-white py-6 pl-6 pr-2 md:py-8 md:pl-8 md:pr-4 flex flex-col items-center">
-      <SponsorCategory title="Đơn vị chủ trì tổ chức" icon={Building2} sponsors={chuTri} />
-      <SponsorCategory title="Đơn vị đồng tổ chức" icon={Users} sponsors={dongToChuc} />
-      <SponsorCategory title="Đơn vị phối hợp" icon={Users} sponsors={phoiHop} />
-      <SponsorCategory title="Đơn vị bảo trợ" icon={Shield} sponsors={baoTro} />
+      {categories.map((cat: any, idx: number) => {
+        const IconComp = iconMap[cat.icon] || Users;
+        const catSponsors = sponsors.filter((l: any) => l.role === cat.title);
+        return (
+          <SponsorCategory 
+            key={idx} 
+            title={cat.title} 
+            icon={IconComp} 
+            sponsors={catSponsors} 
+          />
+        );
+      })}
     </div>
   );
 }

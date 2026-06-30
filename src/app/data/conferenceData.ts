@@ -161,6 +161,7 @@ export const organizingCommitteeGroups: CommitteeGroup[] = [
       { name: "PGS. TS. Nguyễn Việt Hùng - Phó Chủ tịch FISU Việt Nam" },
       { name: "PGS. TS. Nguyễn Long Giang - Phó Chủ tịch  FISU Việt Nam" },
       { name: "PGS. TS. Nguyễn Thị Trường Giang - Phó Giám đốc Học viện Báo chí và Tuyên truyền" },
+      { name: "PGS. TS. Trần Thị Lượng - Phó Chủ nhiệm Khoa ATTT, Học viện Kỹ thuật mật mã;"},
       { name: "TS. Nguyễn Bùi Cương - Phó Viện trưởng Viện Khoa học - Công nghệ mật mã" },
       { name: "PGS. TS. Hoàng Việt Long - Chủ nhiệm khoa An toàn thông tin, Học viện Kỹ thuật và Công nghệ an ninh" },
       { name: "TS. Nguyễn Đình Nghĩa - Chủ nhiệm khoa An toàn thông tin, Học viện An ninh nhân dân" },

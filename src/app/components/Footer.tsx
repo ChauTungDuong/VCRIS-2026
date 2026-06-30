@@ -2,6 +2,10 @@ import { Link } from "react-router";
 import { Mail } from "lucide-react";
 import { CONF } from "../data/conferenceData";
 import { sponsorsData } from "../data/sponsorsData";
+import { useState, useEffect } from "react";
+import { pagesApi } from "../admin/hooks/useApi";
+import { Render } from "@measured/puck";
+import { puckConfig } from "../admin/components/PuckComponents";
 
 type SponsorItem = {
   title: string;
@@ -42,6 +46,32 @@ const resolveSponsorLogo = (logoFileName: string) => {
 };
 
 export default function Footer() {
+  const [footerData, setFooterData] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    pagesApi.get("_footer")
+      .then((res) => {
+        if (res.data?.page?.content) {
+          try {
+            setFooterData(JSON.parse(res.data.page.content));
+          } catch {
+            // ignore
+          }
+        }
+      })
+      .catch(() => {
+        // failed to fetch, use fallback
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) return null;
+
+  if (footerData) {
+    return <Render config={puckConfig} data={footerData} />;
+  }
+
   return (
     <div>
       <footer className="bg-[#173d6b] text-white">

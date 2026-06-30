@@ -1,13 +1,15 @@
 import { Link, useLocation } from "react-router";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { headerNavLinks } from "../utils/routes";
+import { useSiteConfig } from "../hooks/useSiteConfig";
 
 export default function Navigation() {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { config } = useSiteConfig();
+  const headerNavLinks = config.header_nav_links || [];
 
   useEffect(() => {
     const handleScroll = () => {

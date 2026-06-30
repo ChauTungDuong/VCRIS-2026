@@ -106,10 +106,10 @@ p {
 .ai4cris-html-content li {
   margin-bottom: 8px;
 }
-.ai4cris-html-content a {
+.ai4cris-html-content a:not([class*="bg-"]) {
   color: var(--cipher);
   text-decoration: underline;
 }
-.ai4cris-html-content a:hover {
+.ai4cris-html-content a:not([class*="bg-"]):hover {
   color: #004d99;
 }

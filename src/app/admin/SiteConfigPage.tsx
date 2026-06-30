@@ -31,6 +31,18 @@ const configSections = [
       { key: "website_url", label: "Website URL", placeholder: "https://vcris.org", hint: "Public site URL" },
     ],
   },
+  {
+    title: "Global Hero Banner",
+    icon: "🚩",
+    fields: [
+      { key: "hero_title", label: "Hero Title", placeholder: "VCRIS 2026", hint: "Main title on banner" },
+      { key: "hero_subtitle", label: "Hero Subtitle", placeholder: "International Conference...", hint: "Subtitle" },
+      { key: "hero_btn_text", label: "Button Text", placeholder: "Submit Paper", hint: "e.g., Submit Paper" },
+      { key: "hero_btn_url", label: "Button URL", placeholder: "/submission", hint: "e.g., /submission" },
+      { key: "hero_bg_color", label: "Background Color", placeholder: "#1B4F91", hint: "Hex code" },
+      { key: "hero_bg_image", label: "Background Image URL", placeholder: "/images/bg.jpg", hint: "From Media Library" },
+    ],
+  },
 ];
 
 export default function SiteConfigPage() {
@@ -38,14 +50,27 @@ export default function SiteConfigPage() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  
   const [datesJson, setDatesJson] = useState("");
-  const [jsonError, setJsonError] = useState(false);
+  const [datesJsonError, setDatesJsonError] = useState(false);
+  
+  const [navJson, setNavJson] = useState("");
+  const [navJsonError, setNavJsonError] = useState(false);
+  
+  const [sidebarCatsJson, setSidebarCatsJson] = useState("");
+  const [sidebarCatsError, setSidebarCatsError] = useState(false);
+  
+  const [sidebarSponsorsJson, setSidebarSponsorsJson] = useState("");
+  const [sidebarSponsorsError, setSidebarSponsorsError] = useState(false);
 
   useEffect(() => {
     configApi.get().then((res) => {
       const c = res.data.config || {};
       setConfig(c);
       setDatesJson(JSON.stringify(c.important_dates || [], null, 2));
+      setNavJson(JSON.stringify(c.header_nav_links || [], null, 2));
+      setSidebarCatsJson(JSON.stringify(c.sidebar_categories || [], null, 2));
+      setSidebarSponsorsJson(JSON.stringify(c.sidebar_sponsors || [], null, 2));
     }).catch(console.error)
       .finally(() => setLoading(false));
   }, []);
@@ -54,13 +79,11 @@ export default function SiteConfigPage() {
     setSaving(true);
     setSaved(false);
     try {
-      // Attempt to parse the dates JSON before saving
-      try {
-        const parsed = JSON.parse(datesJson);
-        config.important_dates = parsed;
-      } catch {
-        // keep existing if JSON is invalid
-      }
+      try { config.important_dates = JSON.parse(datesJson); } catch {}
+      try { config.header_nav_links = JSON.parse(navJson); } catch {}
+      try { config.sidebar_categories = JSON.parse(sidebarCatsJson); } catch {}
+      try { config.sidebar_sponsors = JSON.parse(sidebarSponsorsJson); } catch {}
+      
       await configApi.update(config);
       setSaved(true);
       setTimeout(() => setSaved(false), 3000);
@@ -165,47 +188,161 @@ export default function SiteConfigPage() {
           </div>
         ))}
 
-        {/* ── Important Dates JSON editor ── */}
-        <div style={{ background: "#fff", border: "1px solid #DEE2E6", borderRadius: 4, overflow: "hidden" }}>
-          <div style={{ padding: "12px 20px", background: "#0b2740", borderBottom: "2px solid #C12026", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <span style={{ fontSize: 16 }}>📋</span>
-              <span style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.8)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
-                Important Dates (JSON)
-              </span>
+        {/* ── JSON Editors Grid ── */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+          {/* Important Dates */}
+          <div style={{ background: "#fff", border: "1px solid #DEE2E6", borderRadius: 4, overflow: "hidden" }}>
+            <div style={{ padding: "12px 20px", background: "#0b2740", borderBottom: "2px solid #C12026", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <span style={{ fontSize: 16 }}>📅</span>
+                <span style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.8)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+                  Important Dates
+                </span>
+              </div>
+              {datesJsonError && (
+                <span style={{ fontSize: 10, color: "#C12026", background: "rgba(193,32,38,0.15)", padding: "3px 8px", borderRadius: 3, fontWeight: 700 }}>
+                  ⚠ Invalid JSON
+                </span>
+              )}
             </div>
-            {jsonError && (
-              <span style={{ fontSize: 10, color: "#C12026", background: "rgba(193,32,38,0.15)", padding: "3px 8px", borderRadius: 3, fontWeight: 700 }}>
-                ⚠ Invalid JSON
-              </span>
-            )}
+            <div style={{ padding: "16px 24px" }}>
+              <textarea
+                value={datesJson}
+                onChange={(e) => {
+                  setDatesJson(e.target.value);
+                  try { JSON.parse(e.target.value); setDatesJsonError(false); } catch { setDatesJsonError(true); }
+                }}
+                rows={8} spellCheck={false}
+                style={{
+                  width: "100%", padding: "12px 14px",
+                  border: `1px solid ${datesJsonError ? "#C12026" : "#DEE2E6"}`,
+                  borderRadius: 4, fontSize: 12, fontFamily: "var(--font-mono)",
+                  resize: "vertical", outline: "none", background: "#FAFAFA",
+                }}
+              />
+            </div>
           </div>
-          <div style={{ padding: "16px 24px" }}>
-            <p style={{ fontSize: 12, color: "#4A4A4A", marginBottom: 12, fontFamily: "var(--font-body)" }}>
-              Each item: <code style={{ background: "#F8F9FA", padding: "2px 6px", borderRadius: 3, fontSize: 11, fontFamily: "var(--font-mono)" }}>{"{ \"label\": \"...\", \"date\": \"...\", \"passed\": false }"}</code>
-            </p>
-            <textarea
-              value={datesJson}
-              onChange={(e) => {
-                setDatesJson(e.target.value);
-                try { JSON.parse(e.target.value); setJsonError(false); } catch { setJsonError(true); }
-              }}
-              rows={14}
-              spellCheck={false}
+
+          {/* Header Nav Links */}
+          <div style={{ background: "#fff", border: "1px solid #DEE2E6", borderRadius: 4, overflow: "hidden" }}>
+            <div style={{ padding: "12px 20px", background: "#0b2740", borderBottom: "2px solid #C12026", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <span style={{ fontSize: 16 }}>🧭</span>
+                <span style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.8)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+                  Header Navigation
+                </span>
+              </div>
+              {navJsonError && (
+                <span style={{ fontSize: 10, color: "#C12026", background: "rgba(193,32,38,0.15)", padding: "3px 8px", borderRadius: 3, fontWeight: 700 }}>
+                  ⚠ Invalid JSON
+                </span>
+              )}
+            </div>
+            <div style={{ padding: "16px 24px" }}>
+              <textarea
+                value={navJson}
+                onChange={(e) => {
+                  setNavJson(e.target.value);
+                  try { JSON.parse(e.target.value); setNavJsonError(false); } catch { setNavJsonError(true); }
+                }}
+                rows={8} spellCheck={false}
+                style={{
+                  width: "100%", padding: "12px 14px",
+                  border: `1px solid ${navJsonError ? "#C12026" : "#DEE2E6"}`,
+                  borderRadius: 4, fontSize: 12, fontFamily: "var(--font-mono)",
+                  resize: "vertical", outline: "none", background: "#FAFAFA",
+                }}
+              />
+            </div>
+          </div>
+
+          {/* Sidebar Categories */}
+          <div style={{ background: "#fff", border: "1px solid #DEE2E6", borderRadius: 4, overflow: "hidden" }}>
+            <div style={{ padding: "12px 20px", background: "#0b2740", borderBottom: "2px solid #C12026", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <span style={{ fontSize: 16 }}>📂</span>
+                <span style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.8)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+                  Sidebar Categories
+                </span>
+              </div>
+              {sidebarCatsError && (
+                <span style={{ fontSize: 10, color: "#C12026", background: "rgba(193,32,38,0.15)", padding: "3px 8px", borderRadius: 3, fontWeight: 700 }}>
+                  ⚠ Invalid JSON
+                </span>
+              )}
+            </div>
+            <div style={{ padding: "16px 24px" }}>
+              <textarea
+                value={sidebarCatsJson}
+                onChange={(e) => {
+                  setSidebarCatsJson(e.target.value);
+                  try { JSON.parse(e.target.value); setSidebarCatsError(false); } catch { setSidebarCatsError(true); }
+                }}
+                rows={8} spellCheck={false}
+                style={{
+                  width: "100%", padding: "12px 14px",
+                  border: `1px solid ${sidebarCatsError ? "#C12026" : "#DEE2E6"}`,
+                  borderRadius: 4, fontSize: 12, fontFamily: "var(--font-mono)",
+                  resize: "vertical", outline: "none", background: "#FAFAFA",
+                }}
+              />
+            </div>
+          </div>
+
+          {/* Sidebar Sponsors */}
+          <div style={{ background: "#fff", border: "1px solid #DEE2E6", borderRadius: 4, overflow: "hidden" }}>
+            <div style={{ padding: "12px 20px", background: "#0b2740", borderBottom: "2px solid #C12026", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <span style={{ fontSize: 16 }}>🏢</span>
+                <span style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.8)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+                  Sidebar Sponsors
+                </span>
+              </div>
+              {sidebarSponsorsError && (
+                <span style={{ fontSize: 10, color: "#C12026", background: "rgba(193,32,38,0.15)", padding: "3px 8px", borderRadius: 3, fontWeight: 700 }}>
+                  ⚠ Invalid JSON
+                </span>
+              )}
+            </div>
+            <div style={{ padding: "16px 24px" }}>
+              <textarea
+                value={sidebarSponsorsJson}
+                onChange={(e) => {
+                  setSidebarSponsorsJson(e.target.value);
+                  try { JSON.parse(e.target.value); setSidebarSponsorsError(false); } catch { setSidebarSponsorsError(true); }
+                }}
+                rows={8} spellCheck={false}
+                style={{
+                  width: "100%", padding: "12px 14px",
+                  border: `1px solid ${sidebarSponsorsError ? "#C12026" : "#DEE2E6"}`,
+                  borderRadius: 4, fontSize: 12, fontFamily: "var(--font-mono)",
+                  resize: "vertical", outline: "none", background: "#FAFAFA",
+                }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* ── Footer Editor Link ── */}
+        <div style={{ background: "#fff", border: "1px solid #DEE2E6", borderRadius: 4, overflow: "hidden", marginTop: 20 }}>
+          <div style={{ padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+            <div>
+              <h3 style={{ margin: 0, fontSize: 16, fontWeight: 700, color: "#0b2740", fontFamily: "var(--font-display)" }}>
+                Footer Editor (Puck Blocks)
+              </h3>
+              <p style={{ margin: "4px 0 0", fontSize: 13, color: "#4A4A4A" }}>
+                Footer is a full block container. Edit text, maps, and links via the visual editor.
+              </p>
+            </div>
+            <a
+              href="/admin/editor/_footer"
               style={{
-                width: "100%", padding: "12px 14px",
-                border: `1px solid ${jsonError ? "#C12026" : "#DEE2E6"}`,
-                borderRadius: 4, fontSize: 12,
-                fontFamily: "var(--font-mono)", boxSizing: "border-box",
-                resize: "vertical", outline: "none",
-                background: "#FAFAFA", lineHeight: 1.7,
+                background: "#1B4F91", color: "#fff", padding: "10px 20px", borderRadius: 4,
+                textDecoration: "none", fontSize: 13, fontWeight: 700, textTransform: "uppercase"
               }}
-              onFocus={(e) => { if (!jsonError) e.target.style.borderColor = "#1B4F91"; }}
-              onBlur={(e) => { if (!jsonError) e.target.style.borderColor = "#DEE2E6"; }}
-            />
-            <p style={{ fontSize: 10, color: "#4A4A4A", marginTop: 8 }}>
-              Changes are applied when you click <strong>Save Changes</strong> above.
-            </p>
+            >
+              Open Footer Editor ➔
+            </a>
           </div>
         </div>
       </div>

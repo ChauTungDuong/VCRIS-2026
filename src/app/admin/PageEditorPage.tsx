@@ -5,7 +5,10 @@ import "@measured/puck/puck.css";
 import { puckConfig } from "./components/PuckComponents";
 import { pagesApi } from "./hooks/useApi";
 import { siteTheme } from "../utils/site";
-
+import Header from "../components/Header";
+import GlobalHero from "../components/GlobalHero";
+import SidebarLogos from "../components/SidebarLogos";
+import Footer from "../components/Footer";
 /* ─────────────────────────────────────────────────────────────
    LEFT PANEL — inner component, must be inside <Puck> context
    Shows: component list (default) | field editor (on selection)
@@ -392,6 +395,7 @@ export default function PageEditorPage() {
           data={initialData}
           onPublish={doSave}
           onChange={(data) => { pendingDataRef.current = data; }}
+          iframe={false}
         >
           {/* Custom Elementor-style layout using children render */}
           <div style={{ display: "flex", flexDirection: "column", height: "100vh", overflow: "hidden", fontFamily: "var(--font-body)" }}>
@@ -439,9 +443,22 @@ export default function PageEditorPage() {
                   </span>
                 </div>
                 {/* The actual preview iframe/DIV */}
-                <div style={{ flex: 1, padding: "20px", display: "flex", justifyContent: "center" }}>
-                  <div style={{ width: "100%", maxWidth: 1280, background: "#fff", boxShadow: "0 4px 24px rgba(0,0,0,0.18)", borderRadius: 4, overflow: "hidden", minHeight: "calc(100vh - 102px)" }}>
-                    <Puck.Preview />
+                <div style={{ flex: 1, padding: "0px", display: "flex", flexDirection: "column" }}>
+                  <div style={{ flex: 1, display: "flex", flexDirection: "column", width: "100%", background: "#fff", boxShadow: "0 4px 24px rgba(0,0,0,0.18)", overflowX: "hidden" }}>
+                    {/* Site Layout Wrapper */}
+                    <Header />
+                    <GlobalHero />
+                    <div className="flex-1 w-full max-w-[1800px] mx-auto pl-8 lg:pl-12 xl:pl-16 pr-0 flex flex-col lg:flex-row relative">
+                      <main className="flex-1 min-w-0 w-full lg:pr-24 py-12">
+                        <Puck.Preview />
+                      </main>
+                      <aside className="w-full lg:w-[300px] xl:w-[340px] flex-shrink-0 lg:border-l border-rule border-dashed bg-white">
+                        <div className="sticky top-[60px]">
+                          <SidebarLogos />
+                        </div>
+                      </aside>
+                    </div>
+                    <Footer />
                   </div>
                 </div>
               </div>

@@ -12,7 +12,16 @@ import { RichTextField } from "./RichTextField";
 import { makeTipTapField } from "./TipTapField";
 import { makeMediaField } from "./MediaPickerField";
 import { VenuePageTitle, VenueDetails, VenuePhotoGrid, VenuePhotoItem, VenueAboutContainer, VenueText, VenueLink } from "./VenueComponents";
-import { Ai4CrisCountdown, Ai4CrisTimeline, Ai4CrisSection } from "./Ai4CrisComponents";
+import {
+  Ai4CrisCountdown,
+  Ai4CrisTimeline,
+  Ai4CrisSection,
+  Ai4CrisMemberTabs,
+  Ai4CrisTrackAccordion,
+  Ai4CrisHeading,
+  Ai4CrisText,
+  Ai4CrisButton
+} from "./Ai4CrisComponents";
 
 // ==========================
 // Shared Field Configs
@@ -55,10 +64,13 @@ const textAlignOptions = [
 
 export const puckConfig: Config = {
   categories: {
-    layout: { title: "📐 Layout", components: ["Section", "Columns", "Spacer", "Divider", "GradientSection"] },
-    typography: { title: "✏️ Typography", components: ["SectionHeading", "TextBlock", "RichText", "Callout", "InfoBox"] },
+    ai4cris: { 
+      title: "🔥 AI4CRIS 2026", 
+      components: ["Ai4CrisCountdown", "Ai4CrisTimeline", "Ai4CrisSection", "Ai4CrisMemberTabs", "Ai4CrisTrackAccordion", "Ai4CrisHeading", "Ai4CrisText", "Ai4CrisButton"] 
+    },
+    layout: { title: "📐 Layout", components: ["HeroBanner", "TwoColText", "IconTextRow", "Divider", "GradientSection", "InfoBox"] },
     content: { title: "📦 Content", components: ["ListBlock", "NumberedList", "TableBlock", "ImageBlock", "ImageGrid", "Badge", "DownloadButton", "ScheduleTable"] },
-    interactive: { title: "🎛️ Interactive", components: ["ButtonLink", "AccordionBlock", "TabsBlock", "AlertBox"] },
+    interactive: { title: "🎛️ Interactive", components: ["ButtonLink", "AccordionGroup", "TabsBlock", "AlertBox"] },
     media: { title: "🎬 Media", components: ["VideoEmbed", "Map"] },
     cards: { title: "🃏 Cards", components: ["PersonCard", "StatCard", "PricingCard", "IconTextRow", "TwoColText", "FeatureCard"] },
     data: { title: "📊 Data Viz", components: ["Timeline", "ProgressBar"] },
@@ -67,7 +79,6 @@ export const puckConfig: Config = {
     home: { title: "🏠 Home Layouts", components: ["HomeHero", "HomeImportantDates", "HomeAbout", "HomeCfa"] },
     general: { title: "🌐 Page Layouts", components: ["TopImageHeader"] },
     macro: { title: "🧩 Macro Blocks", components: ["TopImageHeader", "HomeHero", "HomeImportantDates", "HomeAbout", "HomeCfa"] },
-    ai4cris: { title: "🤖 AI4CRIS Specific", components: ["Ai4CrisCountdown", "Ai4CrisTimeline", "Ai4CrisSection"] },
     venue: { title: "🏢 Venue", components: ["VenuePageTitle", "VenueDetails", "VenuePhotoGrid", "VenuePhotoItem", "VenueAboutContainer", "VenueText", "VenueLink"] },
   },
   root: {
@@ -116,7 +127,14 @@ export const puckConfig: Config = {
     VenuePageTitle, VenueDetails, VenuePhotoGrid, VenuePhotoItem, VenueAboutContainer, VenueText, VenueLink,
 
     // ===== AI4CRIS COMPONENTS =====
-    Ai4CrisCountdown, Ai4CrisTimeline, Ai4CrisSection,
+    Ai4CrisCountdown,
+    Ai4CrisTimeline,
+    Ai4CrisSection,
+    Ai4CrisMemberTabs,
+    Ai4CrisTrackAccordion,
+    Ai4CrisHeading,
+    Ai4CrisText,
+    Ai4CrisButton,
 
     // ====== SECTION ======
     Section: {
@@ -574,52 +592,65 @@ export const puckConfig: Config = {
       },
     },
 
-    // ====== ACCORDION BLOCK ======
-    AccordionBlock: {
-      label: "Accordion / FAQ",
+    // ====== ACCORDION GROUP ======
+    AccordionGroup: {
+      label: "Accordion / FAQ Group",
       defaultProps: {
-        title: "Question or Title",
-        content: "Answer or content...",
-        isOpen: false,
+        items: [
+          { title: "Question 1", content: "<p>Answer 1...</p>", isOpen: false },
+          { title: "Question 2", content: "<p>Answer 2...</p>", isOpen: false },
+        ]
       },
       fields: {
-        title: { type: "text", label: "Title" },
-        content: makeTipTapField("Content"),
-        isOpen: {
-          type: "select",
-          label: "Default State",
-          options: [
-            { label: "Closed", value: false },
-            { label: "Open", value: true },
-          ],
-        },
+        items: {
+          type: "array",
+          label: "Accordion Items",
+          arrayFields: {
+            title: { type: "text", label: "Title" },
+            content: makeTipTapField("Content"),
+            isOpen: {
+              type: "select",
+              label: "Default State",
+              options: [
+                { label: "Closed", value: false },
+                { label: "Open", value: true },
+              ],
+            },
+          },
+          getItemSummary: (item: any) => item.title || "Item",
+        } as any,
       },
-      render: ({ title, content, puck }: any) => (
-        <details
-          ref={puck.dragRef}
-          style={{
-            margin: "0 0 8px 0", padding: "16px 20px",
-            backgroundColor: "#FFFFFF", borderRadius: 4,
-            border: "1px solid #DEE2E6",
-            fontFamily: "var(--font-body)",
-          }}
-        >
-          <summary style={{
-            fontSize: 16, fontWeight: 700, color: "#212529",
-            cursor: "pointer", listStyle: "none",
-            display: "flex", justifyContent: "space-between", alignItems: "center",
-            fontFamily: "var(--font-display)",
-          }}>
-            {title}
-            <span style={{ color: "#1B4F91", fontSize: 20 }}>+</span>
-          </summary>
-          <div style={{
-            marginTop: 12, fontSize: 15, color: "#4A4A4A", lineHeight: 1.7,
-            borderTop: "1px solid #DEE2E6", paddingTop: 12,
-          }}
-            dangerouslySetInnerHTML={{ __html: content }}
-          />
-        </details>
+      render: ({ items, puck }: any) => (
+        <div ref={puck.dragRef} style={{ display: "flex", flexDirection: "column", gap: "8px", margin: "0 0 16px 0" }}>
+          {(items || []).map((item: any, i: number) => (
+            <details
+              key={i}
+              style={{
+                backgroundColor: "#FFFFFF", borderRadius: 4,
+                border: "1px solid #DEE2E6",
+                fontFamily: "var(--font-body)",
+                padding: "16px 20px",
+              }}
+              open={item.isOpen}
+            >
+              <summary style={{
+                fontSize: 16, fontWeight: 700, color: "#212529",
+                cursor: "pointer", listStyle: "none",
+                display: "flex", justifyContent: "space-between", alignItems: "center",
+                fontFamily: "var(--font-display)",
+              }}>
+                {item.title}
+                <span style={{ color: "#1B4F91", fontSize: 20 }}>+</span>
+              </summary>
+              <div style={{
+                marginTop: 12, fontSize: 15, color: "#4A4A4A", lineHeight: 1.7,
+                borderTop: "1px solid #DEE2E6", paddingTop: 12,
+              }}
+                dangerouslySetInnerHTML={{ __html: item.content }}
+              />
+            </details>
+          ))}
+        </div>
       ),
     },
   },
