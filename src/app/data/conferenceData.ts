@@ -167,6 +167,7 @@ export const organizingCommitteeGroups: CommitteeGroup[] = [
       { name: "TS. Nguyễn Đình Nghĩa - Chủ nhiệm khoa An toàn thông tin, Học viện An ninh nhân dân" },
       { name: "TS. Nguyễn Thế Hùng - Trưởng phòng, Viện 486, Bộ Tư lệnh 86" },
       { name: "PGS. TS. Trần Quang Đức - Giám đốc Trung tâm An ninh mạng, Đại học Bách khoa Hà Nội" },
+      { name: "PGS.TS. Phạm Văn Hậu - Giám đốc Trung tâm An ninh mạng, Trường Đại học Công nghệ thông tin, Đại học Quốc gia Thành phố Hồ Chí Minh" },
       { name: "PGS. TS. Trần Quanh Anh - Phó Giám đốc Học viện Công nghệ Bưu chính viễn thông" },
       { name: "PGS. TS. Hoàng Xuân Dậu - Chủ nhiệm khoa An toàn thông tin, Học viện Công nghệ Bưu chính viễn thông" },
       { name: "PGS. TS. Trần Minh Triết - Phó Hiệu trưởng Trường Đại học Khoa học tự nhiên, Đại học Quốc gia Thành phố Hồ Chí Minh" },
