@@ -68,7 +68,7 @@ export default function Program() {
                       <tr className="hover:bg-paper/50 transition-colors">
                         <td className="p-4 font-semibold text-ink">10:30 - 10:55</td>
                         <td className="p-4">Báo cáo mời 6: Ứng dụng AI trong bảo vệ hạ tầng trọng yếu, chính phủ số</td>
-                        <td className="p-4">Doanh nghiệp công nghệ lớn (Viettel/VNPT/BKAV/CMC/Mobilefone...)</td>
+                        <td className="p-4">Hiệp hội An ninh mạng Quốc Gia</td>
                       </tr>
                       <tr className="hover:bg-paper/50 transition-colors">
                         <td className="p-4 font-semibold text-ink align-top">10:55 - 11:40</td>
