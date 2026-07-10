@@ -151,7 +151,7 @@ export const organizingCommitteeGroups: CommitteeGroup[] = [
     role: "Ban Tổ chức",
     members: [
       { name: "GS.TS. Nguyễn Hiếu Minh - Phó Giám đốc Học viện Kỹ thuật mật mã - Trưởng ban", isChair: true },
-      { name: "PGS.TS. Lưu Văn Quảng - Phó Giám đốc Học viện Báo chí và Tuyên truyền" },
+      { name: "PGS.TS. Mai Đức Ngọc - Phó Giám đốc thường trực Học viện Báo chí và Tuyên truyền" },
       { name: "TS. Vũ Thị Đào - Viện trưởng Viện Nghiên cứu và Hợp tác phát triển, Học viện Kỹ thuật mật mã" },
       { name: "TS. Nguyễn Như Tuấn - Tổng biên tập Tạp chí An toàn thông tin" }
     ]
