@@ -66,7 +66,7 @@ const pagesArrayCode = `const pages = [
               ai4crisTimeline({
                 title: "Các mốc thời gian",
                 items: [
-                  { date: "20/7/2026", label: "Thời hạn nộp báo cáo và tham luận", passed: false },
+                  { date: "20/7/2026", extendedDate: "28/7/2026", label: "Thời hạn nộp báo cáo và tham luận", passed: false },
                   { date: "07/8/2026", label: "Thời gian đăng ký tham dự Hội thảo", passed: false },
                   { date: "14/8/2026", label: "Thời gian tổ chức Hội thảo", passed: false },
                 ]
@@ -194,7 +194,7 @@ const pagesArrayCode = `const pages = [
             title: "MỐC THỜI GIAN",
             titleAlign: "left",
             variant: "card-blue",
-            contentHtml: "<p><strong>Thời gian tổ chức Hội thảo:</strong> 14/8/2026</p><p><strong>Thời hạn nộp báo cáo và tham luận:</strong> 20/7/2026</p><p><strong>Thời gian đăng ký tham dự Hội thảo:</strong> 07/8/2026</p>"
+            contentHtml: '<p><strong>Thời gian tổ chức Hội thảo:</strong> 14/8/2026</p><p><strong>Thời hạn nộp báo cáo và tham luận:</strong> <span class="line-through text-slate">20/7/2026</span> <span class="text-red-600 font-bold ml-1">28/7/2026</span></p><p><strong>Thời gian đăng ký tham dự Hội thảo:</strong> 07/8/2026</p>'
           }),
           ai4crisSection({
             title: "LIÊN HỆ",

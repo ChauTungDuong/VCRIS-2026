@@ -321,7 +321,7 @@ async function main() {
               ai4crisTimeline({
                 title: "Các mốc thời gian",
                 items: [
-                  { date: "20/7/2026", label: "Thời hạn nộp báo cáo và tham luận", passed: false },
+                  { date: "20/7/2026", extendedDate: "28/7/2026", label: "Thời hạn nộp báo cáo và tham luận", passed: false },
                   { date: "07/8/2026", label: "Thời gian đăng ký tham dự Hội thảo", passed: false },
                   { date: "14/8/2026", label: "Thời gian tổ chức Hội thảo", passed: false },
                 ]
@@ -338,7 +338,7 @@ async function main() {
             title: "THÔNG TIN QUAN TRỌNG",
             titleAlign: "left",
             variant: "card-blue",
-            contentHtml: `<p><span class="font-semibold text-ink">Thời gian tổ chức Hội thảo:</span> ${home.importantDates.conferenceDates}</p><p><span class="font-semibold text-ink">Thời hạn nộp báo cáo và tham luận:</span> ${home.importantDates.paperSubmissionDeadline}</p><p><span class="font-semibold text-ink">Thời gian đăng ký tham dự Hội thảo:</span> ${home.importantDates.registrationDeadline}</p><p><span class="font-semibold text-ink">Địa điểm tổ chức Hội thảo:</span> ${home.venue}</p><p><span class="font-semibold text-ink">Mọi thông tin về hội thảo xin vui lòng liên hệ:</span> <a href="mailto:AI4CRIS@actvn.edu.vn">AI4CRIS@actvn.edu.vn</a></p>`
+            contentHtml: `<p><span class="font-semibold text-ink">Thời gian tổ chức Hội thảo:</span> ${home.importantDates.conferenceDates}</p><p><span class="font-semibold text-ink">Thời hạn nộp báo cáo và tham luận:</span> <span class="line-through text-slate">20/7/2026</span> <span class="text-red-600 font-bold ml-1">${home.importantDates.paperSubmissionDeadline}</span></p><p><span class="font-semibold text-ink">Thời gian đăng ký tham dự Hội thảo:</span> ${home.importantDates.registrationDeadline}</p><p><span class="font-semibold text-ink">Địa điểm tổ chức Hội thảo:</span> ${home.venue}</p><p><span class="font-semibold text-ink">Mọi thông tin về hội thảo xin vui lòng liên hệ:</span> <a href="mailto:AI4CRIS@actvn.edu.vn">AI4CRIS@actvn.edu.vn</a></p>`
           })
         ])
       }
@@ -447,7 +447,7 @@ async function main() {
             title: "MỐC THỜI GIAN",
             titleAlign: "left",
             variant: "card-blue",
-            contentHtml: "<p><strong>Thời gian tổ chức Hội thảo:</strong> 14/8/2026</p><p><strong>Thời hạn nộp báo cáo và tham luận:</strong> 20/7/2026</p><p><strong>Thời gian đăng ký tham dự Hội thảo:</strong> 07/8/2026</p>"
+            contentHtml: '<p><strong>Thời gian tổ chức Hội thảo:</strong> 14/8/2026</p><p><strong>Thời hạn nộp báo cáo và tham luận:</strong> <span class="line-through text-slate">20/7/2026</span> <span class="text-red-600 font-bold ml-1">28/7/2026</span></p><p><strong>Thời gian đăng ký tham dự Hội thảo:</strong> 07/8/2026</p>'
           }),
           ai4crisSection({
             title: "LIÊN HỆ",

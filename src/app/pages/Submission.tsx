@@ -137,7 +137,11 @@ export default function Submission() {
           </div>
           <div className="space-y-3 text-[16px] text-slate" style={{ fontFamily: "var(--font-body)" }}>
             <p><span className="font-semibold text-ink">Thời gian tổ chức Hội thảo:</span> 14/8/2026</p>
-            <p><span className="font-semibold text-ink">Thời hạn nộp báo cáo và tham luận:</span> 20/7/2026</p>
+            <p>
+              <span className="font-semibold text-ink">Thời hạn nộp báo cáo và tham luận:</span>{" "}
+              <span className="line-through text-slate">20/7/2026</span>{" "}
+              <span className="text-red-600 font-bold ml-1">28/7/2026</span>
+            </p>
             <p><span className="font-semibold text-ink">Thời gian đăng ký tham dự Hội thảo:</span> 07/8/2026</p>
           </div>
         </section>

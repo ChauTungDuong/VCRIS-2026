@@ -208,7 +208,7 @@ export const Ai4CrisCountdown: ComponentConfig<Ai4CrisCountdownProps> = {
 // ==========================
 export type Ai4CrisTimelineProps = {
   title: string;
-  items: { date: string; label: string; passed: boolean }[];
+  items: { date: string; extendedDate?: string; label: string; passed: boolean }[];
 };
 
 export const Ai4CrisTimeline: ComponentConfig<Ai4CrisTimelineProps> = {
@@ -216,7 +216,7 @@ export const Ai4CrisTimeline: ComponentConfig<Ai4CrisTimelineProps> = {
   defaultProps: {
     title: "Các mốc thời gian",
     items: [
-      { date: "20/7/2026", label: "Thời hạn nộp báo cáo và tham luận", passed: false },
+      { date: "20/7/2026", extendedDate: "28/7/2026", label: "Thời hạn nộp báo cáo và tham luận", passed: false },
       { date: "07/8/2026", label: "Thời gian đăng ký tham dự Hội thảo", passed: false },
       { date: "14/8/2026", label: "Thời gian tổ chức Hội thảo", passed: false },
     ],
@@ -228,6 +228,7 @@ export const Ai4CrisTimeline: ComponentConfig<Ai4CrisTimelineProps> = {
       label: "Các mốc thời gian",
       arrayFields: {
         date: { type: "text", label: "Thời gian" },
+        extendedDate: { type: "text", label: "Thời gian gia hạn (nếu có)" },
         label: { type: "text", label: "Nội dung" },
         passed: {
           type: "select",
@@ -264,12 +265,20 @@ export const Ai4CrisTimeline: ComponentConfig<Ai4CrisTimelineProps> = {
               <div className="flex flex-wrap items-center gap-2 mb-1">
                 <span
                   className={`text-[15px] font-semibold ${
-                    item.passed ? "text-slate line-through" : "text-cipher"
+                    item.extendedDate || item.passed ? "text-slate line-through" : "text-cipher"
                   }`}
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
                   {item.date}
                 </span>
+                {item.extendedDate && (
+                  <span
+                    className="text-[15px] font-bold text-red-600"
+                    style={{ fontFamily: "var(--font-mono)" }}
+                  >
+                    {item.extendedDate}
+                  </span>
+                )}
               </div>
               <p
                 className="text-[17px] font-medium text-ink"

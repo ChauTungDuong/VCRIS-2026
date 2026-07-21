@@ -66,7 +66,7 @@ export const home = {
   time: "Hà Nội, 14/8/2026",
   venue: "Học viện Kỹ thuật mật mã, 141 Chiến Thắng, Thanh Liệt, Hà Nội",
   importantDates: {
-    paperSubmissionDeadline: "20/7/2026",
+    paperSubmissionDeadline: "28/7/2026",
     registrationDeadline: "07/8/2026",
     conferenceDates: "14/8/2026",
   },
@@ -96,6 +96,7 @@ export const importantDates = [
   {
     label: "Thời hạn nộp báo cáo và tham luận",
     date: "20/7/2026",
+    extendedDate: "28/7/2026",
     passed: false,
   },
   {

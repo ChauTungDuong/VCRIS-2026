@@ -71,11 +71,19 @@ export default function Home() {
                   <div className="flex-1">
                     <div className="flex flex-wrap items-center gap-2 mb-1">
                       <span
-                        className={`text-[15px] font-semibold ${item.passed ? "text-slate line-through" : "text-cipher"}`}
+                        className={`text-[15px] font-semibold ${item.extendedDate || item.passed ? "text-slate line-through" : "text-cipher"}`}
                         style={{ fontFamily: "var(--font-mono)" }}
                       >
                         {item.date}
                       </span>
+                      {(item as any).extendedDate && (
+                        <span
+                          className="text-[15px] font-bold text-red-600"
+                          style={{ fontFamily: "var(--font-mono)" }}
+                        >
+                          {(item as any).extendedDate}
+                        </span>
+                      )}
                     </div>
                     <p
                       className="text-[17px] font-medium text-ink"
@@ -122,7 +130,11 @@ export default function Home() {
         </div>
         <div className="text-[18px] text-[#0b2740] space-y-3 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
           <p><span className="font-semibold">Thời gian tổ chức Hội thảo:</span> 14/8/2026</p>
-          <p><span className="font-semibold">Thời hạn nộp báo cáo và tham luận:</span> 20/7/2026</p>
+          <p>
+            <span className="font-semibold">Thời hạn nộp báo cáo và tham luận:</span>{" "}
+            <span className="line-through text-slate">20/7/2026</span>{" "}
+            <span className="text-red-600 font-bold ml-1">28/7/2026</span>
+          </p>
           <p><span className="font-semibold">Thời gian đăng ký tham dự Hội thảo:</span> 07/8/2026</p>
           <p><span className="font-semibold">Địa điểm tổ chức Hội thảo:</span> Học viện Kỹ thuật mật mã, 141 Chiến Thắng, Thanh Liệt, Hà Nội</p>
           <p><span className="font-semibold">Mọi thông tin về hội thảo xin vui lòng liên hệ:</span> <a href="mailto:AI4CRIS@actvn.edu.vn" className="text-cipher hover:underline">AI4CRIS@actvn.edu.vn</a></p>
