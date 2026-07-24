@@ -22,16 +22,13 @@ export default function Registration() {
 
               <div className="flex flex-col items-center justify-center p-8 bg-white rounded-2xl border border-cipher/20 shadow-sm gap-4">
                 <a 
-                  href="https://forms.gle/your-google-form-link-here" 
+                  href="https://forms.gle/VKDSZG5Y3uxmW8az7" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="px-8 py-4 rounded-xl bg-cipher text-white font-bold text-[18px] hover:bg-cipher/90 transition-colors shadow-md hover:shadow-lg"
                 >
                   👉 Đăng ký tham dự tại đây
                 </a>
-                <p className="text-[13px] text-slate italic text-center max-w-[400px]">
-                  Sau khi hoàn thành biểu mẫu đăng ký, hệ thống sẽ ghi nhận thông tin của Quý đại biểu. Ban Tổ chức sẽ gửi thư xác nhận tham dự và các thông tin liên quan đến hội thảo qua email đã đăng ký.
-                </p>
               </div>
 
               <div className="space-y-4">
