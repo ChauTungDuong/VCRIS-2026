@@ -173,27 +173,10 @@ export default function Submission() {
           </ul>
         </div>
 
-        <div className="flex justify-center mt-12">
-          <div className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-[600px] justify-center">
-            <Link
-              to={CONF.easyChairUrl}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[20px] bg-cipher text-white text-[16px] font-semibold hover:shadow-lg hover:shadow-cipher/30 transition-all w-full sm:w-auto"
-              style={{ fontFamily: "var(--font-body)" }}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Gửi bài qua EasyChair <ArrowRight size={20} />
-            </Link>
-            <Link
-              to="https://docs.google.com/forms/d/e/1FAIpQLSdQ8TRTDXG2lnoNCsp8WAtkS677UMS8AyD-kqRdXPQoTl47cw/viewform"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[20px] bg-cipher text-white text-[16px] font-semibold hover:shadow-lg hover:shadow-cipher/30 transition-all w-full sm:w-auto"
-              style={{ fontFamily: "var(--font-body)" }}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Gửi bài qua Google Form <ArrowRight size={20} />
-            </Link>
-          </div>
+        <div className="flex justify-center mt-8 mb-4">
+          <p className="text-red-500 font-semibold text-[18px]">
+            Đã hết thời gian gửi bài tham dự
+          </p>
         </div>
     </div>
   );
