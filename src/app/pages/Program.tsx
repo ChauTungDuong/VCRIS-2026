@@ -129,7 +129,7 @@ export default function Program() {
                             <p><i>GS. TS. Nguyễn Thanh Thủy</i></p>
                             <p><i>TS. Trần Anh Tú</i></p>
                             <p><i>Thiếu tướng, PGS.TS. Nguyễn Tùng Hưng</i></p>
-                            <p><i>Thiếu tướng, PGS. TS. Nguyễn Ngọc Cương</i></p>
+                            <p><i>Thiếu tướng, TS. Nguyễn Ngọc Cương</i></p>
                             <p><i>PGS.TS. Phạm Minh Sơn</i></p>
                             <p><i>Đại tá, PGS. TS. Lương Thế Dũng</i></p>
                             <p><i>Ông Ngô Tuấn Anh</i></p>
@@ -185,27 +185,27 @@ export default function Program() {
                                   </thead>
                                   <tbody className="divide-y divide-rule bg-white">
                                     <tr>
-                                      <td className="p-3 align-top">Phạm Hương Trà</td>
+                                      <td className="p-3 align-top">PGS. TS. Phạm Hương Trà, TS. Lê Nguyễn Phương Thảo</td>
                                       <td className="p-3 align-top">Học viện Báo chí và Tuyên truyền</td>
                                       <td className="p-3 align-top">HƯỚNG GIẢI PHÁP TỪ AI CHO CÁC CƠ QUAN BÁO CHÍ VIỆT NAM TRƯỚC THÔNG TIN SAI LỆCH DO DEEPFAKE VÀ TRÍ TUỆ NHÂN TẠO TẠO SINH</td>
                                     </tr>
                                     <tr>
-                                      <td className="p-3 align-top">Đàm Thế Vinh</td>
+                                      <td className="p-3 align-top">TS. Đàm Thế Vinh</td>
                                       <td className="p-3 align-top">Học viện Kỹ thuật quân sự</td>
                                       <td className="p-3 align-top">ỨNG DỤNG TRÍ TUỆ NHÂN TẠO TRONG NHẬN DIỆN VÀ PHÒNG, CHỐNG THAO TÚNG THÔNG TIN TRÊN KHÔNG GIAN TRUYỀN THÔNG QUỐC PHÒNG</td>
                                     </tr>
                                     <tr>
                                       <td className="p-3 align-top">Phạm Thành Công</td>
                                       <td className="p-3 align-top">Học viện Báo chí và Tuyên truyền</td>
-                                      <td className="p-3 align-top">ỨNG DỤNG TRÍ TUỆ NHÂN TẠO TRONG PHÒNG, CHỐNG THÔNG TIN GIẢ TRÊN MÔI TRƯỜNG SỐ: THỰC TRẠNG VÀ GIẢI PHÁP</td>
+                                      <td className="p-3 align-top">ỨNG DỤNG TRÍ TUỆ NHÂN TẠO TRONG PHÒNG, CHỐNG TIN GIẢ TRÊN MÔI TRƯỜNG SỐ: THỰC TRẠNG VÀ GIẢI PHÁP</td>
                                     </tr>
                                     <tr>
-                                      <td className="p-3 align-top">Trần Thọ Xương</td>
+                                      <td className="p-3 align-top">Trần Thu Quỳnh, Vũ Thị Ngọc Thuỳ, Trần Thị Mai Dung, Trần Thọ Xương</td>
                                       <td className="p-3 align-top">Nhà xuất bản Giáo dục Việt Nam</td>
                                       <td className="p-3 align-top">HOẠT ĐỘNG XUẤT BẢN TRONG BỐI CẢNH AI TẠO SINH: THÁCH THỨC ĐỐI VỚI AN TOÀN THÔNG TIN VÀ GIẢI PHÁP QUẢN TRỊ NỘI DUNG</td>
                                     </tr>
                                     <tr>
-                                      <td className="p-3 align-top">Trần Thị Phương Lan</td>
+                                      <td className="p-3 align-top">TS. Trần Thị Phương Lan</td>
                                       <td className="p-3 align-top">Viện Báo chí - Truyền thông, Học viện Báo chí &amp; Tuyên truyền</td>
                                       <td className="p-3 align-top">KINH NGHIỆM QUỐC TẾ TRONG SỬ DỤNG AI PHÒNG, CHỐNG THÔNG TIN SAI LỆCH VỀ CHÍNH TRỊ VÀ MỘT SỐ BÀI HỌC ÁP DỤNG CHO VIỆT NAM</td>
                                     </tr>
@@ -249,12 +249,12 @@ export default function Program() {
                                       <td className="p-3 align-top">KINH NGHIỆM TRIỂN KHAI MẬT MÃ HẬU LƯỢNG TỬ PQC TRONG QUÁ TRÌNH CHUYỂN DỊCH LƯỢNG TỬ</td>
                                     </tr>
                                     <tr>
-                                      <td className="p-3 align-top">Lê Hải Triều, Nguyễn Thị Quế Thu, Đặng Ngọc Quân, Lương Mạnh Hải</td>
-                                      <td className="p-3 align-top">Cục Công nghiệp An ninh, Bộ Công an; Cục Cảnh sát Quản lý tạm giữ, tạm giam và Thi hành án hình sự tại cộng đồng; Học viện Cảnh sát Nhân dân, Bộ Công an; THPT Chuyên Nguyễn Huệ.</td>
+                                      <td className="p-3 align-top">Lê Hải Triều, Nguyễn Thị Quế Thu, Lê Thị Trang Linh, Đặng Ngọc Quân</td>
+                                      <td className="p-3 align-top">Cục Công nghiệp An ninh, Bộ Công an; Cục Cảnh sát Quản lý tạm giữ, tạmạm giam và Thi hành án hình sự tại cộng đồng; Học viện Cảnh sát Nhân dân, Bộ Công an; THPT Chuyên Nguyễn Huệ.</td>
                                       <td className="p-3 align-top">MẬT MÃ HẬU LƯỢNG TỬ VÀ PHÂN PHỐI KHÓA LƯỢNG TỬ: VAI TRÒ CỦA TRÍ TUỆ NHÂN TẠO VÀ ĐỀ XUẤT LỘ TRÌNH CHO VIỆT NAM</td>
                                     </tr>
                                     <tr>
-                                      <td className="p-3 align-top">Nguyễn Như Chiến</td>
+                                      <td className="p-3 align-top">Nguyễn Như Chiến, Trần Ngọc Quý, Hoàng Văn Thành Long</td>
                                       <td className="p-3 align-top">Học viện Kỹ thuật mật mã</td>
                                       <td className="p-3 align-top">ĐÁNH GIÁ ĐỘ AN TOÀN HỆ MẬT TỪ PHƯƠNG PHÁP TRUYỀN THỐNG ĐẾN TRÍ TUỆ NHÂN TẠO VÀ RÒ RỈ PHẦN CỨNG</td>
                                     </tr>
@@ -306,7 +306,7 @@ export default function Program() {
                                       <td className="p-3 align-top">TẤN CÔNG MẠNG CÓ SỰ HỖ TRỢ CỦA TRÍ TUỆ NHÂN TẠO: XU HƯỚNG VÀ VẤN ĐỀ ĐẶT RA ĐỐI VỚI BẢO ĐẢM AN NINH MẠNG QUỐC GIA</td>
                                     </tr>
                                     <tr>
-                                      <td className="p-3 align-top">Cao Hong Lam</td>
+                                      <td className="p-3 align-top">Cao Hồng Lam, Hoàng Việt Long, Bùi Thu Lâm</td>
                                       <td className="p-3 align-top">Học viện Kỹ thuật và Công nghệ An ninh</td>
                                       <td className="p-3 align-top">BÀI TOÁN BẢO TOÀN KHẢ NĂNG PHÁT HIỆN LỚP TẤN CÔNG HIẾM TRONG HỌC LIÊN KẾT CHO IDS IoT DƯỚI DỮ LIỆU KHÔNG ĐỒNG NHẤT: TỔNG QUAN PHÂN TÍCH VÀ KHUNG NGHIÊN CỨU</td>
                                     </tr>
@@ -316,7 +316,7 @@ export default function Program() {
                                       <td className="p-3 align-top">ĐÁNH GIÁ CÁC KỸ THUẬT NÉN MÔ HÌNH HỌC SÂU CHO PHÁT HIỆN XÂM NHẬP MẠNG HƯỚNG TỚI TRIỂN KHAI TẠI BIÊN</td>
                                     </tr>
                                     <tr>
-                                      <td className="p-3 align-top">Vũ Xuân Trường</td>
+                                      <td className="p-3 align-top">Vũ Xuân Trường, Tống Anh Tuấn, Phạm Duy Trung</td>
                                       <td className="p-3 align-top">Học viện Kỹ thuật và Công nghệ an ninh</td>
                                       <td className="p-3 align-top">XÂY DỰNG KHUNG ĐÁNH GIÁ VÀ PHÒNG THỦ TRƯỚC CÁC MỐI ĐE DỌA TRONG GIAI ĐOẠN HUẤN LUYỆN MÔ HÌNH NGÔN NGỮ LỚN</td>
                                     </tr>
@@ -345,29 +345,29 @@ export default function Program() {
                                   </thead>
                                   <tbody className="divide-y divide-rule bg-white">
                                     <tr>
-                                      <td className="p-3 align-top">Phạm Ngọc Minh</td>
+                                      <td className="p-3 align-top">Phạm Ngọc Minh, Phạm Duy Trung, Bùi Thu Lâm</td>
                                       <td className="p-3 align-top">Học viện Kỹ thuật mật mã - Hà Nội</td>
-                                      <td className="p-3 align-top">DeepSentry: Nền tảng XAI cho bài toán phát hiện thông tin sai lệch</td>
+                                      <td className="p-3 align-top">DEEPSENTRY: NỀN TẢNG XAI CHO BÀI TOÁN PHÁT HIỆN THÔNG TIN SAI LỆCH</td>
                                     </tr>
                                     <tr>
-                                      <td className="p-3 align-top">Phạm Trường Sơn*, Nguyễn Việt Hùng, Đinh Đoàn Xuân Phương</td>
+                                      <td className="p-3 align-top">Phạm Trường Sơn, Nguyễn Việt Hùng, Đinh Đoàn Xuân Phương</td>
                                       <td className="p-3 align-top">Trung tâm Nghiên cứu xuất sắc an toàn thông tin, Học viện Kỹ thuật Quân sự</td>
                                       <td className="p-3 align-top">TỪ SOAR DỰA TRÊN LUẬT ĐẾN SOC TỰ HÀNH CÓ KIỂM SOÁT: TIỀM NĂNG CỦA AGENTIC AI VÀ MÔ HÌNH NGÔN NGỮ LỚN CHO TỰ ĐỘNG HÓA PHẢN ỨNG SỰ CỐ</td>
                                     </tr>
                                     <tr>
-                                      <td className="p-3 align-top">Nguyễn Đăng Bắc</td>
+                                      <td className="p-3 align-top">Nguyễn Đăng Bắc, Lê Hữu Tuấn, Nguyễn Văn Tự, Phạm Xuân Bình</td>
                                       <td className="p-3 align-top">Trường Đại học Thái Bình Dương</td>
                                       <td className="p-3 align-top">PHÁT HIỆN GIAO DỊCH GIAN LẬN THẺ TÍN DỤNG BẰNG KIẾN TRÚC MÔ HÌNH LAI KẾT HỢP AUTOENCODER VÀ MẠNG NƠ-RON ĐA TẦNG TRÊN NỀN DỮ LIỆU MẤT CÂN BẰNG NGHIÊM TRỌNG</td>
                                     </tr>
                                     <tr>
-                                      <td className="p-3 align-top">Trương Xuân Hùng</td>
+                                      <td className="p-3 align-top">Trương Xuân Hùng, Trần Anh Tú, Võ Đình Quyết, Hoàng Thông, Nguyễn Anh Khôi, Đinh Lê Thanh Đạt, Minh Nhat Vo</td>
                                       <td className="p-3 align-top">Học viện Kỹ thuật mật mã</td>
-                                      <td className="p-3 align-top">Phòng chống thông tin sai lệch từ Generative AI: Giải pháp XAI bền vững hướng tới tuân thủ pháp lý và giải quyết thách thức an ninh tương lai</td>
+                                      <td className="p-3 align-top">PHÒNG CHỐNG THÔNG TIN SAI LỆCH TỪ GENERATIVE AI: GIẢI PHÁP XAI BỀN VỮNG HƯỚNG TỚI TUÂN THỦ PHÁP LÝ VÀ GIẢI QUYẾT THÁCH THỨC AN NINH TƯƠNG LAI</td>
                                     </tr>
                                     <tr>
-                                      <td className="p-3 align-top">Hoàng Nhật Anh</td>
+                                      <td className="p-3 align-top">TS. Hoàng Nhật Anh</td>
                                       <td className="p-3 align-top">Ban Quản lý khoa học &amp; Hợp tác quốc tế - Học viện Báo chí và Tuyên truyền</td>
-                                      <td className="p-3 align-top">Trí tuệ nhân tạo cho mật mã và an toàn thông tin</td>
+                                      <td className="p-3 align-top">TRÍ TUỆ NHÂN TẠO CHO MẬT MÃ VÀ AN TOÀN THÔNG TIN</td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -412,14 +412,14 @@ export default function Program() {
                                       <td className="p-3 align-top">KHOẢNG TRỐNG QUẢN TRỊ TRONG XÁC THỰC SINH TRẮC HỌC NGÂN HÀNG TẠI VIỆT NAM: SỰ PHÁT TRIỂN CỦA KHUNG PHÁP LÝ GIAI ĐOẠN 2023 - 2026 TRƯỚC THÁCH THỨC TỪ CÁC CUỘC TẤN CÔNG TIÊM NHIỄM DEEPFAKE</td>
                                     </tr>
                                     <tr>
-                                      <td className="p-3 align-top">Cao Thị Dung</td>
+                                      <td className="p-3 align-top">TS. Cao Thị Dung</td>
                                       <td className="p-3 align-top">Học viện Báo chí và Tuyên truyền</td>
                                       <td className="p-3 align-top">QUẢN TRỊ AN TOÀN THÔNG TIN TRONG THỜI ĐẠI AI TẠO SINH: THỰC TRẠNG VÀ HÀM Ý CHÍNH SÁCH</td>
                                     </tr>
                                     <tr>
-                                      <td className="p-3 align-top">Nguyễn Duy Long</td>
+                                      <td className="p-3 align-top">TS. Nguyễn Duy Long</td>
                                       <td className="p-3 align-top">Khoa Nhà nước và Pháp luật, Học viện Báo chí và Tuyên truyền</td>
-                                      <td className="p-3 align-top">Khung pháp lý đối với ứng dụng trí tuệ nhân tạo trong bảo vệ dữ liệu và an toàn thông tin tại Việt Nam</td>
+                                      <td className="p-3 align-top">KHUNG PHÁP LÝ ĐỐI VỚI ỨNG DỤNG TRÍ TUỆ NHÂN TẠO TRONG BẢO VỆ DỮ LIỆU VÀ AN TOÀN THÔNG TIN TẠI VIỆT NAM</td>
                                     </tr>
                                     <tr>
                                       <td className="p-3 align-top">PGS.TS. Nguyễn Thị Ngọc Hoa</td>
@@ -427,7 +427,7 @@ export default function Program() {
                                       <td className="p-3 align-top">CƠ SỞ CHÍNH TRỊ – PHÁP LÝ CỦA VIỆC XÂY DỰNG CÔNG DÂN SỐ Ở VIỆT NAM HIỆN NAY</td>
                                     </tr>
                                     <tr>
-                                      <td className="p-3 align-top">PGS, TS. Trần Hải Minh</td>
+                                      <td className="p-3 align-top">PGS. TS. Trần Hải Minh</td>
                                       <td className="p-3 align-top">Phó Trưởng khoa Triết học Học viện Báo chí và Tuyên truyền</td>
                                       <td className="p-3 align-top">BÀN VỀ MỘT SỐ NGUYÊN TẮC CƠ BẢN TRONG XÁC ĐỊNH VIỆC SỬ DỤNG TRÍ TUỆ NHÂN TẠO (AI) AN TOÀN</td>
                                     </tr>
@@ -456,29 +456,29 @@ export default function Program() {
                                   </thead>
                                   <tbody className="divide-y divide-rule bg-white">
                                     <tr>
-                                      <td className="p-3 align-top">Nguyễn Thị Thu Hương</td>
+                                      <td className="p-3 align-top">ThS. GVC. Nguyễn Thị Thu Hương</td>
                                       <td className="p-3 align-top">Trường Chính trị tỉnh Ninh Bình</td>
-                                      <td className="p-3 align-top">Phát huy vai trò của đội ngũ giảng viên lý luận chính trị trong việc nhận diện các nguy cơ mất an toàn thông tin thời kỳ trí tuệ nhân tạo</td>
+                                      <td className="p-3 align-top">PHÁT HUY VAI TRÒ CỦA ĐỘI NGŨ GIẢNG VIÊN LÝ LUẬN CHÍNH TRỊ TRONG VIỆC NHẬN DIỆN CÁC NGUY CƠ MẤT AN TOÀN THÔNG TIN THỜI KỲ TRÍ TUỆ NHÂN TẠO</td>
                                     </tr>
                                     <tr>
-                                      <td className="p-3 align-top">Lê Thị Yến Như</td>
+                                      <td className="p-3 align-top">Lê Thị Yến Như, Hồ Thu Huyền, Trần Thị Hoài Nhi, Đỗ Thanh Kỳ</td>
                                       <td className="p-3 align-top">Trường Đại học Luật, Đại học Huế</td>
                                       <td className="p-3 align-top">NGHIÊN CỨU CÁC GIẢI PHÁP PHÒNG, CHỐNG HÀNH VI “BẮT CÓC ONLINE” ĐỐI VỚI HỌC SINH, SINH VIÊN TỪ THỰC TIỄN THÀNH PHỐ HUẾ</td>
                                     </tr>
                                     <tr>
-                                      <td className="p-3 align-top">Thân Văn Thanh</td>
+                                      <td className="p-3 align-top">ThS. Thân Văn Thanh</td>
                                       <td className="p-3 align-top">Học viện Báo chí và Tuyên truyền</td>
-                                      <td className="p-3 align-top">Tích hợp giáo dục nhận thức về an toàn thông tin và rủi ro từ trí tuệ nhân tạo trong chương trình đào tạo Cử nhân ngành Ngôn ngữ nhằm bảo vệ không gian số giáo dục đại học.</td>
+                                      <td className="p-3 align-top">TÍCH HỢP GIÁO DỤC NHẬN THỨC VỀ AN TOÀN THÔNG TIN VÀ RỦI RO TỪ TRÍ TUỆ NHÂN TẠO TRONG CHƯƠNG TRÌNH ĐÀO TẠO CỬ NHÂN NGÀNH NGÔN NGỮ NHẰM BẢO VỆ KHÔNG GIAN SỐ GIÁO DỤC ĐẠI HỌC</td>
                                     </tr>
                                     <tr>
                                       <td className="p-3 align-top">Nguyễn Thị Thu Trang</td>
                                       <td className="p-3 align-top">Khoa Ngoại ngữ, Học viện Báo chí và Tuyên truyền</td>
-                                      <td className="p-3 align-top">Quản trị dữ liệu cá nhân trong kỷ nguyên trí tuệ nhân tạo Thách thức và giải pháp bảo đảm an toàn thông tin</td>
+                                      <td className="p-3 align-top">QUẢN TRỊ THÔNG TIN CÁ NHÂN TRONG KỶ NGUYÊN TRÍ TUỆ NHÂN TẠO THÁCH THỨC VÀ GIẢI PHÁP BẢO ĐẢM AN TOÀN THÔNG TIN</td>
                                     </tr>
                                     <tr>
-                                      <td className="p-3 align-top">Đặng Huyền Linh</td>
+                                      <td className="p-3 align-top">TS. Nguyễn Thị Hà Thu, Đặng Huyền Linh</td>
                                       <td className="p-3 align-top">Học viện Báo chí và Tuyên truyền</td>
-                                      <td className="p-3 align-top">Phát huy vai trò của trí tuệ nhân tạo trong xây dựng môi trường số an toàn</td>
+                                      <td className="p-3 align-top">PHÁT HUY VAI TRÒ CỦA TRÍ TUỆ NHÂN TẠO TRONG XÂY DỰNG MÔI TRƯỜNG SỐ AN TOÀN</td>
                                     </tr>
                                   </tbody>
                                 </table>
