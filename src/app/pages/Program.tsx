@@ -138,11 +138,11 @@ export default function Program() {
                         </td>
                       </tr>
                       <tr className="bg-cipher/5 font-semibold text-cipher">
-                        <td className="p-4">13:30 - 17:30</td>
+                        <td className="p-4">13:30 - 16:35</td>
                         <td className="p-4 text-center" colSpan={2}>Các phiên chuyên môn</td>
                       </tr>
                       <tr className="hover:bg-paper/50 transition-colors">
-                        <td className="p-4 font-semibold text-ink align-top">17:30 - 17:45</td>
+                        <td className="p-4 font-semibold text-ink align-top">16:35 - 16:50</td>
                         <td className="p-4">Bế mạc, tổng kết Hội thảo</td>
                         <td className="p-4 align-top">Đại diện Lãnh đạo Học viện Kỹ thuật mật mã, Chủ tịch FISU Việt Nam</td>
                       </tr>
@@ -171,7 +171,7 @@ export default function Program() {
                         </thead>
                         <tbody className="text-[16px] text-slate divide-y divide-rule">
                           <tr className="hover:bg-paper/50 transition-colors">
-                            <td className="p-4 font-semibold text-ink align-top">13:30 - 15:10</td>
+                            <td className="p-4 font-semibold text-ink align-top">13:30 - 15:00</td>
                             <td className="p-4">
                               <p className="font-bold text-ink mb-1">Session 1: AI trong phòng, chống thông tin sai lệch và các thách thức an ninh trong tương lai</p>
                               <p className="italic text-cipher mb-4">Chair: PGS.TS. Đinh Thị Thu Hằng, Viện trưởng Viện Báo chí - Truyền thông, Học viện Báo chí và Tuyên truyền</p>
@@ -189,10 +189,6 @@ export default function Program() {
                                       <td className="p-3 align-top">HƯỚNG GIẢI PHÁP TỪ AI CHO CÁC CƠ QUAN BÁO CHÍ VIỆT NAM TRƯỚC THÔNG TIN SAI LỆCH DO DEEPFAKE VÀ TRÍ TUỆ NHÂN TẠO TẠO SINH</td>
                                     </tr>
                                     <tr>
-                                      <td className="p-3 align-top">TS. Đàm Thế Vinh</td>
-                                      <td className="p-3 align-top">ỨNG DỤNG TRÍ TUỆ NHÂN TẠO TRONG NHẬN DIỆN VÀ PHÒNG, CHỐNG THAO TÚNG THÔNG TIN TRÊN KHÔNG GIAN TRUYỀN THÔNG QUỐC PHÒNG</td>
-                                    </tr>
-                                    <tr>
                                       <td className="p-3 align-top">Phạm Thành Công</td>
                                       <td className="p-3 align-top">ỨNG DỤNG TRÍ TUỆ NHÂN TẠO TRONG PHÒNG, CHỐNG TIN GIẢ TRÊN MÔI TRƯỜNG SỐ: THỰC TRẠNG VÀ GIẢI PHÁP</td>
                                     </tr>
@@ -201,8 +197,8 @@ export default function Program() {
                                       <td className="p-3 align-top">HOẠT ĐỘNG XUẤT BẢN TRONG BỐI CẢNH AI TẠO SINH: THÁCH THỨC ĐỐI VỚI AN TOÀN THÔNG TIN VÀ GIẢI PHÁP QUẢN TRỊ NỘI DUNG</td>
                                     </tr>
                                     <tr>
-                                      <td className="p-3 align-top">TS. Trần Thị Phương Lan</td>
-                                      <td className="p-3 align-top">KINH NGHIỆM QUỐC TẾ TRONG SỬ DỤNG AI PHÒNG, CHỐNG THÔNG TIN SAI LỆCH VỀ CHÍNH TRỊ VÀ MỘT SỐ BÀI HỌC ÁP DỤNG CHO VIỆT NAM</td>
+                                      <td className="p-3 align-top">TS. Đinh Thị Xuân Hòa</td>
+                                      <td className="p-3 align-top">AI VÀ SỨ MỆNH CỦA BÁO CHÍ CÁCH MẠNG VIỆT NAM TRONG KỶ NGUYÊN SỐ: GÓC NHÌN TỪ TƯ TƯỞNG CHỈ ĐẠO CỦA TỔNG BÍ THƯ TÔ LÂM</td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -210,11 +206,11 @@ export default function Program() {
                             </td>
                           </tr>
                           <tr className="bg-cipher/5 font-semibold text-cipher">
-                            <td className="p-4">15:10 - 15:30</td>
+                            <td className="p-4">15:00 - 15:15</td>
                             <td className="p-4 text-center">Nghỉ giải lao</td>
                           </tr>
                           <tr className="hover:bg-paper/50 transition-colors">
-                            <td className="p-4 font-semibold text-ink align-top">15:30 - 17:30</td>
+                            <td className="p-4 font-semibold text-ink align-top">15:15 - 16:35</td>
                             <td className="p-4">
                               <p className="font-bold text-ink mb-1">Session 2: Mật mã và Mật mã hậu lượng tử</p>
                               <p className="italic text-cipher mb-4">Chair: TS. Nguyễn Bùi Cương, Viện Khoa học - Công nghệ mật mã/Ban Cơ yếu Chính phủ</p>
@@ -242,10 +238,6 @@ export default function Program() {
                                     <tr>
                                       <td className="p-3 align-top">Lê Hải Triều, Nguyễn Thị Quế Thu, Lê Thị Trang Linh, Đặng Ngọc Quân</td>
                                       <td className="p-3 align-top">MẬT MÃ HẬU LƯỢNG TỬ VÀ PHÂN PHỐI KHÓA LƯỢNG TỬ: VAI TRÒ CỦA TRÍ TUỆ NHÂN TẠO VÀ ĐỀ XUẤT LỘ TRÌNH CHO VIỆT NAM</td>
-                                    </tr>
-                                    <tr>
-                                      <td className="p-3 align-top">TS. Hoàng Thị Bích Toàn</td>
-                                      <td className="p-3 align-top">MẬT MÃ HẬU LƯỢNG TỬ TRONG BỐI CẢNH CHUYỂN ĐỔI SỐ TẠI VIỆT NAM: THỰC TRẠNG, THÁCH THỨC VÀ ĐỊNH HƯỚNG TRIỂN KHAI</td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -305,11 +297,11 @@ export default function Program() {
                             </td>
                           </tr>
                           <tr className="bg-cipher/5 font-semibold text-cipher">
-                            <td className="p-4">15:00 - 15:30</td>
+                            <td className="p-4">15:00 - 15:15</td>
                             <td className="p-4 text-center">Nghỉ giải lao</td>
                           </tr>
                           <tr className="hover:bg-paper/50 transition-colors">
-                            <td className="p-4 font-semibold text-ink align-top">15:30 - 17:10</td>
+                            <td className="p-4 font-semibold text-ink align-top">15:15 - 16:35</td>
                             <td className="p-4">
                               <p className="font-bold text-ink mb-1">Session 4: Trí tuệ nhân tạo cho bảo mật dữ liệu và an ninh hệ thống mạng</p>
                               <p className="italic text-cipher mb-4">Chair: TS. Phạm Duy Trung/Học viện Kỹ thuật mật mã/Ban Cơ yếu Chính phủ</p>
@@ -329,10 +321,6 @@ export default function Program() {
                                     <tr>
                                       <td className="p-3 align-top">Phạm Trường Sơn, Nguyễn Việt Hùng, Đinh Đoàn Xuân Phương</td>
                                       <td className="p-3 align-top">TỪ SOAR DỰA TRÊN LUẬT ĐẾN SOC TỰ HÀNH CÓ KIỂM SOÁT: TIỀM NĂNG CỦA AGENTIC AI VÀ MÔ HÌNH NGÔN NGỮ LỚN CHO TỰ ĐỘNG HÓA PHẢN ỨNG SỰ CỐ</td>
-                                    </tr>
-                                    <tr>
-                                      <td className="p-3 align-top">Nguyễn Đăng Bắc, Lê Hữu Tuấn, Nguyễn Văn Tự, Phạm Xuân Bình</td>
-                                      <td className="p-3 align-top">PHÁT HIỆN GIAO DỊCH GIAN LẬN THẺ TÍN DỤNG BẰNG KIẾN TRÚC MÔ HÌNH LAI KẾT HỢP AUTOENCODER VÀ MẠNG NƠ-RON ĐA TẦNG TRÊN NỀN DỮ LIỆU MẤT CÂN BẰNG NGHIÊM TRỌNG</td>
                                     </tr>
                                     <tr>
                                       <td className="p-3 align-top">Trương Xuân Hùng, Trần Anh Tú, Võ Đình Quyết, Hoàng Thông, Nguyễn Anh Khôi, Đinh Lê Thanh Đạt, Minh Nhat Vo</td>
@@ -365,7 +353,7 @@ export default function Program() {
                         </thead>
                         <tbody className="text-[16px] text-slate divide-y divide-rule">
                           <tr className="hover:bg-paper/50 transition-colors">
-                            <td className="p-4 font-semibold text-ink align-top">13:30 - 15:10</td>
+                            <td className="p-4 font-semibold text-ink align-top">13:30 - 15:00</td>
                             <td className="p-4">
                               <p className="font-bold text-ink mb-1">Session 5: Chính sách và quản trị AI an toàn</p>
                               <p className="italic text-cipher mb-4">Chair: PGS. TS. Nguyễn Việt Hùng/Học viện Kỹ thuật quân sự/Bộ Quốc phòng</p>
@@ -404,11 +392,11 @@ export default function Program() {
                             </td>
                           </tr>
                           <tr className="bg-cipher/5 font-semibold text-cipher">
-                            <td className="p-4">15:10 - 15:30</td>
+                            <td className="p-4">15:00 - 15:15</td>
                             <td className="p-4 text-center">Nghỉ giải lao</td>
                           </tr>
                           <tr className="hover:bg-paper/50 transition-colors">
-                            <td className="p-4 font-semibold text-ink align-top">15:30 - 17:10</td>
+                            <td className="p-4 font-semibold text-ink align-top">15:15 - 16:35</td>
                             <td className="p-4">
                               <p className="font-bold text-ink mb-1">Session 6: AI an toàn và giáo dục đào tạo</p>
                               <p className="italic text-cipher mb-4">Chair: TS. Vũ Thị Đào/Học viện Kỹ thuật mật mã/Ban Cơ yếu Chính phủ</p>
@@ -424,10 +412,6 @@ export default function Program() {
                                     <tr>
                                       <td className="p-3 align-top">ThS. GVC. Nguyễn Thị Thu Hương</td>
                                       <td className="p-3 align-top">PHÁT HUY VAI TRÒ CỦA ĐỘI NGŨ GIẢNG VIÊN LÝ LUẬN CHÍNH TRỊ TRONG VIỆC NHẬN DIỆN CÁC NGUY CƠ MẤT AN TOÀN THÔNG TIN THỜI KỲ TRÍ TUỆ NHÂN TẠO</td>
-                                    </tr>
-                                    <tr>
-                                      <td className="p-3 align-top">Lê Thị Yến Như, Hồ Thu Huyền, Trần Thị Hoài Nhi, Đỗ Thanh Kỳ</td>
-                                      <td className="p-3 align-top">NGHIÊN CỨU CÁC GIẢI PHÁP PHÒNG, CHỐNG HÀNH VI “BẮT CÓC ONLINE” ĐỐI VỚI HỌC SINH, SINH VIÊN TỪ THỰC TIỄN THÀNH PHỐ HUẾ</td>
                                     </tr>
                                     <tr>
                                       <td className="p-3 align-top">ThS. Thân Văn Thanh</td>
